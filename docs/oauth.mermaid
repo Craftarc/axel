@@ -1,48 +1,22 @@
 sequenceDiagram
     actor User as User
-    participant Client as Desktop Client App
-		participant Browser as Browser
-    participant Auth as Auth Server
-    participant Backend as Lambda Backend Server
-    participant Resource as Resource Server
+    participant Client as Qt Client
+    participant Browser as Browser
+    participant Backend as Backend Server
+	participant Auth as Auth Server
 
-    User->>Client: login
-		activate Client
-		Client->>Browser: openSiteWithBrowser
-		activate Browser
-		Browser->>Auth: getAuthWebsite
-		activate Auth
-		Auth-->>Browser: returnAuthWebsite
-		deactivate Auth
-		Note left of Browser: User sees displayed auth prompt
-		User->>Browser: authorise
-		Browser->>Auth: sendAuthorise
-		Note right of Browser: Include custom redirect URI back to Client
-		activate Auth
-		Auth-->>Browser: returnAuthCode
-		deactivate Auth
-		Browser->>Client: customRedirect
-		deactivate Browser
-		Client->>Backend: sendAuthCode
-		activate Backend
-		Backend->>Auth: requestAccessToken
-		activate Auth
-		Auth-->>Backend: returnAccessToken
-		deactivate Auth
-		activate Backend
-		Backend->>Backend: generateSignedJWT
-		Note left of Backend: Backend keeps a copy of JWT
-		Backend-->>Client: sendSignedJWT
-		deactivate Backend
-		Client->>Backend: sendDataRequest
-		Backend->>Resource: requestDataWithAccessToken
-		activate Resource
-		Resource-->>Backend: returnRequestedData
-		deactivate Resource
-		Backend-->>Client: returnRequestedData
-		Client->>Client: processAndDisplayData
-		deactivate Client
-		Note left of Client: User sees displayed data
+	User->>+Client: Initiate login
+	Client->>+Browser: Direct to /authorize
+	Note right of Client: custom redirect URI + nonce<br/>The nonce is to ensure<br/>uniqueness of the client
+	Browser->>+Auth: User authenticates
+	Auth-->>-Browser: Return authorisation code
+	Browser-->>-Client: Redirect authorisation code
+	Client->>+Backend: Send authorisation code
+	Backend-->>-Client: ACK
+	Backend->>+Auth: Request access token
+	Auth-->>-Backend: Return access token
 
-		
-				
+
+
+
+
