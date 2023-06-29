@@ -1,0 +1,48 @@
+sequenceDiagram
+    actor User as User
+    participant Client as Desktop Client App
+		participant Browser as Browser
+    participant Auth as Auth Server
+    participant Backend as Lambda Backend Server
+    participant Resource as Resource Server
+
+    User->>Client: login
+		activate Client
+		Client->>Browser: openSiteWithBrowser
+		activate Browser
+		Browser->>Auth: getAuthWebsite
+		activate Auth
+		Auth-->>Browser: returnAuthWebsite
+		deactivate Auth
+		Note left of Browser: User sees displayed auth prompt
+		User->>Browser: authorise
+		Browser->>Auth: sendAuthorise
+		Note right of Browser: Include custom redirect URI back to Client
+		activate Auth
+		Auth-->>Browser: returnAuthCode
+		deactivate Auth
+		Browser->>Client: customRedirect
+		deactivate Browser
+		Client->>Backend: sendAuthCode
+		activate Backend
+		Backend->>Auth: requestAccessToken
+		activate Auth
+		Auth-->>Backend: returnAccessToken
+		deactivate Auth
+		activate Backend
+		Backend->>Backend: generateSignedJWT
+		Note left of Backend: Backend keeps a copy of JWT
+		Backend-->>Client: sendSignedJWT
+		deactivate Backend
+		Client->>Backend: sendDataRequest
+		Backend->>Resource: requestDataWithAccessToken
+		activate Resource
+		Resource-->>Backend: returnRequestedData
+		deactivate Resource
+		Backend-->>Client: returnRequestedData
+		Client->>Client: processAndDisplayData
+		deactivate Client
+		Note left of Client: User sees displayed data
+
+		
+				
