@@ -1,5 +1,3 @@
-set(CMAKE_PREFIX_PATH "C:\\msys64\\opt\\boost_1_82_0\\stage")
-
 find_package(Boost
              REQUIRED
              COMPONENTS unit_test_framework)

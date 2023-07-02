@@ -15,3 +15,5 @@ BOOST_AUTO_TEST_CASE(test_subtraction)
     int result = 5 - 3;
     BOOST_TEST(result == 2);
 }
+
+
