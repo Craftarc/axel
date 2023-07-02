@@ -1,38 +1,42 @@
 # Build command
 # docker build -t axel-backend:1.0 . --no-cache
 
-# Use Amazon Linux 2 as base image
+# Use Amazon Linux 2 as base image/
 FROM public.ecr.aws/lambda/provided:al2
 
-# TODO: Add aliases for gcc10-gcc, gcc10-g++, cmake3
-
-WORKDIR /app
+# Environment variables
+ENV CX gcc
+ENV CXX g++
 
 # Update base image
 RUN yum update -y && \
-    yum install -y git \
-    curl \
-    ninja \
-    make \
-    cmake3 \
-    zip \
+    yum groupinstall -y "Development tools" && \
+    yum install -y gcc10-c++ \
     libcurl-devel \
-    gcc10 \
-    gcc10-c++
+    cmake3 \
+    git && \
+    pip3 install awscli
+
+WORKDIR /app
+
+# Install C++ lambda runtime
+RUN git clone https://github.com/awslabs/aws-lambda-cpp.git && \
+    cd aws-lambda-cpp && \
+    mkdir build && \
+    cd build && \
+    cmake3 .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/app/lambda-install && \
+    make && make install
 
 
-COPY ./CMakeLists.txt .
+# Copy project directory
+WORKDIR /app/axel
 
-#RUN mkdir build && \
-#    cd build && \
-#    cmake3 ..
+COPY main.cpp .
+COPY CMakeLists.txt .
 
-## Install C++ lambda runtime
-#RUN git clone https://github.com/awslabs/aws-lambda-cpp.git && \
-#    cd aws-lambda-cpp && \
-#    mkdir build && \
-#    cd build && \
-#    cmake3 .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/lambda-install && \
-#    make && \
-#    make install
+RUN mkdir build && \
+    cd build && \
+    cmake3 .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/app/lambda-install && \
+    make && \
+    make && make aws-lambda-package-demo
 
