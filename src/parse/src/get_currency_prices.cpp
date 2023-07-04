@@ -1,4 +1,5 @@
 #include "get_currency_prices.h"
+#include "poe_ninja_config.h"
 
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
@@ -19,17 +20,17 @@ namespace {
     using tcp = net::ip::tcp;
 
     /**
-    * Function to run HTTP Get to the specified host, service and target
+    * Function to run HTTP Get to the specified host, service and path
     * This function is used to run a HTTPS GET request using Boost library.
     *
     * @param host - hostname or IP address of the server
     * @param service - service name or port number
-    * @param target - The path on the server
+    * @param path - The path on the server
     *
     * @return The body of the HTTP response from the server as a string
     */
     std::string
-    http_get(const std::string& host, const std::string& service, const std::string& target) {
+    http_get(const std::string& host, const std::string& service, const std::string& path) {
 
 
         // IO and SSL context for stream
@@ -53,7 +54,7 @@ namespace {
         stream.handshake(ssl::stream_base::client);
 
         // Construct HTTP request
-        http::request<http::string_body> request(http::verb::get, target, 11);
+        http::request<http::string_body> request(http::verb::get, path, 11);
         request.set(http::field::host, host);
 
         http::write(stream, request);
@@ -76,7 +77,7 @@ namespace {
 }
 
 namespace parse {
-    void get_currency_json() {
-        std::cout << http_get(parse::poeninja_host, "https", parse::poeninja_currency_target) << std::endl;
+    std::string get_currency_json() {
+        return http_get(config::poe_ninja_host, "https", config::poe_ninja_currency_path);
     }
 }
