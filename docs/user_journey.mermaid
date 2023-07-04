@@ -1,0 +1,19 @@
+---
+title: Frontend Flow
+---
+flowchart TD
+    openClient[User opens Axel Client] --> isUserLoggedIn([Check if user is logged in])
+    isUserLoggedIn --> loggedIn[Yes]
+    isUserLoggedIn --> notLoggedIn[No]
+    notLoggedIn --> openBrowser([Open browser with auth link])
+    loggedIn --> renderMainMenu([Render main menu])
+    openBrowser --> completeAuth([Complete authorisation])
+    completeAuth --> renderMainMenu
+    renderMainMenu --> userClicksTab[User clicks on tab]
+
+    userClicksTab --> selectMainMenu[Main menu]
+    selectMainMenu --> renderMainMenu
+    userClicksTab --> selectStash[Stash]
+    subgraph Stash
+        selectStash[Stash] --> renderStash([Render stash])
+    end

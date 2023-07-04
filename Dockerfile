@@ -17,7 +17,8 @@ RUN yum update -y && \
     cmake3 \
     git \
     which \
-    python-devel && \
+    python-devel \
+    libssl-devel && \
     pip3 install awscli
 
 ## INSTALL LIBRARIES
@@ -48,7 +49,6 @@ WORKDIR /app/axel
 
 # Copy only production files
 COPY src ./src
-COPY test ./test
 COPY CMakeLists.txt handler.cpp ./
 
 ## Make demo

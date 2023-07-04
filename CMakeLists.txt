@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.9)
 project(axel LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
-
-# Global link directories
-link_directories(/usr/local/lib64)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(aws-lambda-runtime)
 add_executable(handler "handler.cpp") # Runtime handler
@@ -15,5 +13,7 @@ target_compile_options(handler PRIVATE "-Wall" "-Wextra")
 # this line creates a target that packages your binary and zips it up
 aws_lambda_package_target(handler)
 
-add_subdirectory(src)
-add_subdirectory(test)
+add_executable(main main.cpp)
+target_link_libraries(main parse)
+
+add_subdirectory(./src/parse)
