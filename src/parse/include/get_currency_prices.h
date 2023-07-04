@@ -4,7 +4,7 @@
 #include <string>
 
 namespace parse {
-    const std::string poeninja_currency_host = "https://poe.ninja";
+    const std::string poeninja_host = "poe.ninja";
     const std::string poeninja_currency_target = "/api/data/currencyoverview?league=Crucible&type=Currency";
 
     void get_currency_json();

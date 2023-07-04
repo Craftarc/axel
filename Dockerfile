@@ -18,7 +18,7 @@ RUN yum update -y && \
     git \
     which \
     python-devel \
-    libssl-devel && \
+    openssl-devel && \
     pip3 install awscli
 
 ## INSTALL LIBRARIES
