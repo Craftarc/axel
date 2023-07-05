@@ -9,7 +9,6 @@
 #include <boost/asio/ssl/error.hpp>
 #include <boost/asio/ssl/stream.hpp>
 #include <openssl/ssl.h>
-#include <iostream>
 #include <string>
 
 namespace {
@@ -77,7 +76,7 @@ namespace {
 }
 
 namespace parse {
-    std::string get_currency_json() {
-        return http_get(config::poe_ninja_host, "https", config::poe_ninja_currency_path);
+    std::string get_currency_json(const std::string& host, const std::string& path) {
+        return http_get(host, "https", path);
     }
 }

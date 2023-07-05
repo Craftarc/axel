@@ -5,6 +5,6 @@
 
 namespace parse {
     // Constants
-    std::string get_currency_json();
+    std::string get_currency_json(const std::string& host, const std::string& path);
 }
 #endif
