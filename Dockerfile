@@ -48,8 +48,11 @@ RUN tar --bzip2 -xf ./boost_1_82_0.tar.bz2 && \
 WORKDIR /app/axel
 
 # Copy only production files
+COPY CMakeLists.txt ./
+COPY handler.cpp ./
+COPY main.cpp ./
+COPY config ./config
 COPY src ./src
-COPY CMakeLists.txt handler.cpp ./
 
 ## Make demo
 #RUN mkdir build && \

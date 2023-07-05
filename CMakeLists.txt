@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.9)
 project(axel LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 
+# Global properties
+set(PROJECT_ROOT ${CMAKE_CURRENT_LIST_DIR})
+
 # AWS Lambda runtime library
 find_package(aws-lambda-runtime)
 
@@ -20,6 +23,7 @@ aws_lambda_package_target(handler) # this line creates a target that packages yo
 # main executable
 add_executable(main main.cpp)
 target_link_libraries(main parse)
+target_compile_options(main PRIVATE "-Wall" "-Wextra")
 
 # Subdirectories
 add_subdirectory(./src/parse)
