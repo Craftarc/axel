@@ -3,8 +3,7 @@
 
 #include <string>
 
-namespace parse {
-    // Constants
-    std::string get_currency_json(const std::string& host, const std::string& path);
+namespace poe_ninja {
+    std::string get_item_prices(const std::string& resource_path);
 }
 #endif

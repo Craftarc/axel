@@ -1,14 +1,12 @@
-#define BOOST_TEST_MODULE parse_tests
+#define BOOST_TEST_MODULE get_poe_ninja_data_tests
 
-#include "parse/get_currency_prices.h"
-#include "poe_ninja_config.h"
+#include "poe_ninja/get_poe_ninja_data.h"
+#include "config/poe_ninja_config.h"
 
 #include <boost/test/unit_test.hpp>
 #include <boost/json/src.hpp>
 
 namespace {
-
-
 /**
   * @brief Checks if a given string is a valid JSON
   *
@@ -51,7 +49,7 @@ BOOST_AUTO_TEST_CASE(check_get_currency_json_returns_non_empty_valid_json) {
 
     for (auto& path: paths) {
         path += "&league=" + config::poe_ninja::leagues::crucible;
-        std::string output = parse::get_currency_json(config::poe_ninja::host, path);
+        std::string output = poe_ninja::get_item_prices(path);
         boost::json::value json_output = boost::json::parse(output);
         BOOST_REQUIRE(is_json(output)); // First check if it's a valid JSON, if not stop the entire test case
 

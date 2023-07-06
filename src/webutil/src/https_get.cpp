@@ -1,5 +1,4 @@
-#include "parse/get_currency_prices.h"
-#include "poe_ninja_config.h"
+#include "webutil/https_get.h"
 
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
@@ -11,8 +10,9 @@
 #include <openssl/ssl.h>
 #include <string>
 
-namespace {
+namespace webutil {
     // Maximum size, in bytes, of the HTTP body the parser is willing to accept
+    // TODO: Move this constant somewhere nicer so it doesn't have to affect all HTTP gets.
     constexpr int MAX_HTTP_BODY_SIZE = 15 * 1024 * 1024; // 15MB
 
     namespace beast = boost::beast;
@@ -21,16 +21,18 @@ namespace {
     namespace ssl = net::ssl;
     using tcp = net::ip::tcp;
 
-    /**
-    * Function to run HTTP Get to the specified host, service and path
-    * This function is used to run a HTTPS GET request using Boost library.
-    *
-    * @param host - hostname or IP address of the server
-    * @param service - service name or port number
-    * @param path - The path on the server
-    *
-    * @return The body of the HTTP response from the server as a string
-    */
+/**
+* @internal
+* Function to run HTTP Get to the specified host, service and path
+* This function is used to run a HTTPS GET request using Boost Beast.
+*
+*
+* @param host - The hostname or IP address of the server
+* @param service - The service name or port number
+* @param path - The path on the server
+*
+* @return The body of the HTTP response from the server as a string
+*/
     std::string
     http_get(const std::string& host, const std::string& service, const std::string& path) {
 
@@ -78,10 +80,4 @@ namespace {
 
         return body_string;
     }
-}
-
-namespace parse {
-    std::string get_currency_json(const std::string& host, const std::string& path) {
-        return http_get(host, "https", path);
-    }
-} // parse
+} // webutil

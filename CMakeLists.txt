@@ -22,10 +22,11 @@ aws_lambda_package_target(handler) # this line creates a target that packages yo
 
 # main executable
 add_executable(main main.cpp)
-target_link_libraries(main parse)
+target_link_libraries(main poe_ninja webutil)
 target_compile_options(main PRIVATE "-Wall" "-Wextra")
 
 # Subdirectories
-add_subdirectory(./src/parse)
+add_subdirectory(./src/poe_ninja)
+add_subdirectory(./src/webutil)
 
 
