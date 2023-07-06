@@ -1,4 +1,4 @@
-#include "get_currency_prices.h"
+#include "parse/get_currency_prices.h"
 #include "poe_ninja_config.h"
 
 #include <boost/beast/core.hpp>
@@ -12,6 +12,9 @@
 #include <string>
 
 namespace {
+    // Maximum size, in bytes, of the HTTP body the parser is willing to accept
+    constexpr int MAX_HTTP_BODY_SIZE = 15 * 1024 * 1024; // 15MB
+
     namespace beast = boost::beast;
     namespace http = beast::http;
     namespace net = boost::asio;
@@ -60,8 +63,10 @@ namespace {
 
         // Receive and print the HTTPS response
         beast::flat_buffer buffer;
-        http::response<http::dynamic_body> response;
-        http::read(stream, buffer, response);
+        http::response_parser<http::dynamic_body> parser;
+        parser.body_limit(MAX_HTTP_BODY_SIZE); // Bytes to megabytes
+        read(stream, buffer, parser);
+        http::response<http::dynamic_body> response = parser.release();
 
         // Gracefully close the stream
         beast::error_code ec;
@@ -79,4 +84,4 @@ namespace parse {
     std::string get_currency_json(const std::string& host, const std::string& path) {
         return http_get(host, "https", path);
     }
-}
+} // parse

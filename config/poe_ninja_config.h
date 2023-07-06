@@ -19,6 +19,7 @@ namespace config {
             const std::string divination_card = "/api/data/itemoverview?type=DivinationCard";
             const std::string artifact = "/api/data/itemoverview?type=Artifact";
             const std::string oil = "/api/data/itemoverview?type=Oil";
+            const std::string incubator = "/api/data/itemoverview?type=Incubator";
             const std::string unique_weapon = "/api/data/itemoverview?type=UniqueWeapon";
             const std::string unique_armour = "/api/data/itemoverview?type=UniqueArmour";
             const std::string unique_accessory = "/api/data/itemoverview?type=UniqueAccessory";
