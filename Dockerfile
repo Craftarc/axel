@@ -18,7 +18,8 @@ RUN yum update -y && \
     git \
     which \
     python-devel \
-    openssl-devel && \
+    openssl-devel \
+    wget && \
     pip3 install awscli
 
 ## INSTALL LIBRARIES
@@ -33,8 +34,8 @@ RUN git clone https://github.com/awslabs/aws-lambda-cpp.git && \
     rm -r /usr/local/aws-lambda-cpp
 
 # Install Boost
-COPY ./external/boost_1_82_0.tar.bz2 .
-RUN tar --bzip2 -xf ./boost_1_82_0.tar.bz2 && \
+RUN wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2 && \
+    tar --bzip2 -xf ./boost_1_82_0.tar.bz2 && \
     rm boost_1_82_0.tar.bz2 && \
     cd boost_1_82_0 && \
     ./bootstrap.sh --prefix=/usr/local && \
