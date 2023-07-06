@@ -1,12 +1,22 @@
-// TODO: Make this the master test file for this module instead
-
-#define BOOST_TEST_MODULE webutil library tests
-
 #include <boost/test/unit_test.hpp>
+#include <boost/asio/ssl/error.hpp>
 
-BOOST_AUTO_TEST_CASE(first_test)
-{
-    int i = 1;
-    BOOST_TEST(i);
-    BOOST_TEST(i == 1);
-}
+#include "webutil/https_get.h"
+#include "config/poe_ninja_config.h"
+
+BOOST_AUTO_TEST_SUITE(function_http_get)
+
+    BOOST_AUTO_TEST_CASE(accepts_empty_path) {
+        BOOST_CHECK_NO_THROW(webutil::https_get("www.example.com", "https", ""));
+    }
+
+    BOOST_AUTO_TEST_CASE(accepts_root_path) {
+        BOOST_CHECK_NO_THROW(webutil::https_get("www.example.com", "https", "/"));
+    }
+
+    BOOST_AUTO_TEST_CASE(cannot_use_https) {
+        BOOST_CHECK_THROW(webutil::https_get("www.example.com", "http", "/"), std::exception);
+        // HACK: Should use a narrow exception instead of std::exception, which is too general
+    }
+
+BOOST_AUTO_TEST_SUITE_END()

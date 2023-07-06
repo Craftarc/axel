@@ -17,7 +17,7 @@ namespace webutil {
 * @return The body of the HTTP response from the server as a string
 */
     std::string
-    http_get(const std::string& host, const std::string& service, const std::string& path);
+    https_get(const std::string& host, const std::string& service, const std::string& path);
 }
 
 #endif //AXEL_HTTP_GET_H

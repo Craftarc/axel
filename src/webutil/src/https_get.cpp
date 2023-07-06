@@ -11,16 +11,6 @@
 #include <string>
 
 namespace webutil {
-    // Maximum size, in bytes, of the HTTP body the parser is willing to accept
-    // TODO: Move this constant somewhere nicer so it doesn't have to affect all HTTP gets.
-    constexpr int MAX_HTTP_BODY_SIZE = 15 * 1024 * 1024; // 15MB
-
-    namespace beast = boost::beast;
-    namespace http = beast::http;
-    namespace net = boost::asio;
-    namespace ssl = net::ssl;
-    using tcp = net::ip::tcp;
-
 /**
 * @internal
 * Function to run HTTP Get to the specified host, service and path
@@ -34,8 +24,16 @@ namespace webutil {
 * @return The body of the HTTP response from the server as a string
 */
     std::string
-    http_get(const std::string& host, const std::string& service, const std::string& path) {
+    https_get(const std::string& host, const std::string& service, const std::string& path) {
+        // Maximum size, in bytes, of the HTTP body the parser is willing to accept
+        // TODO: Move this constant somewhere nicer so it doesn't have to affect all HTTP gets.
+        constexpr int MAX_HTTP_BODY_SIZE = 15 * 1024 * 1024; // 15MB
 
+        namespace beast = boost::beast;
+        namespace http = beast::http;
+        namespace net = boost::asio;
+        namespace ssl = net::ssl;
+        using tcp = net::ip::tcp;
 
         // IO and SSL context for stream
         net::io_context ioc;

@@ -42,13 +42,12 @@ namespace config {
             const std::string beast = "/api/data/itemoverview?type=Beast";
             const std::string essence = "/api/data/itemoverview?type=Essence";
             const std::string vial = "/api/data/itemoverview?type=Vial";
-        }
+        } // paths
 
         namespace leagues {
             const std::string crucible = "Crucible";
             const std::string sanctum = "Sanctum";
-        }
-
-    }
-}
+        } // leagues
+    } // poe_ninja
+} // config
 #endif //AXEL_POE_NINJA_CONFIG_H

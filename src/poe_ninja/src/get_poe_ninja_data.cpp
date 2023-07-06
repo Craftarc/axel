@@ -16,6 +16,6 @@
 
 namespace poe_ninja {
     std::string get_item_prices(const std::string& resource_path) {
-        return webutil::http_get(config::poe_ninja::host, "https", resource_path);
+        return webutil::https_get(config::poe_ninja::host, "https", resource_path);
     }
 } // poe_ninja
