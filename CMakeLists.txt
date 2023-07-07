@@ -28,5 +28,6 @@ target_compile_options(main PRIVATE "-Wall" "-Wextra")
 # Subdirectories
 add_subdirectory(./src/poe_ninja)
 add_subdirectory(./src/webutil)
+add_subdirectory(./src/container)
 
 
