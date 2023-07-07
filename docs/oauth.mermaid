@@ -3,18 +3,21 @@ sequenceDiagram
     participant Client as Qt Client
     participant Browser as Browser
     participant Backend as Backend Server
-	participant Auth as Auth Server
+    participant Auth as Auth Server
 
-	User->>+Client: Initiate login
-	Client->>+Browser: Direct to /authorize
-	Note right of Client: custom redirect URI + nonce<br/>The nonce is to ensure<br/>uniqueness of the client
-	Browser->>+Auth: User authenticates
-	Auth-->>-Browser: Return authorisation code
-	Browser-->>-Client: Redirect authorisation code
-	Client->>+Backend: Send authorisation code
-	Backend-->>-Client: ACK
-	Backend->>+Auth: Request access token
-	Auth-->>-Backend: Return access token
+    User ->>+ Client: Initiate login
+    Client ->>+ Browser: Direct to /authorize
+    Browser ->>+ Auth: User authenticates
+    Auth -->> Browser: Return authorisation code
+    Browser ->>+ Backend: Send authorisation code
+    Backend ->> Backend: Read authorisation code
+    Backend -->> Browser: Redirect to local URI with JWT
+    Browser -->>- Client: Redirect to local URI with JWT
+    Client -->>- User: Render main page
+    Backend ->>+ Auth: Request access token
+    Auth -->>- Backend: Return access token
+    deactivate Backend
+
 
 
 
