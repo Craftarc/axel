@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Currency Schema",
-  "description": "JSON Schema for data received a currencyoverview response"
+  "description": "JSON Schema for data received a currencyoverview response",
   "type": "object",
   "properties": {
 	"lines": {
@@ -183,7 +183,10 @@
 				"type": "array",
 				"description": "7-number array representing the change in the amount of pay_currency_id needed to buy get_currency_id",
 				"items": {
-				  "type": "number",
+				  "type": [
+					"number",
+					"null"
+				  ],
 				  "description": "A data point representing the relative value of pay_currency_id",
 				  "examples": [
 					[
@@ -209,23 +212,39 @@
 			}
 		  },
 		  "receiveSparkLine": {
-			"type": "array",
-			"description": "7-number array representing the change in the amount of pay_currency_id needed to buy get_currency_id. The ids are flipped compared to in 'paySparkLine'",
-			"items": {
-			  "type": "number",
-			  "description": "A data point representing the relative value of pay_currency_id",
-			  "examples": [
-				[
-				  0,
-				  0,
-				  0.1,
-				  0,
-				  2,
-				  0.5,
-				  1,
+			"type": "object",
+			"description": "Details regarding the change in value of pay_currency_id. The ids are flipped compared to in 'paySparkLine'",
+			"properties": {
+			  "data": {
+				"type": "array",
+				"description": "7-number array representing the change in the amount of pay_currency_id needed to buy get_currency_id",
+				"items": {
+				  "type": [
+					"number",
+					"null"
+				  ],
+				  "description": "A data point representing the relative value of pay_currency_id",
+				  "examples": [
+					[
+					  0,
+					  0,
+					  0.1,
+					  0,
+					  2,
+					  0.5,
+					  1,
+					  0.3
+					]
+				  ]
+				}
+			  },
+			  "totalChange": {
+				"type": "number",
+				"description": "Net change in the relative value of pay_currency_id. Always the last number in @data",
+				"examples": [
 				  0.3
 				]
-			  ]
+			  }
 			}
 		  },
 		  "chaosEquivalent": {
@@ -234,6 +253,82 @@
 			"examples": [
 			  111065.88
 			]
+		  },
+		  "lowConfidencePaySparkLine": {
+			"type": "object",
+			"description": "Low confidence details regarding the change in value of pay_currency_id",
+			"properties": {
+			  "data": {
+				"type": "array",
+				"description": "7-number array representing the change in the amount of pay_currency_id needed to buy get_currency_id",
+				"items": {
+				  "type": [
+					"number",
+					"null"
+				  ],
+				  "description": "A data point representing the relative value of pay_currency_id",
+				  "examples": [
+					[
+					  0,
+					  0,
+					  0.1,
+					  0,
+					  2,
+					  0.5,
+					  1,
+					  0.3
+					]
+				  ]
+				}
+			  },
+			  "totalChange": {
+				"type": "number",
+				"description": "Net change in the relative value of pay_currency_id. Always the last number in @data",
+				"examples": [
+				  0.3
+				]
+			  }
+			}
+		  },
+		  "lowConfidenceReceiveSparkLine": {
+			"type": "object",
+			"description": "Low confidence details regarding the change in value of pay_currency_id. The ids are flipped compared to in 'lowConfidencePaySparkLine'",
+			"properties": {
+			  "data": {
+				"type": "array",
+				"description": "7-number array representing the change in the amount of pay_currency_id needed to buy get_currency_id",
+				"items": {
+				  "type": [
+					"number",
+					"null"
+				  ],
+				  "description": "A data point representing the relative value of pay_currency_id",
+				  "examples": [
+					[
+					  0,
+					  0,
+					  0.1,
+					  0,
+					  2,
+					  0.5,
+					  1,
+					  0.3
+					]
+				  ]
+				}
+			  },
+			  "totalChange": {
+				"type": "number",
+				"description": "Net change in the relative value of pay_currency_id. Always the last number in @data",
+				"examples": [
+				  0.3
+				]
+			  }
+			}
+		  },
+		  "detailsId": {
+			"type": "string",
+			"description": "Identification string of the currency specified by currencyTypeName"
 		  }
 		}
 	  },
