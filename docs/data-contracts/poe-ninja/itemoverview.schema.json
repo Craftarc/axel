@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Itemoverview",
+  "definitions": {
+	"Itemoverview": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"lines": {
+		  "type": "array",
+		  "items": {
+			"$ref": "#/definitions/Line"
+		  }
+		}
+	  },
+	  "required": [
+		"lines"
+	  ],
+	  "title": "Itemoverview"
+	},
+	"Line": {
+	  "type": "object",
+	  "additionalProperties": true,
+	  "properties": {
+		"id": {
+		  "type": "integer"
+		},
+		"name": {
+		  "type": "string"
+		},
+		"icon": {
+		  "type": "string",
+		  "format": "uri",
+		  "qt-uri-protocols": [
+			"https"
+		  ],
+		  "qt-uri-extensions": [
+			".png"
+		  ]
+		},
+		"stackSize": {
+		  "type": "integer"
+		},
+		"artFilename": {
+		  "type": "string"
+		},
+		"itemClass": {
+		  "type": "integer"
+		},
+		"sparkline": {
+		  "$ref": "#/definitions/Sparkline"
+		},
+		"lowConfidenceSparkline": {
+		  "$ref": "#/definitions/Sparkline"
+		},
+		"implicitModifiers": {
+		  "type": "array",
+		  "items": {}
+		},
+		"explicitModifiers": {
+		  "type": "array",
+		  "items": {
+			"$ref": "#/definitions/ExplicitModifier"
+		  }
+		},
+		"flavourText": {
+		  "type": "string"
+		},
+		"chaosValue": {
+		  "type": "number"
+		},
+		"exaltedValue": {
+		  "type": "number"
+		},
+		"divineValue": {
+		  "type": "number"
+		},
+		"count": {
+		  "type": "integer"
+		},
+		"detailsId": {
+		  "type": "string"
+		},
+		"listingCount": {
+		  "type": "integer"
+		}
+	  },
+	  "required": [
+		"chaosValue",
+		"count",
+		"detailsId",
+		"divineValue",
+		"exaltedValue",
+		"explicitModifiers",
+		"flavourText",
+		"icon",
+		"id",
+		"implicitModifiers",
+		"itemClass",
+		"listingCount",
+		"lowConfidenceSparkline",
+		"name",
+		"sparkline"
+	  ],
+	  "title": "Line"
+	},
+	"ExplicitModifier": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"text": {
+		  "type": "string"
+		},
+		"optional": {
+		  "type": "boolean"
+		}
+	  },
+	  "required": [
+		"optional",
+		"text"
+	  ],
+	  "title": "ExplicitModifier"
+	},
+	"Sparkline": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"data": {
+		  "type": "array",
+		  "items": {
+			"type": [
+			  "number",
+			  "null"
+			]
+		  }
+		},
+		"totalChange": {
+		  "type": "number"
+		}
+	  },
+	  "required": [
+		"data",
+		"totalChange"
+	  ],
+	  "title": "Sparkline"
+	}
+  }
+}

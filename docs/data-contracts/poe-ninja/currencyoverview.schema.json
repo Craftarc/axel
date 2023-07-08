@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Currencyoverview",
+  "definitions": {
+	"Currencyoverview": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"lines": {
+		  "type": "array",
+		  "items": {
+			"$ref": "#/definitions/Line"
+		  }
+		},
+		"currencyDetails": {
+		  "type": "array",
+		  "items": {
+			"$ref": "#/definitions/CurrencyDetail"
+		  }
+		}
+	  },
+	  "required": [
+		"currencyDetails",
+		"lines"
+	  ],
+	  "title": "Currencyoverview"
+	},
+	"CurrencyDetail": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"id": {
+		  "type": "integer"
+		},
+		"icon": {
+		  "type": "string",
+		  "format": "uri",
+		  "qt-uri-protocols": [
+			"https"
+		  ],
+		  "qt-uri-extensions": [
+			".png"
+		  ]
+		},
+		"name": {
+		  "type": "string"
+		},
+		"tradeId": {
+		  "type": "string"
+		}
+	  },
+	  "required": [
+		"id",
+		"name"
+	  ],
+	  "title": "CurrencyDetail"
+	},
+	"Line": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"currencyTypeName": {
+		  "type": "string"
+		},
+		"pay": {
+		  "$ref": "#/definitions/Pay"
+		},
+		"receive": {
+		  "$ref": "#/definitions/Pay"
+		},
+		"paySparkLine": {
+		  "$ref": "#/definitions/PaySparkLine"
+		},
+		"receiveSparkLine": {
+		  "$ref": "#/definitions/ReceiveSparkLine"
+		},
+		"chaosEquivalent": {
+		  "type": "number"
+		},
+		"lowConfidencePaySparkLine": {
+		  "$ref": "#/definitions/PaySparkLine"
+		},
+		"lowConfidenceReceiveSparkLine": {
+		  "$ref": "#/definitions/ReceiveSparkLine"
+		},
+		"detailsId": {
+		  "type": "string"
+		}
+	  },
+	  "required": [
+		"chaosEquivalent",
+		"currencyTypeName",
+		"detailsId",
+		"lowConfidencePaySparkLine",
+		"lowConfidenceReceiveSparkLine",
+		"paySparkLine",
+		"receiveSparkLine"
+	  ],
+	  "title": "Line"
+	},
+	"PaySparkLine": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"data": {
+		  "type": "array",
+		  "items": {
+			"anyOf": [
+			  {
+				"type": "number"
+			  },
+			  {
+				"type": "null"
+			  }
+			]
+		  }
+		},
+		"totalChange": {
+		  "type": "number"
+		}
+	  },
+	  "required": [
+		"data",
+		"totalChange"
+	  ],
+	  "title": "PaySparkLine"
+	},
+	"ReceiveSparkLine": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"data": {
+		  "type": "array",
+		  "items": {
+			"type": "number"
+		  }
+		},
+		"totalChange": {
+		  "type": "number"
+		}
+	  },
+	  "required": [
+		"data",
+		"totalChange"
+	  ],
+	  "title": "ReceiveSparkLine"
+	},
+	"Pay": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"id": {
+		  "type": "integer"
+		},
+		"league_id": {
+		  "type": "integer"
+		},
+		"pay_currency_id": {
+		  "type": "integer"
+		},
+		"get_currency_id": {
+		  "type": "integer"
+		},
+		"sample_time_utc": {
+		  "type": "string",
+		  "format": "date-time"
+		},
+		"count": {
+		  "type": "integer"
+		},
+		"value": {
+		  "type": "number"
+		},
+		"data_point_count": {
+		  "type": "integer"
+		},
+		"includes_secondary": {
+		  "type": "boolean"
+		},
+		"listing_count": {
+		  "type": "integer"
+		}
+	  },
+	  "required": [
+		"count",
+		"data_point_count",
+		"get_currency_id",
+		"id",
+		"includes_secondary",
+		"league_id",
+		"listing_count",
+		"pay_currency_id",
+		"sample_time_utc",
+		"value"
+	  ],
+	  "title": "Pay"
+	}
+  }
+}
