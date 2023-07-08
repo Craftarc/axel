@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Currency Schema",
+  "description": "JSON Schema for data received a currencyoverview response"
+  "type": "object",
+  "properties": {
+	"lines": {
+	  "description": "An array of currency data objects",
+	  "type": "array",
+	  "items": {
+		"description": "Individual currency data objects",
+		"type": "object",
+		"properties": {
+		  "currencyTypeName": {
+			"type": "string",
+			"description": "Name of the currency type",
+			"examples": [
+			  "Mirror of Kalandra",
+			  "Chaos Orb"
+			]
+		  },
+		  "pay": {
+			"description": "Details of the value of pay_currency_id in terms of get_currency_id",
+			"type": "object",
+			"properties": {
+			  "id": {
+				"type": "number",
+				"description": "?, seems to only ever be 0",
+				"examples": [
+				  0
+				]
+			  },
+			  "league_id": {
+				"type": "number",
+				"description": "Identification number of the league from which this data was obtained",
+				"examples": [
+				  178
+				]
+			  },
+			  "pay_currency_id": {
+				"type": "number",
+				"description": "Identification number of the currency to be given i.e. the paying currency",
+				"examples": [
+				  1,
+				  22
+				]
+			  },
+			  "get_currency_id": {
+				"type": "number",
+				"description": "Identification number of the currency to be received i.e. the gotten currency",
+				"examples": [
+				  1,
+				  22
+				]
+			  },
+			  "sample_time_utc": {
+				"type": "string",
+				"description": "ISO 8601 date and time format at UTC+00:00",
+				"example": [
+				  "2023-07-08T11:42:08.3312777Z"
+				]
+			  },
+			  "count": {
+				"type": "number",
+				"description": "?",
+				"example": [
+				  37
+				]
+			  },
+			  "value": {
+				"type": "number",
+				"description": "The number of the 'pay' currency needed to buy ONE of the 'get' currency",
+				"example": [
+				  0.00000904720000
+				]
+			  },
+			  "data_point_count": {
+				"type": "number",
+				"description": "?, seems to always be 1",
+				"example": [
+				  1
+				]
+			  },
+			  "includes_secondary": {
+				"type": "boolean",
+				"description": "?",
+				"example": [
+				  true
+				]
+			  },
+			  "listing_count": {
+				"type": "number",
+				"description": "Number of listings of this transaction on the trade site",
+				"example": [
+				  483
+				]
+			  }
+			}
+		  },
+		  "receive": {
+			"description": "Details of the value of pay_currency_id in terms of get_currency_id. The ids are flipped compared to in 'pay'",
+			"type": "object",
+			"properties": {
+			  "id": {
+				"type": "number",
+				"description": "?, seems to only ever be 0",
+				"examples": [
+				  0
+				]
+			  },
+			  "league_id": {
+				"type": "number",
+				"description": "Identification number of the league from which this data was obtained",
+				"examples": [
+				  178
+				]
+			  },
+			  "pay_currency_id": {
+				"type": "number",
+				"description": "Identification number of the currency to be given i.e. the paying currency",
+				"examples": [
+				  1,
+				  22
+				]
+			  },
+			  "get_currency_id": {
+				"type": "number",
+				"description": "Identification number of the currency to be received i.e. the gotten currency",
+				"examples": [
+				  1,
+				  22
+				]
+			  },
+			  "sample_time_utc": {
+				"type": "string",
+				"description": "ISO 8601 date and time format at UTC+00:00",
+				"example": [
+				  "2023-07-08T11:42:08.3312777Z"
+				]
+			  },
+			  "count": {
+				"type": "number",
+				"description": "?",
+				"example": [
+				  37
+				]
+			  },
+			  "value": {
+				"type": "number",
+				"description": "The number of the 'pay' currency needed to buy ONE of the 'get' currency",
+				"example": [
+				  0.00000904720000
+				]
+			  },
+			  "data_point_count": {
+				"type": "number",
+				"description": "?, seems to always be 1",
+				"example": [
+				  1
+				]
+			  },
+			  "includes_secondary": {
+				"type": "boolean",
+				"description": "?",
+				"example": [
+				  true
+				]
+			  },
+			  "listing_count": {
+				"type": "number",
+				"description": "Number of listings of this transaction on the trade site",
+				"example": [
+				  483
+				]
+			  }
+			}
+		  },
+		  "paySparkLine": {
+			"type": "object",
+			"description": "Details regarding the change in value of pay_currency_id",
+			"properties": {
+			  "data": {
+				"type": "array",
+				"description": "7-number array representing the change in the amount of pay_currency_id needed to buy get_currency_id",
+				"items": {
+				  "type": "number",
+				  "description": "A data point representing the relative value of pay_currency_id",
+				  "examples": [
+					[
+					  0,
+					  0,
+					  0.1,
+					  0,
+					  2,
+					  0.5,
+					  1,
+					  0.3
+					]
+				  ]
+				}
+			  },
+			  "totalChange": {
+				"type": "number",
+				"description": "Net change in the relative value of pay_currency_id. Always the last number in @data",
+				"examples": [
+				  0.3
+				]
+			  }
+			}
+		  },
+		  "receiveSparkLine": {
+			"type": "array",
+			"description": "7-number array representing the change in the amount of pay_currency_id needed to buy get_currency_id. The ids are flipped compared to in 'paySparkLine'",
+			"items": {
+			  "type": "number",
+			  "description": "A data point representing the relative value of pay_currency_id",
+			  "examples": [
+				[
+				  0,
+				  0,
+				  0.1,
+				  0,
+				  2,
+				  0.5,
+				  1,
+				  0.3
+				]
+			  ]
+			}
+		  },
+		  "chaosEquivalent": {
+			"type": "number",
+			"description": "Number of Chaos Orbs 1 currencyTypeName is worth",
+			"examples": [
+			  111065.88
+			]
+		  }
+		}
+	  },
+	  "uniqueItems": true
+	}
+  },
+  "required": [
+	"lines"
+  ]
+}
