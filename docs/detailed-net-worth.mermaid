@@ -1,0 +1,21 @@
+classDiagram
+    IItemSummary <|-- PalaceMapSummary: Inheritance
+    IItemSummary <|-- ExaltedOrbSummary: Inheritance
+    IItemSummary <|-- BaseItemSummary: Inheritance
+    SummaryManager *-- Filter
+
+    class IItemSummary {
+        -int item_id
+        -int count
+    }
+
+    class Filter {
+        -array filter
+        +void setFilter()
+        +array filter(array sorted_summaries)
+    }
+
+    class SummaryManager {
+        -array sorted_summaries
+        -Filter filter
+    }
