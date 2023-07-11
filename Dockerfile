@@ -43,6 +43,19 @@ RUN wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_
     ./b2 --with-test install && \
     cd .. && \
     rm -r boost_1_82_0
+
+# Install Botan
+RUN wget https://botan.randombit.net/releases/Botan-2.19.3.tar.xz && \
+    tar Jxf Botan-2.19.3.tar.xz && \
+    rm Botan-2.19.3.tar.xz && \
+    cd Botan-2.19.3 && \
+    ./configure.py && \
+    make && \
+    make install && \
+    cd .. && \
+    rm -r Botan-2.19.3
+
+
 ## END INSTALL LIBRARIES
 
 # Directory for main app

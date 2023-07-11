@@ -7,15 +7,15 @@ sequenceDiagram
 
     User ->>+ Client: Initiate login
     Client ->>+ Browser: Direct to /authorize
-    Browser ->>+ Auth: User authenticates
-    Auth -->> Browser: Return authorisation code
-    Browser ->>+ Backend: Send authorisation code
-    Backend ->> Backend: Read authorisation code
+    Browser ->>+ Backend: User authenticates
+    Backend ->> Backend: Generate PKCE tokens
+    Backend ->>+ Auth: Send auth and code challenge
+    Auth -->>- Backend: Return authorisation code
     Backend -->> Browser: Redirect to local URI with JWT
-    Browser -->>- Client: Redirect to local URI with JWT
-    Client -->>- User: Render main page
     Backend ->>+ Auth: Request access token
     Auth -->>- Backend: Return access token
+
+
     deactivate Backend
 
 

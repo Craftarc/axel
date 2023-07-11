@@ -4,3 +4,4 @@
 
 #include "https_get_test.cpp"
 #include "pathutil_test.cpp"
+#include "PkceManager_test.cpp"
