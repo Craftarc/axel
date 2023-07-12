@@ -1,8 +1,9 @@
 #include <string>
+#include <boost/test/unit_test.hpp>
 
 #include <botan/auto_rng.h>
 #include <botan/hash.h>
-#include <botan/hex.h>
+#include <botan/base64.h>
 #include <iostream>
 
 #include "webutil/PkceManager.h"
@@ -21,7 +22,7 @@ namespace webutil {
         sha_256->update(random_bytes);
         Botan::secure_vector<uint8_t> hash = sha_256->final();
         
-        code_verifier_ = Botan::hex_encode(hash.data(), hash.size(), false);
+        code_verifier_ = Botan::base64_encode(hash.data(), hash.size());
     }
     
     std::string PKCE::get_code_verifier() const {
