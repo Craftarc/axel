@@ -1,10 +1,9 @@
-#define BOOST_TEST_MODULE get_poe_ninja_data_tests
+#include <boost/test/unit_test.hpp>
+#include <boost/json/src.hpp>
+
 
 #include "poe_ninja/get_poe_ninja_data.h"
 #include "config/poe_ninja_config.h"
-
-#include <boost/test/unit_test.hpp>
-#include <boost/json/src.hpp>
 
 namespace {
 /**
@@ -38,7 +37,7 @@ BOOST_AUTO_TEST_CASE(test_host_constants)
 
 BOOST_AUTO_TEST_CASE(check_get_currency_json_returns_non_empty_valid_json) {
     using namespace config::poe_ninja::paths;
-
+    
     // All currency and item endpoints (excluding league)
     std::vector<std::string> paths{
             currency, fragment, divination_card, artifact, oil, incubator, unique_weapon, unique_armour,
@@ -46,13 +45,13 @@ BOOST_AUTO_TEST_CASE(check_get_currency_json_returns_non_empty_valid_json) {
             blight_ravaged_map, scourged_map, unique_map, delirium_orb, invitation, scarab, base_type, fossil,
             resonator, helmet_enchant, beast, essence, vial
     };
-
+    
     for (auto& path: paths) {
         path += "&league=" + config::poe_ninja::leagues::crucible;
         std::string output = poe_ninja::get_item_prices(path);
         boost::json::value json_output = boost::json::parse(output);
         BOOST_REQUIRE(is_json(output)); // First check if it's a valid JSON, if not stop the entire test case
-
+        
         /* Then check if the JSON is of the correct format. Here it actually only checks if the JSON starts with the key
         "lines", otherwise writing validity checks for all different paths will be quite difficult */
         BOOST_TEST(json_output.as_object().if_contains("lines") != nullptr);

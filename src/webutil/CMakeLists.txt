@@ -1,4 +1,4 @@
-# Configure build targets here
+# Configure target sources here
 set(WEBUTIL_SRC_FILES ./src/https_get.cpp ./src/pathutil.cpp ./src/PkceManager.cpp)
 set(WEBUTIL_TESTS_SRC_FILES ./test/webutil_tests.cpp ./test/https_get_test.cpp ./test/pathutil_test.cpp
     ./test/PkceManager_test.cpp)
