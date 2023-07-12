@@ -1,9 +1,8 @@
-#ifndef AXEL_POE_NINJA_CONFIG_H
-#define AXEL_POE_NINJA_CONFIG_H
+#ifndef AXEL_CONFIG_POE_NINJA_CONFIG_H
+#define AXEL_CONFIG_POE_NINJA_CONFIG_H
 
 #include <string>
 
-// TODO: Make extern
 /**
  * Contains definitions for all relevant parameters in poe.ninja endpoints
  * paths: currently available currency/item types
@@ -51,4 +50,4 @@ namespace config {
         } // leagues
     } // poe_ninja
 } // config
-#endif //AXEL_POE_NINJA_CONFIG_H
+#endif //AXEL_CONFIG_POE_NINJA_CONFIG_H

@@ -10,24 +10,25 @@ namespace pathutil {
      * @note Function modifies input URL string directly.
      */
     std::string
-    add_query_parameters(std::string& url, const std::map<std::string, std::string>& parameters) {
+    add_query_parameters(const std::string& url, const std::map<std::string, std::string>& parameters) {
+        std::string url_copy = url;
         if (parameters.empty()) return url;
-
+        
         size_t question_mark_position = url.find('?');
         if (question_mark_position == std::string::npos) { // If the url doesn't have a query string yet
-            url += '?';
+            url_copy += '?';
         } else { // It already does have a query string
-            url += '&'; // Prepare for next set of parameters
+            url_copy += '&'; // Prepare for next set of parameters
         }
-
+        
         // Add each key pair to the query
         for (const auto& parameter: parameters) {
-            url += parameter.first + '=' + parameter.second + '&';
+            url_copy += parameter.first + '=' + parameter.second + '&';
         }
-
+        
         // Remove trailing '&'
-        url.pop_back();
-
+        url_copy.pop_back();
+        
         return url;
     };
 }
