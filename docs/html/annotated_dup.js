@@ -1,6 +1,7 @@
 var annotated_dup =
 [
-    [ "container", "namespacecontainer.html", [
-      [ "json_container", "classcontainer_1_1json__container.html", null ]
-    ] ]
+    [ "webutil", "namespacewebutil.html", [
+      [ "PkceManager", "classwebutil_1_1_pkce_manager.html", "classwebutil_1_1_pkce_manager" ]
+    ] ],
+    [ "OauthManager", "class_oauth_manager.html", null ]
 ];
