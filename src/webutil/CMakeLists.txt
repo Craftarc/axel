@@ -9,7 +9,7 @@ find_package(OpenSSL REQUIRED)
 
 # Botan uses pkgconfig; find PkgConfig, then use PkgConfig to find botan-2.pc
 find_package(PkgConfig REQUIRED)
-set(ENV{PKG_CONFIG_PATH} "/path/to/pkgconfig:$ENV{PKG_CONFIG_PATH}")
+set(ENV{PKG_CONFIG_PATH} "/usr/local/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
 pkg_check_modules(BOTAN_PKG REQUIRED botan-2)
 
 

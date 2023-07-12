@@ -3,6 +3,7 @@
 
 #include <string>
 
+// TODO: Make extern
 /**
  * Contains definitions for all relevant parameters in poe.ninja endpoints
  * paths: currently available currency/item types
@@ -43,7 +44,7 @@ namespace config {
             const std::string essence = "/api/data/itemoverview?type=Essence";
             const std::string vial = "/api/data/itemoverview?type=Vial";
         } // paths
-
+        
         namespace leagues {
             const std::string crucible = "Crucible";
             const std::string sanctum = "Sanctum";

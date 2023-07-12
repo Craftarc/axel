@@ -1,6 +1,5 @@
 #include <boost/test/unit_test.hpp>
 #include <boost/asio/ssl/error.hpp>
-#include <boost/test/unit_test.hpp>
 
 #include "webutil/https_get.h"
 #include "config/poe_ninja_config.h"
