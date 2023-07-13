@@ -1,7 +1,8 @@
 # Configure target sources here
-set(WEBUTIL_SRC_FILES ./src/https_get.cpp ./src/pathutil.cpp ./src/PkceManager.cpp ./src/OauthManager.cpp)
+set(WEBUTIL_SRC_FILES ./src/https_get.cpp ./src/pathutil.cpp ./src/PkceManager.cpp ./src/OauthManager.cpp
+    src/hash.cpp)
 set(WEBUTIL_TESTS_SRC_FILES ./test/webutil_tests.cpp ./test/https_get_test.cpp ./test/pathutil_test.cpp
-    ./test/PkceManager_test.cpp ./test/OauthManager_test.cpp)
+    ./test/PkceManager_test.cpp ./test/OauthManager_test.cpp ./test/hash_test.cpp)
 
 find_package(Boost REQUIRED COMPONENTS thread system unit_test_framework)
 

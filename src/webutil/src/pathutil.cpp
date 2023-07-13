@@ -2,12 +2,11 @@
 
 namespace pathutil {
     /**
-     * @brief Modifies given URL to include query parameters
+     * @brief Adds query parameters to given URL.
      *
      * @param url Target URL reference, will be modified by adding query parameters.
      * @param parameters Map containing pairs representing query parameters and their values.
      * @returns Updated URL with added query parameters. Returns original URL if input parameter map is empty.
-     * @note Function modifies input URL string directly.
      */
     std::string
     add_query_parameters(const std::string& url, const std::map<std::string, std::string>& parameters) {
@@ -29,6 +28,6 @@ namespace pathutil {
         // Remove trailing '&'
         url_copy.pop_back();
         
-        return url;
+        return url_copy;
     };
 }

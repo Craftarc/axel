@@ -1,11 +1,9 @@
 #include <string>
-#include <algorithm>
-
-#include <botan/auto_rng.h>
 #include <botan/hash.h>
 #include <botan/base64.h>
 
 #include "webutil/PkceManager.h"
+#include "webutil/hash.h"
 
 namespace webutil {
     PkceManager::PkceManager() {
@@ -25,7 +23,6 @@ namespace webutil {
         // Convert to alphanumeric representation
         auto base64_challenge = Botan::base64_encode(hash.data(), hash.size());
         code_challenge_ = base64_url_encode(base64_challenge);
-        
     }
     
     std::string PkceManager::get_code_verifier() const {
@@ -35,29 +32,5 @@ namespace webutil {
     std::string PkceManager::get_code_challenge() const {
         return code_challenge_;
     }
-    
-    std::vector<uint8_t> PkceManager::generate_secret_bytes() {
-        const int VERIFIER_BYTE_LENGTH = 32;
-        
-        Botan::AutoSeeded_RNG rng;
-        
-        // Generate 32 random bytes
-        std::vector<uint8_t> random_bytes(VERIFIER_BYTE_LENGTH);
-        rng.randomize(random_bytes.data(), random_bytes.size());
-        
-        return random_bytes;
-    }
-    
-    std::string& PkceManager::base64_url_encode(std::string& str) {
-        // Replace characters
-        std::replace(str.begin(), str.end(), '+', '-');
-        std::replace(str.begin(), str.end(), '/', '_');
-        
-        // Move all '=' characters to the end, then deallocate that block of '=' characters
-        str.erase(std::remove(str.begin(), str.end(), '='), str.end());
-        
-        return str;
-    }
-    
 } // webutil
 
