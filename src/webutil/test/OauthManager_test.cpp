@@ -7,6 +7,7 @@
 
 #include "webutil/OauthManager.h"
 #include "webutil/PkceManager.h"
+#include "config/poe_auth_config.h"
 
 namespace {
     std::unordered_map<std::string, std::string> extract_query_params(const std::string& url) {
@@ -31,11 +32,12 @@ BOOST_AUTO_TEST_SUITE(class_OauthManager)
     using namespace webutil;
     
     BOOST_AUTO_TEST_SUITE(function_get_authorization_url)
-        OauthManager oauth_manager(PkceManager{});
-        std::string url = oauth_manager.get_authorization_url();
-        auto params = extract_query_params(url);
         
         BOOST_AUTO_TEST_CASE(has_all_required_query_parameters) {
+            OauthManager oauth_manager(PkceManager{});
+            std::string url = oauth_manager.get_authorization_url();
+            auto params = extract_query_params(url);
+            
             BOOST_CHECK(params.find("client_id") != params.end());
             BOOST_CHECK(params.find("response_type") != params.end());
             BOOST_CHECK(params.find("scope") != params.end());
@@ -47,6 +49,10 @@ BOOST_AUTO_TEST_SUITE(class_OauthManager)
         
         // Check that query parameters are in line with GGG's requirements
         BOOST_AUTO_TEST_CASE(query_parameters_are_valid) {
+            OauthManager oauth_manager(PkceManager{});
+            std::string url = oauth_manager.get_authorization_url();
+            auto params = extract_query_params(url);
+            
             /* Regex for checking if the scope parameter is of the following format:
              * "account:{something}%20account:{something}...account:{something}" */
             boost::regex pattern("(account:\\w+%20)*(account:\\w+)$");

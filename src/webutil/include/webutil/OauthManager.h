@@ -23,7 +23,7 @@ namespace webutil {
          *
          * @param pkce_manager Instance of PkceManager.
          */
-        OauthManager(const PkceManager& pkce_manager);
+        explicit OauthManager(const PkceManager& pkce_manager);
         
         /**
          * @brief Get the authorization url.
