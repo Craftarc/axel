@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pkcemanager_0',['PkceManager',['../classwebutil_1_1_pkce_manager.html#a66965cf6a89b712c4589222ad962dd98',1,'webutil::PkceManager']]]
+  ['make_5fauthorization_5furl_0',['make_authorization_url',['../classwebutil_1_1_oauth_manager.html#a41510ae59b0364c29f7e232635de7f8e',1,'webutil::OauthManager']]]
 ];

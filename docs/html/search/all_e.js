@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['unique_5faccessory_0',['unique_accessory',['../namespaceconfig_1_1poe__ninja_1_1paths.html#aec5033bdb32689736b987112db39ed0a',1,'config::poe_ninja::paths']]],
-  ['unique_5farmour_1',['unique_armour',['../namespaceconfig_1_1poe__ninja_1_1paths.html#aab862b775d4b3d0c05276f285a414463',1,'config::poe_ninja::paths']]],
-  ['unique_5fflask_2',['unique_flask',['../namespaceconfig_1_1poe__ninja_1_1paths.html#ad220d3edae947f1ffbcc5176c0eb65c1',1,'config::poe_ninja::paths']]],
-  ['unique_5fjewel_3',['unique_jewel',['../namespaceconfig_1_1poe__ninja_1_1paths.html#af29cd9d5b7eac53ba97dcd9612fa7dbd',1,'config::poe_ninja::paths']]],
-  ['unique_5fmap_4',['unique_map',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a49701ebe8120817559c332ade1364d17',1,'config::poe_ninja::paths']]],
-  ['unique_5fweapon_5',['unique_weapon',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a892af43df6058c40f15e40c3a596760a',1,'config::poe_ninja::paths']]]
+  ['sanctum_0',['sanctum',['../namespaceconfig_1_1poe__ninja_1_1leagues.html#a214f57244e2e68180e5ec011389f6bc5',1,'config::poe_ninja::leagues']]],
+  ['scarab_1',['scarab',['../namespaceconfig_1_1poe__ninja_1_1paths.html#add2fa4f0010ba8f040a1e9d159c2dfd9',1,'config::poe_ninja::paths']]],
+  ['scourged_5fmap_2',['scourged_map',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a5c38c734d50fcecbf9a5bbdd1f346ccc',1,'config::poe_ninja::paths']]],
+  ['skill_5fgem_3',['skill_gem',['../namespaceconfig_1_1poe__ninja_1_1paths.html#aa0c8ca35f286cda03951bee6ccf558aa',1,'config::poe_ninja::paths']]],
+  ['stashes_4',['stashes',['../namespaceconfig_1_1poe_1_1scopes_1_1account.html#a5b7fc7ea9a542ccae4f343416d3fc2ae',1,'config::poe::scopes::account']]],
+  ['state_5fhash_5f_5',['state_hash_',['../classwebutil_1_1_oauth_manager.html#a7be0e8b8070ee24060e7cf391eec14ec',1,'webutil::OauthManager']]]
 ];

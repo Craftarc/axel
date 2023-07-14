@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resonator_0',['resonator',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a76dba7049171c35757cf2f540142a769',1,'config::poe_ninja::paths']]]
+  ['oil_0',['oil',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a35b6005e4df48650f9f2aa6fa7dfbc71',1,'config::poe_ninja::paths']]]
 ];

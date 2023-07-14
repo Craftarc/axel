@@ -37,8 +37,10 @@ var menudata={children:[
 {text:"g",url:"namespacemembers.html#index_g"},
 {text:"h",url:"namespacemembers.html#index_h"},
 {text:"i",url:"namespacemembers.html#index_i"},
+{text:"l",url:"namespacemembers.html#index_l"},
 {text:"m",url:"namespacemembers.html#index_m"},
 {text:"o",url:"namespacemembers.html#index_o"},
+{text:"p",url:"namespacemembers.html#index_p"},
 {text:"r",url:"namespacemembers.html#index_r"},
 {text:"s",url:"namespacemembers.html#index_s"},
 {text:"u",url:"namespacemembers.html#index_u"},
@@ -53,8 +55,10 @@ var menudata={children:[
 {text:"f",url:"namespacemembers_vars.html#index_f"},
 {text:"h",url:"namespacemembers_vars.html#index_h"},
 {text:"i",url:"namespacemembers_vars.html#index_i"},
+{text:"l",url:"namespacemembers_vars.html#index_l"},
 {text:"m",url:"namespacemembers_vars.html#index_m"},
 {text:"o",url:"namespacemembers_vars.html#index_o"},
+{text:"p",url:"namespacemembers_vars.html#index_p"},
 {text:"r",url:"namespacemembers_vars.html#index_r"},
 {text:"s",url:"namespacemembers_vars.html#index_s"},
 {text:"u",url:"namespacemembers_vars.html#index_u"},
@@ -64,7 +68,8 @@ var menudata={children:[
 {text:"Class Index",url:"classes.html"},
 {text:"Class Members",url:"functions.html",children:[
 {text:"All",url:"functions.html"},
-{text:"Functions",url:"functions_func.html"}]}]},
+{text:"Functions",url:"functions_func.html"},
+{text:"Variables",url:"functions_vars.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
