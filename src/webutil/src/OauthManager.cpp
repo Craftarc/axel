@@ -1,7 +1,10 @@
 #include <iostream>
+#include <utility>
 #include <botan/base64.h>
+
 #include "webutil/OauthManager.h"
 #include "webutil/pathutil.h"
+#include "webutil/TokenRequestManager.h"
 #include "webutil/hash.h"
 #include "config/poe_auth_config.h"
 
@@ -21,18 +24,13 @@ namespace {
         
         return result;
     }
-    
-    // Lifetime extension
-    std::string make_state_hash() {
-        std::vector<uint8_t> secret_bytes = webutil::generate_secret_bytes();
-        auto base64_state_hash = Botan::base64_encode(secret_bytes.data(), secret_bytes.size());
-        return webutil::base64_url_encode(base64_state_hash);
-    }
 }
 
 namespace webutil {
-    OauthManager::OauthManager(const PkceManager& pkce_manager)
-            : pkce_manager_(pkce_manager), state_hash_(make_state_hash()) {
+    OauthManager::OauthManager(PkceManager pkce_manager, StateHashManager state_hash_manager,
+                               TokenRequestManager token_request_manager)
+            : pkce_manager_(std::move(pkce_manager)), state_hash_manager_(std::move(state_hash_manager)),
+              token_request_manager_(token_request_manager), state_(State::INITIAL) {
         authorization_url_ = make_authorization_url();
     }
     
@@ -40,30 +38,71 @@ namespace webutil {
      * to add it all to the auth url */
     std::string OauthManager::make_authorization_url() {
         
+        namespace scopes = config::poe::scopes;
+        
+        
         // We request all scopes
-        std::string scope = concatenate_with_space({config::poe::scopes::account::profile,
-                                                    config::poe::scopes::account::stashes,
-                                                    config::poe::scopes::account::characters,
-                                                    config::poe::scopes::account::league_accounts,
-                                                    config::poe::scopes::account::item_filter});
+        std::string scope = concatenate_with_space({scopes::account::profile,
+                                                    scopes::account::stashes,
+                                                    scopes::account::characters,
+                                                    scopes::account::league_accounts,
+                                                    scopes::account::item_filter});
         std::string endpoint = config::poe::host + config::poe::paths::auth_path;
         
-        std::map<std::string, std::string> query_map({{"client_id", "axel"},
-                                                      {"response_type", "code"},
-                                                      {"scope", scope},
-                                                      {"state", state_hash_},
-                                                      {"redirect_uri", config::poe::paths::redirect_uri},
-                                                      {"code_challenge", pkce_manager_.get_code_challenge()},
-                                                      {"code_challenge_method", "S256"}});
+        std::unordered_map<std::string, std::string> query_map({{"client_id", "axel"},
+                                                                {"response_type", "code"},
+                                                                {"scope", scope},
+                                                                {"state", state_hash_manager_.get_state_hash()},
+                                                                {"redirect_uri", config::poe::paths::redirect_uri},
+                                                                {"code_challenge", pkce_manager_.get_code_challenge()},
+                                                                {"code_challenge_method", "S256"}});
         
         return pathutil::add_query_parameters(endpoint, query_map);
     }
     
+    // PRIVATE
     std::string OauthManager::get_authorization_url() {
+        state_ = State::AUTH_SENT;
         return authorization_url_;
     }
     
-    std::string OauthManager::get_state_hash() {
-        return state_hash_;
+    namespace http = boost::beast::http;
+    
+    void OauthManager::make_token_request() {
+        if (state_ != State::AUTH_OK) {
+            throw std::runtime_error("Cannot make token request: Invalid state of OauthManager");
+        } else {
+            token_request_ = token_request_manager_.make_token_request(authorization_code_,
+                                                                       pkce_manager_.get_code_verifier()); // Delegate the construction of the request
+            state_ = State::TOKEN_REQUEST_MADE;
+        }
+    }
+    
+    void OauthManager::receive_authorization_code(const std::string& url_string) {
+        auto query_params = pathutil::extract_query_params(url_string);
+        
+        // Check if keys exist in map
+        auto state_it = query_params.find("state");
+        auto auth_code_it = query_params.find("code");
+        
+        if (state_it != query_params.end()) {
+            auto state = state_it->second;
+        } else {
+            throw std::runtime_error("'state' query parameter not found in authorization url_string");
+        }
+        
+        if (auth_code_it != query_params.end()) {
+            auto auth_code = auth_code_it->second;
+            
+            if (state_hash_manager_.verify_state_hash(query_params["state"])) { // Verify state hash matches
+                state_ = State::AUTH_OK;
+                authorization_code_ = auth_code;
+            } else {
+                throw std::runtime_error(
+                        "'WARNING: State returned by authorization server does not match generated state'");
+            }
+        } else {
+            throw std::runtime_error("'code' query parameter not found in authorization url_string");
+        }
     }
 } // webutil

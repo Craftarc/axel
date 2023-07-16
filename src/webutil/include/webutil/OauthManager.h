@@ -2,12 +2,21 @@
 #define AXEL_OAUTHMANAGER_H
 
 #include <string>
+#include <utility>
 #include <vector>
+
+#include <boost/beast/http/message.hpp>
+#include <boost/beast/http/string_body.hpp>
+
 #include "webutil/PkceManager.h"
+#include "webutil/StateHashManager.h"
+#include "webutil/TokenRequestManager.h"
 
 namespace webutil {
-    /**
-     * @brief Responsible for generating providing formatted requests and their required information
+    namespace http = boost::beast::http;
+
+/**
+     * @brief Responsible for storing and providing formatted requests and their required information
      * for each step of one Oauth session.
      *
      * Includes methods that serve the authorization URL, state parameter verification and access token exchange.
@@ -23,7 +32,8 @@ namespace webutil {
          *
          * @param pkce_manager Instance of PkceManager.
          */
-        explicit OauthManager(const PkceManager& pkce_manager);
+        explicit OauthManager(PkceManager pkce_manager, StateHashManager state_hash_manager,
+                              TokenRequestManager token_request_manager);
         
         /**
          * @brief Get the authorization url.
@@ -34,19 +44,79 @@ namespace webutil {
         std::string get_authorization_url();
         
         /**
-         * @brief Get the state hash.
-         *
-         * @return State hash. This is used to track the current authorization
-         * request to prevent Cross-Site Request Forgery
-         */
-        std::string get_state_hash(); // TODO: Maybe no need to expose this?
-    
-    private:
-        std::string authorization_url_;
-        const PkceManager& pkce_manager_;
-        const std::string state_hash_;
+        * @brief Asks token_request_manager_ to construct the POST request then store it in token_request_
+        * Contains all relevant fields as specified in the PoE Developer Docs.
+        * Relevant documentation: https://www.pathofexile.com/developer/docs/authorization
+        *
+        * @note Checks that the authorization code is available in the class and is valid
+        * before allowing this operation.
+        */
+        void make_token_request(); // TODO: Implement test
         
         /**
+         * @brief Sends the request for exchanging for an access token, then stores the returned
+         * access token and refresh token.
+         *
+         * @note Checks that the access token HTTP request message is ready in the first place
+         * before allowing this operation.
+         */
+        void send_token_request(); // TODO: Implement test
+    
+    private:
+        enum class State {
+            INITIAL,
+            AUTH_SENT,
+            AUTH_OK,
+            TOKEN_REQUEST_MADE,
+            TOKEN_REQUEST_SENT
+        };
+        
+        State state_;
+        /**
+         * @internal
+         * @brief Stores the authorization url field to serve to users, complete with query parameters.
+         */
+        std::string authorization_url_;
+        
+        /**
+         * @brief Stores the authorization code received
+         */
+        std::string authorization_code_;
+        
+        /**
+         * @internal
+         * @brief Stores the access token exchange request
+         */
+        http::request<http::string_body> token_request_;
+        
+        /**
+         * @internal
+         * @brief Stores a PkceManager instance.
+         *
+         * There should only be one PkceManager instance per session.
+         */
+        const PkceManager pkce_manager_;
+        
+        /**
+         * @internal
+         * @brief Stores a StateHashManager instance.
+         *
+         * There should only be one StateHashManager instance per session.
+         */
+        const StateHashManager state_hash_manager_;
+        
+        /**
+         * @internal
+         * @brief Stores a TokenRequestManager instance.
+         *
+         * There should only be one TokenRequestManager instance per session.
+         */
+        TokenRequestManager token_request_manager_;
+        
+        // Methods
+        
+        /**
+         * @internal
          * @brief Constucts the authorization url to redirect the users to.
          *
          * The authorization url will contain query parameters according to the PoE developer documentation's
@@ -56,6 +126,19 @@ namespace webutil {
          * @return The complete authorization url
          */
         std::string make_authorization_url();
+        
+        /**
+         * @internal
+         * @brief Accept an authorization code to be used in future Oauth steps.
+         *
+         * Checks the received HTTP url_string to determined if the state parameter matches, then updates
+         * the state of the OauthManager to allow for make_token_request().
+         *
+         * @param url_string The HTTP url_string containing the authorization code
+         * @throws std::runtime_error if state_ is not AUTH_OK, or if the state or authorization code is not found
+         * in the query parameters.
+         */
+        void receive_authorization_code(const std::string& url_string);
     };
 }
 

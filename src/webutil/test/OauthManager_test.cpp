@@ -34,7 +34,7 @@ BOOST_AUTO_TEST_SUITE(class_OauthManager)
     BOOST_AUTO_TEST_SUITE(function_get_authorization_url)
         
         BOOST_AUTO_TEST_CASE(has_all_required_query_parameters) {
-            OauthManager oauth_manager(PkceManager{});
+            OauthManager oauth_manager(PkceManager{}, StateHashManager{}, TokenRequestManager{});
             std::string url = oauth_manager.get_authorization_url();
             auto params = extract_query_params(url);
             
@@ -49,7 +49,7 @@ BOOST_AUTO_TEST_SUITE(class_OauthManager)
         
         // Check that query parameters are in line with GGG's requirements
         BOOST_AUTO_TEST_CASE(query_parameters_are_valid) {
-            OauthManager oauth_manager(PkceManager{});
+            OauthManager oauth_manager(PkceManager{}, StateHashManager{}, TokenRequestManager{});
             std::string url = oauth_manager.get_authorization_url();
             auto params = extract_query_params(url);
             

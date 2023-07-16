@@ -1,7 +1,6 @@
 #include <boost/test/unit_test.hpp>
 #include <boost/json/src.hpp>
 
-
 #include "poe_ninja/get_poe_ninja_data.h"
 #include "config/poe_ninja_config.h"
 
@@ -33,7 +32,6 @@ BOOST_AUTO_TEST_CASE(test_host_constants)
 {
     BOOST_TEST(config::poe_ninja::host == "poe.ninja");
 }
-
 
 BOOST_AUTO_TEST_CASE(check_get_currency_json_returns_non_empty_valid_json) {
     using namespace config::poe_ninja::paths;
