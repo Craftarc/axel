@@ -1,9 +1,9 @@
 #include <boost/beast/http.hpp>
 
-#include "webutil/TokenRequestManager.h"
+#include "src/auth/include/TokenRequestManager.h"
 #include "config/poe_auth_config.h"
-#include "webutil/httputil.h"
-#include "webutil/pathutil.h"
+#include "webutil/http.h"
+#include "webutil/path.h"
 #include "config/axel.h"
 
 namespace webutil {

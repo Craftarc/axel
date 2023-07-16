@@ -8,9 +8,9 @@
 #include <boost/beast/http/message.hpp>
 #include <boost/beast/http/string_body.hpp>
 
-#include "webutil/PkceManager.h"
-#include "webutil/StateHashManager.h"
-#include "webutil/TokenRequestManager.h"
+#include "PkceManager.h"
+#include "StateHashManager.h"
+#include "TokenRequestManager.h"
 
 namespace webutil {
     namespace http = boost::beast::http;
@@ -28,9 +28,19 @@ namespace webutil {
     class OauthManager {
     public:
         /**
+         * @brief Default constructor
+         */
+        OauthManager();
+        
+        /**
          * @brief Construct an OauthManager instance.
          *
+         * All Oauth resource (formatted requests, state hashes, etc.) should be obtained through this class only.
+         *
          * @param pkce_manager Instance of PkceManager.
+         * @param state_hash_manager Instance of StateHashManager.
+         * @param token_request_manager Instance of TokenRequestManager.
+         *
          */
         explicit OauthManager(PkceManager pkce_manager, StateHashManager state_hash_manager,
                               TokenRequestManager token_request_manager);
@@ -51,7 +61,7 @@ namespace webutil {
         * @note Checks that the authorization code is available in the class and is valid
         * before allowing this operation.
         */
-        void make_token_request(); // TODO: Implement test
+        void make_token_request();
         
         /**
          * @brief Sends the request for exchanging for an access token, then stores the returned
@@ -61,6 +71,25 @@ namespace webutil {
          * before allowing this operation.
          */
         void send_token_request(); // TODO: Implement test
+        
+        
+        /**
+        * @brief Accept an authorization code to be used in future Oauth steps.
+        *
+        * Checks the received HTTP url_string to determined if the state parameter matches, then updates
+        * the state of the OauthManager to allow for make_token_request().
+        *
+        * @param url_string The HTTP url_string containing the authorization code
+        * @throws std::runtime_error if state_ is not AUTH_OK, or if the state or authorization code is not found
+        * in the query parameters.
+        */
+        void receive_authorization_code(const std::string& url_string);
+        
+        /**
+         * @brief Retrieves the state hash.
+         * @return The state hash string.
+         */
+        std::string get_state_hash() const;
     
     private:
         enum class State {
@@ -68,7 +97,9 @@ namespace webutil {
             AUTH_SENT,
             AUTH_OK,
             TOKEN_REQUEST_MADE,
-            TOKEN_REQUEST_SENT
+            TOKEN_REQUEST_SENT,
+            TOKEN_RECEIVED,
+            FINISH
         };
         
         State state_;
@@ -126,19 +157,6 @@ namespace webutil {
          * @return The complete authorization url
          */
         std::string make_authorization_url();
-        
-        /**
-         * @internal
-         * @brief Accept an authorization code to be used in future Oauth steps.
-         *
-         * Checks the received HTTP url_string to determined if the state parameter matches, then updates
-         * the state of the OauthManager to allow for make_token_request().
-         *
-         * @param url_string The HTTP url_string containing the authorization code
-         * @throws std::runtime_error if state_ is not AUTH_OK, or if the state or authorization code is not found
-         * in the query parameters.
-         */
-        void receive_authorization_code(const std::string& url_string);
     };
 }
 

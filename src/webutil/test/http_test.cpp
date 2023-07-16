@@ -1,7 +1,7 @@
 #include <boost/test/unit_test.hpp>
 #include <boost/asio/ssl/error.hpp>
 
-#include "webutil/httputil.h"
+#include "webutil/http.h"
 #include "config/poe_ninja_config.h"
 
 BOOST_AUTO_TEST_SUITE(free_httputil)

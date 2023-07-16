@@ -2,7 +2,7 @@
 #include <boost/beast/http.hpp>
 #include <iostream>
 
-#include "webutil/TokenRequestManager.h"
+#include "src/auth/include/TokenRequestManager.h"
 
 BOOST_AUTO_TEST_SUITE(class_TokenRequestManager)
     using namespace webutil;

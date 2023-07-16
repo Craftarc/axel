@@ -1,12 +1,11 @@
 #include <iostream>
 #include <utility>
-#include <botan/base64.h>
 
-#include "webutil/OauthManager.h"
-#include "webutil/pathutil.h"
-#include "webutil/TokenRequestManager.h"
+#include "src/auth/include/OauthManager.h"
+#include "webutil/path.h"
 #include "webutil/hash.h"
 #include "config/poe_auth_config.h"
+#include "webutil/http.h"
 
 namespace {
     // Declarations
@@ -27,11 +26,27 @@ namespace {
 }
 
 namespace webutil {
+    OauthManager::OauthManager() : pkce_manager_(PkceManager{}),
+                                   state_hash_manager_(StateHashManager{}),
+                                   token_request_manager_(TokenRequestManager{}),
+                                   state_(State::INITIAL) {
+        authorization_url_ = make_authorization_url();
+    }
+    
     OauthManager::OauthManager(PkceManager pkce_manager, StateHashManager state_hash_manager,
                                TokenRequestManager token_request_manager)
             : pkce_manager_(std::move(pkce_manager)), state_hash_manager_(std::move(state_hash_manager)),
               token_request_manager_(token_request_manager), state_(State::INITIAL) {
         authorization_url_ = make_authorization_url();
+    }
+    
+    void OauthManager::send_token_request() {
+        std::string response = send_http_request(token_request_);
+        std::cout << response;
+    }
+    
+    std::string OauthManager::get_state_hash() const {
+        return OauthManager::state_hash_manager_.get_state_hash();
     }
     
     /* Constructs each query parameter one by one then calls add_query_parameters
@@ -60,7 +75,6 @@ namespace webutil {
         return pathutil::add_query_parameters(endpoint, query_map);
     }
     
-    // PRIVATE
     std::string OauthManager::get_authorization_url() {
         state_ = State::AUTH_SENT;
         return authorization_url_;
@@ -70,7 +84,7 @@ namespace webutil {
     
     void OauthManager::make_token_request() {
         if (state_ != State::AUTH_OK) {
-            throw std::runtime_error("Cannot make token request: Invalid state of OauthManager");
+            throw std::runtime_error("Cannot make token request: Authorization code has not been received.");
         } else {
             token_request_ = token_request_manager_.make_token_request(authorization_code_,
                                                                        pkce_manager_.get_code_verifier()); // Delegate the construction of the request
@@ -79,6 +93,9 @@ namespace webutil {
     }
     
     void OauthManager::receive_authorization_code(const std::string& url_string) {
+        if (state_ != State::AUTH_SENT) {
+            throw std::runtime_error("Cannot receive authorization code: Authorization request has not been sent.");
+        }
         auto query_params = pathutil::extract_query_params(url_string);
         
         // Check if keys exist in map

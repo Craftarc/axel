@@ -69,9 +69,9 @@ COPY config ./config
 COPY src ./src
 
 ## Make demo
-#RUN mkdir build && \
-#    cd build && \
-#    cmake3 .. -DCMAKE_BUILD_TYPE=Debug && \
-#    make && \
-#    make aws-lambda-package-handler
+RUN mkdir build && \
+    cd build && \
+    cmake3 .. -DCMAKE_BUILD_TYPE=Release && \
+    make && \
+    make aws-lambda-package-handler
 

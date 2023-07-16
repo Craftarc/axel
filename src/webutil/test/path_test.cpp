@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 
-#include "webutil/pathutil.h"
+#include "webutil/path.h"
 
 BOOST_AUTO_TEST_SUITE(free_pathutil)
     using namespace pathutil;

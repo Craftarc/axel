@@ -1,5 +1,5 @@
 #include "poe_ninja//get_poe_ninja_data.h"
-#include "webutil/httputil.h"
+#include "webutil/http.h"
 #include "config/poe_ninja_config.h"
 
 #include <string>

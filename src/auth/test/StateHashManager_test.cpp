@@ -1,6 +1,6 @@
 #include <boost/test/unit_test.hpp>
 
-#include "webutil/StateHashManager.h"
+#include "src/auth/include/StateHashManager.h"
 
 BOOST_AUTO_TEST_SUITE(class_StateHashManager)
     using namespace webutil;

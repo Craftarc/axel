@@ -1,4 +1,4 @@
-#include "webutil/pathutil.h"
+#include "webutil/path.h"
 
 namespace pathutil {
     /**

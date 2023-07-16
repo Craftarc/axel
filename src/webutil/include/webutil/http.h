@@ -1,5 +1,5 @@
-#ifndef AXEL_HTTP_GET_H
-#define AXEL_HTTP_GET_H
+#ifndef AXEL_WEBUTIL_HTTP_H
+#define AXEL_WEBUTIL_HTTP_H
 
 #include <string>
 #include <boost/beast/http.hpp>
@@ -26,4 +26,4 @@ namespace webutil {
                       const std::string& body = "");
 }
 
-#endif //AXEL_HTTP_GET_H
+#endif //AXEL_WEBUTIL_HTTP_H

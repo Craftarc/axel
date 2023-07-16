@@ -1,7 +1,7 @@
 #include <vector>
 #include <botan/base64.h>
 
-#include "webutil/StateHashManager.h"
+#include "src/auth/include/StateHashManager.h"
 #include "webutil/hash.h"
 
 namespace {

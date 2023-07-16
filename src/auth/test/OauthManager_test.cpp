@@ -5,9 +5,11 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/regex.hpp>
 
-#include "webutil/OauthManager.h"
-#include "webutil/PkceManager.h"
+#include "src/auth/include/OauthManager.h"
+#include "src/auth/include/PkceManager.h"
+#include "src/auth/include/TokenRequestManager.h"
 #include "config/poe_auth_config.h"
+#include "webutil/path.h"
 
 namespace {
     std::unordered_map<std::string, std::string> extract_query_params(const std::string& url) {
@@ -65,6 +67,30 @@ BOOST_AUTO_TEST_SUITE(class_OauthManager)
                     params["redirect_uri"] == "https://bibdsedr7muzq2hg5h2rqzs2ke0matoa.lambda-url.us-west-1.on.aws/");
             BOOST_CHECK(params["code_challenge"].size() == 43);
             BOOST_CHECK(params["code_challenge_method"] == "S256");
+        }
+    
+    BOOST_AUTO_TEST_SUITE_END()
+    
+    BOOST_AUTO_TEST_SUITE(function_make_token_request)
+        
+        BOOST_AUTO_TEST_CASE(error_when_authorization_code_unavailable) {
+            OauthManager oauth_manager{};
+            // Fails because authorization request has not been sent
+            BOOST_CHECK_THROW(oauth_manager.make_token_request(), std::runtime_error);
+            
+            // Fails because authorization request has not been received
+            oauth_manager.get_authorization_url();
+            BOOST_CHECK_THROW(oauth_manager.make_token_request(), std::runtime_error);
+        }
+        
+        BOOST_AUTO_TEST_CASE(success_when_authorization_code_available) {
+            OauthManager oauth_manager{};
+            auto params = extract_query_params(oauth_manager.get_authorization_url());
+            
+            // Need to get state hash from OauthManager because incoming state hash must match currently stored one
+            auto state = oauth_manager.get_state_hash();
+            oauth_manager.receive_authorization_code("https://www.google.com?code=code&state=" + state);
+            BOOST_CHECK_NO_THROW(oauth_manager.make_token_request());
         }
     
     BOOST_AUTO_TEST_SUITE_END()

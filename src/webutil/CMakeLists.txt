@@ -1,17 +1,6 @@
 # Configure target sources here
-set(WEBUTIL_SRC_FILES src/httputil.cpp src/pathutil.cpp src/PkceManager.cpp src/OauthManager.cpp src/hash.cpp
-    src/StateHashManager.cpp src/TokenRequestManager.cpp)
-set(WEBUTIL_TESTS_SRC_FILES test/webutil_tests.cpp test/httputil_test.cpp test/pathutil_test.cpp
-    test/PkceManager_test.cpp test/OauthManager_test.cpp test/hash_test.cpp test/StateHashManager_test.cpp test/TokenRequestManager_test.cpp)
-
-find_package(Boost REQUIRED COMPONENTS thread system unit_test_framework)
-
-find_package(OpenSSL REQUIRED)
-
-# Botan uses pkgconfig; find PkgConfig, then use PkgConfig to find botan-2.pc
-find_package(PkgConfig REQUIRED)
-set(ENV{PKG_CONFIG_PATH} "/usr/local/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
-pkg_check_modules(BOTAN_PKG REQUIRED botan-2)
+set(WEBUTIL_SRC_FILES src/http.cpp src/path.cpp src/hash.cpp)
+set(WEBUTIL_TESTS_SRC_FILES test/webutil_tests.cpp test/http_test.cpp test/path_test.cpp test/hash_test.cpp)
 
 
 # webutil library

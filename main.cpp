@@ -1,7 +1,8 @@
 #include <iostream>
-#include "webutil/httputil.h"
+#include "webutil/http.h"
+#include "src/auth/include/OauthManager.h"
 
 int main() {
-    std::cout << "All targets rebuilt" << std::endl;
-    std::cout << webutil::send_http_request(nullptr) << std::endl;
+    webutil::OauthManager oauth_manager;
+    std::cout << oauth_manager.get_authorization_url();
 }

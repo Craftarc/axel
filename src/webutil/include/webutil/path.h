@@ -1,5 +1,5 @@
-#ifndef AXEL_PATHUTIL_H
-#define AXEL_PATHUTIL_H
+#ifndef AXEL_WEBUTIL_PATH_H
+#define AXEL_WEBUTIL_PATH_H
 
 #include <string>
 #include <map>
@@ -37,4 +37,4 @@ namespace pathutil {
     std::string make_form_data(std::unordered_map<std::string, std::string> params);
 }
 
-#endif //AXEL_PATHUTIL_H
+#endif // AXEL_WEBUTIL_PATH_H
