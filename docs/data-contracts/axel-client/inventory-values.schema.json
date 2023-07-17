@@ -1,0 +1,26 @@
+{
+  "$schema": "https:://json-schema.org/draft/2020-12/schema",
+  "title": "Inventory Values",
+  "description": "Data contract for the valuation details of a player's inventory",
+  "$ref": "#/definitions/inventory-values",
+  "definitions": {
+	"inventory-values": {
+	  "title": "Top level JSON object",
+	  "description": "Contains JSON objects that each describe a portion of the player's inventory",
+	  "type": "object",
+	  "properties": {
+		"league": {
+		  "$ref": "#/definitions/League"
+		}
+	  }
+	},
+	"League": {
+	  "title": "League that this data was obtained from",
+	  "type": "string",
+	  "examples": [
+		"Bestiary",
+		"Sanctum"
+	  ]
+	}
+  }
+}

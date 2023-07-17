@@ -1,0 +1,31 @@
+classDiagram
+
+    STATS-TABLE "1" *-- "1+" ITEM: contains
+    STATS-TABLE "0..1" o-- "1" SORTED-INTERFACE: displays
+    SORTED "1+" -- "1" SORTED-INTERFACE: implements
+    FILTER "1+" -- "1" SORTED-INTERFACE: filters
+
+    class STATS-TABLE {
+
+    }
+
+    class ITEM {
+        image icon
+        string name
+        string stash-tab
+        int quantity
+        double price-per
+        int total
+    }
+
+    class SORTED {
+        string sort-type
+    }
+
+    class FILTER {
+        array filter-types
+    }
+
+    class SORTED-INTERFACE {
+
+    }
