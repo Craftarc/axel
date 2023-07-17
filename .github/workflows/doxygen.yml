@@ -1,0 +1,30 @@
+name: Generate doxygen documentation and deploy
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Install doxygen
+        run: sudo apt-get install doxygen
+
+      - name: Run doxygen
+        run: doxygen
+      
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs/html
