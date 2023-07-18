@@ -1,5 +1,5 @@
 ---
-title: Intiial Oauth flow
+title: State diagram for interaction with OauthManager class
 ---
 
 sequenceDiagram
@@ -11,29 +11,29 @@ sequenceDiagram
 
 
     box gray Backend
-    participant Lambda
-    participant OM
+        participant Lambda
+        participant OM
     end
 
-    Browser->>Auth: Send authorization
+    Browser ->> Auth: Send authorization
     note right of Auth: Authorisation <br> received from user
-    Auth-->>Browser: Send redirect to Lambda
-    Browser->>Lambda: Redirect from Authorization Server
+    Auth -->> Browser: Send redirect to Lambda
+    Browser ->> Lambda: Redirect from Authorization Server
     activate Lambda
     note right of Lambda: Invocation request received
-    Lambda->>OM: new OAuthManager()
+    Lambda ->> OM: new OAuthManager()
     activate OM
     note over OM: State: INITIAL
-    Lambda->>OM: receive_authorization_code(auth_code)
-    OM->>OM: Verify state hash matches
-    OM->>OM: make_token_request(auth_code)
-    OM->>Auth: send_token_request(token_request)
+    Lambda ->> OM: receive_authorization_code(auth_code)
+    OM ->> OM: Verify state hash matches
+    OM ->> OM: make_token_request(auth_code)
+    OM ->> Auth: send_token_request(token_request)
     activate Auth
     note over OM: State: TOKEN_REQUEST_SENT
-    Auth-->>OM: Return access and return tokens
+    Auth -->> OM: Return access and return tokens
     deactivate Auth
 
-    OM->>OM: store_tokens(access_token, request_token)
+    OM ->> OM: store_tokens(access_token, request_token)
     deactivate OM
     note over OM: State: TOKENS_STORED
 
