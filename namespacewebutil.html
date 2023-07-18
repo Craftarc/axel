@@ -118,9 +118,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a57b178231d00dfbd186f62bef2a2cd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modify a base64 encoded string into a base64url encoded string.  <a href="namespacewebutil.html#a57b178231d00dfbd186f62bef2a2cd86">More...</a><br /></td></tr>
 <tr class="separator:a57b178231d00dfbd186f62bef2a2cd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc235b2d700531e654184efb8bb0cb9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewebutil.html#a4fc235b2d700531e654184efb8bb0cb9">send_http_request</a> (const http::request&lt; http::string_body &gt; &amp;request)</td></tr>
-<tr class="memdesc:a4fc235b2d700531e654184efb8bb0cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to send a HTTP request.  <a href="namespacewebutil.html#a4fc235b2d700531e654184efb8bb0cb9">More...</a><br /></td></tr>
+<tr class="memdesc:a4fc235b2d700531e654184efb8bb0cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a HTTP request.  <a href="namespacewebutil.html#a4fc235b2d700531e654184efb8bb0cb9">More...</a><br /></td></tr>
 <tr class="separator:a4fc235b2d700531e654184efb8bb0cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a955faee7f7df2d459208bd9d3e6cd030"><td class="memItemLeft" align="right" valign="top">http::request&lt; http::string_body &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewebutil.html#a955faee7f7df2d459208bd9d3e6cd030">make_http_request</a> (const std::string &amp;http_verb, const std::string &amp;path, const std::unordered_map&lt; std::string, std::string &gt; &amp;fields, const std::string &amp;body=&quot;&quot;)</td></tr>
+<tr class="memdesc:a955faee7f7df2d459208bd9d3e6cd030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a HTTP request.  <a href="namespacewebutil.html#a955faee7f7df2d459208bd9d3e6cd030">More...</a><br /></td></tr>
 <tr class="separator:a955faee7f7df2d459208bd9d3e6cd030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -159,7 +160,7 @@ Functions</h2></td></tr>
 <p>The modification follows the Notes on Implementing Base64url Encoding without Padding outlined in RFC 7636 Appendix A. '+' is replaced to '-', '/' is replaced with '_', and '=' is removed and left to the decoder to imply.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>base64 encoded string. The string typically contains '=' as terminating characters if padding was used.</td></tr>
+    <tr><td class="paramname">str</td><td>base64 encoded string </td></tr>
   </table>
   </dd>
 </dl>
@@ -184,7 +185,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generate the secret bytes for the code verifier. </p>
-<dl class="section return"><dt>Returns</dt><dd>32 random bytes in a container. Cryptographically secure. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>32 random bytes in a container </dd></dl>
 
 </div>
 </div>
@@ -226,6 +227,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Make a HTTP request. </p>
+
 </div>
 </div>
 <a id="a4fc235b2d700531e654184efb8bb0cb9"></a>
@@ -244,10 +247,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function to send a HTTP request. </p>
+<p>Send a HTTP request. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td>The HTTP request to be sent</td></tr>
+    <tr><td class="paramname">request</td><td>The HTTP request to be sent </td></tr>
   </table>
   </dd>
 </dl>
