@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['tcp_92',['tcp',['../namespacewebutil.html#ad30f4f07c3d5499974a0051207864308',1,'webutil']]],
-  ['tokenrequestmanager_93',['TokenRequestManager',['../classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f',1,'webutil::TokenRequestManager::TokenRequestManager()'],['../classwebutil_1_1TokenRequestManager.html',1,'webutil::TokenRequestManager']]],
-  ['tokenrequestmanager_2ecpp_94',['TokenRequestManager.cpp',['../TokenRequestManager_8cpp.html',1,'']]],
-  ['tokenrequestmanager_2eh_95',['TokenRequestManager.h',['../TokenRequestManager_8h.html',1,'']]],
-  ['tokenrequestmanager_5ftest_2ecpp_96',['TokenRequestManager_test.cpp',['../TokenRequestManager__test_8cpp.html',1,'']]]
+  ['unique_5faccessory_0',['unique_accessory',['../namespaceconfig_1_1poe__ninja_1_1paths.html#aec5033bdb32689736b987112db39ed0a',1,'config::poe_ninja::paths']]],
+  ['unique_5farmour_1',['unique_armour',['../namespaceconfig_1_1poe__ninja_1_1paths.html#aab862b775d4b3d0c05276f285a414463',1,'config::poe_ninja::paths']]],
+  ['unique_5fflask_2',['unique_flask',['../namespaceconfig_1_1poe__ninja_1_1paths.html#ad220d3edae947f1ffbcc5176c0eb65c1',1,'config::poe_ninja::paths']]],
+  ['unique_5fjewel_3',['unique_jewel',['../namespaceconfig_1_1poe__ninja_1_1paths.html#af29cd9d5b7eac53ba97dcd9612fa7dbd',1,'config::poe_ninja::paths']]],
+  ['unique_5fmap_4',['unique_map',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a49701ebe8120817559c332ade1364d17',1,'config::poe_ninja::paths']]],
+  ['unique_5fweapon_5',['unique_weapon',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a892af43df6058c40f15e40c3a596760a',1,'config::poe_ninja::paths']]]
 ];

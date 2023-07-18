@@ -85,36 +85,35 @@ $(document).ready(function(){initNavTree('StateHashManager_8h_source.html',''); 
 <div class="title">StateHashManager.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="StateHashManager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_STATEHASHMANAGER_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_STATEHASHMANAGER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AXEL_STATEHASHMANAGER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewebutil.html">webutil</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classwebutil_1_1StateHashManager.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classwebutil_1_1StateHashManager.html">StateHashManager</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classwebutil_1_1StateHashManager.html#a9f3d8046930b0ef1d180256d44362819">StateHashManager</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::string <a class="code" href="classwebutil_1_1StateHashManager.html#ac9167b5deefb10335c2777a4679b15b8">get_state_hash</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classwebutil_1_1StateHashManager.html#acc40f0194324af6d59c270a7f7be4186">verify_state_hash</a>(<span class="keyword">const</span> std::string&amp; check_hash) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::string state_hash_;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_STATEHASHMANAGER_H</span></div>
-<div class="ttc" id="aclasswebutil_1_1StateHashManager_html"><div class="ttname"><a href="classwebutil_1_1StateHashManager.html">webutil::StateHashManager</a></div><div class="ttdoc">The StateHashManager class.</div><div class="ttdef"><b>Definition:</b> StateHashManager.h:18</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>webutil {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classwebutil_1_1StateHashManager.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classwebutil_1_1StateHashManager.html">StateHashManager</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classwebutil_1_1StateHashManager.html#a9f3d8046930b0ef1d180256d44362819">StateHashManager</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string <a class="code" href="classwebutil_1_1StateHashManager.html#ac9167b5deefb10335c2777a4679b15b8">get_state_hash</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classwebutil_1_1StateHashManager.html#acc40f0194324af6d59c270a7f7be4186">verify_state_hash</a>(<span class="keyword">const</span> std::string&amp; check_hash) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        std::string state_hash_;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_STATEHASHMANAGER_H</span></div>
+<div class="ttc" id="aclasswebutil_1_1StateHashManager_html"><div class="ttname"><a href="classwebutil_1_1StateHashManager.html">webutil::StateHashManager</a></div><div class="ttdoc">The StateHashManager class.</div><div class="ttdef"><b>Definition:</b> StateHashManager.h:16</div></div>
 <div class="ttc" id="aclasswebutil_1_1StateHashManager_html_a9f3d8046930b0ef1d180256d44362819"><div class="ttname"><a href="classwebutil_1_1StateHashManager.html#a9f3d8046930b0ef1d180256d44362819">webutil::StateHashManager::StateHashManager</a></div><div class="ttdeci">StateHashManager()</div><div class="ttdoc">Constructs a StateHashManager instance.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:17</div></div>
-<div class="ttc" id="aclasswebutil_1_1StateHashManager_html_ac9167b5deefb10335c2777a4679b15b8"><div class="ttname"><a href="classwebutil_1_1StateHashManager.html#ac9167b5deefb10335c2777a4679b15b8">webutil::StateHashManager::get_state_hash</a></div><div class="ttdeci">std::string get_state_hash() const</div><div class="ttdoc">Get the state hash.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:19</div></div>
-<div class="ttc" id="aclasswebutil_1_1StateHashManager_html_acc40f0194324af6d59c270a7f7be4186"><div class="ttname"><a href="classwebutil_1_1StateHashManager.html#acc40f0194324af6d59c270a7f7be4186">webutil::StateHashManager::verify_state_hash</a></div><div class="ttdeci">bool verify_state_hash(const std::string &amp;check_hash) const</div><div class="ttdoc">Verifies if a given hash matches the state hash stored internally.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:23</div></div>
-<div class="ttc" id="anamespacewebutil_html"><div class="ttname"><a href="namespacewebutil.html">webutil</a></div><div class="ttdef"><b>Definition:</b> OauthManager.h:15</div></div>
+<div class="ttc" id="aclasswebutil_1_1StateHashManager_html_ac9167b5deefb10335c2777a4679b15b8"><div class="ttname"><a href="classwebutil_1_1StateHashManager.html#ac9167b5deefb10335c2777a4679b15b8">webutil::StateHashManager::get_state_hash</a></div><div class="ttdeci">std::string get_state_hash() const</div><div class="ttdoc">Gets the state hash.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:21</div></div>
+<div class="ttc" id="aclasswebutil_1_1StateHashManager_html_acc40f0194324af6d59c270a7f7be4186"><div class="ttname"><a href="classwebutil_1_1StateHashManager.html#acc40f0194324af6d59c270a7f7be4186">webutil::StateHashManager::verify_state_hash</a></div><div class="ttdeci">bool verify_state_hash(const std::string &amp;check_hash) const</div><div class="ttdoc">Verifies if a given hash matches the state hash stored internally.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ecb37285c0bc658c97bb749f37c59e79.html">auth</a></li><li class="navelem"><a class="el" href="dir_9dfd85ec0ef0cc17633756c9c075ea7d.html">include</a></li><li class="navelem"><a class="el" href="StateHashManager_8h.html">StateHashManager.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ecb37285c0bc658c97bb749f37c59e79.html">auth</a></li><li class="navelem"><a class="el" href="dir_9dfd85ec0ef0cc17633756c9c075ea7d.html">include</a></li><li class="navelem"><b>StateHashManager.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['helmet_5fenchant_192',['helmet_enchant',['../namespaceconfig_1_1poe__ninja_1_1paths.html#af987ba1b7b568f066ff63099a81fa63c',1,'config::poe_ninja::paths']]],
-  ['host_193',['host',['../namespaceconfig_1_1poe.html#a6b8697fdfa1286eb1d4ec099a302e66d',1,'config::poe::host()'],['../namespaceconfig_1_1poe__ninja.html#abb826fc43b89a0b228b04d0166463c3c',1,'config::poe_ninja::host()']]]
+  ['incubator_0',['incubator',['../namespaceconfig_1_1poe__ninja_1_1paths.html#aa1566d996385de3ce03172b321174a75',1,'config::poe_ninja::paths']]],
+  ['invitation_1',['invitation',['../namespaceconfig_1_1poe__ninja_1_1paths.html#ade5d26a7176a8c1492d25ade01254c3d',1,'config::poe_ninja::paths']]],
+  ['item_5ffilter_2',['item_filter',['../namespaceconfig_1_1poe_1_1scopes_1_1account.html#aa26a793f9a24e663f69b8057bb58f492',1,'config::poe::scopes::account']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pkcemanager_168',['PkceManager',['../classwebutil_1_1PkceManager.html#a66965cf6a89b712c4589222ad962dd98',1,'webutil::PkceManager']]]
+  ['tokenrequestmanager_30',['TokenRequestManager',['../classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f',1,'webutil::TokenRequestManager']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['league_5faccounts_197',['league_accounts',['../namespaceconfig_1_1poe_1_1scopes_1_1account.html#ac99d83fdbbeeb9e6ed13346240714ef2',1,'config::poe::scopes::account']]]
+  ['manager_0',['manager',['../_pkce_manager__test_8cpp.html#a8fa6edadeba74a972c7f077b2ddf3f99',1,'PkceManager_test.cpp']]],
+  ['map_1',['map',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a128f8967c297c51dc927863dfc405fcc',1,'config::poe_ninja::paths']]]
 ];

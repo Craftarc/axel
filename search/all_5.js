@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fossil_30',['fossil',['../namespaceconfig_1_1poe__ninja_1_1paths.html#ae58746ebcdfa9c7253deb53ff605ea0d',1,'config::poe_ninja::paths']]],
-  ['fragment_31',['fragment',['../namespaceconfig_1_1poe__ninja_1_1paths.html#aef45250ca9bb0ae7d3d27d73ea067043',1,'config::poe_ninja::paths']]]
+  ['receive_5fauthorization_5fcode_9',['receive_authorization_code',['../classwebutil_1_1OauthManager.html#ab653b3a20a36e7e67b184a0febfc1792',1,'webutil::OauthManager']]]
 ];

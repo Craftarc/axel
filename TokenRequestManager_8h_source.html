@@ -85,40 +85,40 @@ $(document).ready(function(){initNavTree('TokenRequestManager_8h_source.html',''
 <div class="title">TokenRequestManager.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TokenRequestManager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_WEBUTIL_TOKENREQUESTMANAGER_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_WEBUTIL_TOKENREQUESTMANAGER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AXEL_WEBUTIL_TOKENREQUESTMANAGER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;boost/beast/http.hpp&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewebutil.html">webutil</a> {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>webutil {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">namespace </span>http = boost::beast::http;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classwebutil_1_1TokenRequestManager.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classwebutil_1_1TokenRequestManager.html">TokenRequestManager</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">TokenRequestManager</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        http::request&lt;http::string_body&gt; <a class="code" href="classwebutil_1_1TokenRequestManager.html#acaccff53afb14715ce572acf1176619c">get_token_request</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        http::request&lt;http::string_body&gt; <a class="code" href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">make_token_request</a>(std::string auth_code, std::string code_verifier);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        http::request&lt;http::string_body&gt; token_request_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_WEBUTIL_TOKENREQUESTMANAGER_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">TokenRequestManager</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        http::request&lt;http::string_body&gt; <a class="code" href="classwebutil_1_1TokenRequestManager.html#acaccff53afb14715ce572acf1176619c">get_token_request</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        http::request&lt;http::string_body&gt; <a class="code" href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">make_token_request</a>(std::string auth_code, std::string code_verifier);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        http::request&lt;http::string_body&gt; token_request_;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_WEBUTIL_TOKENREQUESTMANAGER_H</span></div>
 <div class="ttc" id="aclasswebutil_1_1TokenRequestManager_html"><div class="ttname"><a href="classwebutil_1_1TokenRequestManager.html">webutil::TokenRequestManager</a></div><div class="ttdef"><b>Definition:</b> TokenRequestManager.h:9</div></div>
-<div class="ttc" id="aclasswebutil_1_1TokenRequestManager_html_a01c0fd662b6d0080e3904493e9c5b039"><div class="ttname"><a href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">webutil::TokenRequestManager::make_token_request</a></div><div class="ttdeci">http::request&lt; http::string_body &gt; make_token_request(std::string auth_code, std::string code_verifier)</div><div class="ttdoc">Constructs an HTTP POST request for the exchange for the access token and stores it in make_token_req...</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:19</div></div>
-<div class="ttc" id="aclasswebutil_1_1TokenRequestManager_html_acaccff53afb14715ce572acf1176619c"><div class="ttname"><a href="classwebutil_1_1TokenRequestManager.html#acaccff53afb14715ce572acf1176619c">webutil::TokenRequestManager::get_token_request</a></div><div class="ttdeci">http::request&lt; http::string_body &gt; get_token_request() const</div><div class="ttdoc">Gets the access token request.</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:12</div></div>
-<div class="ttc" id="aclasswebutil_1_1TokenRequestManager_html_af07cdbd7cb0ec2ffa956b129cab9288f"><div class="ttname"><a href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">webutil::TokenRequestManager::TokenRequestManager</a></div><div class="ttdeci">TokenRequestManager()</div><div class="ttdoc">Constructor. Constructs an access token exchange request and stores it.</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:10</div></div>
-<div class="ttc" id="anamespacewebutil_html"><div class="ttname"><a href="namespacewebutil.html">webutil</a></div><div class="ttdef"><b>Definition:</b> OauthManager.h:15</div></div>
+<div class="ttc" id="aclasswebutil_1_1TokenRequestManager_html_a01c0fd662b6d0080e3904493e9c5b039"><div class="ttname"><a href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">webutil::TokenRequestManager::make_token_request</a></div><div class="ttdeci">http::request&lt; http::string_body &gt; make_token_request(std::string auth_code, std::string code_verifier)</div><div class="ttdoc">Constructs an HTTP POST request for the exchange for the access token.</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:24</div></div>
+<div class="ttc" id="aclasswebutil_1_1TokenRequestManager_html_acaccff53afb14715ce572acf1176619c"><div class="ttname"><a href="classwebutil_1_1TokenRequestManager.html#acaccff53afb14715ce572acf1176619c">webutil::TokenRequestManager::get_token_request</a></div><div class="ttdeci">http::request&lt; http::string_body &gt; get_token_request() const</div><div class="ttdoc">Gets the access token request.</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:14</div></div>
+<div class="ttc" id="aclasswebutil_1_1TokenRequestManager_html_af07cdbd7cb0ec2ffa956b129cab9288f"><div class="ttname"><a href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">webutil::TokenRequestManager::TokenRequestManager</a></div><div class="ttdeci">TokenRequestManager()</div><div class="ttdoc">Responsible for constructing and storing the POST request for the access token exchange....</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ecb37285c0bc658c97bb749f37c59e79.html">auth</a></li><li class="navelem"><a class="el" href="dir_9dfd85ec0ef0cc17633756c9c075ea7d.html">include</a></li><li class="navelem"><a class="el" href="TokenRequestManager_8h.html">TokenRequestManager.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ecb37285c0bc658c97bb749f37c59e79.html">auth</a></li><li class="navelem"><a class="el" href="dir_9dfd85ec0ef0cc17633756c9c075ea7d.html">include</a></li><li class="navelem"><b>TokenRequestManager.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

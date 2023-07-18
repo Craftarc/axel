@@ -88,19 +88,17 @@ $(document).ready(function(){initNavTree('classwebutil_1_1TokenRequestManager.ht
 <div class="title">webutil::TokenRequestManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="TokenRequestManager_8h_source.html">TokenRequestManager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af07cdbd7cb0ec2ffa956b129cab9288f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">TokenRequestManager</a> ()</td></tr>
-<tr class="memdesc:af07cdbd7cb0ec2ffa956b129cab9288f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Constructs an access token exchange request and stores it.  <a href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">More...</a><br /></td></tr>
+<tr class="memdesc:af07cdbd7cb0ec2ffa956b129cab9288f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Responsible for constructing and storing the POST request for the access token exchange. Contains all relevant fields as specified in the PoE Developer Docs. Relevant documentation: <a href="https://www.pathofexile.com/developer/docs/authorization">https://www.pathofexile.com/developer/docs/authorization</a>.  <a href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">More...</a><br /></td></tr>
 <tr class="separator:af07cdbd7cb0ec2ffa956b129cab9288f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acaccff53afb14715ce572acf1176619c"><td class="memItemLeft" align="right" valign="top">http::request&lt; http::string_body &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebutil_1_1TokenRequestManager.html#acaccff53afb14715ce572acf1176619c">get_token_request</a> () const</td></tr>
 <tr class="memdesc:acaccff53afb14715ce572acf1176619c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the access token request.  <a href="classwebutil_1_1TokenRequestManager.html#acaccff53afb14715ce572acf1176619c">More...</a><br /></td></tr>
 <tr class="separator:acaccff53afb14715ce572acf1176619c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01c0fd662b6d0080e3904493e9c5b039"><td class="memItemLeft" align="right" valign="top">http::request&lt; http::string_body &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">make_token_request</a> (std::string auth_code, std::string code_verifier)</td></tr>
-<tr class="memdesc:a01c0fd662b6d0080e3904493e9c5b039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an HTTP POST request for the exchange for the access token and stores it in make_token_request_.  <a href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">More...</a><br /></td></tr>
+<tr class="memdesc:a01c0fd662b6d0080e3904493e9c5b039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an HTTP POST request for the exchange for the access token.  <a href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">More...</a><br /></td></tr>
 <tr class="separator:a01c0fd662b6d0080e3904493e9c5b039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -119,7 +117,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor. Constructs an access token exchange request and stores it. </p>
+<p>Responsible for constructing and storing the POST request for the access token exchange. Contains all relevant fields as specified in the PoE Developer Docs. Relevant documentation: <a href="https://www.pathofexile.com/developer/docs/authorization">https://www.pathofexile.com/developer/docs/authorization</a>. </p>
+<p>Constructs an access token exchange request.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">The</td><td>authorization code to construct the request from. </td></tr>
@@ -176,7 +175,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs an HTTP POST request for the exchange for the access token and stores it in make_token_request_. </p>
+<p>Constructs an HTTP POST request for the exchange for the access token. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">auth_code</td><td>The authorization code to be used in the request. </td></tr>
@@ -189,14 +188,14 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/auth/include/<a class="el" href="TokenRequestManager_8h_source.html">TokenRequestManager.h</a></li>
-<li>src/auth/src/<a class="el" href="TokenRequestManager_8cpp.html">TokenRequestManager.cpp</a></li>
+<li>src/auth/src/TokenRequestManager.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacewebutil.html">webutil</a></li><li class="navelem"><a class="el" href="classwebutil_1_1TokenRequestManager.html">TokenRequestManager</a></li>
+    <li class="navelem"><b>webutil</b></li><li class="navelem"><a class="el" href="classwebutil_1_1TokenRequestManager.html">TokenRequestManager</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

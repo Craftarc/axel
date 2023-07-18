@@ -85,38 +85,36 @@ $(document).ready(function(){initNavTree('PkceManager_8h_source.html',''); initR
 <div class="title">PkceManager.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="PkceManager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_PKCEMANAGER_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_PKCEMANAGER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AXEL_PKCEMANAGER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewebutil.html">webutil</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classwebutil_1_1PkceManager.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classwebutil_1_1PkceManager.html">PkceManager</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classwebutil_1_1PkceManager.html#a66965cf6a89b712c4589222ad962dd98">PkceManager</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::string <a class="code" href="classwebutil_1_1PkceManager.html#afede55d3392c2367046d0328fb5e2bbe">get_code_verifier</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::string <a class="code" href="classwebutil_1_1PkceManager.html#a442e667341bcabf7a42781e7925c5486">get_code_challenge</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::string code_verifier_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::string code_challenge_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }; <span class="comment">// webutil</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_PKCEMANAGER_H</span></div>
-<div class="ttc" id="aclasswebutil_1_1PkceManager_html"><div class="ttname"><a href="classwebutil_1_1PkceManager.html">webutil::PkceManager</a></div><div class="ttdoc">A class to manage PkceManager (Proof Key for Code Exchange) code verifiers and challenges.</div><div class="ttdef"><b>Definition:</b> PkceManager.h:12</div></div>
-<div class="ttc" id="aclasswebutil_1_1PkceManager_html_a442e667341bcabf7a42781e7925c5486"><div class="ttname"><a href="classwebutil_1_1PkceManager.html#a442e667341bcabf7a42781e7925c5486">webutil::PkceManager::get_code_challenge</a></div><div class="ttdeci">std::string get_code_challenge() const</div><div class="ttdoc">Get the Code Challenge.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:32</div></div>
-<div class="ttc" id="aclasswebutil_1_1PkceManager_html_a66965cf6a89b712c4589222ad962dd98"><div class="ttname"><a href="classwebutil_1_1PkceManager.html#a66965cf6a89b712c4589222ad962dd98">webutil::PkceManager::PkceManager</a></div><div class="ttdeci">PkceManager()</div><div class="ttdoc">Construct a new PkceManager object.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:9</div></div>
-<div class="ttc" id="aclasswebutil_1_1PkceManager_html_afede55d3392c2367046d0328fb5e2bbe"><div class="ttname"><a href="classwebutil_1_1PkceManager.html#afede55d3392c2367046d0328fb5e2bbe">webutil::PkceManager::get_code_verifier</a></div><div class="ttdeci">std::string get_code_verifier() const</div><div class="ttdoc">Get the Code Verifier.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:28</div></div>
-<div class="ttc" id="anamespacewebutil_html"><div class="ttname"><a href="namespacewebutil.html">webutil</a></div><div class="ttdef"><b>Definition:</b> OauthManager.h:15</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>webutil {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classwebutil_1_1PkceManager.html">   10</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classwebutil_1_1PkceManager.html">PkceManager</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classwebutil_1_1PkceManager.html#a66965cf6a89b712c4589222ad962dd98">PkceManager</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        [[nodiscard]] std::string <a class="code" href="classwebutil_1_1PkceManager.html#afede55d3392c2367046d0328fb5e2bbe">get_code_verifier</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        [[nodiscard]] std::string <a class="code" href="classwebutil_1_1PkceManager.html#a442e667341bcabf7a42781e7925c5486">get_code_challenge</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::string code_verifier_;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string code_challenge_;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }; <span class="comment">// webutil</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_PKCEMANAGER_H</span></div>
+<div class="ttc" id="aclasswebutil_1_1PkceManager_html"><div class="ttname"><a href="classwebutil_1_1PkceManager.html">webutil::PkceManager</a></div><div class="ttdoc">Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.</div><div class="ttdef"><b>Definition:</b> PkceManager.h:10</div></div>
+<div class="ttc" id="aclasswebutil_1_1PkceManager_html_a442e667341bcabf7a42781e7925c5486"><div class="ttname"><a href="classwebutil_1_1PkceManager.html#a442e667341bcabf7a42781e7925c5486">webutil::PkceManager::get_code_challenge</a></div><div class="ttdeci">std::string get_code_challenge() const</div><div class="ttdoc">Gets the Code Challenge.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:40</div></div>
+<div class="ttc" id="aclasswebutil_1_1PkceManager_html_a66965cf6a89b712c4589222ad962dd98"><div class="ttname"><a href="classwebutil_1_1PkceManager.html#a66965cf6a89b712c4589222ad962dd98">webutil::PkceManager::PkceManager</a></div><div class="ttdeci">PkceManager()</div><div class="ttdoc">Constructs a new PkceManager object.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:10</div></div>
+<div class="ttc" id="aclasswebutil_1_1PkceManager_html_afede55d3392c2367046d0328fb5e2bbe"><div class="ttname"><a href="classwebutil_1_1PkceManager.html#afede55d3392c2367046d0328fb5e2bbe">webutil::PkceManager::get_code_verifier</a></div><div class="ttdeci">std::string get_code_verifier() const</div><div class="ttdoc">Gets the Code Verifier.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ecb37285c0bc658c97bb749f37c59e79.html">auth</a></li><li class="navelem"><a class="el" href="dir_9dfd85ec0ef0cc17633756c9c075ea7d.html">include</a></li><li class="navelem"><a class="el" href="PkceManager_8h.html">PkceManager.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ecb37285c0bc658c97bb749f37c59e79.html">auth</a></li><li class="navelem"><a class="el" href="dir_9dfd85ec0ef0cc17633756c9c075ea7d.html">include</a></li><li class="navelem"><b>PkceManager.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
