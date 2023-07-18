@@ -1,8 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[0,0,1],
-"":[0,0,2],
-"":[0,0,3],
 "OauthManager_8h_source.html":[2,0,1,0,0,0],
 "PkceManager_8h_source.html":[2,0,1,0,0,1],
 "StateHashManager_8h_source.html":[2,0,1,0,0,2],
@@ -61,5 +58,8 @@ var NAVTREEINDEX0 =
 "path_8h.html#ae4f568beed07f8f84401e9b9f383f724":[0,0,1,2],
 "path_8h_source.html":[2,0,1,2,0,0,2],
 "poe__auth__config_8h_source.html":[2,0,0,1],
-"poe__ninja__config_8h_source.html":[2,0,0,2]
+"poe__ninja__config_8h_source.html":[2,0,0,2],
+"":[0,0,3],
+"":[0,0,1],
+"":[0,0,2]
 };
