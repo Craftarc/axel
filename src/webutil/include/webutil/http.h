@@ -9,17 +9,11 @@
 namespace webutil {
     namespace http = boost::beast::http;
     
-    /**
-    * @brief Function to send a HTTP request
-    *
-    * @param request The HTTP request to be sent
-    *
-    * @return The body of the HTTP response from the server as a string
-    */
-    
+    /// @brief Send a HTTP request.
     std::string
     send_http_request(const http::request<http::string_body>& request);
     
+    /// @brief Make a HTTP request.
     http::request<http::string_body>
     make_http_request(const std::string& http_verb, const std::string& path,
                       const std::unordered_map<std::string, std::string>& fields,

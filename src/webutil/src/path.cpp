@@ -1,13 +1,13 @@
 #include "webutil/path.h"
 
 namespace pathutil {
-    /**
-     * @brief Adds query parameters to given URL.
-     *
-     * @param url Target URL reference, will be modified by adding query parameters.
-     * @param parameters Map containing pairs representing query parameters and their values.
-     * @returns Updated URL with added query parameters. Returns original URL if input parameter map is empty.
-     */
+    
+    /// Works with url strings regardless of if they have existing query parameters.
+    ///
+    /// @param url The URL string
+    /// @param parameters A map of keys and values to be added to the URL.
+    /// @return A URL string with the specified parameters appended.
+    
     std::string
     add_query_parameters(const std::string& url, const std::unordered_map<std::string, std::string>& parameters) {
         std::string url_copy = url;
@@ -31,6 +31,8 @@ namespace pathutil {
         return url_copy;
     };
     
+    /// @param url The url string containing query parameters.
+    /// @return Map of query parameters extracted from the URL string.
     std::unordered_map<std::string, std::string> extract_query_params(const std::string& url) {
         std::unordered_map<std::string, std::string> params;
         std::string query = url.substr(url.find('?') + 1); // Consider only characters after '?'
@@ -48,6 +50,9 @@ namespace pathutil {
         return params;
     }
     
+    /// @param params Map of key-value pairs to be added to the string
+    ///
+    /// @return The formatted string.
     std::string make_form_data(std::unordered_map<std::string, std::string> params) {
         std::string data; // Stores the final string
         for (auto it = params.begin(); it != params.end(); ++it) {

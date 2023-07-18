@@ -28,6 +28,8 @@ namespace webutil {
     namespace ssl = net::ssl;
     using tcp = net::ip::tcp;
     
+    /// @param request The HTTP request to be sent
+    /// @return The body of the HTTP response from the server as a string
     std::string
     send_http_request(const http::request<http::string_body>& request) {
         std::string host = request["host"];
