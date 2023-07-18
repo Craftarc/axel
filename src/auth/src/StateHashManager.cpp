@@ -16,10 +16,13 @@ namespace {
 namespace webutil {
     StateHashManager::StateHashManager() : state_hash_(make_state_hash()) {}
     
+    /// @return State hash. This is used to track the current authorization
+    /// request to prevent Cross-Site Request Forgery
     std::string StateHashManager::get_state_hash() const {
         return state_hash_;
     }
     
+    /// @return true if the given hash matches the state hash. false otherwise
     bool StateHashManager::verify_state_hash(const std::string& check_hash) const {
         return (check_hash == state_hash_);
     }

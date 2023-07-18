@@ -4,15 +4,7 @@
 #include <string>
 
 namespace poe_ninja {
-/**
- * @brief Fetch data from POE Ninja using specified host and path.
- *
- * Send an HTTP GET request to given host and path, retrieve response as a string.
- *
- * @param resource_path - Path to specific data resource at host.
- *
- * @return - Response data from GET request as string.
- */
+    /// @brief Fetches data from POE Ninja using specified host and path.
     std::string get_item_prices(const std::string& resource_path);
 }
 #endif

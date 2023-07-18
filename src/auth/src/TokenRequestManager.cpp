@@ -7,12 +7,17 @@
 #include "config/axel.h"
 
 namespace webutil {
+    /// @param The authorization code to construct the request from.
     TokenRequestManager::TokenRequestManager() {}
     
+    /// @return The access token HTTP request.
     http::request<http::string_body> TokenRequestManager::get_token_request() const {
         return token_request_;
     }
     
+    
+    /// @param auth_code The authorization code to be used in the request.
+    /// @return The fully constructed HTTP POST request.
     namespace http = boost::beast::http;
     
     http::request<http::string_body>

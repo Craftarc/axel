@@ -6,6 +6,7 @@
 #include "webutil/hash.h"
 
 namespace webutil {
+    /// Generate and store a code verifier - code challenge pair.
     PkceManager::PkceManager() {
         // Get 32 random bytes
         std::vector<uint8_t> secret_bytes = generate_secret_bytes();
@@ -25,10 +26,17 @@ namespace webutil {
         code_challenge_ = base64_url_encode(base64_challenge);
     }
     
+    /// As per RFC 7636 Section 4, the code verifier is a cryptographic random string using the characters
+    /// [A-Z], [a-z], [0-9], "-", ".", "_", and "~", with a length between 43 and 128 characters.
+    /// @return std::string The code verifier string.
     std::string PkceManager::get_code_verifier() const {
         return code_verifier_;
     }
     
+    /// The code challenge is derived from the code verifier. According to the PkceManager specification,
+    /// as well as GGG's requirements, the code challenge is hashed with SHA-256.
+    ///
+    /// @return std::string The code challenge string.
     std::string PkceManager::get_code_challenge() const {
         return code_challenge_;
     }

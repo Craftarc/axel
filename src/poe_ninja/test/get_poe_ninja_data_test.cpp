@@ -16,7 +16,7 @@ namespace {
   * @note
   * Empty JSONs i.e. "{}" are still considered valid JSONs.
   *
-  * @internal
+  *
   *
   * @param json_string The string to be checked if it is a valid JSON.
   * @return True if the string is a valid JSON. False, otherwise.

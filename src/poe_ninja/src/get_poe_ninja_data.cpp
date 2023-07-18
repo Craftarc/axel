@@ -7,6 +7,11 @@
 namespace poe_ninja {
     using namespace webutil;
     
+    /// Sends an HTTP GET request to given host and path, retrieve response as a string.
+    ///
+    /// @param resource_path - Path to specific data resource at host.
+    ///
+    /// @return - Response data from GET request as string.
     std::string get_item_prices(const std::string& resource_path) {
         auto request = make_http_request("GET", resource_path, {{"host", config::poe_ninja::host}});
         

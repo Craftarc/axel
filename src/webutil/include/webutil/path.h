@@ -15,7 +15,7 @@ namespace pathutil {
     /// @brief Extracts query parameters from a url string into a map.
     std::unordered_map<std::string, std::string> extract_query_params(const std::string& url);
     
-    /// @brief Construct a string of key-value pairs following the application/x-www-form-encoded format.
+    /// @brief Constructs a string of key-value pairs following the application/x-www-form-encoded format.
     std::string make_form_data(std::unordered_map<std::string, std::string> params);
 }
 
