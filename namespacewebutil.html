@@ -156,14 +156,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Modify a base64 encoded string into a base64url encoded string. </p>
+<p>The modification follows the Notes on Implementing Base64url Encoding without Padding outlined in RFC 7636 Appendix A. '+' is replaced to '-', '/' is replaced with '_', and '=' is removed and left to the decoder to imply.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>base64 encoded string </td></tr>
+    <tr><td class="paramname">str</td><td>base64 encoded string. The string typically contains '=' as terminating characters if padding was used.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>base64url encoded string</dd></dl>
-<p>The modification follows the Notes on Implementing Base64url Encoding without Padding outlined in RFC 7636 Appendix A. '+' is replaced to '-', '/' is replaced with '_', and '=' is removed - padding is left for the decoder to imply </p><dl class="section note"><dt>Note</dt><dd>It is assumed that str will not contain any non-padding '=' characters because it is base64 encoded. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It is assumed that str will not contain any non-padding '=' characters because it is base64 encoded. </dd></dl>
 
 </div>
 </div>
@@ -183,8 +184,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generate the secret bytes for the code verifier. </p>
-<dl class="section return"><dt>Returns</dt><dd>32 random bytes in a container.</dd></dl>
-<p>RNG used is cryptographically secure. </p>
+<dl class="section return"><dt>Returns</dt><dd>32 random bytes in a container. Cryptographically secure. </dd></dl>
 
 </div>
 </div>
