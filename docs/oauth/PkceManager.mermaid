@@ -1,0 +1,16 @@
+---
+title: Oauth Flow - PkceManager
+---
+sequenceDiagram
+    participant OM as OauthManager
+    participant PM as PkceManager
+
+    note right of OM: Generate code pair <br> during construction
+    OM ->>+ PM: PkceManager()
+    OM ->> PM: String get_code_challenge()
+    PM -->> OM: code_challenge
+    OM ->> PM: String get_code_verifier()
+    PM -->>- OM: code_verifier
+
+
+

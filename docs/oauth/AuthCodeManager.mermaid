@@ -1,0 +1,9 @@
+---
+title: Oauth Flow - AuthCodeManager
+---
+sequenceDiagram
+    participant OM as OauthManager
+    participant ACM as AuthCodeManager
+
+    OM ->>+ ACM: String get_auth_url(code_challenge, state_hash)
+    ACM -->>- OM: auth_url
