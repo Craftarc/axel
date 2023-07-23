@@ -94,16 +94,19 @@ $(document).ready(function(){initNavTree('path_8h_source.html',''); initResizabl
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;boost/algorithm/string.hpp&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>pathutil {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>webutil {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::string</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    add_query_parameters(<span class="keyword">const</span> std::string&amp; url, <span class="keyword">const</span> std::unordered_map&lt;std::string, std::string&gt;&amp; parameters);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::unordered_map&lt;std::string, std::string&gt; extract_query_params(<span class="keyword">const</span> std::string&amp; url);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string make_form_data(std::unordered_map&lt;std::string, std::string&gt; params);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_WEBUTIL_PATH_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::string</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    concatenate_with_space(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; string_list);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_WEBUTIL_PATH_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

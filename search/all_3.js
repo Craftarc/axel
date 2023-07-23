@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['oauthmanager_7',['OauthManager',['../classwebutil_1_1OauthManager.html#aae11b313a487b277e60a73466b105d2f',1,'webutil::OauthManager::OauthManager()'],['../classwebutil_1_1OauthManager.html#aef41dfcab156a29493279cf62525be8e',1,'webutil::OauthManager::OauthManager(PkceManager pkce_manager, StateHashManager state_hash_manager, TokenRequestManager token_request_manager)'],['../classwebutil_1_1OauthManager.html',1,'webutil::OauthManager']]]
+  ['hash_5ftests_9',['hash_tests',['../classhash__tests.html',1,'']]],
+  ['httpsender_10',['HttpSender',['../classwebutil_1_1HttpSender.html',1,'webutil']]]
 ];

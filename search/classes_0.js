@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['oauthmanager_14',['OauthManager',['../classwebutil_1_1OauthManager.html',1,'webutil']]]
+  ['authcodemanager_25',['AuthCodeManager',['../classauth_1_1AuthCodeManager.html',1,'auth']]],
+  ['authcodemanager_5ftest_26',['AuthCodeManager_test',['../classAuthCodeManager__test.html',1,'']]]
 ];

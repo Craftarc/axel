@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('http_8h_source.html',''); initResizabl
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">namespace </span>http = boost::beast::http;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::string</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    send_http_request(<span class="keyword">const</span> http::request&lt;http::string_body&gt;&amp; request);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    send_http_request(<span class="keyword">const</span> http::request&lt;http::string_body&gt;&amp; request); <span class="comment">// TODO: move this into HttpSender</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    http::request&lt;http::string_body&gt;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    make_http_request(<span class="keyword">const</span> std::string&amp; http_verb, <span class="keyword">const</span> std::string&amp; path,</div>

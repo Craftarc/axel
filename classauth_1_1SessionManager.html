@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Axel Backend: Member List</title>
+<title>Axel Backend: auth::SessionManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classwebutil_1_1OauthManager.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classauth_1_1SessionManager.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -81,25 +81,31 @@ $(document).ready(function(){initNavTree('classwebutil_1_1OauthManager.html','')
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classauth_1_1SessionManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">webutil::OauthManager Member List</div>  </div>
+<div class="title">auth::SessionManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="classwebutil_1_1OauthManager.html">webutil::OauthManager</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html#afa5b145f9dcdaaf5478ee3fea28b92d5">get_authorization_url</a>()</td><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html">webutil::OauthManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html#a78b1aa1478425aa74040fa9ac9bb4e8d">get_state_hash</a>() const</td><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html">webutil::OauthManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html#a99a81c12f32e1a367c0b390032ca7d50">make_token_request</a>()</td><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html">webutil::OauthManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html#aae11b313a487b277e60a73466b105d2f">OauthManager</a>()</td><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html">webutil::OauthManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html#aef41dfcab156a29493279cf62525be8e">OauthManager</a>(PkceManager pkce_manager, StateHashManager state_hash_manager, TokenRequestManager token_request_manager)</td><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html">webutil::OauthManager</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html#ab653b3a20a36e7e67b184a0febfc1792">receive_authorization_code</a>(const std::string &amp;url_string)</td><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html">webutil::OauthManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html#a96751a503a5a642980efa5e3ee1cd9a5">send_token_request</a>()</td><td class="entry"><a class="el" href="classwebutil_1_1OauthManager.html">webutil::OauthManager</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac18bac9a7b3b3bc918cf1134b6223319"><td class="memItemLeft" align="right" valign="top"><a id="ac18bac9a7b3b3bc918cf1134b6223319"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1SessionManager.html#ac18bac9a7b3b3bc918cf1134b6223319">get_session_token</a> () const</td></tr>
+<tr class="memdesc:ac18bac9a7b3b3bc918cf1134b6223319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the session token for the current user session. <br /></td></tr>
+<tr class="separator:ac18bac9a7b3b3bc918cf1134b6223319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/auth/include/auth/<a class="el" href="SessionManager_8h_source.html">SessionManager.h</a></li>
+<li>src/auth/src/SessionManager.cpp</li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><b>auth</b></li><li class="navelem"><a class="el" href="classauth_1_1SessionManager.html">SessionManager</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

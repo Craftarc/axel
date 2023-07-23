@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['receive_5fauthorization_5fcode_27',['receive_authorization_code',['../classwebutil_1_1OauthManager.html#ab653b3a20a36e7e67b184a0febfc1792',1,'webutil::OauthManager']]]
+  ['receive_5fauth_48',['receive_auth',['../classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001',1,'auth::OauthManager']]]
 ];

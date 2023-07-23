@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['send_5ftoken_5frequest_10',['send_token_request',['../classwebutil_1_1OauthManager.html#a96751a503a5a642980efa5e3ee1cd9a5',1,'webutil::OauthManager']]],
-  ['statehashmanager_11',['StateHashManager',['../classwebutil_1_1StateHashManager.html#a9f3d8046930b0ef1d180256d44362819',1,'webutil::StateHashManager::StateHashManager()'],['../classwebutil_1_1StateHashManager.html',1,'webutil::StateHashManager']]]
+  ['oauthmanager_13',['OauthManager',['../classauth_1_1OauthManager.html',1,'auth::OauthManager'],['../classauth_1_1OauthManager.html#a577bc93acb1ecc6d73bac3f5974ea9af',1,'auth::OauthManager::OauthManager()']]]
 ];

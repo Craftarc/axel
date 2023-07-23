@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Axel Backend: webutil::TokenRequestManager Class Reference</title>
+<title>Axel Backend: auth::TokenRequestManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classwebutil_1_1TokenRequestManager.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classauth_1_1TokenRequestManager.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,33 +83,29 @@ $(document).ready(function(){initNavTree('classwebutil_1_1TokenRequestManager.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classwebutil_1_1TokenRequestManager-members.html">List of all members</a>  </div>
+<a href="classauth_1_1TokenRequestManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">webutil::TokenRequestManager Class Reference</div>  </div>
+<div class="title">auth::TokenRequestManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af07cdbd7cb0ec2ffa956b129cab9288f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">TokenRequestManager</a> ()</td></tr>
-<tr class="memdesc:af07cdbd7cb0ec2ffa956b129cab9288f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Responsible for constructing and storing the POST request for the access token exchange. Contains all relevant fields as specified in the PoE Developer Docs. Relevant documentation: <a href="https://www.pathofexile.com/developer/docs/authorization">https://www.pathofexile.com/developer/docs/authorization</a>.  <a href="classwebutil_1_1TokenRequestManager.html#af07cdbd7cb0ec2ffa956b129cab9288f">More...</a><br /></td></tr>
-<tr class="separator:af07cdbd7cb0ec2ffa956b129cab9288f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaccff53afb14715ce572acf1176619c"><td class="memItemLeft" align="right" valign="top">http::request&lt; http::string_body &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebutil_1_1TokenRequestManager.html#acaccff53afb14715ce572acf1176619c">get_token_request</a> () const</td></tr>
-<tr class="memdesc:acaccff53afb14715ce572acf1176619c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the access token request.  <a href="classwebutil_1_1TokenRequestManager.html#acaccff53afb14715ce572acf1176619c">More...</a><br /></td></tr>
-<tr class="separator:acaccff53afb14715ce572acf1176619c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01c0fd662b6d0080e3904493e9c5b039"><td class="memItemLeft" align="right" valign="top">http::request&lt; http::string_body &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">make_token_request</a> (std::string auth_code, std::string code_verifier)</td></tr>
-<tr class="memdesc:a01c0fd662b6d0080e3904493e9c5b039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an HTTP POST request for the exchange for the access token.  <a href="classwebutil_1_1TokenRequestManager.html#a01c0fd662b6d0080e3904493e9c5b039">More...</a><br /></td></tr>
-<tr class="separator:a01c0fd662b6d0080e3904493e9c5b039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b44d806f2b7fc713be61bcbee751a33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1TokenRequestManager.html#a6b44d806f2b7fc713be61bcbee751a33">TokenRequestManager</a> ()</td></tr>
+<tr class="memdesc:a6b44d806f2b7fc713be61bcbee751a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Responsible for constructing and storing the POST request for the access token exchange. Contains all relevant fields as specified in the PoE Developer Docs. Relevant documentation: <a href="https://www.pathofexile.com/developer/docs/authorization">https://www.pathofexile.com/developer/docs/authorization</a>.  <a href="classauth_1_1TokenRequestManager.html#a6b44d806f2b7fc713be61bcbee751a33">More...</a><br /></td></tr>
+<tr class="separator:a6b44d806f2b7fc713be61bcbee751a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c311a76a59b2183ac9ef6354b3c1ca"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1TokenRequestManager.html#a46c311a76a59b2183ac9ef6354b3c1ca">send_token_request</a> (std::string auth_code, std::string code_verifier, std::unique_ptr&lt; <a class="el" href="classwebutil_1_1IHttpSender.html">webutil::IHttpSender</a> &gt; http_sender) const</td></tr>
+<tr class="separator:a46c311a76a59b2183ac9ef6354b3c1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af07cdbd7cb0ec2ffa956b129cab9288f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af07cdbd7cb0ec2ffa956b129cab9288f">&#9670;&nbsp;</a></span>TokenRequestManager()</h2>
+<a id="a6b44d806f2b7fc713be61bcbee751a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b44d806f2b7fc713be61bcbee751a33">&#9670;&nbsp;</a></span>TokenRequestManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">webutil::TokenRequestManager::TokenRequestManager </td>
+          <td class="memname">auth::TokenRequestManager::TokenRequestManager </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -129,34 +125,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="acaccff53afb14715ce572acf1176619c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaccff53afb14715ce572acf1176619c">&#9670;&nbsp;</a></span>get_token_request()</h2>
+<a id="a46c311a76a59b2183ac9ef6354b3c1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46c311a76a59b2183ac9ef6354b3c1ca">&#9670;&nbsp;</a></span>send_token_request()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">http::request&lt; http::string_body &gt; webutil::TokenRequestManager::get_token_request </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the access token request. </p>
-<dl class="section return"><dt>Returns</dt><dd>The access token HTTP request. </dd></dl>
-
-</div>
-</div>
-<a id="a01c0fd662b6d0080e3904493e9c5b039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01c0fd662b6d0080e3904493e9c5b039">&#9670;&nbsp;</a></span>make_token_request()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">http::request&lt; http::string_body &gt; webutil::TokenRequestManager::make_token_request </td>
+          <td class="memname">std::pair&lt; std::string, std::string &gt; auth::TokenRequestManager::send_token_request </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>auth_code</em>, </td>
@@ -165,29 +141,33 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>code_verifier</em>&#160;</td>
+          <td class="paramname"><em>code_verifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classwebutil_1_1IHttpSender.html">webutil::IHttpSender</a> &gt;&#160;</td>
+          <td class="paramname"><em>http_sender</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Constructs an HTTP POST request for the exchange for the access token. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">auth_code</td><td>The authorization code to be used in the request. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The fully constructed HTTP POST request. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A string pair in the following format: {access_token, refresh_token} </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/auth/include/<a class="el" href="TokenRequestManager_8h_source.html">TokenRequestManager.h</a></li>
+<li>src/auth/include/auth/<a class="el" href="TokenRequestManager_8h_source.html">TokenRequestManager.h</a></li>
 <li>src/auth/src/TokenRequestManager.cpp</li>
 </ul>
 </div><!-- contents -->
@@ -195,7 +175,7 @@ Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>webutil</b></li><li class="navelem"><a class="el" href="classwebutil_1_1TokenRequestManager.html">TokenRequestManager</a></li>
+    <li class="navelem"><b>auth</b></li><li class="navelem"><a class="el" href="classauth_1_1TokenRequestManager.html">TokenRequestManager</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

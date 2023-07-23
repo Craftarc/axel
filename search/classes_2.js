@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['statehashmanager_16',['StateHashManager',['../classwebutil_1_1StateHashManager.html',1,'webutil']]]
+  ['ihttpsender_29',['IHttpSender',['../classwebutil_1_1IHttpSender.html',1,'webutil']]]
 ];
