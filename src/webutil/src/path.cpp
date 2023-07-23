@@ -1,6 +1,6 @@
 #include "webutil/path.h"
 
-namespace pathutil {
+namespace webutil {
     
     /// Works with url strings regardless of if they have existing query parameters.
     ///
@@ -63,5 +63,22 @@ namespace pathutil {
             }
         }
         return data;
+    }
+    
+    /// @param string_list A list of strings to be concatenated
+    /// @return The concatenated string.
+    std::string
+    concatenate_with_space(const std::vector<std::string>& string_list) {
+        std::string result;
+        for (auto it = std::begin(string_list); it != std::end(string_list); ++it) {
+            // If iterator is at last element of vector don't add a trailing space
+            if (it == std::prev(string_list.end())) {
+                result += *it;
+            } else {
+                result += *it + "%20"; // ASCII encoding for whitespace
+            }
+        }
+        
+        return result;
     }
 }

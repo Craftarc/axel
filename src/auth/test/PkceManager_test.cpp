@@ -1,17 +1,33 @@
-#include <boost/test/unit_test.hpp>
+#include <gtest/gtest.h>
+#include <regex>
+#include "auth/PkceManager.h"
 
-#include "src/auth/include/PkceManager.h"
-
-BOOST_AUTO_TEST_SUITE(class_PkceManager)
-    webutil::PkceManager manager;
-    
-    BOOST_AUTO_TEST_CASE(function_get_code_verifier) {
-        BOOST_CHECK_EQUAL(manager.get_code_verifier().length(), 43); // 43 characters from encoding 32 bytes
+namespace {
+    bool is_base64url(const std::string& url) {
+        
+        std::string pattern =
+                "[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-]{43}"; // URL safe
+        
+        std::regex base64url_regex(pattern);
+        
+        return std::regex_match(url, base64url_regex);
     }
-    
-    BOOST_AUTO_TEST_CASE(function_get_code_challenge) {
-        // 43 characters from encoding 32 bytes from SHA256
-        BOOST_CHECK_EQUAL(manager.get_code_challenge().length(), 43);
-    }
+}
 
-BOOST_AUTO_TEST_SUITE_END();
+class PkceManager_test : public ::testing::Test {
+protected:
+    auth::PkceManager pkce_manager;  // Assuming webutil is the appropriate namespace for PkceManager
+};
+// Testing function_get_code_verifier
+TEST_F(PkceManager_test, get_code_verifier__is_32_bytes_and_url_safe) {
+    auto verifier = pkce_manager.get_code_verifier();
+    EXPECT_EQ(43, verifier.size());
+    EXPECT_TRUE(is_base64url(verifier));
+}
+
+// Testing function_get_code_challenge
+TEST_F(PkceManager_test, get_code_challenge__is_32_bytes_and_url_safe) {
+    auto challenge = pkce_manager.get_code_challenge();
+    EXPECT_EQ(43, challenge.size());
+    EXPECT_TRUE(is_base64url(challenge));
+}

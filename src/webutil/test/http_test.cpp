@@ -1,53 +1,43 @@
-#include <boost/test/unit_test.hpp>
-#include <boost/asio/ssl/error.hpp>
+#include <gtest/gtest.h>
 
 #include "webutil/http.h"
 #include "config/poe_ninja_config.h"
 
-BOOST_AUTO_TEST_SUITE(free_httputil)
-    using namespace webutil;
-    namespace http = boost::beast::http;
+namespace {
+    class http_tests : public ::testing::Test {
+    };
+}
+
+TEST_F(http_tests, TestMakeHttpRequest) {
+    const std::string http_verb = "POST";
+    const std::string path = "/test/path";
+    const std::unordered_map<std::string, std::string> fields{{"Content-Type", "application/json"}};
+    const std::string body = "Test Body";
     
-    BOOST_AUTO_TEST_SUITE(function_make_http_request)
-        
-        BOOST_AUTO_TEST_CASE(TestMakeHttpRequest)
-        {
-            const std::string http_verb = "POST";
-            const std::string path = "/test/path";
-            const std::unordered_map<std::string, std::string> fields{{"Content-Type", "application/json"}};
-            const std::string body = "Test Body";
-            
-            http::request<http::string_body> request
-                    = make_http_request(http_verb, path, fields, body);
-            
-            // Perform checks
-            BOOST_TEST(http_verb == request.method_string());
-            BOOST_TEST(path == request.target());
-            
-            // Check that fields have been set correctly
-            for (const auto& field: fields) {
-                BOOST_TEST(request[field.first] == field.second);
-            }
-            
-            // Check the body
-            BOOST_TEST(body == request.body());
-        }
+    auto request = webutil::make_http_request(http_verb, path, fields, body);
     
-    BOOST_AUTO_TEST_SUITE_END()
+    // Perform checks
+    EXPECT_EQ(http_verb, request.method_string());
+    EXPECT_EQ(path, request.target());
     
-    BOOST_AUTO_TEST_SUITE(function_send_http_request)
-        
-        BOOST_AUTO_TEST_CASE(accepts_empty_path) {
-            auto request = make_http_request("GET", "", {{"host", "www.google.com"}}, "");
-            
-            BOOST_CHECK_NO_THROW(webutil::send_http_request(request));
-        }
-        
-        BOOST_AUTO_TEST_CASE(accepts_root_path) {
-            auto request = make_http_request("GET", "/", {{"host", "www.google.com"}}, "");
-            
-            BOOST_CHECK_NO_THROW(webutil::send_http_request(request));
-        }
+    // Check that fields have been set correctly
+    for (const auto& field: fields) {
+        EXPECT_EQ(request[field.first], field.second);
+    }
     
-    BOOST_AUTO_TEST_SUITE_END()
-BOOST_AUTO_TEST_SUITE_END()
+    // Check the body
+    EXPECT_EQ(body, request.body());
+}
+
+TEST_F(http_tests, accepts_empty_path) {
+    auto request = webutil::make_http_request("GET", "", {{"host", "www.google.com"}}, "");
+    
+    // In Google Test, we use EXPECT_NO_THROW to assert that a statement doesn't throw an exception
+    EXPECT_NO_THROW(webutil::send_http_request(request));
+}
+
+TEST_F(http_tests, accepts_root_path) {
+    auto request = webutil::make_http_request("GET", "/", {{"host", "www.google.com"}}, "");
+    
+    EXPECT_NO_THROW(webutil::send_http_request(request));
+}

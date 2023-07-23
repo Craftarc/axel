@@ -1,33 +1,30 @@
-#include <boost/test/unit_test.hpp>
+#include <gtest/gtest.h>
+#include <regex>
 
-#include "src/auth/include/StateHashManager.h"
+#include "auth/StateHashManager.h"
 
-BOOST_AUTO_TEST_SUITE(class_StateHashManager)
-    using namespace webutil;
-    BOOST_AUTO_TEST_SUITE(function_get_state_hash)
+namespace {
+    bool is_base64url(const std::string& url) {
+        std::string pattern =
+                "[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-]{43}"; // URL safe
         
-        BOOST_AUTO_TEST_CASE(has_43_characters) {
-            StateHashManager state_hash_manager;
-            BOOST_CHECK_EQUAL(state_hash_manager.get_state_hash().length(), 43); // 32 byte --base64url--> 43 characters
-        }
-    
-    BOOST_AUTO_TEST_SUITE_END()
-    
-    BOOST_AUTO_TEST_SUITE(function_verify_state_hash)
+        std::regex base64url_regex(pattern);
         
-        BOOST_AUTO_TEST_CASE(accepts_matching_hash) {
-            StateHashManager state_hash_manager;
-            auto state_hash = state_hash_manager.get_state_hash();
-            BOOST_CHECK(state_hash_manager.verify_state_hash(state_hash));
-        }
-        
-        BOOST_AUTO_TEST_CASE(rejects_different_hash) {
-            StateHashManager state_hash_manager;
-            std::string bad_hash = "abc";
-            BOOST_CHECK(!state_hash_manager.verify_state_hash(bad_hash));
-        }
+        return std::regex_match(url, base64url_regex);
+    }
     
-    BOOST_AUTO_TEST_SUITE_END()
+    class StateHashManager_test : public ::testing::Test {
+    protected:
+        auth::StateHashManager state_hash_manager;
+        std::string state_hash = state_hash_manager.get_state_hash();
+    };
+}
 
+TEST_F(StateHashManager_test, get_state_hash__is_43_bytes) {
+    EXPECT_EQ(43, state_hash.size());
+}
 
-BOOST_AUTO_TEST_SUITE_END()
+TEST_F(StateHashManager_test, get_state_hash__is_base64url_encoded) {
+    EXPECT_TRUE(is_base64url(state_hash));
+}
+

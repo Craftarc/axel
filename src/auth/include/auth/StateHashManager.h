@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace webutil {
+namespace auth {
     /// @brief The StateHashManager class.
     ///
     /// The StateHashManager class is responsible for generating and storing the state hash, which is used to track
@@ -22,10 +22,11 @@ namespace webutil {
         std::string get_state_hash() const;
         
         /// @brief Verifies if a given hash matches the state hash stored internally.
-        bool verify_state_hash(const std::string& check_hash) const;
+        bool check_state_hash(const std::string& check_hash) const;
     
     private:
         std::string state_hash_;
     };
 }
+
 #endif //AXEL_STATEHASHMANAGER_H

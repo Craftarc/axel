@@ -11,7 +11,7 @@ namespace webutil {
     
     /// @brief Sends a HTTP request.
     std::string
-    send_http_request(const http::request<http::string_body>& request);
+    send_http_request(const http::request<http::string_body>& request); // TODO: move this into HttpSender
     
     /// @brief Makes a HTTP request.
     http::request<http::string_body>

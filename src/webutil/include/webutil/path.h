@@ -7,7 +7,7 @@
 
 #include <boost/algorithm/string.hpp>
 
-namespace pathutil {
+namespace webutil {
     /// @brief Adds query parameters to a url string.
     std::string
     add_query_parameters(const std::string& url, const std::unordered_map<std::string, std::string>& parameters);
@@ -17,6 +17,10 @@ namespace pathutil {
     
     /// @brief Constructs a string of key-value pairs following the application/x-www-form-encoded format.
     std::string make_form_data(std::unordered_map<std::string, std::string> params);
+    
+    /// @brief Concatenates all strings in a list with the url-encoded whitespace, '%20'.
+    std::string
+    concatenate_with_space(const std::vector<std::string>& string_list);
 }
 
 #endif // AXEL_WEBUTIL_PATH_H

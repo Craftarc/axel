@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace webutil {
+namespace auth {
     /// @brief Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.
     ///
     /// There should only be one Pkce proof pair per authentication session.
@@ -20,7 +20,7 @@ namespace webutil {
     private:
         std::string code_verifier_;
         std::string code_challenge_;
-    }; // webutil
+    };
 }
 
 #endif //AXEL_PKCEMANAGER_H
