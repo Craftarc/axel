@@ -1,7 +1,6 @@
 #include <aws/lambda-runtime/runtime.h>
 #include <iostream>
 #include <boost/json.hpp>
-#include <boost/json/src.hpp> // Header implementation to link against
 #include "auth/OauthManager.h"
 
 using namespace aws::lambda_runtime;

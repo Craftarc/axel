@@ -6,7 +6,7 @@
 namespace webutil {
     namespace http = boost::beast::http;
     
-    class HttpSender : IHttpSender {
+    class HttpSender : public IHttpSender {
     public:
         std::string send_http_request(const http::request<http::string_body>& request) override;
     };

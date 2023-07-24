@@ -16,6 +16,11 @@ auth::TokenRequestManager::TokenRequestManager() {}
 /// @return A string pair in the following format: {access_token, refresh_token}
 namespace http = boost::beast::http;
 
+/// Constructs and sends out the token exchange request. The tokens are then parsed from the response.
+/// @param auth_code The authorization code to be included in the token exchange request.
+/// @param code_verifier The code verifier to be included in the token exchange request.
+/// @param http_sender The HttpSender class that defines the request-sending behaviour and underlying networking.
+/// @return A pair of strings in the format: {${access_token}, ${refresh_token}}
 std::pair<std::string, std::string>
 auth::TokenRequestManager::send_token_request(std::string auth_code,
                                               std::string code_verifier,

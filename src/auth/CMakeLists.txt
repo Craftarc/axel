@@ -14,7 +14,7 @@ target_link_libraries(auth webutil ${BOTAN_PKG_LIBRARIES} Boost::json)
 
 # auth library tests
 add_executable(auth_tests ${AUTH_TESTS_SRC_FILES})
-target_include_directories(auth_tests PRIVATE include ${PROJECT_ROOT})
+target_include_directories(auth_tests PRIVATE include test ${PROJECT_ROOT})
 target_link_libraries(auth_tests PRIVATE auth webutil GTest::Main GTest::GTest)
 include(GoogleTest)
 gtest_discover_tests(auth_tests)
