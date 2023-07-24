@@ -33,8 +33,8 @@ namespace auth {
                      std::unique_ptr<SessionManager> session_manager);
         /// @brief Starts the Oauth process
         std::string start_auth();
-        /// @brief Receives the authorization url
-        std::string receive_auth(const std::string& url);
+        /// @brief Receives the authorization query_string
+        std::string receive_auth(const std::string& query_string);
     
     private:
         /// @brief The states of OauthManager throughout the Oauth process.

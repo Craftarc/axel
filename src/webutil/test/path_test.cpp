@@ -29,7 +29,7 @@ TEST_F(path_tests, add_query_parameters__can_add_to_existing_query_strings) {
 }
 
 TEST_F(path_tests, extract_query_params__extracts_params) {
-    std::string input = "https://www.google.com?param1=value1&param2=value2&param3=value3";
+    std::string input = "param1=value1&param2=value2&param3=value3";
     auto result = webutil::extract_query_params(input);
     
     EXPECT_EQ(result.size(), 3); // Check that 3 parameters are indeed parsed out

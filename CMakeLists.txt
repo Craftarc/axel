@@ -40,16 +40,11 @@ pkg_check_modules(BOTAN_PKG REQUIRED botan-2)
 
 # handler executable
 add_executable(handler ${HANDLER_SRC_FILES}) # Runtime handler
-target_include_directories(handler PRIVATE ${BOOST_INCLUDE_DIRS})
-target_link_libraries(handler PRIVATE AWS::aws-lambda-runtime webutil auth)
+target_include_directories(handler PRIVATE AWS::aws-lambda-runtime)
+target_link_libraries(handler PRIVATE AWS::aws-lambda-runtime)
 target_compile_features(handler PRIVATE "cxx_std_17")
 target_compile_options(handler PRIVATE "-Wall" "-Wextra")
 aws_lambda_package_target(handler NO_LIBC) # this line creates a target that packages your binary and zips it up
-
-# main executable
-add_executable(main ${MAIN_SRC_FILES})
-target_link_libraries(main poe_ninja webutil auth)
-target_compile_options(main PRIVATE "-Wall" "-Wextra")
 
 # Subdirectories
 add_subdirectory(src/poe_ninja)

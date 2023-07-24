@@ -35,12 +35,12 @@ namespace auth {
 
 /// Processes the authorization response from the authorization server after the user has logged in and approved
 /// the required scopes.
-/// @param url The url string containing the query parameters "state" and "code", returned from
+/// @param query_string The query_string string containing the query parameters "state" and "code", returned from
 /// the authorization server after a successful login by the user.
 /// @return The session token for tracking this user session.
 /// @note The user session is considered established once the token is sent out.
-    std::string auth::OauthManager::receive_auth(const std::string& url) {
-        std::unordered_map<std::string, std::string> query_params = webutil::extract_query_params(url);
+    std::string auth::OauthManager::receive_auth(const std::string& query_string) {
+        std::unordered_map<std::string, std::string> query_params = webutil::extract_query_params(query_string);
         auto state_hash = query_params["state"];
         auto auth_code = query_params["code"];
         

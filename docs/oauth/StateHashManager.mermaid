@@ -1,0 +1,34 @@
+---
+title: Oauth Flow - StateHashManager
+---
+sequenceDiagram
+    participant OM as OauthManager
+    participant SHM as StateHashManager
+    participant DB as DynamoDB
+
+    note over SHM: state_hash generated <br> during construction
+    SHM ->>+ DB: store_state_hash(state_hash)
+    DB -->>- SHM: acknowledgement
+    OM ->>+ SHM: get_state_hash()
+    SHM -->>- OM: state_hash
+    OM ->>+ SHM: check_state_hash(returned_state_hash)
+    SHM ->>+ DB: search_state_hash(returned_state_hash)
+    alt state hash matches
+        DB -->> SHM: true
+        SHM -->> OM: true
+        note over OM: continue
+    else state hash doesn't match
+        DB -->>- SHM: false
+        SHM -->>- OM: false
+        note over OM: terminate
+    end
+
+
+
+
+
+
+
+
+
+

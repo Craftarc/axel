@@ -18,9 +18,9 @@ sequenceDiagram
     SHM -->>- OM: state_hash
     OM ->>+ ACM: String get_auth_url(code_challenge, state_hash)
     ACM -->>- OM: auth_url
-    OM -->> L: auth_url
     OM ->> OM: void set_state(USER_REDIRECTED)
-    L ->> OM: String receive_auth(url)
+    OM -->>- L: auth_url
+    L ->>+ OM: String receive_auth(url)
     note right of OM: Extract state_hash <br> and auth_code
     OM ->>+ SHM: Bool check_state_hash(state_hash)
     SHM -->>- OM: is_valid_hash

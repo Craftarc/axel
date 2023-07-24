@@ -8,7 +8,7 @@ namespace {
     };
 }
 
-TEST_F(http_tests, TestMakeHttpRequest) {
+TEST_F(http_tests, make_http_request__data_is_correct) {
     const std::string http_verb = "POST";
     const std::string path = "/test/path";
     const std::unordered_map<std::string, std::string> fields{{"Content-Type", "application/json"}};
