@@ -96,52 +96,48 @@ $(document).ready(function(){initNavTree('OauthManager_8h_source.html',''); init
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;boost/beast/http/string_body.hpp&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;auth/PkceManager.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;auth/StateHashManager.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;auth/TokenRequestManager.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;auth/interfaces/IStateHashManager.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;auth/interfaces/ITokenRequestManager.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;auth/AuthCodeManager.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;auth/SessionManager.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>auth {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">namespace </span>http = boost::beast::http;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classauth_1_1OauthManager.html">   28</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1OauthManager.html">OauthManager</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classauth_1_1OauthManager.html#a577bc93acb1ecc6d73bac3f5974ea9af">OauthManager</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::string <a class="code" href="classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b">start_auth</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::string <a class="code" href="classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001">receive_auth</a>(<span class="keyword">const</span> std::string&amp; url);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classauth_1_1OauthManager.html#a014891931eb35fbcc7a24dd8131765db">   38</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classauth_1_1OauthManager.html#a014891931eb35fbcc7a24dd8131765db">State</a> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            INITIAL,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            USER_REDIRECTED,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            AUTH_CODE_RECEIVED,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            TOKENS_RECEIVED,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            SESSION_ESTABLISHED,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            ERROR</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">const</span> <a class="code" href="classauth_1_1PkceManager.html">PkceManager</a> pkce_manager_;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> <a class="code" href="classauth_1_1AuthCodeManager.html">AuthCodeManager</a> auth_code_manager_;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">const</span> <a class="code" href="classauth_1_1StateHashManager.html">StateHashManager</a> state_hash_manager_;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">const</span> <a class="code" href="classauth_1_1TokenRequestManager.html">TokenRequestManager</a> token_request_manager_;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">const</span> <a class="code" href="classauth_1_1SessionManager.html">SessionManager</a> session_manager_;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classauth_1_1OauthManager.html#a014891931eb35fbcc7a24dd8131765db">State</a> state_;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> set_state(<a class="code" href="classauth_1_1OauthManager.html#a014891931eb35fbcc7a24dd8131765db">State</a> state);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_OAUTHMANAGER_H</span></div>
-<div class="ttc" id="aclassauth_1_1AuthCodeManager_html"><div class="ttname"><a href="classauth_1_1AuthCodeManager.html">auth::AuthCodeManager</a></div><div class="ttdef"><b>Definition:</b> AuthCodeManager.h:7</div></div>
-<div class="ttc" id="aclassauth_1_1OauthManager_html"><div class="ttname"><a href="classauth_1_1OauthManager.html">auth::OauthManager</a></div><div class="ttdoc">Responsible for storing and providing formatted requests and their required information for each step...</div><div class="ttdef"><b>Definition:</b> OauthManager.h:28</div></div>
-<div class="ttc" id="aclassauth_1_1OauthManager_html_a014891931eb35fbcc7a24dd8131765db"><div class="ttname"><a href="classauth_1_1OauthManager.html#a014891931eb35fbcc7a24dd8131765db">auth::OauthManager::State</a></div><div class="ttdeci">State</div><div class="ttdoc">The states of OauthManager throughout the Oauth process.</div><div class="ttdef"><b>Definition:</b> OauthManager.h:38</div></div>
-<div class="ttc" id="aclassauth_1_1OauthManager_html_a423c52f8cc99751bf5ec11afc35bb26b"><div class="ttname"><a href="classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b">auth::OauthManager::start_auth</a></div><div class="ttdeci">std::string start_auth()</div><div class="ttdoc">Starts the Oauth process.</div><div class="ttdef"><b>Definition:</b> OauthManager.cpp:25</div></div>
-<div class="ttc" id="aclassauth_1_1OauthManager_html_a577bc93acb1ecc6d73bac3f5974ea9af"><div class="ttname"><a href="classauth_1_1OauthManager.html#a577bc93acb1ecc6d73bac3f5974ea9af">auth::OauthManager::OauthManager</a></div><div class="ttdeci">OauthManager()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> OauthManager.cpp:15</div></div>
-<div class="ttc" id="aclassauth_1_1OauthManager_html_ac6e0de26b1eac22d82462a2c49fc2001"><div class="ttname"><a href="classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001">auth::OauthManager::receive_auth</a></div><div class="ttdeci">std::string receive_auth(const std::string &amp;url)</div><div class="ttdef"><b>Definition:</b> OauthManager.cpp:38</div></div>
-<div class="ttc" id="aclassauth_1_1PkceManager_html"><div class="ttname"><a href="classauth_1_1PkceManager.html">auth::PkceManager</a></div><div class="ttdoc">Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.</div><div class="ttdef"><b>Definition:</b> PkceManager.h:10</div></div>
-<div class="ttc" id="aclassauth_1_1SessionManager_html"><div class="ttname"><a href="classauth_1_1SessionManager.html">auth::SessionManager</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:7</div></div>
-<div class="ttc" id="aclassauth_1_1StateHashManager_html"><div class="ttname"><a href="classauth_1_1StateHashManager.html">auth::StateHashManager</a></div><div class="ttdoc">The StateHashManager class.</div><div class="ttdef"><b>Definition:</b> StateHashManager.h:16</div></div>
-<div class="ttc" id="aclassauth_1_1TokenRequestManager_html"><div class="ttname"><a href="classauth_1_1TokenRequestManager.html">auth::TokenRequestManager</a></div><div class="ttdef"><b>Definition:</b> TokenRequestManager.h:10</div></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classauth_1_1OauthManager.html">   27</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1OauthManager.html">OauthManager</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classauth_1_1OauthManager.html#a89307851b7fb74e8e6c61d37f639ee09">OauthManager</a>(std::unique_ptr&lt;PkceManager&gt; pkce_manager, std::unique_ptr&lt;IStateHashManager&gt; state_hash_manager,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                     std::unique_ptr&lt;ITokenRequestManager&gt; token_request_manager,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                     std::unique_ptr&lt;AuthCodeManager&gt; auth_code_manager,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                     std::unique_ptr&lt;SessionManager&gt; session_manager);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::string <a class="code" href="classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b">start_auth</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        std::string <a class="code" href="classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001">receive_auth</a>(<span class="keyword">const</span> std::string&amp; url);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">enum class</span> State {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            INITIAL,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            USER_REDIRECTED,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            AUTH_CODE_RECEIVED,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            TOKENS_RECEIVED,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            SESSION_ESTABLISHED,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            ERROR</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        };</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::unique_ptr&lt;PkceManager&gt; pkce_manager_;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::unique_ptr&lt;AuthCodeManager&gt; auth_code_manager_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::unique_ptr&lt;IStateHashManager&gt; state_hash_manager_;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::unique_ptr&lt;ITokenRequestManager&gt; token_request_manager_;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::unique_ptr&lt;SessionManager&gt; session_manager_;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        State state_;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> set_state(State state);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_OAUTHMANAGER_H</span></div>
+<div class="ttc" id="aclassauth_1_1OauthManager_html"><div class="ttname"><a href="classauth_1_1OauthManager.html">auth::OauthManager</a></div><div class="ttdoc">Responsible for storing and providing formatted requests and their required information for each step...</div><div class="ttdef"><b>Definition:</b> OauthManager.h:27</div></div>
+<div class="ttc" id="aclassauth_1_1OauthManager_html_a423c52f8cc99751bf5ec11afc35bb26b"><div class="ttname"><a href="classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b">auth::OauthManager::start_auth</a></div><div class="ttdeci">std::string start_auth()</div><div class="ttdoc">Starts the Oauth process.</div><div class="ttdef"><b>Definition:</b> OauthManager.cpp:29</div></div>
+<div class="ttc" id="aclassauth_1_1OauthManager_html_a89307851b7fb74e8e6c61d37f639ee09"><div class="ttname"><a href="classauth_1_1OauthManager.html#a89307851b7fb74e8e6c61d37f639ee09">auth::OauthManager::OauthManager</a></div><div class="ttdeci">OauthManager(std::unique_ptr&lt; PkceManager &gt; pkce_manager, std::unique_ptr&lt; IStateHashManager &gt; state_hash_manager, std::unique_ptr&lt; ITokenRequestManager &gt; token_request_manager, std::unique_ptr&lt; AuthCodeManager &gt; auth_code_manager, std::unique_ptr&lt; SessionManager &gt; session_manager)</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> OauthManager.cpp:15</div></div>
+<div class="ttc" id="aclassauth_1_1OauthManager_html_ac6e0de26b1eac22d82462a2c49fc2001"><div class="ttname"><a href="classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001">auth::OauthManager::receive_auth</a></div><div class="ttdeci">std::string receive_auth(const std::string &amp;url)</div><div class="ttdoc">Receives the authorization url.</div><div class="ttdef"><b>Definition:</b> OauthManager.cpp:42</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

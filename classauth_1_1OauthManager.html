@@ -82,7 +82,6 @@ $(document).ready(function(){initNavTree('classauth_1_1OauthManager.html',''); i
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classauth_1_1OauthManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -95,31 +94,17 @@ $(document).ready(function(){initNavTree('classauth_1_1OauthManager.html',''); i
 
 <p><code>#include &lt;<a class="el" href="OauthManager_8h_source.html">OauthManager.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a014891931eb35fbcc7a24dd8131765db"><td class="memItemLeft" align="right" valign="top"><a id="a014891931eb35fbcc7a24dd8131765db"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a014891931eb35fbcc7a24dd8131765db">State</a> { <br />
-&#160;&#160;<b>INITIAL</b>
-, <b>USER_REDIRECTED</b>
-, <b>AUTH_CODE_RECEIVED</b>
-, <b>TOKENS_RECEIVED</b>
-, <br />
-&#160;&#160;<b>SESSION_ESTABLISHED</b>
-, <b>ERROR</b>
-<br />
- }</td></tr>
-<tr class="memdesc:a014891931eb35fbcc7a24dd8131765db"><td class="mdescLeft">&#160;</td><td class="mdescRight">The states of <a class="el" href="classauth_1_1OauthManager.html" title="Responsible for storing and providing formatted requests and their required information for each step...">OauthManager</a> throughout the Oauth process. <br /></td></tr>
-<tr class="separator:a014891931eb35fbcc7a24dd8131765db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a577bc93acb1ecc6d73bac3f5974ea9af"><td class="memItemLeft" align="right" valign="top"><a id="a577bc93acb1ecc6d73bac3f5974ea9af"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a577bc93acb1ecc6d73bac3f5974ea9af">OauthManager</a> ()</td></tr>
-<tr class="memdesc:a577bc93acb1ecc6d73bac3f5974ea9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="separator:a577bc93acb1ecc6d73bac3f5974ea9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89307851b7fb74e8e6c61d37f639ee09"><td class="memItemLeft" align="right" valign="top"><a id="a89307851b7fb74e8e6c61d37f639ee09"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a89307851b7fb74e8e6c61d37f639ee09">OauthManager</a> (std::unique_ptr&lt; <a class="el" href="classauth_1_1PkceManager.html">PkceManager</a> &gt; pkce_manager, std::unique_ptr&lt; <a class="el" href="classauth_1_1IStateHashManager.html">IStateHashManager</a> &gt; state_hash_manager, std::unique_ptr&lt; <a class="el" href="classauth_1_1ITokenRequestManager.html">ITokenRequestManager</a> &gt; token_request_manager, std::unique_ptr&lt; <a class="el" href="classauth_1_1AuthCodeManager.html">AuthCodeManager</a> &gt; auth_code_manager, std::unique_ptr&lt; <a class="el" href="classauth_1_1SessionManager.html">SessionManager</a> &gt; session_manager)</td></tr>
+<tr class="memdesc:a89307851b7fb74e8e6c61d37f639ee09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a89307851b7fb74e8e6c61d37f639ee09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a423c52f8cc99751bf5ec11afc35bb26b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b">start_auth</a> ()</td></tr>
 <tr class="memdesc:a423c52f8cc99751bf5ec11afc35bb26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the Oauth process.  <a href="classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b">More...</a><br /></td></tr>
 <tr class="separator:a423c52f8cc99751bf5ec11afc35bb26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6e0de26b1eac22d82462a2c49fc2001"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001">receive_auth</a> (const std::string &amp;url)</td></tr>
+<tr class="memdesc:ac6e0de26b1eac22d82462a2c49fc2001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives the authorization url.  <a href="classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001">More...</a><br /></td></tr>
 <tr class="separator:ac6e0de26b1eac22d82462a2c49fc2001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -142,14 +127,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Receives the authorization url. </p>
 <p>Processes the authorization response from the authorization server after the user has logged in and approved the required scopes. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">url</td><td>The string containing the query parameters "state" and "code", returned from the authorization server after a successful login by the user. </td></tr>
+    <tr><td class="paramname">url</td><td>The url string containing the query parameters "state" and "code", returned from the authorization server after a successful login by the user. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The JWT session token for tracking this user session. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The user session is considered established once the JWT token is sent out. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The session token for tracking this user session. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The user session is considered established once the token is sent out. </dd></dl>
 
 </div>
 </div>

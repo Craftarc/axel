@@ -88,27 +88,29 @@ $(document).ready(function(){initNavTree('StateHashManager_8h_source.html',''); 
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_STATEHASHMANAGER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AXEL_STATEHASHMANAGER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>auth {</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classauth_1_1StateHashManager.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1StateHashManager.html">StateHashManager</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classauth_1_1StateHashManager.html#aa65da783b39b55da03d961973247e383">StateHashManager</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string <a class="code" href="classauth_1_1StateHashManager.html#a4a5498e9dba1a090acbd024f3d3b77e4">get_state_hash</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classauth_1_1StateHashManager.html#af43f3182bdc8c6994b7e56420fb31784">check_state_hash</a>(<span class="keyword">const</span> std::string&amp; check_hash) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        std::string state_hash_;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_STATEHASHMANAGER_H</span></div>
-<div class="ttc" id="aclassauth_1_1StateHashManager_html"><div class="ttname"><a href="classauth_1_1StateHashManager.html">auth::StateHashManager</a></div><div class="ttdoc">The StateHashManager class.</div><div class="ttdef"><b>Definition:</b> StateHashManager.h:16</div></div>
-<div class="ttc" id="aclassauth_1_1StateHashManager_html_a4a5498e9dba1a090acbd024f3d3b77e4"><div class="ttname"><a href="classauth_1_1StateHashManager.html#a4a5498e9dba1a090acbd024f3d3b77e4">auth::StateHashManager::get_state_hash</a></div><div class="ttdeci">std::string get_state_hash() const</div><div class="ttdoc">Gets the state hash.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:20</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;auth/interfaces/IStateHashManager.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>auth {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classauth_1_1StateHashManager.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1StateHashManager.html">StateHashManager</a> : <span class="keyword">public</span> <a class="code" href="classauth_1_1IStateHashManager.html">IStateHashManager</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classauth_1_1StateHashManager.html#aa65da783b39b55da03d961973247e383">StateHashManager</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::string <a class="code" href="classauth_1_1StateHashManager.html#a2cf829ec13f172dc398a318cdf00419b">get_state_hash</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classauth_1_1StateHashManager.html#aaca7a5fe451bc75f64cafa028bf201ec">check_state_hash</a>(<span class="keyword">const</span> std::string&amp; check_hash) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::string state_hash_;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_STATEHASHMANAGER_H</span></div>
+<div class="ttc" id="aclassauth_1_1IStateHashManager_html"><div class="ttname"><a href="classauth_1_1IStateHashManager.html">auth::IStateHashManager</a></div><div class="ttdef"><b>Definition:</b> IStateHashManager.h:4</div></div>
+<div class="ttc" id="aclassauth_1_1StateHashManager_html"><div class="ttname"><a href="classauth_1_1StateHashManager.html">auth::StateHashManager</a></div><div class="ttdoc">The StateHashManager class.</div><div class="ttdef"><b>Definition:</b> StateHashManager.h:17</div></div>
+<div class="ttc" id="aclassauth_1_1StateHashManager_html_a2cf829ec13f172dc398a318cdf00419b"><div class="ttname"><a href="classauth_1_1StateHashManager.html#a2cf829ec13f172dc398a318cdf00419b">auth::StateHashManager::get_state_hash</a></div><div class="ttdeci">std::string get_state_hash() const override</div><div class="ttdoc">Gets the state hash.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:20</div></div>
 <div class="ttc" id="aclassauth_1_1StateHashManager_html_aa65da783b39b55da03d961973247e383"><div class="ttname"><a href="classauth_1_1StateHashManager.html#aa65da783b39b55da03d961973247e383">auth::StateHashManager::StateHashManager</a></div><div class="ttdeci">StateHashManager()</div><div class="ttdoc">Constructs a StateHashManager instance.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:16</div></div>
-<div class="ttc" id="aclassauth_1_1StateHashManager_html_af43f3182bdc8c6994b7e56420fb31784"><div class="ttname"><a href="classauth_1_1StateHashManager.html#af43f3182bdc8c6994b7e56420fb31784">auth::StateHashManager::check_state_hash</a></div><div class="ttdeci">bool check_state_hash(const std::string &amp;check_hash) const</div><div class="ttdoc">Verifies if a given hash matches the state hash stored internally.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:25</div></div>
+<div class="ttc" id="aclassauth_1_1StateHashManager_html_aaca7a5fe451bc75f64cafa028bf201ec"><div class="ttname"><a href="classauth_1_1StateHashManager.html#aaca7a5fe451bc75f64cafa028bf201ec">auth::StateHashManager::check_state_hash</a></div><div class="ttdeci">bool check_state_hash(const std::string &amp;check_hash) const override</div><div class="ttdoc">Verifies if a given hash matches the state hash stored internally.</div><div class="ttdef"><b>Definition:</b> StateHashManager.cpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -3,8 +3,7 @@ var indexSectionsWithContent =
   0: "acghimoprst",
   1: "ahimopst",
   2: "c",
-  3: "cgoprst",
-  4: "s"
+  3: "cgoprst"
 };
 
 var indexSectionNames =
@@ -12,8 +11,7 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "namespaces",
-  3: "functions",
-  4: "enums"
+  3: "functions"
 };
 
 var indexSectionLabels =
@@ -21,7 +19,6 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Namespaces",
-  3: "Functions",
-  4: "Enumerations"
+  3: "Functions"
 };
 

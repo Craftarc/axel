@@ -93,6 +93,15 @@ $(document).ready(function(){initNavTree('classauth_1_1StateHashManager.html',''
  <a href="classauth_1_1StateHashManager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="StateHashManager_8h_source.html">StateHashManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for auth::StateHashManager:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classauth_1_1StateHashManager.png" usemap="#auth::StateHashManager_map" alt=""/>
+  <map id="auth::StateHashManager_map" name="auth::StateHashManager_map">
+<area href="classauth_1_1IStateHashManager.html" alt="auth::IStateHashManager" shape="rect" coords="0,0,153,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -100,12 +109,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1StateHashManager.html#aa65da783b39b55da03d961973247e383">StateHashManager</a> ()</td></tr>
 <tr class="memdesc:aa65da783b39b55da03d961973247e383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classauth_1_1StateHashManager.html" title="The StateHashManager class.">StateHashManager</a> instance. <br /></td></tr>
 <tr class="separator:aa65da783b39b55da03d961973247e383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a5498e9dba1a090acbd024f3d3b77e4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1StateHashManager.html#a4a5498e9dba1a090acbd024f3d3b77e4">get_state_hash</a> () const</td></tr>
-<tr class="memdesc:a4a5498e9dba1a090acbd024f3d3b77e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the state hash.  <a href="classauth_1_1StateHashManager.html#a4a5498e9dba1a090acbd024f3d3b77e4">More...</a><br /></td></tr>
-<tr class="separator:a4a5498e9dba1a090acbd024f3d3b77e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af43f3182bdc8c6994b7e56420fb31784"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1StateHashManager.html#af43f3182bdc8c6994b7e56420fb31784">check_state_hash</a> (const std::string &amp;check_hash) const</td></tr>
-<tr class="memdesc:af43f3182bdc8c6994b7e56420fb31784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies if a given hash matches the state hash stored internally.  <a href="classauth_1_1StateHashManager.html#af43f3182bdc8c6994b7e56420fb31784">More...</a><br /></td></tr>
-<tr class="separator:af43f3182bdc8c6994b7e56420fb31784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf829ec13f172dc398a318cdf00419b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1StateHashManager.html#a2cf829ec13f172dc398a318cdf00419b">get_state_hash</a> () const override</td></tr>
+<tr class="memdesc:a2cf829ec13f172dc398a318cdf00419b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the state hash.  <a href="classauth_1_1StateHashManager.html#a2cf829ec13f172dc398a318cdf00419b">More...</a><br /></td></tr>
+<tr class="separator:a2cf829ec13f172dc398a318cdf00419b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca7a5fe451bc75f64cafa028bf201ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1StateHashManager.html#aaca7a5fe451bc75f64cafa028bf201ec">check_state_hash</a> (const std::string &amp;check_hash) const override</td></tr>
+<tr class="memdesc:aaca7a5fe451bc75f64cafa028bf201ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies if a given hash matches the state hash stored internally.  <a href="classauth_1_1StateHashManager.html#aaca7a5fe451bc75f64cafa028bf201ec">More...</a><br /></td></tr>
+<tr class="separator:aaca7a5fe451bc75f64cafa028bf201ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classauth_1_1StateHashManager.html" title="The StateHashManager class.">StateHashManager</a> class. </p>
@@ -113,11 +122,14 @@ Public Member Functions</h2></td></tr>
 <p>The response containing the authorization code from the authorization server should be verified against the one stored in an instance of this class.</p>
 <dl class="section note"><dt>Note</dt><dd>There should only be one instance of this class per Oauth session. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af43f3182bdc8c6994b7e56420fb31784"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af43f3182bdc8c6994b7e56420fb31784">&#9670;&nbsp;</a></span>check_state_hash()</h2>
+<a id="aaca7a5fe451bc75f64cafa028bf201ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca7a5fe451bc75f64cafa028bf201ec">&#9670;&nbsp;</a></span>check_state_hash()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool auth::StateHashManager::check_state_hash </td>
@@ -127,18 +139,28 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Verifies if a given hash matches the state hash stored internally. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the given hash matches the state hash. false otherwise </dd></dl>
 
+<p>Implements <a class="el" href="classauth_1_1IStateHashManager.html">auth::IStateHashManager</a>.</p>
+
 </div>
 </div>
-<a id="a4a5498e9dba1a090acbd024f3d3b77e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a5498e9dba1a090acbd024f3d3b77e4">&#9670;&nbsp;</a></span>get_state_hash()</h2>
+<a id="a2cf829ec13f172dc398a318cdf00419b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf829ec13f172dc398a318cdf00419b">&#9670;&nbsp;</a></span>get_state_hash()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string auth::StateHashManager::get_state_hash </td>
@@ -147,10 +169,17 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the state hash. </p>
 <dl class="section return"><dt>Returns</dt><dd>State hash. This is used to track the current authorization request to prevent Cross-Site Request Forgery </dd></dl>
+
+<p>Implements <a class="el" href="classauth_1_1IStateHashManager.html">auth::IStateHashManager</a>.</p>
 
 </div>
 </div>
