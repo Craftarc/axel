@@ -103,17 +103,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a423c52f8cc99751bf5ec11afc35bb26b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b">start_auth</a> ()</td></tr>
 <tr class="memdesc:a423c52f8cc99751bf5ec11afc35bb26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the Oauth process.  <a href="classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b">More...</a><br /></td></tr>
 <tr class="separator:a423c52f8cc99751bf5ec11afc35bb26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6e0de26b1eac22d82462a2c49fc2001"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001">receive_auth</a> (const std::string &amp;url)</td></tr>
-<tr class="memdesc:ac6e0de26b1eac22d82462a2c49fc2001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives the authorization url.  <a href="classauth_1_1OauthManager.html#ac6e0de26b1eac22d82462a2c49fc2001">More...</a><br /></td></tr>
-<tr class="separator:ac6e0de26b1eac22d82462a2c49fc2001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a505bb67254a7872e7f4c077c56b708"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a5a505bb67254a7872e7f4c077c56b708">receive_auth</a> (const std::string &amp;query_string)</td></tr>
+<tr class="memdesc:a5a505bb67254a7872e7f4c077c56b708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives the authorization query_string.  <a href="classauth_1_1OauthManager.html#a5a505bb67254a7872e7f4c077c56b708">More...</a><br /></td></tr>
+<tr class="separator:a5a505bb67254a7872e7f4c077c56b708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Responsible for storing and providing formatted requests and their required information for each step of one Oauth session. </p>
 <p>Includes methods that serve the authorization URL, state parameter verification and access token exchange. All required messages (URLs, HTTP requests) must not be constructed manually. They are only to be taken from this class.</p>
 <dl class="section note"><dt>Note</dt><dd>Only one <a class="el" href="classauth_1_1OauthManager.html" title="Responsible for storing and providing formatted requests and their required information for each step...">OauthManager</a> instance should exist per Oauth session. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac6e0de26b1eac22d82462a2c49fc2001"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6e0de26b1eac22d82462a2c49fc2001">&#9670;&nbsp;</a></span>receive_auth()</h2>
+<a id="a5a505bb67254a7872e7f4c077c56b708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a505bb67254a7872e7f4c077c56b708">&#9670;&nbsp;</a></span>receive_auth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -122,16 +122,16 @@ Public Member Functions</h2></td></tr>
           <td class="memname">std::string auth::OauthManager::receive_auth </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>url</em></td><td>)</td>
+          <td class="paramname"><em>query_string</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Receives the authorization url. </p>
+<p>Receives the authorization query_string. </p>
 <p>Processes the authorization response from the authorization server after the user has logged in and approved the required scopes. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">url</td><td>The url string containing the query parameters "state" and "code", returned from the authorization server after a successful login by the user. </td></tr>
+    <tr><td class="paramname">query_string</td><td>The query_string string containing the query parameters "state" and "code", returned from the authorization server after a successful login by the user. </td></tr>
   </table>
   </dd>
 </dl>
