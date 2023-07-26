@@ -3,7 +3,7 @@
 
 #include <gmock/gmock.h>
 #include "auth/interfaces/ITokenRequestManager.h"
-#include "webutil/IHttpSender.h"
+#include "webutil/interfaces/IHttpSender.h"
 
 namespace auth {
     class MockTokenRequestManager : public ITokenRequestManager {

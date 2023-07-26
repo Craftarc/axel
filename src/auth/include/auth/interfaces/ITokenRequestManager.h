@@ -1,7 +1,7 @@
 #ifndef AXEL_AUTH_INTERFACES_ITOKENREQUESTMANAGER
 #define AXEL_AUTH_INTERFACES_ITOKENREQUESTMANAGER
 
-#include "webutil/IHttpSender.h"
+#include "webutil/interfaces/IHttpSender.h"
 
 namespace auth {
     class ITokenRequestManager {

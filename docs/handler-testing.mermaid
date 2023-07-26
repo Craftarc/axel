@@ -1,0 +1,23 @@
+---
+title: Production / Testing behaviour of HandlerManager
+---
+sequenceDiagram
+    participant main as main
+    participant HM as HandlerManager
+    participant H as Handler
+    participant MH as TestHandler
+    participant P as Process
+    main ->>+ HM: HandlerManager(environment)
+    alt environment="production"
+        HM ->>+ H: run()
+        H ->> H: aws::lambda-runtime::run_handler(handler)
+
+        H -->>- HM: invocation_response
+        HM -->> main: invocation_response
+    else environment="test"
+        HM ->>+ MH: run()
+        MH ->>+ P: Custom run_handler()
+    end
+
+
+

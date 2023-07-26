@@ -40,7 +40,7 @@ RUN wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_
     cd boost_1_82_0 && \
     ./bootstrap.sh --prefix=/usr/local && \
     ./b2 install && \
-    ./b2 --with-test install && \
+    ./b2 --with-test.cpp install && \
     cd .. && \
     rm -r boost_1_82_0
 
@@ -63,7 +63,7 @@ RUN git clone https://github.com/google/googletest.git -b v1.13.0 && \
     cmake3 .. && \
     make && \
     make install && \
-    cd .. && \
+    cd ../.. && \
     rm -r googletest
 
 # Install C++ AWS SDK
@@ -74,7 +74,7 @@ RUN git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp && \
     cmake3 .. && \
     make && \
     make install && \
-    cd .. && \
+    cd ../.. && \
     rm -r aws-sdk-cpp
 
 
@@ -85,7 +85,7 @@ WORKDIR /app/axel
 
 # Copy only production files
 COPY CMakeLists.txt ./
-COPY handler.cpp ./
+COPY main.cpp ./
 COPY config ./config
 COPY src ./src
 
@@ -94,4 +94,5 @@ RUN mkdir build && \
     cd build && \
     cmake3 .. -DCMAKE_BUILD_TYPE=Release && \
     make && \
-    make aws-lambda-package-handler
+    make aws-lambda-package-handler && \
+    chmod 777 handler # Full read-write-execute permissions for all groups

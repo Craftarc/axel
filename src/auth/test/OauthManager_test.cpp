@@ -16,7 +16,7 @@ namespace {
         std::unique_ptr<auth::MockStateHashManager> mock_state_hash_manager{std::make_unique<auth::MockStateHashManager>()};
         std::unique_ptr<auth::MockTokenRequestManager> mock_token_request_manager{std::make_unique<auth::MockTokenRequestManager>()};
         
-        // Get raw pointers to objects before they are moved in OauthManager()
+        // Get raw pointers to objects before they are moved into OauthManager()
         auth::MockStateHashManager* raw_mock_state_hash_manager{mock_state_hash_manager.get()};
         auth::MockTokenRequestManager* raw_mock_token_request_manager{mock_token_request_manager.get()};
         

@@ -7,7 +7,7 @@
 #include "webutil/http.h"
 #include "webutil/path.h"
 #include "config/axel.h"
-#include "webutil/IHttpSender.h"
+#include "webutil/interfaces/IHttpSender.h"
 
 /// @param The authorization code to construct the request from.
 auth::TokenRequestManager::TokenRequestManager() {}

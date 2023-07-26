@@ -1,7 +1,7 @@
 #ifndef AXEL_WEBUITL_HTTPSENDER_H
 #define AXEL_WEBUITL_HTTPSENDER_H
 
-#include "webutil/IHttpSender.h"
+#include "webutil/interfaces/IHttpSender.h"
 
 namespace webutil {
     namespace http = boost::beast::http;

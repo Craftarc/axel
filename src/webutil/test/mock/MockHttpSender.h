@@ -4,7 +4,7 @@
 #include <gmock/gmock.h>
 #include <boost/beast/http.hpp>
 
-#include "webutil/IHttpSender.h"
+#include "webutil/interfaces/IHttpSender.h"
 
 namespace webutil {
     namespace http = boost::beast::http;

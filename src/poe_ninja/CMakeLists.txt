@@ -9,8 +9,7 @@ find_package(OpenSSL REQUIRED)
 # poe_ninja library
 add_library(poe_ninja ${POE_NINJA_SRC_FILES})
 target_include_directories(poe_ninja PUBLIC ./include ${PROJECT_ROOT})
-target_link_libraries(poe_ninja
-                      webutil)
+target_link_libraries(poe_ninja webutil Boost::json)
 
 
 # poe_ninja library tests

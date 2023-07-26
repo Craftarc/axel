@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <boost/json/src.hpp>
+#include <boost/json.hpp>
 
 #include "poe_ninja/get_poe_ninja_data.h"
 #include "config/poe_ninja_config.h"

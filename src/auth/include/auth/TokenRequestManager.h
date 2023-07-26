@@ -2,7 +2,7 @@
 #define AXEL_WEBUTIL_TOKENREQUESTMANAGER_H
 
 #include <boost/beast/http.hpp>
-#include "webutil/IHttpSender.h"
+#include "webutil/interfaces/IHttpSender.h"
 #include "auth/interfaces/ITokenRequestManager.h"
 
 namespace auth {

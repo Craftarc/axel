@@ -1,6 +1,5 @@
 # Configure target sources here
 set(MAIN_SRC_FILES main.cpp)
-set(HANDLER_SRC_FILES handler.cpp)
 
 cmake_minimum_required(VERSION 3.13)
 project(axel LANGUAGES CXX)
@@ -38,18 +37,25 @@ find_package(PkgConfig REQUIRED)
 set(ENV{PKG_CONFIG_PATH} "/usr/local/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
 pkg_check_modules(BOTAN_PKG REQUIRED botan-2)
 
-# handler executable
-add_executable(handler ${HANDLER_SRC_FILES}) # Runtime handler
-target_include_directories(handler PRIVATE AWS::aws-lambda-runtime)
-target_link_libraries(handler PRIVATE AWS::aws-lambda-runtime)
-target_compile_features(handler PRIVATE "cxx_std_17")
-target_compile_options(handler PRIVATE "-Wall" "-Wextra")
-aws_lambda_package_target(handler NO_LIBC) # this line creates a target that packages your binary and zips it up
+# main executable
+add_executable(main ${MAIN_SRC_FILES})
+target_include_directories(main PRIVATE AWS::aws-lambda-runtime)
+target_link_libraries(main PRIVATE AWS::aws-lambda-runtime Boost::json axel)
+target_compile_features(main PRIVATE "cxx_std_17")
+target_compile_options(main PRIVATE "-Wall" "-Wextra")
+aws_lambda_package_target(main NO_LIBC) # this line creates a target that packages your binary and zips it up
+
+# sandbox executable
+add_executable(sandbox sandbox.cpp)
+target_compile_features(sandbox PRIVATE "cxx_std_17")
+target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
+target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime)
+target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime)
+
 
 # Subdirectories
 add_subdirectory(src/poe_ninja)
 add_subdirectory(src/webutil)
 add_subdirectory(src/auth)
-
-
+add_subdirectory(src/axel)
 
