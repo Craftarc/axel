@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oauthmanager_17',['OauthManager',['../classauth_1_1OauthManager.html',1,'auth::OauthManager'],['../classauth_1_1OauthManager.html#a89307851b7fb74e8e6c61d37f639ee09',1,'auth::OauthManager::OauthManager()']]]
+  ['pkcemanager_16',['PkceManager',['../classauth_1_1PkceManager.html',1,'auth::PkceManager'],['../classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92',1,'auth::PkceManager::PkceManager()']]]
 ];

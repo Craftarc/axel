@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['receive_5fauth_55',['receive_auth',['../classauth_1_1OauthManager.html#a5a505bb67254a7872e7f4c077c56b708',1,'auth::OauthManager']]]
+  ['pkcemanager_49',['PkceManager',['../classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92',1,'auth::PkceManager']]]
 ];

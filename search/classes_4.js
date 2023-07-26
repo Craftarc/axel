@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oauthmanager_38',['OauthManager',['../classauth_1_1OauthManager.html',1,'auth']]]
+  ['pkcemanager_35',['PkceManager',['../classauth_1_1PkceManager.html',1,'auth']]]
 ];
