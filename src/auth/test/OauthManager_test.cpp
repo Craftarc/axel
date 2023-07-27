@@ -6,8 +6,8 @@
 #include "auth/AuthCodeManager.h"
 #include "auth/SessionManager.h"
 
-#include "mock/MockStateHashManager.h"
-#include "mock/MockTokenRequestManager.h"
+#include "auth/MockStateHashManager.h"
+#include "auth/MockTokenRequestManager.h"
 
 using namespace ::testing;
 namespace {

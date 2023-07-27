@@ -2,7 +2,7 @@
 #include <gmock/gmock.h>
 
 #include "auth/TokenRequestManager.h"
-#include "src/webutil/test/mock/MockHttpSender.h"
+#include "webutil/MockHttpSender.h"
 
 namespace webutil {
     class TokenRequestManager_test : public ::testing::Test {

@@ -1,6 +1,6 @@
 .DS_Store
 .idea/
-cmake-build-debug-docker
+build
 external/
 credentials
 docs/html

@@ -40,7 +40,7 @@ RUN wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_
     cd boost_1_82_0 && \
     ./bootstrap.sh --prefix=/usr/local && \
     ./b2 install && \
-    ./b2 --with-test.cpp install && \
+    ./b2 --with-test install && \
     cd .. && \
     rm -r boost_1_82_0
 
@@ -77,15 +77,15 @@ RUN git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp && \
     cd ../.. && \
     rm -r aws-sdk-cpp
 
-
 ## END INSTALL LIBRARIES
 
 # Directory for main app
 WORKDIR /app/axel
 
 # Copy only production files
-COPY CMakeLists.txt ./
-COPY main.cpp ./
+COPY CMakeLists.txt .
+COPY main.cpp .
+COPY sandbox.cpp .
 COPY config ./config
 COPY src ./src
 
@@ -94,5 +94,5 @@ RUN mkdir build && \
     cd build && \
     cmake3 .. -DCMAKE_BUILD_TYPE=Release && \
     make && \
-    make aws-lambda-package-handler && \
-    chmod 777 handler # Full read-write-execute permissions for all groups
+    make aws-lambda-package-main && \
+    chmod 777 main # Full read-write-execute permissions for all groups

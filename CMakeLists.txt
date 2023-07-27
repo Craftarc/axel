@@ -45,17 +45,18 @@ target_compile_features(main PRIVATE "cxx_std_17")
 target_compile_options(main PRIVATE "-Wall" "-Wextra")
 aws_lambda_package_target(main NO_LIBC) # this line creates a target that packages your binary and zips it up
 
-# sandbox executable
+# sandbox executable (for testing free functions)
 add_executable(sandbox sandbox.cpp)
 target_compile_features(sandbox PRIVATE "cxx_std_17")
 target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
 target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime)
-target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime)
+target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime parse Boost::json)
 
 
 # Subdirectories
 add_subdirectory(src/poe_ninja)
-add_subdirectory(src/webutil)
+add_subdirectory(src/util/webutil)
+add_subdirectory(src/util/parse)
 add_subdirectory(src/auth)
 add_subdirectory(src/axel)
 
