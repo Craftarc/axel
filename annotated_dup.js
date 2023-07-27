@@ -8,7 +8,9 @@ var annotated_dup =
       [ "PkceManager", "classauth_1_1PkceManager.html", "classauth_1_1PkceManager" ],
       [ "SessionManager", "classauth_1_1SessionManager.html", "classauth_1_1SessionManager" ],
       [ "StateHashManager", "classauth_1_1StateHashManager.html", "classauth_1_1StateHashManager" ],
-      [ "TokenRequestManager", "classauth_1_1TokenRequestManager.html", "classauth_1_1TokenRequestManager" ]
+      [ "TokenRequestManager", "classauth_1_1TokenRequestManager.html", "classauth_1_1TokenRequestManager" ],
+      [ "MockStateHashManager", "classauth_1_1MockStateHashManager.html", "classauth_1_1MockStateHashManager" ],
+      [ "MockTokenRequestManager", "classauth_1_1MockTokenRequestManager.html", "classauth_1_1MockTokenRequestManager" ]
     ] ],
     [ "axel", null, [
       [ "Handler", "classaxel_1_1Handler.html", "classaxel_1_1Handler" ],
@@ -18,6 +20,7 @@ var annotated_dup =
     ] ],
     [ "webutil", null, [
       [ "HttpSender", "classwebutil_1_1HttpSender.html", "classwebutil_1_1HttpSender" ],
-      [ "IHttpSender", "classwebutil_1_1IHttpSender.html", "classwebutil_1_1IHttpSender" ]
+      [ "IHttpSender", "classwebutil_1_1IHttpSender.html", "classwebutil_1_1IHttpSender" ],
+      [ "MockHttpSender", "classwebutil_1_1MockHttpSender.html", "classwebutil_1_1MockHttpSender" ]
     ] ]
 ];
