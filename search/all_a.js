@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['receive_5fauth_23',['receive_auth',['../classauth_1_1OauthManager.html#a5a505bb67254a7872e7f4c077c56b708',1,'auth::OauthManager']]],
-  ['run_24',['run',['../classaxel_1_1Handler.html#afba7ff118d88a0bc544859eaaeca173d',1,'axel::Handler::run()'],['../classaxel_1_1TestHandler.html#acb14f4593498b8b35da995c41abe76aa',1,'axel::TestHandler::run()']]]
+  ['testhandler_24',['TestHandler',['../classaxel_1_1TestHandler.html',1,'axel']]],
+  ['tokenrequestmanager_25',['TokenRequestManager',['../classauth_1_1TokenRequestManager.html',1,'auth::TokenRequestManager'],['../classauth_1_1TokenRequestManager.html#a6b44d806f2b7fc713be61bcbee751a33',1,'auth::TokenRequestManager::TokenRequestManager()']]]
 ];

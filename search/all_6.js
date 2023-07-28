@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['ihttpsender_13',['IHttpSender',['../classwebutil_1_1IHttpSender.html',1,'webutil']]],
-  ['istatehashmanager_14',['IStateHashManager',['../classauth_1_1IStateHashManager.html',1,'auth']]],
-  ['itokenrequestmanager_15',['ITokenRequestManager',['../classauth_1_1ITokenRequestManager.html',1,'auth']]]
+  ['oauthmanager_15',['OauthManager',['../classauth_1_1OauthManager.html',1,'auth::OauthManager'],['../classauth_1_1OauthManager.html#a89307851b7fb74e8e6c61d37f639ee09',1,'auth::OauthManager::OauthManager()']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['mockhttpsender_16',['MockHttpSender',['../classwebutil_1_1MockHttpSender.html',1,'webutil']]],
-  ['mockstatehashmanager_17',['MockStateHashManager',['../classauth_1_1MockStateHashManager.html',1,'auth']]],
-  ['mocktokenrequestmanager_18',['MockTokenRequestManager',['../classauth_1_1MockTokenRequestManager.html',1,'auth']]]
+  ['pkcemanager_16',['PkceManager',['../classauth_1_1PkceManager.html',1,'auth::PkceManager'],['../classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92',1,'auth::PkceManager::PkceManager()']]]
 ];
