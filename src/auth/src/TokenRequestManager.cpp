@@ -8,6 +8,7 @@
 #include "webutil/path.h"
 #include "config/axel.h"
 #include "webutil/interfaces/IHttpSender.h"
+#include "poe_auth_config.h"
 
 /// @param The authorization code to construct the request from.
 auth::TokenRequestManager::TokenRequestManager() {}
@@ -37,7 +38,7 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                                         {"grant_type", config::axel::grant_type},
                                                         {"code", std::move(auth_code)},
                                                         {"redirect_uri", config::poe::paths::redirect_uri},
-                                                        {"scope", config::poe::scopes::account::profile},
+                                                        {"scope", config::poe::scopes::profile},
                                                         {"code_verifier", std::move(code_verifier)}});
     
     auto full_request = webutil::make_http_request("POST",

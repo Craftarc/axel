@@ -2,6 +2,7 @@
 #include "config/poe_auth_config.h"
 #include "webutil/path.h"
 #include "config/axel.h"
+#include "poe_auth_config.h"
 
 /// @param code_challenge The code challenge to include in the authorization url.
 /// @param state_hash The state hash to include in the authorization url.
@@ -13,11 +14,11 @@ std::string auth::AuthCodeManager::get_auth_url(std::string code_challenge, std:
     return webutil::add_query_parameters(base_path, {{"client_id", config::axel::client_id},
                                                      {"response_type", "code"},
                                                      {"scope",
-                                                      webutil::concatenate_with_space({scopes::profile,
-                                                                                       scopes::characters,
-                                                                                       scopes::stashes,
-                                                                                       scopes::league_accounts,
-                                                                                       scopes::item_filter})},
+                                                      webutil::concatenate_with_space({config::poe::scopes::profile,
+                                                                                       config::poe::scopes::characters,
+                                                                                       config::poe::scopes::stashes,
+                                                                                       config::poe::scopes::league_accounts,
+                                                                                       config::poe::scopes::item_filter})},
                                                      {"state", state_hash},
                                                      {"redirect_uri", config::poe::paths::redirect_uri},
                                                      {"challenge", code_challenge},

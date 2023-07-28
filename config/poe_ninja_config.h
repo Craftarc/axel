@@ -3,16 +3,12 @@
 
 #include <string>
 
-/**
- * Contains definitions for all relevant parameters in poe.ninja endpoints
- * paths: currently available currency/item types
- * leagues: currently available leagues
- *
- * Last updated: Crucible 7/6/2023
- */
+/// @brief Contains constants for use throughout the whole program
 namespace config {
+    /// @brief Contains constants related to PoENinja's API
     namespace poe_ninja {
         const std::string host = "poe.ninja";
+        /// @brief Contains constants related to API paths
         namespace paths {
             const std::string currency = "/api/data/currencyoverview?type=Currency";
             const std::string fragment = "/api/data/currencyoverview?type=Fragment";
