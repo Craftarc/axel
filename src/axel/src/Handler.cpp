@@ -12,17 +12,13 @@ namespace {
         std::cout << req.function_arn << std::endl;
         std::cout << "///////// END PAYLOAD /////////" << std::endl;
         std::cout << std::endl;
-
-//        boost::json::value json_value = boost::json::parse(req.payload);
-//        auto raw_query_string = json_value.at("rawQueryString");
-//        std::cout << raw_query_string << std::endl;
         
         return invocation_response::success("" /*payload*/,
                                             "application/json" /*MIME type*/);
     }
 }
 namespace axel {
-    void Handler::run() const {
+    void Handler::run() {
         aws::lambda_runtime::run_handler(handler);
     }
 }

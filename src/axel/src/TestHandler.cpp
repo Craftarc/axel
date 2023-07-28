@@ -37,8 +37,12 @@ namespace {
 }
 
 namespace axel {
-    void TestHandler::run() const {
-        std::cout << "HI" << std::endl;
+    invocation_response TestHandler::run(const invocation_request& request) {
+        std::string payload = request.payload;
+        std::string content_type = "application/json"; // Axel only uses JSON
+        bool success = true;
+        
+        return {payload, content_type, success};
     }
 };
 

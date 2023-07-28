@@ -2,14 +2,14 @@
 #define AXEL_TESTHANDLER_H
 
 #include <gmock/gmock.h>
+#include <aws/lambda-runtime/runtime.h>
 
-#include "axel/interfaces/IHandler.h"
-
+using namespace aws::lambda_runtime;
 namespace axel {
-    class TestHandler : public IHandler {
+    class TestHandler {
     public:
         /// @brief Runs the handler implementation that will process local input (file or std::cin)
-        void run() const override;
+        static invocation_response run(const invocation_request& request);
     };
 }
 

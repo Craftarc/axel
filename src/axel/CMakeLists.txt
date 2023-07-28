@@ -1,6 +1,6 @@
 # Configure target sources here
-set(AXEL_SRC_FILES src/Handler.cpp src/HandlerManager.cpp src/Handler.cpp src/TestHandler.cpp)
-set(AXEL_TESTS_SRC_FILES test/HandlerManager_test.cpp)
+set(AXEL_SRC_FILES src/Handler.cpp src/Handler.cpp src/TestHandler.cpp)
+set(AXEL_TESTS_SRC_FILES test/TestHandler_test.cpp)
 set(AXEL_TEST_INPUT_FILES axel/response.json)
 
 configure_file(test/input/response.json response.txt)
