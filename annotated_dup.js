@@ -13,10 +13,8 @@ var annotated_dup =
       [ "MockTokenRequestManager", "classauth_1_1MockTokenRequestManager.html", "classauth_1_1MockTokenRequestManager" ]
     ] ],
     [ "axel", null, [
-      [ "Handler", "classaxel_1_1Handler.html", "classaxel_1_1Handler" ],
-      [ "HandlerManager", "classaxel_1_1HandlerManager.html", "classaxel_1_1HandlerManager" ],
-      [ "IHandler", "classaxel_1_1IHandler.html", "classaxel_1_1IHandler" ],
-      [ "TestHandler", "classaxel_1_1TestHandler.html", "classaxel_1_1TestHandler" ]
+      [ "Handler", "classaxel_1_1Handler.html", null ],
+      [ "TestHandler", "classaxel_1_1TestHandler.html", null ]
     ] ],
     [ "webutil", null, [
       [ "HttpSender", "classwebutil_1_1HttpSender.html", "classwebutil_1_1HttpSender" ],

@@ -88,19 +88,16 @@ $(document).ready(function(){initNavTree('Handler_8h_source.html',''); initResiz
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_HANDLER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AXEL_HANDLER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;axel/interfaces/IHandler.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>axel {</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classaxel_1_1Handler.html">    7</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classaxel_1_1Handler.html">Handler</a> : <span class="keyword">public</span> <a class="code" href="classaxel_1_1IHandler.html">IHandler</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classaxel_1_1Handler.html#add3a3c47868ed374a03cbe5abcb0e95c">run</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    };</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_HANDLER_H</span></div>
-<div class="ttc" id="aclassaxel_1_1Handler_html"><div class="ttname"><a href="classaxel_1_1Handler.html">axel::Handler</a></div><div class="ttdef"><b>Definition:</b> Handler.h:7</div></div>
-<div class="ttc" id="aclassaxel_1_1Handler_html_add3a3c47868ed374a03cbe5abcb0e95c"><div class="ttname"><a href="classaxel_1_1Handler.html#add3a3c47868ed374a03cbe5abcb0e95c">axel::Handler::run</a></div><div class="ttdeci">void run() const override</div><div class="ttdoc">Runs the handler implementation that communicates with the AWS Lambda server runtime.</div><div class="ttdef"><b>Definition:</b> Handler.cpp:25</div></div>
-<div class="ttc" id="aclassaxel_1_1IHandler_html"><div class="ttname"><a href="classaxel_1_1IHandler.html">axel::IHandler</a></div><div class="ttdef"><b>Definition:</b> IHandler.h:8</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>axel {</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classaxel_1_1Handler.html">    5</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classaxel_1_1Handler.html">Handler</a> {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaxel_1_1Handler.html#afba7ff118d88a0bc544859eaaeca173d">run</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    };</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_HANDLER_H</span></div>
+<div class="ttc" id="aclassaxel_1_1Handler_html"><div class="ttname"><a href="classaxel_1_1Handler.html">axel::Handler</a></div><div class="ttdef"><b>Definition:</b> Handler.h:5</div></div>
+<div class="ttc" id="aclassaxel_1_1Handler_html_afba7ff118d88a0bc544859eaaeca173d"><div class="ttname"><a href="classaxel_1_1Handler.html#afba7ff118d88a0bc544859eaaeca173d">axel::Handler::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Runs the handler implementation that communicates with the AWS Lambda server runtime.</div><div class="ttdef"><b>Definition:</b> Handler.cpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

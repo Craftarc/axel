@@ -89,20 +89,18 @@ $(document).ready(function(){initNavTree('TestHandler_8h_source.html',''); initR
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AXEL_TESTHANDLER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;gmock/gmock.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;axel/interfaces/IHandler.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;aws/lambda-runtime/runtime.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>aws::lambda_runtime;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>axel {</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classaxel_1_1TestHandler.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classaxel_1_1TestHandler.html">TestHandler</a> : <span class="keyword">public</span> <a class="code" href="classaxel_1_1IHandler.html">IHandler</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classaxel_1_1TestHandler.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classaxel_1_1TestHandler.html">TestHandler</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classaxel_1_1TestHandler.html#a61019d5780a690d2bd443cc13be8f537">run</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">static</span> invocation_response run(<span class="keyword">const</span> invocation_request&amp; request);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    };</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_TESTHANDLER_H</span></div>
-<div class="ttc" id="aclassaxel_1_1IHandler_html"><div class="ttname"><a href="classaxel_1_1IHandler.html">axel::IHandler</a></div><div class="ttdef"><b>Definition:</b> IHandler.h:8</div></div>
 <div class="ttc" id="aclassaxel_1_1TestHandler_html"><div class="ttname"><a href="classaxel_1_1TestHandler.html">axel::TestHandler</a></div><div class="ttdef"><b>Definition:</b> TestHandler.h:9</div></div>
-<div class="ttc" id="aclassaxel_1_1TestHandler_html_a61019d5780a690d2bd443cc13be8f537"><div class="ttname"><a href="classaxel_1_1TestHandler.html#a61019d5780a690d2bd443cc13be8f537">axel::TestHandler::run</a></div><div class="ttdeci">void run() const override</div><div class="ttdoc">Runs the handler implementation that will process local input (file or std::cin)</div><div class="ttdef"><b>Definition:</b> TestHandler.cpp:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

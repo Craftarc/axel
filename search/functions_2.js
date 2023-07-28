@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handlermanager_53',['HandlerManager',['../classaxel_1_1HandlerManager.html#a242a1d07955f8e56eb21a7e052c7c472',1,'axel::HandlerManager']]]
+  ['oauthmanager_48',['OauthManager',['../classauth_1_1OauthManager.html#a89307851b7fb74e8e6c61d37f639ee09',1,'auth::OauthManager']]]
 ];

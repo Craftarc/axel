@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pkcemanager_55',['PkceManager',['../classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92',1,'auth::PkceManager']]]
+  ['receive_5fauth_50',['receive_auth',['../classauth_1_1OauthManager.html#a5a505bb67254a7872e7f4c077c56b708',1,'auth::OauthManager']]],
+  ['run_51',['run',['../classaxel_1_1Handler.html#afba7ff118d88a0bc544859eaaeca173d',1,'axel::Handler::run()'],['../classaxel_1_1TestHandler.html#acb14f4593498b8b35da995c41abe76aa',1,'axel::TestHandler::run()']]]
 ];

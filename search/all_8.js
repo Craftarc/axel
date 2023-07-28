@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['receive_5fauth_20',['receive_auth',['../classauth_1_1OauthManager.html#a5a505bb67254a7872e7f4c077c56b708',1,'auth::OauthManager']]],
-  ['run_21',['run',['../classaxel_1_1Handler.html#add3a3c47868ed374a03cbe5abcb0e95c',1,'axel::Handler::run()'],['../classaxel_1_1TestHandler.html#a61019d5780a690d2bd443cc13be8f537',1,'axel::TestHandler::run()']]],
-  ['run_5fhandler_22',['run_handler',['../classaxel_1_1HandlerManager.html#a722512f56c65fe57811930eb7a8e7d10',1,'axel::HandlerManager']]]
+  ['receive_5fauth_18',['receive_auth',['../classauth_1_1OauthManager.html#a5a505bb67254a7872e7f4c077c56b708',1,'auth::OauthManager']]],
+  ['run_19',['run',['../classaxel_1_1Handler.html#afba7ff118d88a0bc544859eaaeca173d',1,'axel::Handler::run()'],['../classaxel_1_1TestHandler.html#acb14f4593498b8b35da995c41abe76aa',1,'axel::TestHandler::run()']]]
 ];
