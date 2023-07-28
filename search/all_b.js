@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['oauthmanager_0',['OauthManager',['../classwebutil_1_1_oauth_manager.html#a48a8588e150f1b66e45516b087516947',1,'webutil::OauthManager::OauthManager()'],['../classwebutil_1_1_oauth_manager.html',1,'webutil::OauthManager']]],
-  ['oauthmanager_2ecpp_1',['OauthManager.cpp',['../_oauth_manager_8cpp.html',1,'']]],
-  ['oauthmanager_2eh_2',['OauthManager.h',['../_oauth_manager_8h.html',1,'']]],
-  ['oauthmanager_5ftest_2ecpp_3',['OauthManager_test.cpp',['../_oauth_manager__test_8cpp.html',1,'']]],
-  ['oil_4',['oil',['../namespaceconfig_1_1poe__ninja_1_1paths.html#a35b6005e4df48650f9f2aa6fa7dfbc71',1,'config::poe_ninja::paths']]]
+  ['send_5fhttp_5frequest_25',['send_http_request',['../classwebutil_1_1HttpSender.html#a32176235711e6bef16d6c89516f05db3',1,'webutil::HttpSender']]],
+  ['send_5ftoken_5frequest_26',['send_token_request',['../classauth_1_1TokenRequestManager.html#a46c311a76a59b2183ac9ef6354b3c1ca',1,'auth::TokenRequestManager']]],
+  ['sessionmanager_27',['SessionManager',['../classauth_1_1SessionManager.html',1,'auth']]],
+  ['start_5fauth_28',['start_auth',['../classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b',1,'auth::OauthManager']]],
+  ['statehashmanager_29',['StateHashManager',['../classauth_1_1StateHashManager.html',1,'auth::StateHashManager'],['../classauth_1_1StateHashManager.html#aa65da783b39b55da03d961973247e383',1,'auth::StateHashManager::StateHashManager()']]]
 ];

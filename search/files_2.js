@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['oauthmanager_2ecpp_0',['OauthManager.cpp',['../_oauth_manager_8cpp.html',1,'']]],
-  ['oauthmanager_2eh_1',['OauthManager.h',['../_oauth_manager_8h.html',1,'']]],
-  ['oauthmanager_5ftest_2ecpp_2',['OauthManager_test.cpp',['../_oauth_manager__test_8cpp.html',1,'']]]
+  ['poe_5fauth_5fconfig_2eh_50',['poe_auth_config.h',['../poe__auth__config_8h.html',1,'']]],
+  ['poe_5fninja_5fconfig_2eh_51',['poe_ninja_config.h',['../poe__ninja__config_8h.html',1,'']]]
 ];

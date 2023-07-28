@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Axel Backend", "index.html", [
+    [ "documentation", "md_config_documentation.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
