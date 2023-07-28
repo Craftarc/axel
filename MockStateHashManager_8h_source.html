@@ -85,18 +85,22 @@ $(document).ready(function(){initNavTree('MockStateHashManager_8h_source.html','
 <div class="title">MockStateHashManager.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;gmock/gmock.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;auth/interfaces/IStateHashManager.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_AUTH_MOCKSTATEHASHMANAGER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AXEL_AUTH_MOCKSTATEHASHMANAGER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>auth {</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="classauth_1_1MockStateHashManager.html">    5</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1MockStateHashManager.html">MockStateHashManager</a> : <span class="keyword">public</span> <a class="code" href="classauth_1_1IStateHashManager.html">IStateHashManager</a> {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        MOCK_METHOD(std::string, get_state_hash, (), (<span class="keyword">const</span>, <span class="keyword">override</span>));</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        MOCK_METHOD(<span class="keywordtype">bool</span>, check_state_hash, (<span class="keyword">const</span> std::string&amp; check_hash), (<span class="keyword">const</span>, <span class="keyword">override</span>));</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    };</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;gmock/gmock.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;auth/interfaces/IStateHashManager.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>auth {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classauth_1_1MockStateHashManager.html">    8</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1MockStateHashManager.html">MockStateHashManager</a> : <span class="keyword">public</span> <a class="code" href="classauth_1_1IStateHashManager.html">IStateHashManager</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        MOCK_METHOD(std::string, get_state_hash, (), (<span class="keyword">const</span>, <span class="keyword">override</span>));</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        MOCK_METHOD(<span class="keywordtype">bool</span>, check_state_hash, (<span class="keyword">const</span> std::string&amp; check_hash), (<span class="keyword">const</span>, <span class="keyword">override</span>));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    };</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_AUTH_MOCKSTATEHASHMANAGER_H</span></div>
 <div class="ttc" id="aclassauth_1_1IStateHashManager_html"><div class="ttname"><a href="classauth_1_1IStateHashManager.html">auth::IStateHashManager</a></div><div class="ttdef"><b>Definition:</b> IStateHashManager.h:4</div></div>
-<div class="ttc" id="aclassauth_1_1MockStateHashManager_html"><div class="ttname"><a href="classauth_1_1MockStateHashManager.html">auth::MockStateHashManager</a></div><div class="ttdef"><b>Definition:</b> MockStateHashManager.h:5</div></div>
+<div class="ttc" id="aclassauth_1_1MockStateHashManager_html"><div class="ttname"><a href="classauth_1_1MockStateHashManager.html">auth::MockStateHashManager</a></div><div class="ttdef"><b>Definition:</b> MockStateHashManager.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
