@@ -9,30 +9,39 @@ sequenceDiagram
     participant SHM as StateHashManager
     participant TRM as TokenRequestManager
     participant SM as SessionManager
+    participant DM as DbManager
 
-    L ->>+ OM: String start_auth()
+    L ->>+ OM: start_auth()
     OM ->> OM: void set_state(INITIAL)
-    OM ->>+ PM: String get_code_challenge()
+    OM ->>+ PM: get_code_challenge()
     PM -->>- OM: code_challenge
-    OM ->>+ SHM: String get_state_hash()
+    OM ->>+ SHM: get_state_hash()
     SHM -->>- OM: state_hash
-    OM ->>+ ACM: String get_auth_url(code_challenge, state_hash)
+    OM ->>+ SM: get_session_token()
+    SM -->>- OM: auth_session_token
+    OM ->>+ DM: store_session_token(AuthDB, auth_session_token, state_hash)
+    DM -->>- OM: returns if successful
+    OM ->>+ ACM: get_auth_url(code_challenge, state_hash)
     ACM -->>- OM: auth_url
     OM ->> OM: void set_state(USER_REDIRECTED)
     OM -->>- L: auth_url
-    L ->>+ OM: String receive_auth(url)
+    L ->>+ OM: receive_auth(url, auth_session_token)
     note right of OM: Extract state_hash <br> and auth_code
+    OM ->>+ DM: get_state_hash(auth_session_token)
+    DM -->>- OM: state_hash
     OM ->>+ SHM: Bool check_state_hash(state_hash)
     SHM -->>- OM: is_valid_hash
     OM ->> OM: set_state(AUTH_RECEIVED)
-    OM ->>+ PM: String get_code_verifier()
+    OM ->>+ PM: get_code_verifier()
     PM -->>- OM: code_verifier
-    OM ->>+ TRM: String[] send_token_request(auth_code, code_verifier)
+    OM ->>+ TRM: send_token_request(auth_code, code_verifier)
     OM ->> OM: void set_state(EXCHANGE_REQUEST_SENT)
     TRM -->>- OM: access_token, refresh_token
     OM ->> OM: void set_state(TOKENS_RECEIVED)
-    OM ->>+ SM: String get_session_token()
-    SM -->>- OM: session_token
+    OM ->>+ SM: get_session_token()
+    SM -->>- OM: app_session_token
+    OM ->>+ DM: store_session_token(AxelDB, axel_session_token)
+    DM -->>- OM: returns if successful
     OM ->> OM: void set_state(SESSION_ESTABLISHED)
     OM -->>- L: session_token
 
