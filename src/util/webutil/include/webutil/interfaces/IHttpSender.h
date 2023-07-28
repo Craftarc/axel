@@ -10,7 +10,7 @@ namespace webutil {
     class IHttpSender {
     public:
         virtual ~IHttpSender() = default;
-        virtual std::string send_http_request(const http::request<http::string_body>& request) = 0;
+        virtual std::string send_http_request(const http::request<http::string_body>& request, int max_body_size) = 0;
     };
 }
 #endif // AXEL_IHTTPSENDER_H

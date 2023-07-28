@@ -8,7 +8,9 @@ namespace webutil {
     
     class HttpSender : public IHttpSender {
     public:
-        std::string send_http_request(const http::request<http::string_body>& request) override;
+        /// @brief Sends a HTTP request and returns the body of the HTTP response in a string.
+        std::string send_http_request(const http::request<http::string_body>& request, int max_body_size) override;
+        // TODO: Add an overload for a default max_body_size
     };
 }
 #endif // AXEL_WEBUITL_HTTPSENDER_H

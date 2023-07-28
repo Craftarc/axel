@@ -8,11 +8,6 @@
 namespace {
     constexpr int HTTP_VERSION = 11; // HTTP 1.1
     const std::string HTTP_SERVICE = "https";
-    
-    // Maximum size, in bytes, of the HTTP body the parser is willing to accept
-    // TODO: Move this constant somewhere nicer so it doesn't have to affect all HTTP gets.
-    constexpr int MAX_HTTP_BODY_SIZE = 15 * 1024 * 1024; // 15MB
-    
 }
 namespace webutil {
     namespace beast = boost::beast;
@@ -21,7 +16,11 @@ namespace webutil {
     namespace ssl = net::ssl;
     using tcp = net::ip::tcp;
     
-    std::string HttpSender::send_http_request(const http::request<http::string_body>& request) {
+    /// @param request The HTTP request to be sent, with all request fields furnished.
+    /// @param max_body_size Largest accepted body size of HTTP response, in MB. Default: 8MB
+    /// @return The response body as a string
+    std::string HttpSender::send_http_request(const http::request<http::string_body>& request, int max_body_size) {
+        int max_body_size_bytes = max_body_size * 1024 * 1024; // Argument is in MB, this converts to B
         std::string host = request["host"];
         
         // IO and SSL context for stream
@@ -53,7 +52,7 @@ namespace webutil {
         // Receive and print the HTTPS response
         beast::flat_buffer buffer;
         http::response_parser<http::dynamic_body> parser;
-        parser.body_limit(MAX_HTTP_BODY_SIZE);
+        parser.body_limit(max_body_size_bytes);
         read(stream, buffer, parser);
         http::response<http::dynamic_body> response = parser.release();
         

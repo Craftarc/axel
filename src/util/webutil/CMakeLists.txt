@@ -1,6 +1,6 @@
 # Configure target sources here
 set(WEBUTIL_SRC_FILES src/http.cpp src/path.cpp src/hash.cpp src/HttpSender.cpp)
-set(WEBUTIL_TESTS_SRC_FILES test/http_test.cpp test/path_test.cpp test/hash_test.cpp)
+set(WEBUTIL_TESTS_SRC_FILES test/http_test.cpp test/path_test.cpp test/hash_test.cpp test/HttpSender_test.cpp)
 
 # webutil library
 add_library(webutil ${WEBUTIL_SRC_FILES})

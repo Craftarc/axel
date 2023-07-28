@@ -16,7 +16,6 @@ namespace webutil {
     };
     
     TEST_F(TokenRequestManager_test, send_token_request__extracts_and_returns_tokens) {
-        // Dummy response for webutil::send_http_request()
         std::string sample_json = "{\n"
                                   "    \"access_token\": \"486132c90fedb152360bc0e1aa54eea155768eb9\",\n"
                                   "    \"expires_in\": 2592000,\n"

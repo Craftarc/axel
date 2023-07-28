@@ -29,15 +29,3 @@ TEST_F(http_tests, make_http_request__data_is_correct) {
     EXPECT_EQ(body, request.body());
 }
 
-TEST_F(http_tests, accepts_empty_path) {
-    auto request = webutil::make_http_request("GET", "", {{"host", "www.google.com"}}, "");
-    
-    // In Google Test, we use EXPECT_NO_THROW to assert that a statement doesn't throw an exception
-    EXPECT_NO_THROW(webutil::send_http_request(request));
-}
-
-TEST_F(http_tests, accepts_root_path) {
-    auto request = webutil::make_http_request("GET", "/", {{"host", "www.google.com"}}, "");
-    
-    EXPECT_NO_THROW(webutil::send_http_request(request));
-}

@@ -47,7 +47,7 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                                      "application/x-www-form-urlencoded"}},
                                                    request_body);
     
-    auto response_body = http_sender->send_http_request(full_request);
+    auto response_body = http_sender->send_http_request(full_request, 0);
     
     boost::json::value json = boost::json::parse(response_body);
     auto access_token = json.at("access_token").as_string().c_str();
