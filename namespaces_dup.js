@@ -21,14 +21,14 @@ var namespaces_dup =
         [ "client_id", "namespaceconfig_1_1axel.html#a1e1f1512d1b72054ea488c01f7248847", null ],
         [ "grant_type", "namespaceconfig_1_1axel.html#a6de9ed972d90ab67184bbb08e961e276", null ]
       ] ],
-      [ "poe", null, [
+      [ "poe", "namespaceconfig_1_1poe.html", [
         [ "paths", null, [
           [ "auth_path", "poe__auth__config_8h.html#a46462eb279e0aeb35108b250f2dcd40c", null ],
           [ "redirect_uri", "poe__auth__config_8h.html#a901877702c1517581c2dd61f8d2e9381", null ]
         ] ],
-        [ "host", "poe__auth__config_8h.html#a6b8697fdfa1286eb1d4ec099a302e66d", null ]
+        [ "host", "namespaceconfig_1_1poe.html#a6b8697fdfa1286eb1d4ec099a302e66d", null ]
       ] ],
-      [ "poe_ninja", null, [
+      [ "poe_ninja", "namespaceconfig_1_1poe__ninja.html", [
         [ "leagues", null, [
           [ "crucible", "poe__ninja__config_8h.html#a7e2bf24de415696f7c221bc60c265a58", null ],
           [ "sanctum", "poe__ninja__config_8h.html#a214f57244e2e68180e5ec011389f6bc5", null ]
@@ -63,7 +63,7 @@ var namespaces_dup =
           [ "unique_weapon", "poe__ninja__config_8h.html#a892af43df6058c40f15e40c3a596760a", null ],
           [ "vial", "poe__ninja__config_8h.html#abc5bac9ac0fa36819e0e6e396fa96196", null ]
         ] ],
-        [ "host", "poe__ninja__config_8h.html#abb826fc43b89a0b228b04d0166463c3c", null ]
+        [ "host", "namespaceconfig_1_1poe__ninja.html#abb826fc43b89a0b228b04d0166463c3c", null ]
       ] ]
     ] ],
     [ "parse", null, [
