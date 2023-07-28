@@ -1,5 +1,5 @@
-#ifndef AXEL_IHTTPSENDER_H
-#define AXEL_IHTTPSENDER_H
+#ifndef AXEL_WEBUTIL_IHTTPSENDER_H
+#define AXEL_WEBUTIL_IHTTPSENDER_H
 
 #include <string>
 #include <boost/beast/http.hpp>
@@ -13,4 +13,4 @@ namespace webutil {
         virtual std::string send_http_request(const http::request<http::string_body>& request, int max_body_size) = 0;
     };
 }
-#endif // AXEL_IHTTPSENDER_H
+#endif // AXEL_WEBUTIL_IHTTPSENDER_H

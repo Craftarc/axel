@@ -1,5 +1,5 @@
-#ifndef AXEL_TESTHANDLER_H
-#define AXEL_TESTHANDLER_H
+#ifndef AXEL_AXEL_TESTHANDLER_H
+#define AXEL_AXEL_TESTHANDLER_H
 
 #include <gmock/gmock.h>
 #include <aws/lambda-runtime/runtime.h>
@@ -13,4 +13,4 @@ namespace axel {
     };
 }
 
-#endif // AXEL_TESTHANDLER_H
+#endif // AXEL_AXEL_TESTHANDLER_H

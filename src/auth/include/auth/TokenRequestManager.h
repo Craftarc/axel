@@ -1,5 +1,5 @@
-#ifndef AXEL_WEBUTIL_TOKENREQUESTMANAGER_H
-#define AXEL_WEBUTIL_TOKENREQUESTMANAGER_H
+#ifndef AXEL_AUTH_TOKENREQUESTMANAGER_H
+#define AXEL_AUTH_TOKENREQUESTMANAGER_H
 
 #include <boost/beast/http.hpp>
 #include "webutil/interfaces/IHttpSender.h"
@@ -26,4 +26,4 @@ namespace auth {
     };
 }
 
-#endif //AXEL_WEBUTIL_TOKENREQUESTMANAGER_H
+#endif //AXEL_AUTH_TOKENREQUESTMANAGER_H

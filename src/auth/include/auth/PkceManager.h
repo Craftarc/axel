@@ -1,5 +1,5 @@
-#ifndef AXEL_PKCEMANAGER_H
-#define AXEL_PKCEMANAGER_H
+#ifndef AXEL_AUTH_PKCEMANAGER_H
+#define AXEL_AUTH_PKCEMANAGER_H
 
 #include <string>
 
@@ -23,4 +23,4 @@ namespace auth {
     };
 }
 
-#endif //AXEL_PKCEMANAGER_H
+#endif //AXEL_AUTH_PKCEMANAGER_H

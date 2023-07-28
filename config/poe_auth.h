@@ -1,5 +1,5 @@
-#ifndef AXEL_CONFIG_POE_AUTH_CONFIG_H
-#define AXEL_CONFIG_POE_AUTH_CONFIG_H
+#ifndef AXEL_CONFIG_POE_AUTH_H
+#define AXEL_CONFIG_POE_AUTH_H
 
 namespace config {
     /// @brief Contains constants related to POE's API.
@@ -21,4 +21,4 @@ namespace config {
     }
 }
 
-#endif
+#endif // AXEL_CONFIG_POE_AUTH_H

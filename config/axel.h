@@ -1,3 +1,6 @@
+#ifndef AXEL_CONFIG_AXEL_H
+#define AXEL_CONFIG_AXEL_H
+
 namespace config {
     /// @brief Contains constants related to Axel's functionality
     namespace axel {
@@ -5,3 +8,5 @@ namespace config {
         const std::string grant_type = "authorization_code";
     }
 }
+
+#endif // AXEL_CONFIG_AXEL_H

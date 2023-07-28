@@ -1,5 +1,5 @@
-#ifndef AXEL_ISTATEHASHMANAGER_H
-#define AXEL_ISTATEHASHMANAGER_H
+#ifndef AXEL_AUTH_ISTATEHASHMANAGER_H
+#define AXEL_AUTH_ISTATEHASHMANAGER_H
 namespace auth {
     class IStateHashManager {
     public:
@@ -9,4 +9,4 @@ namespace auth {
     };
 }
 
-#endif // AXEL_ISTATEHASHMANAGER_H
+#endif // AXEL_AUTH_ISTATEHASHMANAGER_H

@@ -1,15 +1,14 @@
 #include "auth/AuthCodeManager.h"
-#include "config/poe_auth_config.h"
+#include "config/poe_auth.h"
 #include "webutil/path.h"
 #include "config/axel.h"
-#include "poe_auth_config.h"
 
 /// @param code_challenge The code challenge to include in the authorization url.
 /// @param state_hash The state hash to include in the authorization url.
 /// @return The authorization url string.
 std::string auth::AuthCodeManager::get_auth_url(std::string code_challenge, std::string state_hash) const {
     std::string base_path = config::poe::host + config::poe::paths::auth_path; // Before adding query parameters
-    namespace scopes = config::poe::scopes::account;
+    namespace scopes = config::poe::scopes;
     
     return webutil::add_query_parameters(base_path, {{"client_id", config::axel::client_id},
                                                      {"response_type", "code"},

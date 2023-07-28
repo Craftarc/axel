@@ -4,6 +4,7 @@
 #include "auth/TokenRequestManager.h"
 #include "webutil/MockHttpSender.h"
 
+using namespace ::testing;
 namespace webutil {
     class TokenRequestManager_test : public ::testing::Test {
     protected:
@@ -27,7 +28,7 @@ namespace webutil {
                                   "}";
         
         EXPECT_CALL(*mock_http_sender,
-                    send_http_request(::testing::_)).Times(1).WillOnce(::testing::Return(sample_json));
+                    send_http_request(_, _)).Times(1).WillOnce(Return(sample_json));
         
         token_request_manager.send_token_request(auth_code, code_verifier, std::move(mock_http_sender));
     }

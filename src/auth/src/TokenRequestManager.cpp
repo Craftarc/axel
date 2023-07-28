@@ -3,12 +3,11 @@
 #include <iostream>
 
 #include "auth/TokenRequestManager.h"
-#include "config/poe_auth_config.h"
+#include "config/poe_auth.h"
 #include "webutil/http.h"
 #include "webutil/path.h"
 #include "config/axel.h"
 #include "webutil/interfaces/IHttpSender.h"
-#include "poe_auth_config.h"
 
 /// @param The authorization code to construct the request from.
 auth::TokenRequestManager::TokenRequestManager() {}

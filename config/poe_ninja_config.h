@@ -1,5 +1,5 @@
-#ifndef AXEL_CONFIG_POE_NINJA_CONFIG_H
-#define AXEL_CONFIG_POE_NINJA_CONFIG_H
+#ifndef AXEL_CONFIG_POE_NINJA_H
+#define AXEL_CONFIG_POE_NINJA_H
 
 #include <string>
 
@@ -46,4 +46,4 @@ namespace config {
         } // leagues
     } // poe_ninja
 } // config
-#endif //AXEL_CONFIG_POE_NINJA_CONFIG_H
+#endif //AXEL_CONFIG_POE_NINJA_H

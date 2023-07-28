@@ -1,5 +1,5 @@
-#ifndef AXEL_OAUTHMANAGER_H
-#define AXEL_OAUTHMANAGER_H
+#ifndef AXEL_AUTH_OAUTHMANAGER_H
+#define AXEL_AUTH_OAUTHMANAGER_H
 
 #include <string>
 #include <utility>
@@ -58,4 +58,4 @@ namespace auth {
     };
 }
 
-#endif //AXEL_OAUTHMANAGER_H
+#endif //AXEL_AUTH_OAUTHMANAGER_H

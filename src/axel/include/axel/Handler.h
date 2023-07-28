@@ -1,5 +1,5 @@
-#ifndef AXEL_HANDLER_H
-#define AXEL_HANDLER_H
+#ifndef AXEL_AXEL_HANDLER_H
+#define AXEL_AXEL_HANDLER_H
 
 namespace axel {
     class Handler {
@@ -9,4 +9,4 @@ namespace axel {
     };
 }
 
-#endif // AXEL_HANDLER_H
+#endif // AXEL_AXEL_HANDLER_H

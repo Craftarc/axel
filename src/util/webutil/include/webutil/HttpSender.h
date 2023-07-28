@@ -1,5 +1,5 @@
-#ifndef AXEL_WEBUITL_HTTPSENDER_H
-#define AXEL_WEBUITL_HTTPSENDER_H
+#ifndef AXEL_WEBUTIL_HTTPSENDER_H
+#define AXEL_WEBUTIL_HTTPSENDER_H
 
 #include "webutil/interfaces/IHttpSender.h"
 
@@ -13,4 +13,4 @@ namespace webutil {
         // TODO: Add an overload for a default max_body_size
     };
 }
-#endif // AXEL_WEBUITL_HTTPSENDER_H
+#endif // AXEL_WEBUTIL_HTTPSENDER_H

@@ -1,3 +1,6 @@
+#ifndef AXEL_AUTH_MOCKSTATEHASHMANAGER_H
+#define AXEL_AUTH_MOCKSTATEHASHMANAGER_H
+
 #include <gmock/gmock.h>
 #include "auth/interfaces/IStateHashManager.h"
 
@@ -8,3 +11,4 @@ namespace auth {
         MOCK_METHOD(bool, check_state_hash, (const std::string& check_hash), (const, override));
     };
 }
+#endif // AXEL_AUTH_MOCKSTATEHASHMANAGER_H
