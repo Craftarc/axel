@@ -39,7 +39,6 @@ var namespaces_dup =
       [ "extract_query_params", "path_8h.html#ab8b6160552eae4349b0d7450ef6db7ee", null ],
       [ "generate_secret_bytes", "hash_8h.html#a4b322b3a6e4ef26574153212f939c775", null ],
       [ "make_form_data", "path_8h.html#a177074a519b80be02757463c15c4499b", null ],
-      [ "make_http_request", "http_8h.html#a955faee7f7df2d459208bd9d3e6cd030", null ],
-      [ "send_http_request", "http_8h.html#a4fc235b2d700531e654184efb8bb0cb9", null ]
+      [ "make_http_request", "http_8h.html#a955faee7f7df2d459208bd9d3e6cd030", null ]
     ] ]
 ];

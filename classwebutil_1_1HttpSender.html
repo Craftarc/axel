@@ -100,10 +100,59 @@ Inheritance diagram for webutil::HttpSender:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a24104950461a370649623ffec0d41276"><td class="memItemLeft" align="right" valign="top"><a id="a24104950461a370649623ffec0d41276"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>send_http_request</b> (const http::request&lt; http::string_body &gt; &amp;request) override</td></tr>
-<tr class="separator:a24104950461a370649623ffec0d41276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32176235711e6bef16d6c89516f05db3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebutil_1_1HttpSender.html#a32176235711e6bef16d6c89516f05db3">send_http_request</a> (const http::request&lt; http::string_body &gt; &amp;request, int max_body_size) override</td></tr>
+<tr class="memdesc:a32176235711e6bef16d6c89516f05db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a HTTP request and returns the body of the HTTP response in a string.  <a href="classwebutil_1_1HttpSender.html#a32176235711e6bef16d6c89516f05db3">More...</a><br /></td></tr>
+<tr class="separator:a32176235711e6bef16d6c89516f05db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a32176235711e6bef16d6c89516f05db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32176235711e6bef16d6c89516f05db3">&#9670;&nbsp;</a></span>send_http_request()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string webutil::HttpSender::send_http_request </td>
+          <td>(</td>
+          <td class="paramtype">const http::request&lt; http::string_body &gt; &amp;&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_body_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends a HTTP request and returns the body of the HTTP response in a string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>The HTTP request to be sent, with all request fields furnished. </td></tr>
+    <tr><td class="paramname">max_body_size</td><td>Largest accepted body size of HTTP response, in MB. Default: 8MB </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The response body as a string </dd></dl>
+
+<p>Implements <a class="el" href="classwebutil_1_1IHttpSender.html">webutil::IHttpSender</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/util/webutil/include/webutil/<a class="el" href="HttpSender_8h_source.html">HttpSender.h</a></li>
 <li>src/util/webutil/src/HttpSender.cpp</li>

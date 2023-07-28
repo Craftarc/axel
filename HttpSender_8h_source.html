@@ -95,11 +95,13 @@ $(document).ready(function(){initNavTree('HttpSender_8h_source.html',''); initRe
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classwebutil_1_1HttpSender.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classwebutil_1_1HttpSender.html">HttpSender</a> : <span class="keyword">public</span> <a class="code" href="classwebutil_1_1IHttpSender.html">IHttpSender</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        std::string send_http_request(<span class="keyword">const</span> http::request&lt;http::string_body&gt;&amp; request) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    };</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_WEBUITL_HTTPSENDER_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        std::string <a class="code" href="classwebutil_1_1HttpSender.html#a32176235711e6bef16d6c89516f05db3">send_http_request</a>(<span class="keyword">const</span> http::request&lt;http::string_body&gt;&amp; request, <span class="keywordtype">int</span> max_body_size) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="comment">// TODO: Add an overload for a default max_body_size</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    };</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_WEBUITL_HTTPSENDER_H</span></div>
 <div class="ttc" id="aclasswebutil_1_1HttpSender_html"><div class="ttname"><a href="classwebutil_1_1HttpSender.html">webutil::HttpSender</a></div><div class="ttdef"><b>Definition:</b> HttpSender.h:9</div></div>
+<div class="ttc" id="aclasswebutil_1_1HttpSender_html_a32176235711e6bef16d6c89516f05db3"><div class="ttname"><a href="classwebutil_1_1HttpSender.html#a32176235711e6bef16d6c89516f05db3">webutil::HttpSender::send_http_request</a></div><div class="ttdeci">std::string send_http_request(const http::request&lt; http::string_body &gt; &amp;request, int max_body_size) override</div><div class="ttdoc">Sends a HTTP request and returns the body of the HTTP response in a string.</div><div class="ttdef"><b>Definition:</b> HttpSender.cpp:22</div></div>
 <div class="ttc" id="aclasswebutil_1_1IHttpSender_html"><div class="ttname"><a href="classwebutil_1_1IHttpSender.html">webutil::IHttpSender</a></div><div class="ttdef"><b>Definition:</b> IHttpSender.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

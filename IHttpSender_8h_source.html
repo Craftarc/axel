@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('IHttpSender_8h_source.html',''); initR
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classwebutil_1_1IHttpSender.html">   10</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classwebutil_1_1IHttpSender.html">IHttpSender</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classwebutil_1_1IHttpSender.html">IHttpSender</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">virtual</span> std::string send_http_request(<span class="keyword">const</span> http::request&lt;http::string_body&gt;&amp; request) = 0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">virtual</span> std::string send_http_request(<span class="keyword">const</span> http::request&lt;http::string_body&gt;&amp; request, <span class="keywordtype">int</span> max_body_size) = 0;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    };</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_IHTTPSENDER_H</span></div>
