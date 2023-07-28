@@ -1,8 +1,8 @@
 var namespaceconfig_1_1poe__ninja =
 [
-    [ "leagues", "namespaceconfig_1_1poe__ninja_1_1leagues.html", [
-      [ "crucible", "namespaceconfig_1_1poe__ninja_1_1leagues.html#a7e2bf24de415696f7c221bc60c265a58", null ],
-      [ "sanctum", "namespaceconfig_1_1poe__ninja_1_1leagues.html#a214f57244e2e68180e5ec011389f6bc5", null ]
+    [ "leagues", null, [
+      [ "crucible", "poe__ninja__config_8h.html#a7e2bf24de415696f7c221bc60c265a58", null ],
+      [ "sanctum", "poe__ninja__config_8h.html#a214f57244e2e68180e5ec011389f6bc5", null ]
     ] ],
     [ "paths", "namespaceconfig_1_1poe__ninja_1_1paths.html", [
       [ "artifact", "namespaceconfig_1_1poe__ninja_1_1paths.html#a12af009a5676156a9516b55846a0ac37", null ],
