@@ -45,7 +45,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"AuthCodeManager_8h_source.html"
+""
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
