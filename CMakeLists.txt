@@ -9,6 +9,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Global properties
 set(PROJECT_ROOT ${CMAKE_CURRENT_LIST_DIR})
 
+# AWS C++ SDK
+find_package(AWSSDK REQUIRED COMPONENTS core dynamodb)
+
 # AWS Lambda runtime library
 find_package(aws-lambda-runtime)
 
@@ -50,7 +53,7 @@ add_executable(sandbox sandbox.cpp)
 target_compile_features(sandbox PRIVATE "cxx_std_17")
 target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
 target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime)
-target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime parse Boost::json)
+target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime parse Boost::json ${AWSSDK_LINK_LIBRARIES})
 
 
 # Subdirectories

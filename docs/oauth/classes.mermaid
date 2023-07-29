@@ -3,13 +3,13 @@ title: Oauth Flow - Class Diagram
 ---
 classDiagram
     class OauthManager {
+        +String start_auth()
+        +String receive_auth(url) String
         -PkceManager pkce_manager_
         -AuthCodeManager auth_code_manager_
         -StateHashManager state_hash_manager_
         -TokenRequestManager token_request_manager_
         -State state_
-        +String start_auth()
-        +String receive_auth(url) String
         -void set_state(state) State
     }
 
@@ -31,6 +31,17 @@ classDiagram
 
     class TokenRequestManager {
         +String[] send_token_request(auth_code, code_verifier) String[]
+    }
+
+    class IDatabaseManager {
+        <<interface>>
+        +DbManager(database) IDatabase
+        -String database
+        +void store(items) Array
+    }
+
+    class IDatabase {
+
     }
 
     class State {

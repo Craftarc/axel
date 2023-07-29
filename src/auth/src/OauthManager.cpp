@@ -29,6 +29,7 @@ namespace auth {
     std::string auth::OauthManager::start_auth() {
         auto code_challenge = pkce_manager_->get_code_challenge();
         auto state_hash = state_hash_manager_->get_state_hash();
+        
         set_state(State::USER_REDIRECTED);
         return auth_code_manager_->get_auth_url(code_challenge, state_hash);
     }
