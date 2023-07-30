@@ -1,6 +1,7 @@
 # Configure target sources here
 set(MAIN_SRC_FILES main.cpp)
 
+
 cmake_minimum_required(VERSION 3.13)
 project(axel LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
@@ -55,6 +56,12 @@ target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
 target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime)
 target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime parse Boost::json ${AWSSDK_LINK_LIBRARIES})
 
+# tests executable (all tests)
+add_executable(tests $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:webutil_tests> $<TARGET_OBJECTS:parse_tests>
+               $<TARGET_OBJECTS:poe_ninja_tests> $<TARGET_OBJECTS:axel_tests>)
+target_link_libraries(tests PRIVATE auth_tests webutil_tests parse_tests poe_ninja_tests axel_tests)
+include(GoogleTest)
+gtest_discover_tests(tests)
 
 # Subdirectories
 add_subdirectory(src/poe_ninja)

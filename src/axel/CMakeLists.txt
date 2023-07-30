@@ -11,11 +11,9 @@ target_include_directories(axel PUBLIC include)
 target_link_libraries(axel PUBLIC AWS::aws-lambda-runtime)
 
 # axel library tests
-add_executable(axel_tests ${AXEL_TESTS_SRC_FILES})
-target_include_directories(axel_tests PRIVATE include test)
-target_link_libraries(axel_tests PRIVATE axel GTest::Main GTest::GTest ${GMock})
-include(GoogleTest)
-gtest_discover_tests(axel_tests)
+add_library(axel_tests OBJECT ${AXEL_TESTS_SRC_FILES})
+target_include_directories(axel_tests PUBLIC include test)
+target_link_libraries(axel_tests PUBLIC axel GTest::Main GTest::GTest ${GMock})
 
 # Sample AWS Lambda requests for testing
 configure_file(test/input/response.json ${CMAKE_BINARY_DIR}/test_input/${AXEL_TEST_INPUT_FILES})

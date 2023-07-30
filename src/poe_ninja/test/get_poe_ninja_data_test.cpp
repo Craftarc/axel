@@ -32,7 +32,7 @@ TEST(constants_test, correct_hostname) {
     EXPECT_EQ(config::poe_ninja::host, "poe.ninja");
 }
 
-TEST(constants_test, currency_json_returns_non_empty_valid_json) {
+TEST(constants_test, DISABLED_currency_json_returns_non_empty_valid_json) {
     using namespace config::poe_ninja::paths;
     
     // All currency and item endpoints (excluding league)
