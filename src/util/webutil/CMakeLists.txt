@@ -8,12 +8,12 @@ target_include_directories(webutil PUBLIC include test ${BOTAN_PKG_INCLUDE_DIRS}
 target_link_libraries(webutil OpenSSL::SSL OpenSSL::Crypto Boost::thread ${BOTAN_PKG_LIBRARIES} ${GMock})
 
 # webutil library tests
-add_executable(webutil_tests ${WEBUTIL_TESTS_SRC_FILES})
-target_include_directories(webutil_tests PRIVATE include)
-target_link_libraries(webutil_tests PRIVATE webutil webutil_mocks ${GTEST_BOTH_LIBRARIES})
-include(GoogleTest)
-gtest_discover_tests(webutil_tests)
+add_library(webutil_tests OBJECT ${WEBUTIL_TESTS_SRC_FILES})
+target_include_directories(webutil_tests PUBLIC include)
+target_link_libraries(webutil_tests PUBLIC webutil webutil_mocks GTest::GTest GTest::Main)
+
 
 # webutil mocks
 add_library(webutil_mocks INTERFACE)
 target_include_directories(webutil_mocks INTERFACE mock include)
+target_link_libraries(webutil_mocks INTERFACE ${GMock})
