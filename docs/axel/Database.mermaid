@@ -1,0 +1,13 @@
+---
+title: Database Class Diagram
+---
+classDiagram
+    class Database {
+        +Database(String database_name, client_config)
+        -ClientConfiguration client_config
+        -String database_name
+        +get(String partition_key)
+        +put(Map~KeyValuePair~ map)
+        +delete(String partition_key)
+        +update(String partition_key, Array values)
+    }

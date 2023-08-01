@@ -1,5 +1,5 @@
 # Configure target sources here
-set(AXEL_SRC_FILES src/Handler.cpp src/Handler.cpp src/TestHandler.cpp)
+set(AXEL_SRC_FILES src/Handler.cpp src/Handler.cpp src/TestHandler.cpp src/Database.cpp)
 set(AXEL_TESTS_SRC_FILES test/TestHandler_test.cpp)
 set(AXEL_TEST_INPUT_FILES axel/response.json)
 
@@ -7,7 +7,7 @@ configure_file(test/input/response.json response.txt)
 
 # axel library
 add_library(axel ${AXEL_SRC_FILES})
-target_include_directories(axel PUBLIC include)
+target_include_directories(axel PUBLIC include ${PROJECT_ROOT})
 target_link_libraries(axel PUBLIC AWS::aws-lambda-runtime)
 
 # axel library tests

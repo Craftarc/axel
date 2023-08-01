@@ -53,8 +53,8 @@ aws_lambda_package_target(main NO_LIBC) # this line creates a target that packag
 add_executable(sandbox sandbox.cpp)
 target_compile_features(sandbox PRIVATE "cxx_std_17")
 target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
-target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime)
-target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime parse Boost::json ${AWSSDK_LINK_LIBRARIES})
+target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime src/axel/include ${PROJECT_ROOT})
+target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime parse Boost::json ${AWSSDK_LINK_LIBRARIES} axel)
 
 # tests executable (all tests)
 add_executable(tests $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:webutil_tests> $<TARGET_OBJECTS:parse_tests>
