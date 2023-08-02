@@ -5,7 +5,7 @@
 	"version": "2.0",
 	"routeKey": "$default",
 	"rawPath": "/",
-	"rawQueryString": "code=ee2bf05af34e72c404d9ead42c47f493c8e56590&state=b3YkJi8YYnraGKZgDIHavPGHaybR-pWM__CSrrjPFmA",
+	"rawQueryString": "code=ee2bf05af34e72c404d9ead42c47f493c8e56590&state=ivFsKTBkRZn0ZtNCm2UGCXHsdDO7UJefR-eGXx5ouPU",
 	"headers": {
 	  "sec-fetch-mode": "navigate",
 	  "referer": "https://www.pathofexile.com/",
@@ -27,7 +27,8 @@
 	  "cache-control": "max-age=0",
 	  "accept-encoding": "gzip, deflate, br",
 	  "sec-fetch-dest": "document",
-	  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+	  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+	  "cookie": "wTgk87tt09RxiFwXOwCw-KAhNoCripWepotTKQ3P3pQ"
 	},
 	"queryStringParameters": {
 	  "code": "ee2bf05af34e72c404d9ead42c47f493c8e56590",

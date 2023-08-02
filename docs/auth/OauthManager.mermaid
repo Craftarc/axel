@@ -11,38 +11,36 @@ sequenceDiagram
     participant SM as SessionManager
     participant DM as DbManager
 
-    L ->>+ OM: start_auth()
-    OM ->> OM: void set_state(INITIAL)
-    OM ->>+ PM: get_code_challenge()
-    PM -->>- OM: code_challenge
-    OM ->>+ SHM: get_state_hash()
-    SHM -->>- OM: state_hash
-    OM ->>+ SM: get_session_token()
-    SM -->>- OM: auth_session_token
-    OM ->>+ DM: store_session_token(AuthDB, auth_session_token, state_hash)
-    DM -->>- OM: returns if successful
-    OM ->>+ ACM: get_auth_url(code_challenge, state_hash)
-    ACM -->>- OM: auth_url
-    OM ->> OM: void set_state(USER_REDIRECTED)
-    OM -->>- L: auth_url
-    L ->>+ OM: receive_auth(url, auth_session_token)
-    note right of OM: Extract state_hash <br> and auth_code
-    OM ->>+ DM: get_state_hash(auth_session_token)
-    DM -->>- OM: state_hash
-    OM ->>+ SHM: Bool check_state_hash(state_hash)
-    SHM -->>- OM: is_valid_hash
-    OM ->> OM: set_state(AUTH_RECEIVED)
-    OM ->>+ PM: get_code_verifier()
-    PM -->>- OM: code_verifier
-    OM ->>+ TRM: send_token_request(auth_code, code_verifier)
-    OM ->> OM: void set_state(EXCHANGE_REQUEST_SENT)
-    TRM -->>- OM: access_token, refresh_token
-    OM ->> OM: void set_state(TOKENS_RECEIVED)
-    OM ->>+ SM: get_session_token()
-    SM -->>- OM: app_session_token
-    OM ->>+ DM: store_session_token(AxelDB, axel_session_token)
-    DM -->>- OM: returns if successful
-    OM ->> OM: void set_state(SESSION_ESTABLISHED)
-    OM -->>- L: session_token
+    L ->>+ OM: start auth
+    OM ->> OM: set state: INITIAL
+    OM ->>+ PM: get code challenge and code verifier
+    PM -->>- OM: code challenge, code verifier
+    OM ->>+ SHM: get state hash
+    SHM -->>- OM: state hash
+    OM ->>+ SM: get session id
+    SM -->>- OM: session id
+    OM ->>+ DM: store (session id, code verifier, state hash)
+    DM -->>- OM: success
+    OM ->>+ ACM: get auth url (code challenge, state hash)
+    ACM -->>- OM: auth url
+    OM ->> OM: set state: USER REDIRECTED
+    OM -->>- L: auth url
+    L ->>+ OM: receive auth (url, session id)
+    note right of OM: Extract state hash <br> and auth code
+    OM ->>+ DM: get stored state hash, code verifier from previous step (session id)
+    DM -->>- OM: state hash, code verifier
+    OM ->>+ SHM: check if state hash is valid
+    SHM -->> OM: is valid
+    OM ->> OM: set state: AUTH_RECEIVED
+    OM ->>+ TRM: send token request(auth code, code verifier)
+    OM ->> OM: set state: EXCHANGE_REQUEST_SENT
+    TRM -->>- OM: access token, refresh token
+    OM ->> OM: set state: TOKENS_RECEIVED
+    OM ->>+ SM: get session id for axel app
+    SM -->>- OM: axel session id
+    OM ->>+ DM: store session id (AxelDB, axel session id)
+    DM -->>- OM: success
+    OM ->> OM: set state: SESSION_ESTABLISHED
+    OM -->>- L: axel session id
 
 

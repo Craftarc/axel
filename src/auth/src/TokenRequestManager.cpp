@@ -25,6 +25,8 @@ std::pair<std::string, std::string>
 auth::TokenRequestManager::send_token_request(std::string auth_code,
                                               std::string code_verifier,
                                               std::unique_ptr<webutil::IHttpSender> http_sender) const {
+    const int MAX_RESPONSE_BODY = 10;
+    
     // Check input validity
     if (auth_code == "") {
         throw std::runtime_error("auth_code is empty");
@@ -47,7 +49,7 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                                      "application/x-www-form-urlencoded"}},
                                                    request_body);
     
-    auto response_body = http_sender->send_http_request(full_request, 0);
+    auto response_body = http_sender->send_http_request(full_request, MAX_RESPONSE_BODY);
     
     boost::json::value json = boost::json::parse(response_body);
     auto access_token = json.at("access_token").as_string().c_str();

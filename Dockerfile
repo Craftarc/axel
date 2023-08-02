@@ -1,7 +1,7 @@
 # Build command
 # docker build -t axel-backend:1.0 . --no-cache
 
-# Use Amazon Linux 2 as base image/
+# Use Amazon Linux 2 as base image
 FROM public.ecr.aws/lambda/provided:al2
 
 # Environment variables

@@ -35,6 +35,6 @@ namespace axel {
         /// @brief Retrieve the name of the partition key of the table.
         Aws::String get_partition_key() const;
     };
+} // axel
 
 #endif //AXEL_AXEL_DATABASE_H
-} // axel

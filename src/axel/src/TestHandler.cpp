@@ -1,48 +1,31 @@
 #include "axel/TestHandler.h"
 #include "boost/json.hpp"
-
-namespace {
-    std::string handler(const invocation_request& req) {
-        std::cout << std::endl;
-        std::cout << "///////// PAYLOAD /////////" << std::endl;
-        std::cout << req.payload << std::endl;
-        std::cout << "///////// END PAYLOAD /////////" << std::endl;
-        std::cout << std::endl;
-        
-        boost::json::value json_value = boost::json::parse(req.payload);
-        auto raw_query_string = json_value.at("rawQueryString");
-        std::cout << raw_query_string << std::endl;
-        
-        return "";
-    }
-    
-    void run_handler(std::istream& input) {
-        invocation_request request;
-        std::getline(input, request.payload);
-        std::getline(input, request.request_id);
-        std::getline(input, request.xray_trace_id);
-        std::getline(input, request.client_context);
-        std::getline(input, request.cognito_identity);
-        std::getline(input, request.function_arn);
-        
-        // For the deadline, Need to read into a std::time_t or a string and then convert
-        // Assuming you will get seconds since epoch from input and convert it
-        std::time_t deadline;
-        if (input >> deadline) {
-            request.deadline = std::chrono::system_clock::from_time_t(deadline);
-        }
-        
-        input.ignore();  // Ignore newline after time
-    }
-}
+#include "auth/OauthManager.h"
+#include "parse/util.h"
 
 namespace axel {
     invocation_response TestHandler::run(const invocation_request& request) {
         std::string payload = request.payload;
-        std::string content_type = "application/json"; // Axel only uses JSON
+        std::string content_type;
+        boost::json::value json = boost::json::parse(payload);
+        std::string path = json.at("rawPath").as_string().c_str();
+        
+        if (path == "/login") {
+            auth::OauthManager oauth_manager;
+            std::string response = oauth_manager.start_auth();
+            std::cout << response << std::endl;
+        } else if (path == "/") {
+            auth::OauthManager oauth_manager;
+            std::string query_string = json.at("rawQueryString").as_string().c_str();
+            std::string session_id = json.at("headers").at("cookie").as_string().c_str();
+            
+            std::cout << "Session id: " << session_id << std::endl;
+            
+            oauth_manager.receive_auth(query_string, session_id);
+        }
+        
         bool success = true;
         
         return {payload, content_type, success};
     }
 };
-

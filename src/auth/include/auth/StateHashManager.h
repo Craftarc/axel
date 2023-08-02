@@ -16,17 +16,12 @@ namespace auth {
     /// @note There should only be one instance of this class per Oauth session.
     class StateHashManager : public IStateHashManager {
     public:
-        /// @brief Constructs a StateHashManager instance.
-        StateHashManager();
         
         /// @brief Gets the state hash.
-        std::string get_state_hash() const override;
+        [[nodiscard]] std::string get_state_hash() const override;
         
-        /// @brief Verifies if a given hash matches the state hash stored internally.
-        bool check_state_hash(const std::string& check_hash) const override;
-    
-    private:
-        std::string state_hash_;
+        /// @brief Checks if an input state hash matches the one associated with the same authentication session.
+        bool check_state_hash(std::string session_id, std::string state_hash) const override;
     };
 }
 

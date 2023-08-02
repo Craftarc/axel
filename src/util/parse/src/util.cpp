@@ -3,7 +3,7 @@
 #include <aws/lambda-runtime/runtime.h>
 #include <boost/json.hpp>
 
-#include "parse/string.h"
+#include "parse/util.h"
 
 namespace parse {
     
@@ -38,4 +38,21 @@ namespace parse {
         
         return request;
     }
-}
+    
+    /// @param status_code HTTP status code of response.
+    /// @param headers Map of headers to include in response. 1-dimensional map only.
+    /// @param body Payload body. Must be of "application/json" type.
+    std::string make_invocation_response_payload(int status_code,
+                                                 const std::unordered_map<std::string, std::string>& headers,
+                                                 const std::string& body) {
+        // Construct JSON object from headers map
+        boost::json::object header_object;
+        for (const auto& pair: headers) {
+            header_object.emplace(pair.first, pair.second);
+        }
+        
+        boost::json::value json{{"statusCode", status_code}, {"headers", std::move(header_object)}, {"body", body}};
+        
+        return boost::json::serialize(json); // Convert to string
+    }
+} // parse
