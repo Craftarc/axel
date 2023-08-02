@@ -39,27 +39,45 @@ namespace auth {
 /// Responsible for calling functions and methods in sequence according to the Oauth specification.
 /// @return The invocation response payload to send back to the user.
     std::string auth::OauthManager::start_auth() {
+        std::cout << "Authorisation session started" << std::endl;
+        
         auto code_challenge = pkce_manager_->get_code_challenge();
         auto code_verifier = pkce_manager_->get_code_verifier();
         auto state_hash = state_hash_manager_->get_state_hash();
         auto session_id = session_manager_->get_session_token();
         
-        std::cout << "Session ID: " << session_id << std::endl;
+        std::cout << "Session ID created: " << session_id << std::endl;
+        std::cout << "State hash created: " << state_hash << std::endl;
+        std::cout << "Code verifier created: " << code_verifier << std::endl;
         
         // Set up connection to Oauth Database
         Aws::Client::ClientConfiguration client_configuration;
+        std::cout << "Client configuration created" << std::endl;
         client_configuration.region = "us-west-1";
-        axel::Database oauth_database{config::axel::database::auth, client_configuration};
+        std::cout << "Region set" << std::endl;
         
-        oauth_database.put({{"session_id", session_id},
+        axel::Database oauth_database{config::axel::database::auth, client_configuration};
+        std::cout << "Connection established" << std::endl;
+        
+        if (oauth_database.put({{"session_id", session_id},
                             {"state_hash", state_hash},
-                            {"code_verifier", code_verifier}});
+                            {"code_verifier", code_verifier}})) {
+            std::cout << "Successfully inserted (session_id, state_hash, code_verifier) into axel-oauth" << std::endl;
+        } else {
+            throw std::runtime_error("Failed to insert into axel-oauth");
+        };
         
         std::string auth_url = auth_code_manager_->get_auth_url(code_challenge, state_hash);
+        
+        std::cout << "Generated auth url: " << auth_url << std::endl;
+        
         // Construct invocation response
         std::unordered_map<std::string, std::string> headers = {{"Location", auth_url},
                                                                 {"Set-Cookie", session_id}};
-        auto response = parse::make_invocation_response_payload(302, std::move(headers), "");
+        
+        auto response = parse::make_invocation_response_payload(302, headers, "");
+        
+        std::cout << "Generated invocation_response payload: " << response << std::endl;
         
         set_state(State::USER_REDIRECTED);
         

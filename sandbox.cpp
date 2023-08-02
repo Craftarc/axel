@@ -26,20 +26,9 @@ int main() {
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {
-        axel::TestHandler test_handler;
-        std::fstream start_file("test_input/axel/login-request.json");
-        std::fstream auth_response_file("test_input/axel/auth-response.json");
-        std::string start_input = parse::read_file_into_string(start_file);
-        std::string auth_response_input = parse::read_file_into_string(auth_response_file);
-        
-        // Initiate start
-        invocation_request start_request = parse::make_invocation_request(start_input);
-        auto res = test_handler.run(start_request); // should print response
-        std::cout << res.get_payload() << std::endl;
-//
-//        // Initiate auth_response
-//        invocation_request auth_response_request = parse::make_invocation_request(auth_response_input);
-//        test_handler.run(auth_response_request);
+        invocation_request request = parse::make_invocation_request("test_input/auth/initial-login.json");
+
+        axel::TestHandler::run(request);
     }
     Aws::ShutdownAPI(options);
     return 0;

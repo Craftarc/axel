@@ -71,7 +71,7 @@ RUN git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp && \
     cd aws-sdk-cpp && \
     mkdir build && \
     cd build && \
-    cmake3 .. && \
+    cmake3 .. -DBUILD_ONLY="dynamodb" && \
     make && \
     make install && \
     cd ../.. && \

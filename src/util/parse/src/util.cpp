@@ -2,6 +2,7 @@
 #include <string>
 #include <aws/lambda-runtime/runtime.h>
 #include <boost/json.hpp>
+#include <fstream>
 
 #include "parse/util.h"
 
@@ -18,11 +19,14 @@ namespace parse {
         return string;
     }
     
-    /// Takes in a JSON string, then tries to read as many fields matching those in an invocation_request
+    /// Takes in a JSON file, then tries to read as many fields matching those in an invocation_request
     /// as possible, before creating a new invocation_request with those values filled in.
-    /// @param input JSON string to convert
+    /// @param filename Path to input JSON file.
     /// @return An invocation_request with member variables assigned
-    invocation_request make_invocation_request(const std::string& input) {
+    invocation_request make_invocation_request(const std::string& filename) {
+        std::fstream file(filename);
+        std::string input = parse::read_file_into_string(file);
+        
         invocation_request request{};
         boost::json::object input_json = boost::json::parse(input).as_object();
         // Check for presence of each of the fields

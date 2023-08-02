@@ -4,7 +4,7 @@
 namespace config {
     /// @brief Contains constants related to POE's API.
     namespace poe {
-        const std::string host = "www.pathofexile.com";
+        const std::string host = "https://www.pathofexile.com";
         /// @brief Contains constants related to paths.
         namespace paths {
             const std::string auth_path = "/oauth/authorize";

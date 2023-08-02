@@ -11,15 +11,21 @@ namespace axel {
         std::string path = json.at("rawPath").as_string().c_str();
         
         if (path == "/login") {
+            std::cout << "Entered path: " << path << std::endl;
+            
             auth::OauthManager oauth_manager;
             std::string response = oauth_manager.start_auth();
-            std::cout << response << std::endl;
+            
+            std::cout << "/login flow complete" << std::endl;
+            
+            return invocation_response::success(response, "application/json");
         } else if (path == "/") {
+            std::cout << "Entered path: " << path << std::endl;
+            
             auth::OauthManager oauth_manager;
             std::string query_string = json.at("rawQueryString").as_string().c_str();
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();
             
-            std::cout << "Session id: " << session_id << std::endl;
             
             oauth_manager.receive_auth(query_string, session_id);
         }

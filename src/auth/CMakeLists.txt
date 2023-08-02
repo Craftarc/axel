@@ -21,3 +21,8 @@ target_link_libraries(auth_tests PUBLIC auth auth_mocks webutil_mocks GTest::Mai
 add_library(auth_mocks INTERFACE)
 target_include_directories(auth_mocks INTERFACE include mock)
 target_link_libraries(auth_mocks INTERFACE ${GMock})
+
+
+# Sample AWS Lambda requests for testing
+configure_file(../auth/test/input/auth-response.json ${CMAKE_BINARY_DIR}/test_input/auth/auth-response.json)
+configure_file(../auth/test/input/initial-login.json ${CMAKE_BINARY_DIR}/test_input/auth/initial-login.json)
