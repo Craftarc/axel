@@ -8,8 +8,8 @@ namespace auth {
     public:
         virtual ~ITokenRequestManager() = default;
         
-        virtual std::pair<std::string, std::string> send_token_request(std::string auth_code, std::string code_verifier,
-                                                                       std::unique_ptr<webutil::IHttpSender> http_sender) const = 0;
+        virtual std::string send_token_request(std::string auth_code, std::string code_verifier,
+                                               std::unique_ptr<webutil::IHttpSender> http_sender) const = 0;
     };
 }
 

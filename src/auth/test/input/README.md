@@ -10,4 +10,6 @@ Each top-level key in the JSON corresponds to a variable name of invocation_requ
 get_time_remaining).
 
 - initial-login: Initial GET request to the Lambda function URL. The function should redirect the user to an
-authorisation url, and place a cookie in the user's browser.
+  authorisation url, and place a cookie in the user's browser.
+- auth-response: Redirect from the authorisation server to the Lambda function URL.
+- token-response: Access tokens returned from the authorisation server.

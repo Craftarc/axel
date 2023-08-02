@@ -26,6 +26,7 @@ namespace axel {
             std::string query_string = json.at("rawQueryString").as_string().c_str();
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();
             
+            std::cout << "Session id retrieved: " << session_id << std::endl;
             
             oauth_manager.receive_auth(query_string, session_id);
         }

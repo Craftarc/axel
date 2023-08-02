@@ -23,6 +23,12 @@ namespace webutil {
         int max_body_size_bytes = max_body_size * 1024 * 1024; // Argument is in MB, this converts to B
         std::string host = request["host"];
         
+        // Reject hostnames with protocols
+        std::string target = "://";
+        if (host.find(target) != std::string::npos) { // If a match is found at any index
+            throw std::runtime_error("Host field should not contain protocol");
+        }
+        
         // IO and SSL context for stream
         net::io_context ioc;
         ssl::context ctx(ssl::context::tlsv12_client);

@@ -11,6 +11,7 @@ namespace {
     /// @brief Takes a request from the AWS Lambda server runtime and delegates it to the appropriate method to be processed.
     invocation_response handler(const invocation_request& req) {
         std::string payload = req.payload;
+        std::cout << payload << std::endl;
         std::string content_type;
         boost::json::value json = boost::json::parse(payload);
         std::string path = json.at("rawPath").as_string().c_str();
@@ -29,10 +30,10 @@ namespace {
             
             auth::OauthManager oauth_manager;
             std::string query_string = json.at("rawQueryString").as_string().c_str();
+            
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();
-            
-            
             oauth_manager.receive_auth(query_string, session_id);
+            return invocation_response::success("", "application/json");
         }
         
         bool success = true;

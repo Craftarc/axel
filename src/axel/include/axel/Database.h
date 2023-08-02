@@ -15,7 +15,6 @@ namespace axel {
     public:
         /// @brief Parameterised constructor. All Database objects must be constructed with a specified table name.
         Database(const std::string& table_name, const Aws::Client::ClientConfiguration& client_config);
-        virtual ~Database() = default;
         /// @brief Stores items in the database
         bool put(const std::unordered_map<Aws::String, Aws::String>& items);
         
@@ -26,6 +25,9 @@ namespace axel {
         /// @param key_value The key_value of the partition key of the item to delete
         /// @brief Removes the item with the specified partition key attribute from the database
         bool del(const Aws::String& key_value) const;
+        
+        /// @brief Connects to a database.
+        static std::unique_ptr<Database> connect(const std::string& database);
     
     private:
         const Aws::DynamoDB::DynamoDBClient client_;

@@ -5,15 +5,16 @@
 
 namespace {
     class http_tests : public ::testing::Test {
+    protected:
+        const std::string http_verb = "POST";
+        const std::string path = "/test/path";
+        const std::unordered_map<std::string, std::string> fields{{"Content-Type", "application/json"}};
+        const std::string body = "Test Body";
+        
     };
 }
 
 TEST_F(http_tests, make_http_request__data_is_correct) {
-    const std::string http_verb = "POST";
-    const std::string path = "/test/path";
-    const std::unordered_map<std::string, std::string> fields{{"Content-Type", "application/json"}};
-    const std::string body = "Test Body";
-    
     auto request = webutil::make_http_request(http_verb, path, fields, body);
     
     // Perform checks
@@ -28,4 +29,3 @@ TEST_F(http_tests, make_http_request__data_is_correct) {
     // Check the body
     EXPECT_EQ(body, request.body());
 }
-

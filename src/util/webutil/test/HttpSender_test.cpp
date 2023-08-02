@@ -21,3 +21,9 @@ TEST_F(HttpSender_test, send_http_request__accepts_root_path) {
     
     EXPECT_NO_THROW(http_sender.send_http_request(request, 15));
 }
+
+TEST_F(HttpSender_test, send_http_request__reject_protocol_in_host) {
+    auto request = webutil::make_http_request("GET", "/", {{"host", "https://www.google.com"}}, "");
+    
+    EXPECT_THROW(http_sender.send_http_request(request, 15), std::runtime_error);
+}

@@ -51,17 +51,13 @@ namespace auth {
         std::cout << "Code verifier created: " << code_verifier << std::endl;
         
         // Set up connection to Oauth Database
-        Aws::Client::ClientConfiguration client_configuration;
-        std::cout << "Client configuration created" << std::endl;
-        client_configuration.region = "us-west-1";
-        std::cout << "Region set" << std::endl;
+        std::unique_ptr<axel::Database> oauth_database{axel::Database::connect(config::axel::database::auth)};
         
-        axel::Database oauth_database{config::axel::database::auth, client_configuration};
         std::cout << "Connection established" << std::endl;
         
-        if (oauth_database.put({{"session_id", session_id},
-                            {"state_hash", state_hash},
-                            {"code_verifier", code_verifier}})) {
+        if (oauth_database->put({{"session_id", session_id},
+                                 {"state_hash", state_hash},
+                                 {"code_verifier", code_verifier}})) {
             std::cout << "Successfully inserted (session_id, state_hash, code_verifier) into axel-oauth" << std::endl;
         } else {
             throw std::runtime_error("Failed to insert into axel-oauth");
@@ -72,6 +68,7 @@ namespace auth {
         std::cout << "Generated auth url: " << auth_url << std::endl;
         
         // Construct invocation response
+        auth_url = "https://" + auth_url; // Location must be absolute path instead of only hostname
         std::unordered_map<std::string, std::string> headers = {{"Location", auth_url},
                                                                 {"Set-Cookie", session_id}};
         
@@ -96,20 +93,42 @@ namespace auth {
         auto state_hash = query_params["state"];
         auto auth_code = query_params["code"];
         
-        if (state_hash_manager_->check_state_hash(session_id, state_hash)) {
+        // Set up connection to Oauth Database
+        std::unique_ptr<axel::Database> oauth_database{axel::Database::connect(config::axel::database::auth)};
+        
+        std::cout << "Connection established" << std::endl;
+        
+        auto item_map = oauth_database->get(session_id);
+        std::string stored_hash = item_map["state_hash"].GetS();
+        std::string code_verifier = item_map["code_verifier"].GetS();
+        
+        std::cout << "Code verifier: " << code_verifier << std::endl;
+        std::cout << "State hash: " << stored_hash << std::endl;
+        
+        if (state_hash_manager_->check_state_hash(state_hash, stored_hash)) {
             set_state(State::AUTH_CODE_RECEIVED);
+            std::cout << "State hash matches" << std::endl;
         }
         
         if (state_ != State::AUTH_CODE_RECEIVED) {
             throw std::runtime_error("State hash does not match.");
         } else {
-            std::string code_verifier = pkce_manager_->get_code_verifier();
-            auto tokens = token_request_manager_->send_token_request(auth_code,
-                                                                     code_verifier,
-                                                                     std::make_unique<webutil::HttpSender>());
+            auto access_token = token_request_manager_->send_token_request(auth_code,
+                                                                           code_verifier,
+                                                                           std::make_unique<webutil::HttpSender>());
+            
             set_state(State::TOKENS_RECEIVED);
             std::string session_token = session_manager_->get_session_token();
+            
+            
+            // Set up connection to App Database
+            std::unique_ptr<axel::Database> app_database{axel::Database::connect(config::axel::database::app)};
+            app_database->put({{"session_id", session_token}, {"access_token", access_token}});
+            
+            std::cout << "Access token stored" << std::endl;
+            
             set_state(State::SESSION_ESTABLISHED);
+            
             return session_token;
         }
     }

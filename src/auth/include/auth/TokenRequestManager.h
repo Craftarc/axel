@@ -19,10 +19,10 @@ namespace auth {
         TokenRequestManager();
         
         /// @brief Sends the token exchange request furnished with the given arguments
-        std::pair<std::string, std::string>
+        std::string
         send_token_request(std::string auth_code,
                            std::string code_verifier,
-                           std::unique_ptr<webutil::IHttpSender> http_sender) const;
+                           std::unique_ptr<webutil::IHttpSender> http_sender) const override;
     };
 }
 

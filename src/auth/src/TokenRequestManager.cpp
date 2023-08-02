@@ -21,7 +21,7 @@ namespace http = boost::beast::http;
 /// @param code_verifier The code verifier to be included in the token exchange request.
 /// @param http_sender The HttpSender class that defines the request-sending behaviour and underlying networking.
 /// @return A pair of strings in the format: {${access_token}, ${refresh_token}}
-std::pair<std::string, std::string>
+std::string
 auth::TokenRequestManager::send_token_request(std::string auth_code,
                                               std::string code_verifier,
                                               std::unique_ptr<webutil::IHttpSender> http_sender) const {
@@ -43,19 +43,20 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                                         {"code_verifier", std::move(code_verifier)}});
     
     auto full_request = webutil::make_http_request("POST",
-                                                   config::poe::paths::auth_path,
+                                                   config::poe::paths::token,
                                                    {{"host", config::poe::host},
                                                     {"content-type",
                                                      "application/x-www-form-urlencoded"}},
                                                    request_body);
     
+    full_request.prepare_payload(); // Automatically set Content-Length
     auto response_body = http_sender->send_http_request(full_request, MAX_RESPONSE_BODY);
     
+    // Extract access token
     boost::json::value json = boost::json::parse(response_body);
     auto access_token = json.at("access_token").as_string().c_str();
-    auto refresh_token = json.at("refresh_token").as_string().c_str();
     
-    return {access_token, refresh_token};
+    return access_token;
 }
 
 

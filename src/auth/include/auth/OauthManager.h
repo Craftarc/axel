@@ -14,6 +14,7 @@
 #include "auth/AuthCodeManager.h"
 #include "auth/SessionManager.h"
 #include "axel/Database.h"
+#include "auth/interfaces/IOauthManager.h"
 
 namespace auth {
     
@@ -25,7 +26,7 @@ namespace auth {
     /// class.
     ///
     /// @note Only one OauthManager instance should exist per Oauth session.
-    class OauthManager {
+    class OauthManager : public IOauthManager {
     public:
         /// @brief Default constructor, intialises *Manager members with defaults.
         OauthManager();
@@ -35,9 +36,9 @@ namespace auth {
                      std::unique_ptr<AuthCodeManager> auth_code_manager,
                      std::unique_ptr<SessionManager> session_manager);
         /// @brief Starts the Oauth process
-        std::string start_auth();
+        std::string start_auth() override;
         /// @brief Receives the authorization query_string, makes the token exchange request, and returns the access token.
-        std::string receive_auth(const std::string& query_string, const std::string& session_id);
+        std::string receive_auth(const std::string& query_string, const std::string& session_id) override;
     
     private:
         /// @brief The states of OauthManager throughout the Oauth process.

@@ -21,7 +21,7 @@ namespace auth {
         [[nodiscard]] std::string get_state_hash() const override;
         
         /// @brief Checks if an input state hash matches the one associated with the same authentication session.
-        bool check_state_hash(std::string session_id, std::string state_hash) const override;
+        bool check_state_hash(std::string state_hash, std::string stored_hash) const override;
     };
 }
 

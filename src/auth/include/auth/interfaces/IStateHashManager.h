@@ -5,7 +5,7 @@ namespace auth {
     public:
         virtual ~IStateHashManager() = default;
         virtual std::string get_state_hash() const = 0;
-        virtual bool check_state_hash(std::string session_id, std::string state_hash) const = 0;
+        virtual bool check_state_hash(std::string state_hash, std::string stored_hash) const = 0;
     };
 }
 

@@ -23,17 +23,8 @@ std::string auth::StateHashManager::get_state_hash() const {
 /// @param state_hash The state hash returned by the authorization server. This state hash is to be checked against
 /// the state hash in the database associated with the session ID.
 /// @return True if the state hashes match, False otherwise.
-bool auth::StateHashManager::check_state_hash(std::string session_id, std::string state_hash) const {
-    // Set up connection to Oauth Database
-    Aws::Client::ClientConfiguration client_configuration;
-    client_configuration.region = "us-west-1";
-    axel::Database oauth_database{config::axel::database::auth, client_configuration};
-    
-    // Get stored state hash associated with session ID
-    auto item_map = oauth_database.get(session_id);
-    std::string stored_state_hash = item_map["state_hash"].GetS();
-    
-    return stored_state_hash == state_hash;
+bool auth::StateHashManager::check_state_hash(std::string state_hash, std::string stored_hash) const {
+    return state_hash == stored_hash;
 }
 
 

@@ -1,0 +1,10 @@
+{
+  "payload": {
+	"access_token": "8f69f4d5f72fed5f65f2f3e184e19c5266743c67",
+	"expires_in": 2419200,
+	"token_type": "bearer",
+	"scope": "account:profile",
+	"sub": "9b8dae17-80db-4239-b327-57fb7460ad67",
+	"username": "Craftarc"
+  }
+}

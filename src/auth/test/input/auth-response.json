@@ -5,34 +5,37 @@
 	"version": "2.0",
 	"routeKey": "$default",
 	"rawPath": "/",
-	"rawQueryString": "code=ee2bf05af34e72c404d9ead42c47f493c8e56590&state=ivFsKTBkRZn0ZtNCm2UGCXHsdDO7UJefR-eGXx5ouPU",
+	"rawQueryString": "code=a4b218facfec4b21d396f38bc4311e7b226ec54f&state=xT-9RJjCTDGkNxh0oRo9C9F3wGQcXiBlpE57X0mY4Tk",
+	"cookies": [
+	  "X7xjFcXqvcD5DaskjT1YpFPgv_IK15xv6rmOy-_36gA"
+	],
 	"headers": {
 	  "sec-fetch-mode": "navigate",
 	  "referer": "https://www.pathofexile.com/",
 	  "x-amzn-tls-version": "TLSv1.2",
 	  "sec-fetch-site": "cross-site",
 	  "accept-language": "en-US,en;q=0.9",
+	  "cookie": "X7xjFcXqvcD5DaskjT1YpFPgv_IK15xv6rmOy-_36gA",
 	  "x-forwarded-proto": "https",
 	  "x-forwarded-port": "443",
 	  "x-forwarded-for": "116.14.157.253",
 	  "sec-fetch-user": "?1",
 	  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
 	  "x-amzn-tls-cipher-suite": "ECDHE-RSA-AES128-GCM-SHA256",
-	  "sec-ch-ua": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\"",
+	  "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"115\", \"Chromium\";v=\"115\"",
 	  "sec-ch-ua-mobile": "?0",
-	  "x-amzn-trace-id": "Root=1-64b3a605-6d64e9703d320a4d63ba706c",
-	  "sec-ch-ua-platform": "\"Windows\"",
+	  "x-amzn-trace-id": "Root=1-64ca1b22-7255ee60781fc4615393e493",
+	  "sec-ch-ua-platform": "\"Linux\"",
 	  "host": "bibdsedr7muzq2hg5h2rqzs2ke0matoa.lambda-url.us-west-1.on.aws",
 	  "upgrade-insecure-requests": "1",
 	  "cache-control": "max-age=0",
 	  "accept-encoding": "gzip, deflate, br",
 	  "sec-fetch-dest": "document",
-	  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
-	  "cookie": "wTgk87tt09RxiFwXOwCw-KAhNoCripWepotTKQ3P3pQ"
+	  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
 	},
 	"queryStringParameters": {
-	  "code": "ee2bf05af34e72c404d9ead42c47f493c8e56590",
-	  "state": "b3YkJi8YYnraGKZgDIHavPGHaybR-pWM__CSrrjPFmA"
+	  "code": "a4b218facfec4b21d396f38bc4311e7b226ec54f",
+	  "state": "fa-b9wK7TpzsdvDZnw62pQZg8E0j5L4l3F06NA-E7Es"
 	},
 	"requestContext": {
 	  "accountId": "anonymous",
@@ -44,13 +47,13 @@
 		"path": "/",
 		"protocol": "HTTP/1.1",
 		"sourceIp": "116.14.157.253",
-		"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+		"userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
 	  },
-	  "requestId": "2fbff872-ba4e-4b6d-8753-73fc93aa0620",
+	  "requestId": "cf9ebe65-7b4c-47f1-96c2-13cfcdb6860f",
 	  "routeKey": "$default",
 	  "stage": "$default",
-	  "time": "16/Jul/2023:08:10:45 +0000",
-	  "timeEpoch": 1689495045499
+	  "time": "02/Aug/2023:09:00:18 +0000",
+	  "timeEpoch": 1690966818435
 	},
 	"isBase64Encoded": false
   }

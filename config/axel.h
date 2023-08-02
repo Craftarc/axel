@@ -8,6 +8,7 @@ namespace config {
         const std::string grant_type = "authorization_code";
         namespace database {
             const std::string auth = "axel-oauth";
+            const std::string app = "axel-app";
         }
     }
 }
