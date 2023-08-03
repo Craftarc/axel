@@ -91,7 +91,7 @@ This section guides you through a basic setup of the development environment, co
 **You are strongly recommended to use an IDE like CLion or Visual Studio**. This project assumes the use of CLion.
 
 ## 1. Cloning the repository
-To clone the repository, `cd` into the directory in which you want the **contents** of the root folder of the repsitory to reside.
+To clone the repository, `cd` into the directory in which you want the **root folder** of the repsitory to reside.
 
 The following commands clone the repository into `~/axel/<contents-of-root-repository>`.
 ```
