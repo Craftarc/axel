@@ -5,7 +5,6 @@
 #include "axel/Handler.h"
 #include "auth/OauthManager.h"
 
-
 using namespace aws::lambda_runtime;
 namespace {
     /// @brief Takes a request from the AWS Lambda server runtime and delegates it to the appropriate method to be processed.
@@ -19,7 +18,7 @@ namespace {
         if (path == "/login") {
             std::cout << "Entered path: " << path << std::endl;
             
-            auth::OauthManager oauth_manager;
+            auth::OauthManager oauth_manager(config::axel::database::auth, config::axel::database::app);
             std::string response = oauth_manager.start_auth();
             
             std::cout << "/login flow complete" << std::endl;
@@ -28,7 +27,7 @@ namespace {
         } else if (path == "/") {
             std::cout << "Entered path: " << path << std::endl;
             
-            auth::OauthManager oauth_manager;
+            auth::OauthManager oauth_manager(config::axel::database::auth, config::axel::database::app);
             std::string query_string = json.at("rawQueryString").as_string().c_str();
             
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();

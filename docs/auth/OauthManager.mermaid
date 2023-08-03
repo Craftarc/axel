@@ -34,13 +34,13 @@ sequenceDiagram
     OM ->> OM: set state: AUTH_RECEIVED
     OM ->>+ TRM: send token request(auth code, code verifier)
     OM ->> OM: set state: EXCHANGE_REQUEST_SENT
-    TRM -->>- OM: access token, refresh token
+    TRM -->>- OM: access token
     OM ->> OM: set state: TOKENS_RECEIVED
     OM ->>+ SM: get session id for axel app
-    SM -->>- OM: axel session id
-    OM ->>+ DM: store session id (AxelDB, axel session id)
+    SM -->>- OM: app session id
+    OM ->>+ DM: store app session id, access token
     DM -->>- OM: success
     OM ->> OM: set state: SESSION_ESTABLISHED
-    OM -->>- L: axel session id
+    OM -->>- L: app session id
 
 

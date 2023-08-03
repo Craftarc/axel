@@ -14,31 +14,39 @@
 #include "auth/StateHashManager.h"
 #include "auth/TokenRequestManager.h"
 #include "parse/util.h"
-#include "config/poe_auth.h"
+#include "axel/Database.h"
 
 namespace auth {
-    OauthManager::OauthManager() :
+    OauthManager::OauthManager(const std::string& auth_database, const std::string& app_database) :
             OauthManager{std::make_unique<PkceManager>(),
                          std::make_unique<StateHashManager>(),
                          std::make_unique<TokenRequestManager>(),
                          std::make_unique<AuthCodeManager>(),
-                         std::make_unique<SessionManager>()} {}
+                         std::make_unique<SessionManager>(),
+                         std::make_unique<axel::Database>(auth_database),
+                         std::make_unique<axel::Database>(app_database)} {}
     
-    OauthManager::OauthManager(std::unique_ptr<PkceManager> pkce_manager,
+    OauthManager::OauthManager(std::unique_ptr<IPkceManager> pkce_manager,
                                std::unique_ptr<IStateHashManager> state_hash_manager,
                                std::unique_ptr<ITokenRequestManager> token_request_manager,
-                               std::unique_ptr<AuthCodeManager> auth_code_manager,
-                               std::unique_ptr<SessionManager> session_manager)
+                               std::unique_ptr<IAuthCodeManager> auth_code_manager,
+                               std::unique_ptr<ISessionManager> session_manager,
+                               std::unique_ptr<axel::IDatabase> auth_database,
+                               std::unique_ptr<axel::IDatabase> app_database)
             : pkce_manager_(std::move(pkce_manager)),
               state_hash_manager_(std::move(state_hash_manager)),
               token_request_manager_(std::move(token_request_manager)),
               auth_code_manager_(std::move(auth_code_manager)),
               session_manager_(std::move(session_manager)),
+              auth_database_(std::move(auth_database)),
+              app_database_(std::move(app_database)),
               state_(State::INITIAL) {};
 
 /// Responsible for calling functions and methods in sequence according to the Oauth specification.
 /// @return The invocation response payload to send back to the user.
     std::string auth::OauthManager::start_auth() {
+        const int REDIRECT_STATUS_CODE = 302;
+        
         std::cout << "Authorisation session started" << std::endl;
         
         auto code_challenge = pkce_manager_->get_code_challenge();
@@ -46,16 +54,7 @@ namespace auth {
         auto state_hash = state_hash_manager_->get_state_hash();
         auto session_id = session_manager_->get_session_token();
         
-        std::cout << "Session ID created: " << session_id << std::endl;
-        std::cout << "State hash created: " << state_hash << std::endl;
-        std::cout << "Code verifier created: " << code_verifier << std::endl;
-        
-        // Set up connection to Oauth Database
-        std::unique_ptr<axel::Database> oauth_database{axel::Database::connect(config::axel::database::auth)};
-        
-        std::cout << "Connection established" << std::endl;
-        
-        if (oauth_database->put({{"session_id", session_id},
+        if (auth_database_->put({{"session_id", session_id},
                                  {"state_hash", state_hash},
                                  {"code_verifier", code_verifier}})) {
             std::cout << "Successfully inserted (session_id, state_hash, code_verifier) into axel-oauth" << std::endl;
@@ -64,7 +63,6 @@ namespace auth {
         };
         
         std::string auth_url = auth_code_manager_->get_auth_url(code_challenge, state_hash);
-        
         std::cout << "Generated auth url: " << auth_url << std::endl;
         
         // Construct invocation response
@@ -72,7 +70,7 @@ namespace auth {
         std::unordered_map<std::string, std::string> headers = {{"Location", auth_url},
                                                                 {"Set-Cookie", session_id}};
         
-        auto response = parse::make_invocation_response_payload(302, headers, "");
+        auto response = parse::make_invocation_response_payload(REDIRECT_STATUS_CODE, headers, "");
         
         std::cout << "Generated invocation_response payload: " << response << std::endl;
         
@@ -93,12 +91,9 @@ namespace auth {
         auto state_hash = query_params["state"];
         auto auth_code = query_params["code"];
         
-        // Set up connection to Oauth Database
-        std::unique_ptr<axel::Database> oauth_database{axel::Database::connect(config::axel::database::auth)};
-        
         std::cout << "Connection established" << std::endl;
         
-        auto item_map = oauth_database->get(session_id);
+        auto item_map = auth_database_->get(session_id);
         std::string stored_hash = item_map["state_hash"].GetS();
         std::string code_verifier = item_map["code_verifier"].GetS();
         
@@ -120,10 +115,9 @@ namespace auth {
             set_state(State::TOKENS_RECEIVED);
             std::string session_token = session_manager_->get_session_token();
             
-            
-            // Set up connection to App Database
-            std::unique_ptr<axel::Database> app_database{axel::Database::connect(config::axel::database::app)};
-            app_database->put({{"session_id", session_token}, {"access_token", access_token}});
+            if (!app_database_->put({{"session_id", session_token}, {"access_token", access_token}})) {
+                throw std::runtime_error("Failed to put session_id, access_token into app database");
+            };
             
             std::cout << "Access token stored" << std::endl;
             

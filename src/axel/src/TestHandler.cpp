@@ -13,7 +13,7 @@ namespace axel {
         if (path == "/login") {
             std::cout << "Entered path: " << path << std::endl;
             
-            auth::OauthManager oauth_manager;
+            auth::OauthManager oauth_manager(config::axel::database::auth, config::axel::database::app);
             std::string response = oauth_manager.start_auth();
             
             std::cout << "/login flow complete" << std::endl;
@@ -22,7 +22,7 @@ namespace axel {
         } else if (path == "/") {
             std::cout << "Entered path: " << path << std::endl;
             
-            auth::OauthManager oauth_manager;
+            auth::OauthManager oauth_manager(config::axel::database::auth, config::axel::database::app);
             std::string query_string = json.at("rawQueryString").as_string().c_str();
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();
             

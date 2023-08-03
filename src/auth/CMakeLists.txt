@@ -15,7 +15,7 @@ target_link_libraries(auth webutil axel parse ${BOTAN_PKG_LIBRARIES} Boost::json
 # auth library tests
 add_library(auth_tests OBJECT ${AUTH_TESTS_SRC_FILES})
 target_include_directories(auth_tests PUBLIC test ${PROJECT_ROOT})
-target_link_libraries(auth_tests PUBLIC auth auth_mocks webutil_mocks GTest::Main GTest::GTest)
+target_link_libraries(auth_tests PUBLIC auth auth_mocks webutil_mocks axel_mocks GTest::Main GTest::GTest)
 
 # auth library mocks
 add_library(auth_mocks INTERFACE)

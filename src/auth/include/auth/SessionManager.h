@@ -3,8 +3,10 @@
 
 #include <string>
 
+#include "auth/interfaces/ISessionManager.h"
+
 namespace auth {
-    class SessionManager {
+    class SessionManager : public ISessionManager {
     public:
         SessionManager();
         

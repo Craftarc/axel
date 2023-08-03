@@ -6,9 +6,9 @@
 #include <aws/dynamodb/model/DeleteItemRequest.h>
 
 namespace axel {
-    Database::Database(const std::string& table_name, const Aws::Client::ClientConfiguration& client_config)
-            : client_{Aws::DynamoDB::DynamoDBClient{client_config}},
-              table_name_{table_name},
+    Database::Database(std::string table_name)
+            : client_{connect(table_name)},
+              table_name_{std::move(table_name)},
               partition_key_(get_partition_key()) {
     };
     
@@ -74,5 +74,14 @@ namespace axel {
         
         auto outcome{client_.DeleteItem(delete_item_request)};
         return outcome.IsSuccess();
+    }
+    
+    /// @param database Name of the database table to connect to.
+    /// @return A DynamoDB client.
+    Aws::DynamoDB::DynamoDBClient Database::connect(const std::string& database) {
+        Aws::Client::ClientConfiguration client_configuration;
+        client_configuration.region = "us-west-1";
+        
+        return Aws::DynamoDB::DynamoDBClient{client_configuration};
     }
 } // axel
