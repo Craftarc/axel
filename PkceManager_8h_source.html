@@ -90,25 +90,28 @@ $(document).ready(function(){initNavTree('PkceManager_8h_source.html',''); initR
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>auth {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classauth_1_1PkceManager.html">   10</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1PkceManager.html">PkceManager</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92">PkceManager</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        [[nodiscard]] std::string <a class="code" href="classauth_1_1PkceManager.html#ad80cbacdd8f14e56d8da2af78f4438f5">get_code_verifier</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        [[nodiscard]] std::string <a class="code" href="classauth_1_1PkceManager.html#a49b0107fcf937eb391faf99041783d9f">get_code_challenge</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::string code_verifier_;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string code_challenge_;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    };</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_AUTH_PKCEMANAGER_H</span></div>
-<div class="ttc" id="aclassauth_1_1PkceManager_html"><div class="ttname"><a href="classauth_1_1PkceManager.html">auth::PkceManager</a></div><div class="ttdoc">Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.</div><div class="ttdef"><b>Definition:</b> PkceManager.h:10</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;interfaces/IPkceManager.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>auth {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classauth_1_1PkceManager.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1PkceManager.html">PkceManager</a> : <span class="keyword">public</span> <a class="code" href="classIPkceManager.html">IPkceManager</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92">PkceManager</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        [[nodiscard]] std::string <a class="code" href="classauth_1_1PkceManager.html#a93071ecdcc62b3f7e0ab42321cb139d1">get_code_verifier</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        [[nodiscard]] std::string <a class="code" href="classauth_1_1PkceManager.html#aeeb12bdbc756a34bde5c841fad790a43">get_code_challenge</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::string code_verifier_;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::string code_challenge_;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_AUTH_PKCEMANAGER_H</span></div>
+<div class="ttc" id="aclassIPkceManager_html"><div class="ttname"><a href="classIPkceManager.html">IPkceManager</a></div><div class="ttdef"><b>Definition:</b> IPkceManager.h:4</div></div>
+<div class="ttc" id="aclassauth_1_1PkceManager_html"><div class="ttname"><a href="classauth_1_1PkceManager.html">auth::PkceManager</a></div><div class="ttdoc">Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.</div><div class="ttdef"><b>Definition:</b> PkceManager.h:12</div></div>
 <div class="ttc" id="aclassauth_1_1PkceManager_html_a3469aae28d398c90f73adb7a1c8dee92"><div class="ttname"><a href="classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92">auth::PkceManager::PkceManager</a></div><div class="ttdeci">PkceManager()</div><div class="ttdoc">Constructs a new PkceManager object.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:9</div></div>
-<div class="ttc" id="aclassauth_1_1PkceManager_html_a49b0107fcf937eb391faf99041783d9f"><div class="ttname"><a href="classauth_1_1PkceManager.html#a49b0107fcf937eb391faf99041783d9f">auth::PkceManager::get_code_challenge</a></div><div class="ttdeci">std::string get_code_challenge() const</div><div class="ttdoc">Gets the Code Challenge.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:39</div></div>
-<div class="ttc" id="aclassauth_1_1PkceManager_html_ad80cbacdd8f14e56d8da2af78f4438f5"><div class="ttname"><a href="classauth_1_1PkceManager.html#ad80cbacdd8f14e56d8da2af78f4438f5">auth::PkceManager::get_code_verifier</a></div><div class="ttdeci">std::string get_code_verifier() const</div><div class="ttdoc">Gets the Code Verifier.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:31</div></div>
+<div class="ttc" id="aclassauth_1_1PkceManager_html_a93071ecdcc62b3f7e0ab42321cb139d1"><div class="ttname"><a href="classauth_1_1PkceManager.html#a93071ecdcc62b3f7e0ab42321cb139d1">auth::PkceManager::get_code_verifier</a></div><div class="ttdeci">std::string get_code_verifier() const override</div><div class="ttdoc">Gets the Code Verifier.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:31</div></div>
+<div class="ttc" id="aclassauth_1_1PkceManager_html_aeeb12bdbc756a34bde5c841fad790a43"><div class="ttname"><a href="classauth_1_1PkceManager.html#aeeb12bdbc756a34bde5c841fad790a43">auth::PkceManager::get_code_challenge</a></div><div class="ttdeci">std::string get_code_challenge() const override</div><div class="ttdoc">Gets the Code Challenge.</div><div class="ttdef"><b>Definition:</b> PkceManager.cpp:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

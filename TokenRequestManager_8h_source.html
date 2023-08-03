@@ -101,18 +101,18 @@ $(document).ready(function(){initNavTree('TokenRequestManager_8h_source.html',''
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classauth_1_1TokenRequestManager.html#a6b44d806f2b7fc713be61bcbee751a33">TokenRequestManager</a>();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::pair&lt;std::string, std::string&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classauth_1_1TokenRequestManager.html#a46c311a76a59b2183ac9ef6354b3c1ca">send_token_request</a>(std::string auth_code,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classauth_1_1TokenRequestManager.html#ab2570713a951958d45e69b4b6a25bd01">send_token_request</a>(std::string auth_code,</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                           std::string code_verifier,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                           std::unique_ptr&lt;webutil::IHttpSender&gt; http_sender) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                           std::unique_ptr&lt;webutil::IHttpSender&gt; http_sender) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_AUTH_TOKENREQUESTMANAGER_H</span></div>
 <div class="ttc" id="aclassauth_1_1ITokenRequestManager_html"><div class="ttname"><a href="classauth_1_1ITokenRequestManager.html">auth::ITokenRequestManager</a></div><div class="ttdef"><b>Definition:</b> ITokenRequestManager.h:7</div></div>
 <div class="ttc" id="aclassauth_1_1TokenRequestManager_html"><div class="ttname"><a href="classauth_1_1TokenRequestManager.html">auth::TokenRequestManager</a></div><div class="ttdef"><b>Definition:</b> TokenRequestManager.h:11</div></div>
-<div class="ttc" id="aclassauth_1_1TokenRequestManager_html_a46c311a76a59b2183ac9ef6354b3c1ca"><div class="ttname"><a href="classauth_1_1TokenRequestManager.html#a46c311a76a59b2183ac9ef6354b3c1ca">auth::TokenRequestManager::send_token_request</a></div><div class="ttdeci">std::pair&lt; std::string, std::string &gt; send_token_request(std::string auth_code, std::string code_verifier, std::unique_ptr&lt; webutil::IHttpSender &gt; http_sender) const</div><div class="ttdoc">Sends the token exchange request furnished with the given arguments.</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:25</div></div>
 <div class="ttc" id="aclassauth_1_1TokenRequestManager_html_a6b44d806f2b7fc713be61bcbee751a33"><div class="ttname"><a href="classauth_1_1TokenRequestManager.html#a6b44d806f2b7fc713be61bcbee751a33">auth::TokenRequestManager::TokenRequestManager</a></div><div class="ttdeci">TokenRequestManager()</div><div class="ttdoc">Responsible for constructing and storing the POST request for the access token exchange....</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:13</div></div>
+<div class="ttc" id="aclassauth_1_1TokenRequestManager_html_ab2570713a951958d45e69b4b6a25bd01"><div class="ttname"><a href="classauth_1_1TokenRequestManager.html#ab2570713a951958d45e69b4b6a25bd01">auth::TokenRequestManager::send_token_request</a></div><div class="ttdeci">std::string send_token_request(std::string auth_code, std::string code_verifier, std::unique_ptr&lt; webutil::IHttpSender &gt; http_sender) const override</div><div class="ttdoc">Sends the token exchange request furnished with the given arguments.</div><div class="ttdef"><b>Definition:</b> TokenRequestManager.cpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

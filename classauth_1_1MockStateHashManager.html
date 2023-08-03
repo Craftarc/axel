@@ -103,16 +103,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ef2bc8470b057553e8b91ec81c01bb2"><td class="memItemLeft" align="right" valign="top"><a id="a2ef2bc8470b057553e8b91ec81c01bb2"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>MOCK_METHOD</b> (std::string, get_state_hash,(),(const, override))</td></tr>
 <tr class="separator:a2ef2bc8470b057553e8b91ec81c01bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafbc2ffe50df2b01484934f167a7e5eb"><td class="memItemLeft" align="right" valign="top"><a id="aafbc2ffe50df2b01484934f167a7e5eb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MOCK_METHOD</b> (bool, check_state_hash,(const std::string &amp;check_hash),(const, override))</td></tr>
-<tr class="separator:aafbc2ffe50df2b01484934f167a7e5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9ae555f6013cf1c26a9dd86e6a4958"><td class="memItemLeft" align="right" valign="top"><a id="ada9ae555f6013cf1c26a9dd86e6a4958"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>MOCK_METHOD</b> (bool, check_state_hash,(std::string state_hash, std::string stored_hash),(override, const))</td></tr>
+<tr class="separator:ada9ae555f6013cf1c26a9dd86e6a4958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classauth_1_1IStateHashManager"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classauth_1_1IStateHashManager')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classauth_1_1IStateHashManager.html">auth::IStateHashManager</a></td></tr>
 <tr class="memitem:aca7c7022ba827cef6a9650d558f56b19 inherit pub_methods_classauth_1_1IStateHashManager"><td class="memItemLeft" align="right" valign="top"><a id="aca7c7022ba827cef6a9650d558f56b19"></a>
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_state_hash</b> () const =0</td></tr>
 <tr class="separator:aca7c7022ba827cef6a9650d558f56b19 inherit pub_methods_classauth_1_1IStateHashManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b3f481d6380d185a909a4d066e64026 inherit pub_methods_classauth_1_1IStateHashManager"><td class="memItemLeft" align="right" valign="top"><a id="a4b3f481d6380d185a909a4d066e64026"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>check_state_hash</b> (const std::string &amp;check_hash) const =0</td></tr>
-<tr class="separator:a4b3f481d6380d185a909a4d066e64026 inherit pub_methods_classauth_1_1IStateHashManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2933c162038d44fdf1d947a01559c9 inherit pub_methods_classauth_1_1IStateHashManager"><td class="memItemLeft" align="right" valign="top"><a id="a1a2933c162038d44fdf1d947a01559c9"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>check_state_hash</b> (std::string state_hash, std::string stored_hash) const =0</td></tr>
+<tr class="separator:a1a2933c162038d44fdf1d947a01559c9 inherit pub_methods_classauth_1_1IStateHashManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/auth/mock/auth/<a class="el" href="MockStateHashManager_8h_source.html">MockStateHashManager.h</a></li>

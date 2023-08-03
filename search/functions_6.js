@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tokenrequestmanager_67',['TokenRequestManager',['../classauth_1_1TokenRequestManager.html#a6b44d806f2b7fc713be61bcbee751a33',1,'auth::TokenRequestManager']]]
+  ['make_5fform_5fdata_101',['make_form_data',['../namespacewebutil.html#a177074a519b80be02757463c15c4499b',1,'webutil']]],
+  ['make_5fhttp_5frequest_102',['make_http_request',['../namespacewebutil.html#a955faee7f7df2d459208bd9d3e6cd030',1,'webutil']]]
 ];

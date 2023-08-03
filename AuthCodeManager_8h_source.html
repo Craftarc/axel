@@ -90,16 +90,19 @@ $(document).ready(function(){initNavTree('AuthCodeManager_8h_source.html',''); i
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>auth {</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classauth_1_1AuthCodeManager.html">    7</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1AuthCodeManager.html">AuthCodeManager</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        std::string <a class="code" href="classauth_1_1AuthCodeManager.html#a6dfe76692136947fafc6de37e9e92f4c">get_auth_url</a>(std::string code_challenge, std::string state_hash) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    };</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_AUTH_AUTHCODEMANAGER_H</span></div>
-<div class="ttc" id="aclassauth_1_1AuthCodeManager_html"><div class="ttname"><a href="classauth_1_1AuthCodeManager.html">auth::AuthCodeManager</a></div><div class="ttdef"><b>Definition:</b> AuthCodeManager.h:7</div></div>
-<div class="ttc" id="aclassauth_1_1AuthCodeManager_html_a6dfe76692136947fafc6de37e9e92f4c"><div class="ttname"><a href="classauth_1_1AuthCodeManager.html#a6dfe76692136947fafc6de37e9e92f4c">auth::AuthCodeManager::get_auth_url</a></div><div class="ttdeci">std::string get_auth_url(std::string code_challenge, std::string state_hash) const</div><div class="ttdoc">Gets the authorization url for the user to visit.</div><div class="ttdef"><b>Definition:</b> AuthCodeManager.cpp:9</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;auth/interfaces/IAuthCodeManager.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>auth {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classauth_1_1AuthCodeManager.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classauth_1_1AuthCodeManager.html">AuthCodeManager</a> : <span class="keyword">public</span> <a class="code" href="classauth_1_1IAuthCodeManager.html">IAuthCodeManager</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        std::string <a class="code" href="classauth_1_1AuthCodeManager.html#a29b023e67c09ed1281cc50563cd6faf3">get_auth_url</a>(std::string code_challenge, std::string state_hash) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    };</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_AUTH_AUTHCODEMANAGER_H</span></div>
+<div class="ttc" id="aclassauth_1_1AuthCodeManager_html"><div class="ttname"><a href="classauth_1_1AuthCodeManager.html">auth::AuthCodeManager</a></div><div class="ttdef"><b>Definition:</b> AuthCodeManager.h:9</div></div>
+<div class="ttc" id="aclassauth_1_1AuthCodeManager_html_a29b023e67c09ed1281cc50563cd6faf3"><div class="ttname"><a href="classauth_1_1AuthCodeManager.html#a29b023e67c09ed1281cc50563cd6faf3">auth::AuthCodeManager::get_auth_url</a></div><div class="ttdeci">std::string get_auth_url(std::string code_challenge, std::string state_hash) const override</div><div class="ttdoc">Gets the authorization url for the user to visit.</div><div class="ttdef"><b>Definition:</b> AuthCodeManager.cpp:9</div></div>
+<div class="ttc" id="aclassauth_1_1IAuthCodeManager_html"><div class="ttname"><a href="classauth_1_1IAuthCodeManager.html">auth::IAuthCodeManager</a></div><div class="ttdef"><b>Definition:</b> IAuthCodeManager.h:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

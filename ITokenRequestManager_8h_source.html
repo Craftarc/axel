@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('ITokenRequestManager_8h_source.html','
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classauth_1_1ITokenRequestManager.html">ITokenRequestManager</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">virtual</span> std::pair&lt;std::string, std::string&gt; send_token_request(std::string auth_code, std::string code_verifier,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                                       std::unique_ptr&lt;webutil::IHttpSender&gt; http_sender) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">virtual</span> std::string send_token_request(std::string auth_code, std::string code_verifier,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                               std::unique_ptr&lt;webutil::IHttpSender&gt; http_sender) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    };</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>

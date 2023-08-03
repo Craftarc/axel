@@ -1,6 +1,7 @@
 var classauth_1_1OauthManager =
 [
-    [ "OauthManager", "classauth_1_1OauthManager.html#a89307851b7fb74e8e6c61d37f639ee09", null ],
-    [ "receive_auth", "classauth_1_1OauthManager.html#a5a505bb67254a7872e7f4c077c56b708", null ],
-    [ "start_auth", "classauth_1_1OauthManager.html#a423c52f8cc99751bf5ec11afc35bb26b", null ]
+    [ "OauthManager", "classauth_1_1OauthManager.html#a8a1a16bc3ed70904684c3bcdba043701", null ],
+    [ "OauthManager", "classauth_1_1OauthManager.html#aa252ce925bb39f690bbdefe9bb70da8f", null ],
+    [ "receive_auth", "classauth_1_1OauthManager.html#a521ce6373c8803d2ebd9f7ad907aa7da", null ],
+    [ "start_auth", "classauth_1_1OauthManager.html#a6d48384cee549b485b66538259c80117", null ]
 ];

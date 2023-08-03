@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['oauthmanager_21',['OauthManager',['../classauth_1_1OauthManager.html',1,'auth::OauthManager'],['../classauth_1_1OauthManager.html#a89307851b7fb74e8e6c61d37f639ee09',1,'auth::OauthManager::OauthManager()']]]
+  ['handler_21',['Handler',['../classaxel_1_1Handler.html',1,'axel']]],
+  ['httpsender_22',['HttpSender',['../classwebutil_1_1HttpSender.html',1,'webutil']]]
 ];

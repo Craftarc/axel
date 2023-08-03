@@ -103,9 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b44d806f2b7fc713be61bcbee751a33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1TokenRequestManager.html#a6b44d806f2b7fc713be61bcbee751a33">TokenRequestManager</a> ()</td></tr>
 <tr class="memdesc:a6b44d806f2b7fc713be61bcbee751a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Responsible for constructing and storing the POST request for the access token exchange. Contains all relevant fields as specified in the PoE Developer Docs. Relevant documentation: <a href="https://www.pathofexile.com/developer/docs/authorization">https://www.pathofexile.com/developer/docs/authorization</a>.  <a href="classauth_1_1TokenRequestManager.html#a6b44d806f2b7fc713be61bcbee751a33">More...</a><br /></td></tr>
 <tr class="separator:a6b44d806f2b7fc713be61bcbee751a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46c311a76a59b2183ac9ef6354b3c1ca"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1TokenRequestManager.html#a46c311a76a59b2183ac9ef6354b3c1ca">send_token_request</a> (std::string auth_code, std::string code_verifier, std::unique_ptr&lt; <a class="el" href="classwebutil_1_1IHttpSender.html">webutil::IHttpSender</a> &gt; http_sender) const</td></tr>
-<tr class="memdesc:a46c311a76a59b2183ac9ef6354b3c1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the token exchange request furnished with the given arguments.  <a href="classauth_1_1TokenRequestManager.html#a46c311a76a59b2183ac9ef6354b3c1ca">More...</a><br /></td></tr>
-<tr class="separator:a46c311a76a59b2183ac9ef6354b3c1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2570713a951958d45e69b4b6a25bd01"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1TokenRequestManager.html#ab2570713a951958d45e69b4b6a25bd01">send_token_request</a> (std::string auth_code, std::string code_verifier, std::unique_ptr&lt; <a class="el" href="classwebutil_1_1IHttpSender.html">webutil::IHttpSender</a> &gt; http_sender) const override</td></tr>
+<tr class="memdesc:ab2570713a951958d45e69b4b6a25bd01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the token exchange request furnished with the given arguments.  <a href="classauth_1_1TokenRequestManager.html#ab2570713a951958d45e69b4b6a25bd01">More...</a><br /></td></tr>
+<tr class="separator:ab2570713a951958d45e69b4b6a25bd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6b44d806f2b7fc713be61bcbee751a33"></a>
@@ -135,8 +135,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a46c311a76a59b2183ac9ef6354b3c1ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46c311a76a59b2183ac9ef6354b3c1ca">&#9670;&nbsp;</a></span>send_token_request()</h2>
+<a id="ab2570713a951958d45e69b4b6a25bd01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2570713a951958d45e69b4b6a25bd01">&#9670;&nbsp;</a></span>send_token_request()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt; std::string, std::string &gt; auth::TokenRequestManager::send_token_request </td>
+          <td class="memname">std::string auth::TokenRequestManager::send_token_request </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>auth_code</em>, </td>
@@ -170,7 +170,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

@@ -93,16 +93,18 @@ $(document).ready(function(){initNavTree('http_8h_source.html',''); initResizabl
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;boost/beast/http/message.hpp&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>webutil {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewebutil.html">webutil</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">namespace </span>http = boost::beast::http;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    http::request&lt;http::string_body&gt;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    make_http_request(<span class="keyword">const</span> std::string&amp; http_verb, <span class="keyword">const</span> std::string&amp; path,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="namespacewebutil.html#a955faee7f7df2d459208bd9d3e6cd030">make_http_request</a>(<span class="keyword">const</span> std::string&amp; http_verb, <span class="keyword">const</span> std::string&amp; path,</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                      <span class="keyword">const</span> std::unordered_map&lt;std::string, std::string&gt;&amp; fields,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                      <span class="keyword">const</span> std::string&amp; body = <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AXEL_WEBUTIL_HTTP_H</span></div>
+<div class="ttc" id="anamespacewebutil_html"><div class="ttname"><a href="namespacewebutil.html">webutil</a></div><div class="ttdoc">The webutil namespace contains functions, classes, and other resources for web utility.</div><div class="ttdef"><b>Definition:</b> hash.h:7</div></div>
+<div class="ttc" id="anamespacewebutil_html_a955faee7f7df2d459208bd9d3e6cd030"><div class="ttname"><a href="namespacewebutil.html#a955faee7f7df2d459208bd9d3e6cd030">webutil::make_http_request</a></div><div class="ttdeci">http::request&lt; http::string_body &gt; make_http_request(const std::string &amp;http_verb, const std::string &amp;path, const std::unordered_map&lt; std::string, std::string &gt; &amp;fields, const std::string &amp;body=&quot;&quot;)</div><div class="ttdoc">Makes a HTTP request.</div><div class="ttdef"><b>Definition:</b> http.cpp:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

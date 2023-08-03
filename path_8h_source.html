@@ -94,19 +94,24 @@ $(document).ready(function(){initNavTree('path_8h_source.html',''); initResizabl
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;boost/algorithm/string.hpp&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>webutil {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewebutil.html">webutil</a> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::string</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    add_query_parameters(<span class="keyword">const</span> std::string&amp; url, <span class="keyword">const</span> std::unordered_map&lt;std::string, std::string&gt;&amp; parameters);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="namespacewebutil.html#a5a24b58037afe2f0aaa7df739fe18cdf">add_query_parameters</a>(<span class="keyword">const</span> std::string&amp; url, <span class="keyword">const</span> std::unordered_map&lt;std::string, std::string&gt;&amp; parameters);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::unordered_map&lt;std::string, std::string&gt; extract_query_params(<span class="keyword">const</span> std::string&amp; url);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::unordered_map&lt;std::string, std::string&gt; <a class="code" href="namespacewebutil.html#ab8b6160552eae4349b0d7450ef6db7ee">extract_query_params</a>(<span class="keyword">const</span> std::string&amp; url);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string make_form_data(std::unordered_map&lt;std::string, std::string&gt; params);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string <a class="code" href="namespacewebutil.html#a177074a519b80be02757463c15c4499b">make_form_data</a>(std::unordered_map&lt;std::string, std::string&gt; params);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::string</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    concatenate_with_space(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; string_list);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="namespacewebutil.html#a97eff07cf894670999019f44591f4ad9">concatenate_with_space</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; string_list);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_WEBUTIL_PATH_H</span></div>
+<div class="ttc" id="anamespacewebutil_html"><div class="ttname"><a href="namespacewebutil.html">webutil</a></div><div class="ttdoc">The webutil namespace contains functions, classes, and other resources for web utility.</div><div class="ttdef"><b>Definition:</b> hash.h:7</div></div>
+<div class="ttc" id="anamespacewebutil_html_a177074a519b80be02757463c15c4499b"><div class="ttname"><a href="namespacewebutil.html#a177074a519b80be02757463c15c4499b">webutil::make_form_data</a></div><div class="ttdeci">std::string make_form_data(std::unordered_map&lt; std::string, std::string &gt; params)</div><div class="ttdoc">Constructs a string of key-value pairs following the application/x-www-form-encoded format.</div><div class="ttdef"><b>Definition:</b> path.cpp:56</div></div>
+<div class="ttc" id="anamespacewebutil_html_a5a24b58037afe2f0aaa7df739fe18cdf"><div class="ttname"><a href="namespacewebutil.html#a5a24b58037afe2f0aaa7df739fe18cdf">webutil::add_query_parameters</a></div><div class="ttdeci">std::string add_query_parameters(const std::string &amp;url, const std::unordered_map&lt; std::string, std::string &gt; &amp;parameters)</div><div class="ttdoc">Adds query parameters to a url string.</div><div class="ttdef"><b>Definition:</b> path.cpp:12</div></div>
+<div class="ttc" id="anamespacewebutil_html_a97eff07cf894670999019f44591f4ad9"><div class="ttname"><a href="namespacewebutil.html#a97eff07cf894670999019f44591f4ad9">webutil::concatenate_with_space</a></div><div class="ttdeci">std::string concatenate_with_space(const std::vector&lt; std::string &gt; &amp;string_list)</div><div class="ttdoc">Concatenates all strings in a list with the url-encoded whitespace, '%20'.</div><div class="ttdef"><b>Definition:</b> path.cpp:71</div></div>
+<div class="ttc" id="anamespacewebutil_html_ab8b6160552eae4349b0d7450ef6db7ee"><div class="ttname"><a href="namespacewebutil.html#ab8b6160552eae4349b0d7450ef6db7ee">webutil::extract_query_params</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; extract_query_params(const std::string &amp;url)</div><div class="ttdoc">Extracts query parameters from a url string into a map.</div><div class="ttdef"><b>Definition:</b> path.cpp:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

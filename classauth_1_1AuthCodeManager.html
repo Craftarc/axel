@@ -88,19 +88,31 @@ $(document).ready(function(){initNavTree('classauth_1_1AuthCodeManager.html','')
 <div class="title">auth::AuthCodeManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for auth::AuthCodeManager:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classauth_1_1AuthCodeManager.png" usemap="#auth::AuthCodeManager_map" alt=""/>
+  <map id="auth::AuthCodeManager_map" name="auth::AuthCodeManager_map">
+<area href="classauth_1_1IAuthCodeManager.html" alt="auth::IAuthCodeManager" shape="rect" coords="0,0,152,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6dfe76692136947fafc6de37e9e92f4c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1AuthCodeManager.html#a6dfe76692136947fafc6de37e9e92f4c">get_auth_url</a> (std::string code_challenge, std::string state_hash) const</td></tr>
-<tr class="memdesc:a6dfe76692136947fafc6de37e9e92f4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the authorization url for the user to visit.  <a href="classauth_1_1AuthCodeManager.html#a6dfe76692136947fafc6de37e9e92f4c">More...</a><br /></td></tr>
-<tr class="separator:a6dfe76692136947fafc6de37e9e92f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b023e67c09ed1281cc50563cd6faf3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1AuthCodeManager.html#a29b023e67c09ed1281cc50563cd6faf3">get_auth_url</a> (std::string code_challenge, std::string state_hash) const override</td></tr>
+<tr class="memdesc:a29b023e67c09ed1281cc50563cd6faf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the authorization url for the user to visit.  <a href="classauth_1_1AuthCodeManager.html#a29b023e67c09ed1281cc50563cd6faf3">More...</a><br /></td></tr>
+<tr class="separator:a29b023e67c09ed1281cc50563cd6faf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6dfe76692136947fafc6de37e9e92f4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dfe76692136947fafc6de37e9e92f4c">&#9670;&nbsp;</a></span>get_auth_url()</h2>
+<a id="a29b023e67c09ed1281cc50563cd6faf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b023e67c09ed1281cc50563cd6faf3">&#9670;&nbsp;</a></span>get_auth_url()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string auth::AuthCodeManager::get_auth_url </td>
@@ -120,6 +132,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the authorization url for the user to visit. </p>
@@ -131,6 +148,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The authorization url string. </dd></dl>
+
+<p>Implements <a class="el" href="classauth_1_1IAuthCodeManager.html">auth::IAuthCodeManager</a>.</p>
 
 </div>
 </div>

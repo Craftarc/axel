@@ -2,7 +2,8 @@ var namespaceconfig_1_1poe =
 [
     [ "paths", "namespaceconfig_1_1poe_1_1paths.html", [
       [ "auth_path", "namespaceconfig_1_1poe_1_1paths.html#a46462eb279e0aeb35108b250f2dcd40c", null ],
-      [ "redirect_uri", "namespaceconfig_1_1poe_1_1paths.html#a901877702c1517581c2dd61f8d2e9381", null ]
+      [ "redirect_uri", "namespaceconfig_1_1poe_1_1paths.html#a901877702c1517581c2dd61f8d2e9381", null ],
+      [ "token", "namespaceconfig_1_1poe_1_1paths.html#ae8ad8ccb8536e2d864924aa6df4b8a6f", null ]
     ] ],
     [ "scopes", "namespaceconfig_1_1poe_1_1scopes.html", [
       [ "characters", "namespaceconfig_1_1poe_1_1scopes.html#a5654d6795666e6300eb3183f4a2d01b9", null ],
