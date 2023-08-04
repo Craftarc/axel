@@ -20,9 +20,11 @@ Axel is a replacement for Exilence, which has recently gone out of service. This
 - [License](#license)
 
 # Introduction
-This documentation details the architecture of Axel Backend, and guides the user in setting up a development environment. <br>
-To contribute to this project, see [Overview](#overview) for a general overview of the project. <br>
-To start from scratch, see [Setup](#setup)
+This documentation details the architecture of Axel Backend, and guides the user in setting up a development environment.
+
+To contribute to this project, see [Overview](#overview) for a general overview of the project.
+
+To start from scratch, see [Setup](#setup).
 
 # Overview
 ## About Axel
@@ -105,9 +107,8 @@ git clone git@github.com:Craftarc/axel.git
 Axel's development environment is containerised. The _Dockerfile_ may be located at `axel/Dockerfile`.
 
 Run the following command to build the image. <br>
-`docker build -t axel-backend:1.0`
+`docker build -t axel-backend:1.0 .`
 
-_Warning: This process may take 1-2 hours, since several large packages of source code will be downloaded._
 
 ## 3. Build the project
 Axel's backend builds two main executables: `main.cpp` and `sandbox.cpp`. For more information on why there are two executables, see [The Lambda Execution Environment](#the-lambda-execution-environment).
@@ -116,7 +117,7 @@ Axel's backend builds two main executables: `main.cpp` and `sandbox.cpp`. For mo
 **1. In _Settings_, navigate to _Build, Execution, Deployment > Toolchains_.** <br>
 Set the following settings:
 - Container settings: `--entrypoint= --rm`
-- CMake: `/usr/bin/cmake3`
+- CMake: `/usr/bin/cmake`
 
 **2. Navigate to _Run > Edit Configurations... > + > Google Test_.** <br>
 Select one of the test targets _(*\_tests)_, then click _Apply_. <br>
@@ -124,20 +125,18 @@ Run the configuration.
 
 ### Manual Build
 **1. Mount the project root into the container, then start the container.** <br>
-The following command starts a shell inside the container (overriding the default entrypoint, which asks for an event-data-handling executable).
 ```
-docker run -v <path-to-axel-root>:/app/axel --it --entrypoint /bin/bash axel-backend:1.0
+docker run -v <path-to-axel-root>:/app/axel --it axel-backend:1.0
 ```
 **2. Compile and build the executables.** <br>
 ```
 cd build
-cmake3 ..
+cmake ..
 make
 ```
-**3. Run a test.** <br>
+**3. Run tests.** <br>
 ```
-cd src/auth
-./auth_tests
+./tests
 ```
 
 # Configuration
@@ -147,25 +146,30 @@ The `main` executable starts the AWS C++ runtime, which starts polling the hardc
 2. Run the following command:
 ```
 docker build -t axel-backend:1.0 . # Build updated executables
-docker run -d -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 --entrypoint /aws-lambda/aws-lambda-rie axel-backend:1.0 /app/axel/build/main
+docker run -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 --entrypoint /aws-lambda/aws-lambda-rie axel-backend:1.0 /app/axel/build/main
 ```
-- `-p 9000:8080`: The RIE listens on port 8080 within the container. By mapping port 9000 on the host machine to port 8080 within the container, event data can be _POST_ed to the RIE.
-To _POST_ an event to the RIE, do
+Breakdown of command
+- `-v ~/.aws-lambda-rie:/aws-lambda`: Mounts the `aws-lambda-rie` runtime binary into `/aws-lambda` in the container.
+- `-p 9000:8080`: The RIE listens on port 8080 within the container. By mapping port 9000 on the host machine to port 8080 within the container, event data can be _POST_ ed to the RIE.
+- `--entrypoint /aws-lambda/aws-lambda-rie`: The first command to execute - start the runtime binary we mounted in.
+- `axel-backend:1.0`: Image to start the container with.
+- `/app/axel/build/main`: Run the main executable (this is run after/in the context of the aws-lambda-rie executable).
+  
+To _POST_ an event to the RIE, do 
 ```
 curl --location 'http://localhost:9000/2015-03-31/functions/function/invocations' \
 --header 'Content-Type: application/json' \
 --data '{
     "key1": "value1",
     "key2": "value2"
-}
+}'
 ```
 
 ## Working with custom entrypoints
 **1. To work with custom entrypoints, we want to execute the `sandbox` executable instead.** <br>
-Simply override the default entrypoint (which tries to find and run an executable that polls the Lambda service).
 ```
 docker build -t axel-backend:1.0 . # Build updated executables
-docker run -it --entrypoint /bin/bash
+docker run -it
 ```
 **2. Run the `sandbox` executable.**
 ```
