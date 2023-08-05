@@ -5,8 +5,9 @@ set(PARSE_TESTS_SRC_FILES test/util_test.cpp)
 # parse library
 add_library(parse ${PARSE_SRC_FILES})
 target_include_directories(parse PUBLIC include)
+target_link_libraries(parse PUBLIC Boost::json AWS::aws-lambda-runtime)
 
 # parse library tests
 add_library(parse_tests OBJECT ${PARSE_TESTS_SRC_FILES})
 target_include_directories(parse_tests PUBLIC include)
-target_link_libraries(parse_tests PUBLIC parse ${GTEST_BOTH_LIBRARIES} pthread)
+target_link_libraries(parse_tests PUBLIC parse GTest::gtest)

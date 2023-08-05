@@ -12,9 +12,9 @@ target_link_libraries(axel PUBLIC AWS::aws-lambda-runtime auth parse)
 # axel library tests
 add_library(axel_tests OBJECT ${AXEL_TESTS_SRC_FILES})
 target_include_directories(axel_tests PUBLIC include test)
-target_link_libraries(axel_tests PUBLIC axel axel_mocks GTest::Main GTest::GTest ${GMock})
+target_link_libraries(axel_tests PUBLIC axel axel_mocks GTest::gtest)
 
 # axel library mocks
 add_library(axel_mocks INTERFACE)
 target_include_directories(axel_mocks INTERFACE include mock)
-target_link_libraries(axel_mocks INTERFACE ${GMock})
+target_link_libraries(axel_mocks INTERFACE GTest::gmock)
