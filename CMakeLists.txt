@@ -1,17 +1,21 @@
 # Configure target sources here
 set(MAIN_SRC_FILES main.cpp)
 
-
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.22)
 project(axel LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_TOOLCHAIN_FILE, /opt/vcpkg/scripts/buildsystems/vcpkg.cmake)
+set(Boost_NO_WARN_NEW_VERSIONS 1)
+
 # Global properties
 set(PROJECT_ROOT ${CMAKE_CURRENT_LIST_DIR})
 
+
+## Find libraries
 # AWS C++ SDK
-find_package(AWSSDK REQUIRED COMPONENTS core dynamodb)
+find_package(AWSSDK CONFIG REQUIRED COMPONENTS core dynamodb)
 
 # AWS Lambda runtime library
 find_package(aws-lambda-runtime)
@@ -21,25 +25,17 @@ find_package(Boost REQUIRED COMPONENTS thread system unit_test_framework json)
 
 # GTest
 find_package(GTest REQUIRED)
-message(STATUS "Google Test headers found in ${GTEST_INCLUDE_DIRS}")
-message(STATUS "Google Test found at ${GTEST_BOTH_LIBRARIES}")
-
-## GMock
-# since find_package(GTest) only links in gtest and gtest_main, we need to link in gmock ourselves
-find_library(GMock NAMES gmock)
-if (NOT GMock)
-    message(FATAL_ERROR "GMock not found")
-else ()
-    message(STATUS "Google Mock found at ${GMock}")
-endif ()
+enable_testing()
 
 # OpenSSL
 find_package(OpenSSL REQUIRED)
 
 # Botan uses pkgconfig; find PkgConfig, then use PkgConfig to find botan-2.pc
 find_package(PkgConfig REQUIRED)
-set(ENV{PKG_CONFIG_PATH} "/usr/local/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
 pkg_check_modules(BOTAN_PKG REQUIRED botan-2)
+link_directories(${BOTAN_PKG_LIBRARY_DIRS})
+
+## End find libraries
 
 # main executable
 add_executable(main ${MAIN_SRC_FILES})
@@ -54,12 +50,14 @@ add_executable(sandbox sandbox.cpp)
 target_compile_features(sandbox PRIVATE "cxx_std_17")
 target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
 target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime src/axel/include ${PROJECT_ROOT})
-target_link_libraries(sandbox PRIVATE AWS::aws-lambda-runtime parse Boost::json auth ${AWSSDK_LINK_LIBRARIES} axel)
+target_link_libraries(sandbox PRIVATE auth axel parse
+                      AWS::aws-lambda-runtime Boost::json ${AWSSDK_LINK_LIBRARIES})
 
 # tests executable (all tests)
 add_executable(tests $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:webutil_tests> $<TARGET_OBJECTS:parse_tests>
                $<TARGET_OBJECTS:poe_ninja_tests> $<TARGET_OBJECTS:axel_tests>)
-target_link_libraries(tests PRIVATE auth_tests webutil_tests parse_tests poe_ninja_tests axel_tests)
+target_link_libraries(tests PRIVATE auth_tests webutil_tests parse_tests poe_ninja_tests axel_tests
+                      GTest::gtest_main)
 include(GoogleTest)
 gtest_discover_tests(tests)
 
