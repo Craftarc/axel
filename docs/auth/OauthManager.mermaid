@@ -33,10 +33,9 @@ sequenceDiagram
     SHM -->> OM: is valid
     OM ->> OM: set state: AUTH_RECEIVED
     OM ->>+ TRM: send token request(auth code, code verifier)
-    OM ->> OM: set state: EXCHANGE_REQUEST_SENT
     TRM -->>- OM: access token
     OM ->> OM: set state: TOKENS_RECEIVED
-    OM ->>+ SM: get session id for axel app
+    OM ->>+ SM: get session id for Axel client
     SM -->>- OM: app session id
     OM ->>+ DM: store app session id, access token
     DM -->>- OM: success

@@ -35,15 +35,28 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(BOTAN_PKG REQUIRED botan-2)
 link_directories(${BOTAN_PKG_LIBRARY_DIRS})
 
+# spdlog
+find_package(spdlog CONFIG REQUIRED)
+
 ## End find libraries
 
 # main executable
 add_executable(main ${MAIN_SRC_FILES})
 target_include_directories(main PRIVATE AWS::aws-lambda-runtime)
-target_link_libraries(main PRIVATE AWS::aws-lambda-runtime Boost::json axel)
+target_link_libraries(main PRIVATE axel
+                      AWS::aws-lambda-runtime Boost::json spdlog::spdlog)
 target_compile_features(main PRIVATE "cxx_std_17")
 target_compile_options(main PRIVATE "-Wall" "-Wextra")
 aws_lambda_package_target(main NO_LIBC) # this line creates a target that packages your binary and zips it up
+
+# Settings
+option(RIE_MOUNT "Compile main to run against the RIE" YES)
+if (RIE_MOUNT)
+    message(STATUS "Will build main for RIE use")
+    target_compile_definitions(main PRIVATE RIE_MOUNT)
+else ()
+    message(STATUS "Will build main for local use")
+endif ()
 
 # sandbox executable (for testing free functions)
 add_executable(sandbox sandbox.cpp)
@@ -51,7 +64,7 @@ target_compile_features(sandbox PRIVATE "cxx_std_17")
 target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
 target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime src/axel/include ${PROJECT_ROOT})
 target_link_libraries(sandbox PRIVATE auth axel parse
-                      AWS::aws-lambda-runtime Boost::json ${AWSSDK_LINK_LIBRARIES})
+                      AWS::aws-lambda-runtime Boost::json ${AWSSDK_LINK_LIBRARIES} spdlog::spdlog)
 
 # tests executable (all tests)
 add_executable(tests $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:webutil_tests> $<TARGET_OBJECTS:parse_tests>

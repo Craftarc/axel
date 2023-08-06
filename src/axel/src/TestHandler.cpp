@@ -1,3 +1,5 @@
+#include <spdlog/spdlog.h>
+
 #include "axel/TestHandler.h"
 #include "boost/json.hpp"
 #include "auth/OauthManager.h"
@@ -11,23 +13,19 @@ namespace axel {
         std::string path = json.at("rawPath").as_string().c_str();
         
         if (path == "/login") {
-            std::cout << "Entered path: " << path << std::endl;
-            
             auth::OauthManager oauth_manager(config::axel::database::auth, config::axel::database::app);
-            std::string response = oauth_manager.start_auth();
             
-            std::cout << "/login flow complete" << std::endl;
+            spdlog::info("TestHandler: Starting authentication session");
+            std::string response = oauth_manager.start_auth();
             
             return invocation_response::success(response, "application/json");
         } else if (path == "/") {
-            std::cout << "Entered path: " << path << std::endl;
             
             auth::OauthManager oauth_manager(config::axel::database::auth, config::axel::database::app);
             std::string query_string = json.at("rawQueryString").as_string().c_str();
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();
             
-            std::cout << "Session id retrieved: " << session_id << std::endl;
-            
+            spdlog::info("TestHandler: Passing redirect query parameters to OAuthManager");
             oauth_manager.receive_auth(query_string, session_id);
         }
         
