@@ -2,6 +2,7 @@
 #include <utility>
 
 #include <aws/core/client/ClientConfiguration.h>
+#include <spdlog/spdlog.h>
 
 #include "auth/OauthManager.h"
 #include "auth/PkceManager.h"
@@ -24,7 +25,8 @@ namespace auth {
                          std::make_unique<AuthCodeManager>(),
                          std::make_unique<SessionManager>(),
                          std::make_unique<axel::Database>(auth_database),
-                         std::make_unique<axel::Database>(app_database)} {}
+                         std::make_unique<axel::Database>(app_database)} {
+    }
     
     OauthManager::OauthManager(std::unique_ptr<IPkceManager> pkce_manager,
                                std::unique_ptr<IStateHashManager> state_hash_manager,
@@ -40,41 +42,50 @@ namespace auth {
               session_manager_(std::move(session_manager)),
               auth_database_(std::move(auth_database)),
               app_database_(std::move(app_database)),
-              state_(State::INITIAL) {};
+              state_(State::INITIAL) {
+        spdlog::info("OAuthManager: State set to INITIAL");
+    };
 
 /// Responsible for calling functions and methods in sequence according to the Oauth specification.
 /// @return The invocation response payload to send back to the user.
     std::string auth::OauthManager::start_auth() {
-        const int REDIRECT_STATUS_CODE = 302;
         
-        std::cout << "Authorisation session started" << std::endl;
+        const int REDIRECT_STATUS_CODE = 302;
         
         auto code_challenge = pkce_manager_->get_code_challenge();
         auto code_verifier = pkce_manager_->get_code_verifier();
+        spdlog::info("OauthManager: Code verifier and code challenge obtained");
+        
         auto state_hash = state_hash_manager_->get_state_hash();
+        spdlog::info("OauthManager: State hash obtained");
+        
         auto session_id = session_manager_->get_session_token();
+        spdlog::info("OauthManager: Session token obtained");
         
         if (auth_database_->put({{"session_id", session_id},
                                  {"state_hash", state_hash},
                                  {"code_verifier", code_verifier}})) {
-            std::cout << "Successfully inserted (session_id, state_hash, code_verifier) into axel-oauth" << std::endl;
+            spdlog::info("Stored session id, code verifier and state hash in OAuth table");
         } else {
-            throw std::runtime_error("Failed to insert into axel-oauth");
+            spdlog::error("OauthManager: Failed to insert (session_id, state_hash, code_verifier) in OAuth Database");
+            throw std::runtime_error("Failed to insert into OAuth Database");
         };
         
         std::string auth_url = auth_code_manager_->get_auth_url(code_challenge, state_hash);
-        std::cout << "Generated auth url: " << auth_url << std::endl;
+        spdlog::info("OauthManager: Authorisation URL obtained");
+        
         
         // Construct invocation response
         auth_url = "https://" + auth_url; // Location must be absolute path instead of only hostname
+        spdlog::debug("OauthManager::start_auth - auth_url should be absolute path, is {}", auth_url);
+        
+        // Make invocation response
         std::unordered_map<std::string, std::string> headers = {{"Location", auth_url},
                                                                 {"Set-Cookie", session_id}};
-        
         auto response = parse::make_invocation_response_payload(REDIRECT_STATUS_CODE, headers, "");
         
-        std::cout << "Generated invocation_response payload: " << response << std::endl;
-        
         set_state(State::USER_REDIRECTED);
+        spdlog::info("State set to USER_REDIRECTED");
         
         return response;
     }
@@ -88,40 +99,50 @@ namespace auth {
 /// @note The user session is considered established once the token is sent out.
     std::string auth::OauthManager::receive_auth(const std::string& query_string, const std::string& session_id) {
         std::unordered_map<std::string, std::string> query_params = webutil::extract_query_params(query_string);
+        
         auto state_hash = query_params["state"];
         auto auth_code = query_params["code"];
         
-        std::cout << "Connection established" << std::endl;
+        if (state_hash.empty() || auth_code.empty()) { // Keys are not found in map
+            spdlog::error("OauthManager: State or authorisation code could not be found in query string");
+            throw std::runtime_error("OAuthManager: State or authorisation code could not be found in query string");
+        } else {
+            spdlog::info("OauthManager: state hash and authorisation code extracted");
+        }
         
         auto item_map = auth_database_->get(session_id);
         std::string stored_hash = item_map["state_hash"].GetS();
         std::string code_verifier = item_map["code_verifier"].GetS();
         
-        std::cout << "Code verifier: " << code_verifier << std::endl;
-        std::cout << "State hash: " << stored_hash << std::endl;
-        
         if (state_hash_manager_->check_state_hash(state_hash, stored_hash)) {
-            set_state(State::AUTH_CODE_RECEIVED);
-            std::cout << "State hash matches" << std::endl;
+            set_state(State::AUTH_RECEIVED);
+            spdlog::info("OauthManager: State hash is valid");
+            spdlog::info("OauthManager: State set to AUTH_RECEIVED");
         }
         
-        if (state_ != State::AUTH_CODE_RECEIVED) {
-            throw std::runtime_error("State hash does not match.");
+        if (state_ != State::AUTH_RECEIVED) {
+            spdlog::error("Stored state hash '{0}' does not match input state hash '{1}'", state_hash, state_hash);
+            throw std::runtime_error("State hash does not match");
         } else {
             auto access_token = token_request_manager_->send_token_request(auth_code,
                                                                            code_verifier,
                                                                            std::make_unique<webutil::HttpSender>());
+            spdlog::info("OauthManager: Token request sent");
             
             set_state(State::TOKENS_RECEIVED);
+            spdlog::info("OAuthManager: State set to TOKENS_RECEIVED");
+            
             std::string session_token = session_manager_->get_session_token();
+            spdlog::info("OAuthManager: Session ID for app obtained");
             
             if (!app_database_->put({{"session_id", session_token}, {"access_token", access_token}})) {
                 throw std::runtime_error("Failed to put session_id, access_token into app database");
+            } else {
+                spdlog::info("OAuthManager: Stored (client session id, access token) in App table");
             };
             
-            std::cout << "Access token stored" << std::endl;
-            
             set_state(State::SESSION_ESTABLISHED);
+            spdlog::info("OAuthManager: State set to SESSION_ESTABLISHED");
             
             return session_token;
         }

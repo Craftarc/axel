@@ -49,7 +49,7 @@ namespace auth {
         enum class State {
             INITIAL,
             USER_REDIRECTED,
-            AUTH_CODE_RECEIVED,
+            AUTH_RECEIVED,
             TOKENS_RECEIVED,
             SESSION_ESTABLISHED,
             ERROR
