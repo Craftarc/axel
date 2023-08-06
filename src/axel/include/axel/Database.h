@@ -19,7 +19,7 @@ namespace axel {
         /// @brief Stores items in the database
         bool put(const std::unordered_map<Aws::String, Aws::String>& items) override;
         
-        /// @brief Retrieves an item from a database using a given key_value for its partition key
+        /// @brief Retrieves an item from a database using a given value for its partition key
         [[nodiscard]] Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue>
         get(const Aws::String& key_value) const override;
         
