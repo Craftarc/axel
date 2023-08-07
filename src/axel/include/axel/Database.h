@@ -10,12 +10,17 @@
 
 #include "config/axel.h"
 #include "axel/interface/IDatabase.h"
+#include "axel/interface/IDynamoDBClient.h"
 
 namespace axel {
     class Database : public IDatabase {
+        friend class Database_test;
+    
     public:
-        /// @brief Parameterised constructor. All Database objects must be constructed with a specified table name.
-        Database(std::string table_name);
+        /// @brief Parameterised constructor. Uses the AWS implementation of DynamoDBClient.
+        Database(const std::string& table_name,
+                 const std::unordered_map<Aws::String, Aws::DynamoDB::Model::ValueType>& attributes);
+        
         /// @brief Stores items in the database
         bool put(const std::unordered_map<Aws::String, Aws::String>& items) override;
         
@@ -27,16 +32,27 @@ namespace axel {
         /// @brief Removes the item with the specified partition key attribute from the database
         bool del(const Aws::String& key_value) const override;
     
+    protected:
+        /// @brief Parameterised constructor. All Database objects must be constructed with a specified table name, and a
+        /// set of valid attributes for that table.
+        Database(const std::string& table_name,
+                 const std::unordered_map<Aws::String, Aws::DynamoDB::Model::ValueType>& attributes,
+                 std::unique_ptr<axel::IDynamoDBClient> client);
+    
     private:
-        const Aws::DynamoDB::DynamoDBClient client_;
-        const std::string table_name_;
+        std::unique_ptr<axel::IDynamoDBClient> client_;
+        const std::string& table_name_;
         const Aws::String partition_key_;
+        
+        /// Table of |attribute name|attribute value| that defines the attributes of this table.
+        const std::unordered_map<Aws::String, Aws::DynamoDB::Model::ValueType>& attributes_;
         
         /// @brief Retrieve the name of the partition key of the table.
         Aws::String get_partition_key() const;
         
-        /// @brief Constructs a DynamoDB client for use within this class.
-        Aws::DynamoDB::DynamoDBClient connect(const std::string& database);
+        /// @brief Adds an attribute name-value pair to a PutItemRequest
+        Aws::DynamoDB::Model::PutItemRequest& add_item(const std::pair<Aws::String, Aws::String>& item_pair,
+                                                       Aws::DynamoDB::Model::PutItemRequest& put_item_request) const;
     };
 } // axel
 

@@ -24,8 +24,8 @@ namespace auth {
                          std::make_unique<TokenRequestManager>(),
                          std::make_unique<AuthCodeManager>(),
                          std::make_unique<SessionManager>(),
-                         std::make_unique<axel::Database>(auth_database),
-                         std::make_unique<axel::Database>(app_database)} {
+                         std::make_unique<axel::Database>(auth_database, config::axel::database::auth_attributes),
+                         std::make_unique<axel::Database>(app_database, config::axel::database::app_attributes)} {
     }
     
     OauthManager::OauthManager(std::unique_ptr<IPkceManager> pkce_manager,
