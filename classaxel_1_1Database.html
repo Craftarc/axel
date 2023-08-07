@@ -108,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0fb4b29f8b5678c3deb8084b955519f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores items in the database.  <a href="classaxel_1_1Database.html#a0fb4b29f8b5678c3deb8084b955519f9">More...</a><br /></td></tr>
 <tr class="separator:a0fb4b29f8b5678c3deb8084b955519f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20295ba187de645f07875f98826313ea"><td class="memItemLeft" align="right" valign="top">Aws::Map&lt; Aws::String, Aws::DynamoDB::Model::AttributeValue &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#a20295ba187de645f07875f98826313ea">get</a> (const Aws::String &amp;key_value) const override</td></tr>
-<tr class="memdesc:a20295ba187de645f07875f98826313ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an item from a database using a given key_value for its partition key.  <a href="classaxel_1_1Database.html#a20295ba187de645f07875f98826313ea">More...</a><br /></td></tr>
+<tr class="memdesc:a20295ba187de645f07875f98826313ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an item from a database using a given value for its partition key.  <a href="classaxel_1_1Database.html#a20295ba187de645f07875f98826313ea">More...</a><br /></td></tr>
 <tr class="separator:a20295ba187de645f07875f98826313ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af351a249866666daefaa33c1417e81d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#af351a249866666daefaa33c1417e81d9">del</a> (const Aws::String &amp;key_value) const override</td></tr>
 <tr class="memdesc:af351a249866666daefaa33c1417e81d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the item with the specified partition key attribute from the database.  <a href="classaxel_1_1Database.html#af351a249866666daefaa33c1417e81d9">More...</a><br /></td></tr>
@@ -176,10 +176,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves an item from a database using a given key_value for its partition key. </p>
+<p>Retrieves an item from a database using a given value for its partition key. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key_value</td><td>The key_value of the primary key of the item to fetch. </td></tr>
+    <tr><td class="paramname">key_value</td><td>The value of the partition key of the item to fetch. </td></tr>
   </table>
   </dd>
 </dl>
