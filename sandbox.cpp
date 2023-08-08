@@ -27,7 +27,7 @@ int main() {
     Aws::InitAPI(options);
     {
         invocation_request request = parse::make_invocation_request("test_input/auth/auth-response.json");
-
+        
         axel::TestHandler::run(request);
     }
     Aws::ShutdownAPI(options);

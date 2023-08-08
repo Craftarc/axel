@@ -20,28 +20,26 @@ namespace {
 // A DescribeTableResult with the above table description
     Model::DescribeTableResult describe_table_result{Model::DescribeTableResult().WithTable(table_description)};
     axel::MockDynamoDBClient* mock_auth_client(new axel::MockDynamoDBClient());
-    Aws::Utils::Outcome<Aws::DynamoDB::Model::DescribeTableResult, Aws::DynamoDB::DynamoDBError> outcome{
-            describe_table_result};
+    Aws::DynamoDB::Model::DescribeTableOutcome successful_outcome{describe_table_result};
 }
 
 namespace axel {
     class Database_test : public Test {
     protected:
-        Database_test() : setup_return(setup()), auth_database{config::axel::database::auth,
-                                                               config::axel::database::auth_attributes,
-                                                               std::move(std::unique_ptr<MockDynamoDBClient>(
-                                                                       mock_auth_client))} {}
+        Database_test()
+                : setup_return(setup()), auth_database{config::axel::database::auth,
+                                                       config::axel::database::auth_attributes,
+                                                       std::move(std::unique_ptr<MockDynamoDBClient>(
+                                                               mock_auth_client))} {}
         
-        Database auth_database;
-    
-    private:
         // Run this before anything else in the initialiser list, since initialisation needs DynamoDBClient (so it needs mocks too)
-        static int setup() {
-            EXPECT_CALL(*mock_auth_client, DescribeTable(_)).Times(1).WillOnce(Return(outcome));
-            return 0;
+        int setup() {
+            EXPECT_CALL(*mock_auth_client, DescribeTable(_)).Times(1).WillOnce(Return(successful_outcome));
+            return 1;
         }
         
         int setup_return;
+        Database auth_database;
     };
     
     TEST_F(Database_test, put__error_attributes_not_valid_for_given_table) {

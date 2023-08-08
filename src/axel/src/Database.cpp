@@ -82,8 +82,7 @@ namespace axel {
             // .GetKeySchema() returns the table's partition key and sort key in a vector
             for (const auto& element: outcome.GetResult().GetTable().GetKeySchema()) {
                 if (element.GetKeyType() == Aws::DynamoDB::Model::KeyType::HASH) { // KeyType::HASH is the partition key
-                    Aws::String partition_key{element.GetAttributeName()};
-                    return partition_key;
+                    return element.GetAttributeName();
                 }
             }
             spdlog::error("Could not get partition key of table '{0}'", table_name_);
