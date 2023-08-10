@@ -20,10 +20,12 @@ var annotated_dup =
     ] ],
     [ "axel", null, [
       [ "Database", "classaxel_1_1Database.html", "classaxel_1_1Database" ],
-      [ "Handler", "classaxel_1_1Handler.html", null ],
+      [ "DynamoDBClient", "classaxel_1_1DynamoDBClient.html", "classaxel_1_1DynamoDBClient" ],
+      [ "Handler", "classaxel_1_1Handler.html", "classaxel_1_1Handler" ],
       [ "IDatabase", "classaxel_1_1IDatabase.html", "classaxel_1_1IDatabase" ],
-      [ "TestHandler", "classaxel_1_1TestHandler.html", null ],
-      [ "MockDatabase", "classaxel_1_1MockDatabase.html", "classaxel_1_1MockDatabase" ]
+      [ "IDynamoDBClient", "classaxel_1_1IDynamoDBClient.html", "classaxel_1_1IDynamoDBClient" ],
+      [ "MockDatabase", "classaxel_1_1MockDatabase.html", "classaxel_1_1MockDatabase" ],
+      [ "MockDynamoDBClient", "classaxel_1_1MockDynamoDBClient.html", "classaxel_1_1MockDynamoDBClient" ]
     ] ],
     [ "webutil", "namespacewebutil.html", [
       [ "HttpSender", "classwebutil_1_1HttpSender.html", "classwebutil_1_1HttpSender" ],

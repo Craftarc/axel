@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pkcemanager_104',['PkceManager',['../classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92',1,'auth::PkceManager']]],
-  ['put_105',['put',['../classaxel_1_1Database.html#a0fb4b29f8b5678c3deb8084b955519f9',1,'axel::Database']]]
+  ['oauthmanager_118',['OauthManager',['../classauth_1_1OauthManager.html#a8a1a16bc3ed70904684c3bcdba043701',1,'auth::OauthManager::OauthManager(const std::string &amp;auth_database, const std::string &amp;app_database)'],['../classauth_1_1OauthManager.html#aa252ce925bb39f690bbdefe9bb70da8f',1,'auth::OauthManager::OauthManager(std::unique_ptr&lt; IPkceManager &gt; pkce_manager, std::unique_ptr&lt; IStateHashManager &gt; state_hash_manager, std::unique_ptr&lt; ITokenRequestManager &gt; token_request_manager, std::unique_ptr&lt; IAuthCodeManager &gt; auth_code_manager, std::unique_ptr&lt; ISessionManager &gt; session_manager, std::unique_ptr&lt; axel::IDatabase &gt; auth_database, std::unique_ptr&lt; axel::IDatabase &gt; app_database)']]]
 ];

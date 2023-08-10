@@ -83,6 +83,8 @@ $(document).ready(function(){initNavTree('classaxel_1_1Database.html',''); initR
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classaxel_1_1Database-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">axel::Database Class Reference</div>  </div>
@@ -100,10 +102,9 @@ Inheritance diagram for axel::Database:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59a7277ec4a39f29e76b6cfa7ca532b9"><td class="memItemLeft" align="right" valign="top"><a id="a59a7277ec4a39f29e76b6cfa7ca532b9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#a59a7277ec4a39f29e76b6cfa7ca532b9">Database</a> (std::string table_name)</td></tr>
-<tr class="memdesc:a59a7277ec4a39f29e76b6cfa7ca532b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterised constructor. All <a class="el" href="classaxel_1_1Database.html">Database</a> objects must be constructed with a specified table name. <br /></td></tr>
-<tr class="separator:a59a7277ec4a39f29e76b6cfa7ca532b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ca209f1185fc26ee4f4056c9b8f2e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#aa1ca209f1185fc26ee4f4056c9b8f2e6">Database</a> (const std::string &amp;table_name, const std::unordered_map&lt; Aws::String, Aws::DynamoDB::Model::ValueType &gt; &amp;attributes)</td></tr>
+<tr class="memdesc:aa1ca209f1185fc26ee4f4056c9b8f2e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterised constructor. Uses the AWS implementation of <a class="el" href="classaxel_1_1DynamoDBClient.html">DynamoDBClient</a>.  <a href="classaxel_1_1Database.html#aa1ca209f1185fc26ee4f4056c9b8f2e6">More...</a><br /></td></tr>
+<tr class="separator:aa1ca209f1185fc26ee4f4056c9b8f2e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb4b29f8b5678c3deb8084b955519f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#a0fb4b29f8b5678c3deb8084b955519f9">put</a> (const std::unordered_map&lt; Aws::String, Aws::String &gt; &amp;items) override</td></tr>
 <tr class="memdesc:a0fb4b29f8b5678c3deb8084b955519f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores items in the database.  <a href="classaxel_1_1Database.html#a0fb4b29f8b5678c3deb8084b955519f9">More...</a><br /></td></tr>
 <tr class="separator:a0fb4b29f8b5678c3deb8084b955519f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,7 +114,111 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af351a249866666daefaa33c1417e81d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#af351a249866666daefaa33c1417e81d9">del</a> (const Aws::String &amp;key_value) const override</td></tr>
 <tr class="memdesc:af351a249866666daefaa33c1417e81d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the item with the specified partition key attribute from the database.  <a href="classaxel_1_1Database.html#af351a249866666daefaa33c1417e81d9">More...</a><br /></td></tr>
 <tr class="separator:af351a249866666daefaa33c1417e81d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a914d7645b421d469b173fada69db67bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#a914d7645b421d469b173fada69db67bb">Database</a> (const std::string &amp;table_name, const std::unordered_map&lt; Aws::String, Aws::DynamoDB::Model::ValueType &gt; &amp;attributes, std::unique_ptr&lt; <a class="el" href="classaxel_1_1IDynamoDBClient.html">axel::IDynamoDBClient</a> &gt; client)</td></tr>
+<tr class="memdesc:a914d7645b421d469b173fada69db67bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterised constructor. All <a class="el" href="classaxel_1_1Database.html">Database</a> objects must be constructed with a specified table name, and a set of valid attributes for that table.  <a href="classaxel_1_1Database.html#a914d7645b421d469b173fada69db67bb">More...</a><br /></td></tr>
+<tr class="separator:a914d7645b421d469b173fada69db67bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a473b287fef4ee3de24a3ffafa3a67884"><td class="memItemLeft" align="right" valign="top"><a id="a473b287fef4ee3de24a3ffafa3a67884"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>Database_test</b></td></tr>
+<tr class="separator:a473b287fef4ee3de24a3ffafa3a67884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa1ca209f1185fc26ee4f4056c9b8f2e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ca209f1185fc26ee4f4056c9b8f2e6">&#9670;&nbsp;</a></span>Database() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">axel::Database::Database </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>table_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::unordered_map&lt; Aws::String, Aws::DynamoDB::Model::ValueType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>attributes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parameterised constructor. Uses the AWS implementation of <a class="el" href="classaxel_1_1DynamoDBClient.html">DynamoDBClient</a>. </p>
+<p>Constructs an object that performs operations on the specified table name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table_name</td><td>Name of the table this object interacts with. </td></tr>
+    <tr><td class="paramname">attributes</td><td>Map of the attribute names, and the types of the attribute names, that this table stores. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Uses an instance of the AWS implementation of <a class="el" href="classaxel_1_1DynamoDBClient.html">DynamoDBClient</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a914d7645b421d469b173fada69db67bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a914d7645b421d469b173fada69db67bb">&#9670;&nbsp;</a></span>Database() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">axel::Database::Database </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>table_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::unordered_map&lt; Aws::String, Aws::DynamoDB::Model::ValueType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>attributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classaxel_1_1IDynamoDBClient.html">axel::IDynamoDBClient</a> &gt;&#160;</td>
+          <td class="paramname"><em>client</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parameterised constructor. All <a class="el" href="classaxel_1_1Database.html">Database</a> objects must be constructed with a specified table name, and a set of valid attributes for that table. </p>
+<p>Constructs an object that performs operations on the specified table name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table_name</td><td>Name of the table this object interacts with. </td></tr>
+    <tr><td class="paramname">attributes</td><td>Map of the attribute names, and the types of the attribute names, that this table stores. </td></tr>
+    <tr><td class="paramname">client</td><td>The <a class="el" href="classaxel_1_1DynamoDBClient.html">DynamoDBClient</a> instance to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This table only ever interacts with the table with the specified table name. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="af351a249866666daefaa33c1417e81d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af351a249866666daefaa33c1417e81d9">&#9670;&nbsp;</a></span>del()</h2>

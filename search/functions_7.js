@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['oauthmanager_103',['OauthManager',['../classauth_1_1OauthManager.html#a8a1a16bc3ed70904684c3bcdba043701',1,'auth::OauthManager::OauthManager(const std::string &amp;auth_database, const std::string &amp;app_database)'],['../classauth_1_1OauthManager.html#aa252ce925bb39f690bbdefe9bb70da8f',1,'auth::OauthManager::OauthManager(std::unique_ptr&lt; IPkceManager &gt; pkce_manager, std::unique_ptr&lt; IStateHashManager &gt; state_hash_manager, std::unique_ptr&lt; ITokenRequestManager &gt; token_request_manager, std::unique_ptr&lt; IAuthCodeManager &gt; auth_code_manager, std::unique_ptr&lt; ISessionManager &gt; session_manager, std::unique_ptr&lt; axel::IDatabase &gt; auth_database, std::unique_ptr&lt; axel::IDatabase &gt; app_database)']]]
+  ['make_5fform_5fdata_116',['make_form_data',['../namespacewebutil.html#a177074a519b80be02757463c15c4499b',1,'webutil']]],
+  ['make_5fhttp_5frequest_117',['make_http_request',['../namespacewebutil.html#a955faee7f7df2d459208bd9d3e6cd030',1,'webutil']]]
 ];

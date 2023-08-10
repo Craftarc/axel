@@ -9,6 +9,10 @@ var hierarchy =
       [ "axel::Database", "classaxel_1_1Database.html", null ],
       [ "axel::MockDatabase", "classaxel_1_1MockDatabase.html", null ]
     ] ],
+    [ "axel::IDynamoDBClient", "classaxel_1_1IDynamoDBClient.html", [
+      [ "axel::DynamoDBClient", "classaxel_1_1DynamoDBClient.html", null ],
+      [ "axel::MockDynamoDBClient", "classaxel_1_1MockDynamoDBClient.html", null ]
+    ] ],
     [ "webutil::IHttpSender", "classwebutil_1_1IHttpSender.html", [
       [ "webutil::HttpSender", "classwebutil_1_1HttpSender.html", null ],
       [ "webutil::MockHttpSender", "classwebutil_1_1MockHttpSender.html", null ]
@@ -32,6 +36,5 @@ var hierarchy =
     [ "auth::ITokenRequestManager", "classauth_1_1ITokenRequestManager.html", [
       [ "auth::MockTokenRequestManager", "classauth_1_1MockTokenRequestManager.html", null ],
       [ "auth::TokenRequestManager", "classauth_1_1TokenRequestManager.html", null ]
-    ] ],
-    [ "axel::TestHandler", "classaxel_1_1TestHandler.html", null ]
+    ] ]
 ];

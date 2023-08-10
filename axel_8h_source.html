@@ -88,19 +88,36 @@ $(document).ready(function(){initNavTree('axel_8h_source.html',''); initResizabl
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef AXEL_CONFIG_AXEL_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AXEL_CONFIG_AXEL_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="namespaceconfig.html">    4</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceconfig.html">config</a> {</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespaceconfig_1_1axel.html">    6</a></span>&#160;    <span class="keyword">namespace </span>axel {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="keyword">const</span> std::string client_id = <span class="stringliteral">&quot;axel&quot;</span>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keyword">const</span> std::string grant_type = <span class="stringliteral">&quot;authorization_code&quot;</span>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keyword">namespace </span>database {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keyword">const</span> std::string auth = <span class="stringliteral">&quot;axel-oauth&quot;</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keyword">const</span> std::string app = <span class="stringliteral">&quot;axel-app&quot;</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_CONFIG_AXEL_H</span></div>
-<div class="ttc" id="anamespaceconfig_html"><div class="ttname"><a href="namespaceconfig.html">config</a></div><div class="ttdoc">Contains constants for use throughout the whole program.</div><div class="ttdef"><b>Definition:</b> axel.h:4</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;aws/dynamodb/DynamoDBServiceClientModel.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespaceconfig.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceconfig.html">config</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespaceconfig_1_1axel.html">    8</a></span>&#160;    <span class="keyword">namespace </span>axel {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keyword">const</span> std::string client_id = <span class="stringliteral">&quot;axel&quot;</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">const</span> std::string grant_type = <span class="stringliteral">&quot;authorization_code&quot;</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">namespace </span>database {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keyword">const</span> std::string auth = <span class="stringliteral">&quot;axel-oauth&quot;</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">const</span> std::unordered_map&lt;Aws::String, Aws::DynamoDB::Model::ValueType&gt; auth_attributes = {{<span class="stringliteral">&quot;session_id&quot;</span>,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                                                                       Aws::DynamoDB::Model::ValueType::STRING},</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                                                                      {<span class="stringliteral">&quot;state_hash&quot;</span>,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                                                                       Aws::DynamoDB::Model::ValueType::STRING},</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                                                                      {<span class="stringliteral">&quot;code_verifier&quot;</span>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                                                                       Aws::DynamoDB::Model::ValueType::STRING},</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                                                      {<span class="stringliteral">&quot;time_to_live&quot;</span>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                                                                       Aws::DynamoDB::Model::ValueType::NUMBER}};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keyword">const</span> std::string app = <span class="stringliteral">&quot;axel-app&quot;</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">const</span> std::unordered_map&lt;Aws::String, Aws::DynamoDB::Model::ValueType&gt; app_attributes = {{<span class="stringliteral">&quot;session_id&quot;</span>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                                                                                      Aws::DynamoDB::Model::ValueType::STRING},</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                                                                     {<span class="stringliteral">&quot;access_token&quot;</span>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                                                                      Aws::DynamoDB::Model::ValueType::STRING}};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">const</span> std::string auth_test = <span class="stringliteral">&quot;axel-oauth-test&quot;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">const</span> std::string app_test = <span class="stringliteral">&quot;axel-app-test&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_CONFIG_AXEL_H</span></div>
+<div class="ttc" id="anamespaceconfig_html"><div class="ttname"><a href="namespaceconfig.html">config</a></div><div class="ttdoc">Contains constants for use throughout the whole program.</div><div class="ttdef"><b>Definition:</b> axel.h:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['make_5fform_5fdata_101',['make_form_data',['../namespacewebutil.html#a177074a519b80be02757463c15c4499b',1,'webutil']]],
-  ['make_5fhttp_5frequest_102',['make_http_request',['../namespacewebutil.html#a955faee7f7df2d459208bd9d3e6cd030',1,'webutil']]]
+  ['handler_114',['Handler',['../classaxel_1_1Handler.html#a172d77041a17bc65426176d74cdf6d32',1,'axel::Handler']]],
+  ['handler_115',['handler',['../classaxel_1_1Handler.html#a0cb41fde62bc5ac19e1959845c037e5d',1,'axel::Handler']]]
 ];
