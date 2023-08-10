@@ -43,6 +43,11 @@ namespace axel {
             add_item(pair, put_item_request);
         }
         
+        if (!check_put_item_request(put_item_request)) {
+            spdlog::error("PutItemRequest does not contain partition key-value pair for partition key '{}'",
+                          partition_key_);
+            throw std::runtime_error("Database::put - PutItemRequest does not contain partition key-value pair");
+        }
         const Aws::DynamoDB::Model::PutItemOutcome outcome{client_->PutItem(put_item_request)};
         
         if (outcome.IsSuccess()) {
@@ -61,7 +66,7 @@ namespace axel {
         get_item_request.SetTableName(table_name_);
         
         auto attribute_value{Aws::DynamoDB::Model::AttributeValue().SetS(key_value)}; // Construct proper type for .AddKey
-        get_item_request.AddKey(get_partition_key(), attribute_value);
+        get_item_request.AddKey(partition_key_, attribute_value);
         
         auto outcome{client_->GetItem(get_item_request)};
         if (outcome.IsSuccess()) {
@@ -141,7 +146,25 @@ namespace axel {
                     throw std::runtime_error("Undefined type of attribute value");
             }
             
+            put_item_request.AddItem(item_pair.first, value);
+            
             return put_item_request;
+        }
+    }
+    
+    /// @brief Checks if the given PutItemRequest contains the partition key-value pair for the table, which is
+    /// a requirement for a PutItem operation.
+    /// @param put_item_request The PutItemRequest to be checked.
+    /// @return True if the PutItemRequest does contain the partition key-value pair, False otherwise.
+    bool Database::check_put_item_request(const Model::PutItemRequest& put_item_request) const {
+        auto items{put_item_request.GetItem()}; // Get all items in the PutItemRequest
+        
+        // Check for existence of partition key-value pair
+        if (auto position{items.find(partition_key_)}; position == items.end()) { // Not found
+            spdlog::error("PutItemRequest does not contain the partition key '{}'", partition_key_);
+            return false;
+        } else {
+            return true;
         }
     }
 } // axel

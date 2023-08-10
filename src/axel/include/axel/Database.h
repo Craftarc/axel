@@ -12,6 +12,7 @@
 #include "axel/interface/IDatabase.h"
 #include "axel/interface/IDynamoDBClient.h"
 
+namespace Model = Aws::DynamoDB::Model;
 namespace axel {
     class Database : public IDatabase {
         friend class Database_test;
@@ -53,6 +54,8 @@ namespace axel {
         /// @brief Adds an attribute name-value pair to a PutItemRequest
         Aws::DynamoDB::Model::PutItemRequest& add_item(const std::pair<Aws::String, Aws::String>& item_pair,
                                                        Aws::DynamoDB::Model::PutItemRequest& put_item_request) const;
+        
+        bool check_put_item_request(const Model::PutItemRequest& put_item_request) const;
     };
 } // axel
 
