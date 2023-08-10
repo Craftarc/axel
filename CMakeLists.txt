@@ -6,7 +6,7 @@ project(axel LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_TOOLCHAIN_FILE /opt/vcpkg/scripts/buildsystems/vcpkg.cmake)
+set(CMAKE_TOOLCHAIN_FILE, /opt/vcpkg/scripts/buildsystems/vcpkg.cmake)
 set(Boost_NO_WARN_NEW_VERSIONS 1)
 
 # Global properties

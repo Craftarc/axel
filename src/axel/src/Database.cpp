@@ -6,14 +6,30 @@
 #include <aws/dynamodb/model/DeleteItemRequest.h>
 
 #include "axel/Database.h"
+#include "axel/DynamoDBClient.h"
 
 namespace axel {
-    Database::Database(std::string table_name)
-            : client_{connect(table_name)},
+    
+    /// Constructs an object that performs operations on the specified table name.
+    /// @param table_name Name of the table this object interacts with.
+    /// @param attributes Map of the attribute names, and the types of the attribute names, that this table stores.
+    /// @param client The DynamoDBClient instance to use.
+    /// @note This table only ever interacts with the table with the specified table name.
+    Database::Database(const std::string& table_name,
+                       const std::unordered_map<Aws::String, Aws::DynamoDB::Model::ValueType>& attributes,
+                       std::unique_ptr<axel::IDynamoDBClient> client)
+            : client_{std::move(client)},
               table_name_{table_name},
-              partition_key_(get_partition_key()) {
-        spdlog::info("Interface to database created. Database: {}", table_name);
-    };
+              partition_key_(get_partition_key()),
+              attributes_{attributes} {};
+    
+    /// Constructs an object that performs operations on the specified table name.
+    /// @param table_name Name of the table this object interacts with.
+    /// @param attributes Map of the attribute names, and the types of the attribute names, that this table stores.
+    /// @note Uses an instance of the AWS implementation of DynamoDBClient.
+    Database::Database(const std::string& table_name,
+                       const std::unordered_map<Aws::String, Aws::DynamoDB::Model::ValueType>& attributes) :
+            Database(table_name, attributes, std::make_unique<axel::DynamoDBClient>(table_name)) {};
     
     /// Adds items to the DynamoDB specified by the table name provided in the constructor.
     /// @param items A map of items to add to the table. Each key-value pair in the map represents the target attribute,
@@ -24,13 +40,12 @@ namespace axel {
         put_item_request.SetTableName(table_name_);
         
         for (const auto& pair: items) {
-            auto value{Aws::DynamoDB::Model::AttributeValue().SetS(pair.second)}; // Construct proper type for .AddItem()
-            put_item_request.AddItem(pair.first, value);
+            add_item(pair, put_item_request);
         }
-        const Aws::DynamoDB::Model::PutItemOutcome outcome{client_.PutItem(put_item_request)};
+        
+        const Aws::DynamoDB::Model::PutItemOutcome outcome{client_->PutItem(put_item_request)};
         
         if (outcome.IsSuccess()) {
-            spdlog::info("Successfully added item into table '{}'.", table_name_);
         } else {
             spdlog::error("Failed to add item into table '{}'.", table_name_);
             throw std::runtime_error("Error adding item into table");
@@ -48,9 +63,8 @@ namespace axel {
         auto attribute_value{Aws::DynamoDB::Model::AttributeValue().SetS(key_value)}; // Construct proper type for .AddKey
         get_item_request.AddKey(get_partition_key(), attribute_value);
         
-        auto outcome{client_.GetItem(get_item_request)};
+        auto outcome{client_->GetItem(get_item_request)};
         if (outcome.IsSuccess()) {
-            spdlog::info("Successfully retrieved item from table '{}'.", table_name_);
             return outcome.GetResult().GetItem();
         } else {
             spdlog::error("Could not get item with given partition key '{}'", partition_key_);
@@ -63,20 +77,19 @@ namespace axel {
         Aws::DynamoDB::Model::DescribeTableRequest describe_table_request;
         describe_table_request.SetTableName(table_name_);
         
-        auto outcome{client_.DescribeTable(describe_table_request)};
+        auto outcome{client_->DescribeTable(describe_table_request)};
         if (outcome.IsSuccess()) {
             // .GetKeySchema() returns the table's partition key and sort key in a vector
             for (const auto& element: outcome.GetResult().GetTable().GetKeySchema()) {
                 if (element.GetKeyType() == Aws::DynamoDB::Model::KeyType::HASH) { // KeyType::HASH is the partition key
-                    Aws::String partition_key{element.GetAttributeName()};
-                    spdlog::info("Found partition key of table '{0}': '{1}'", table_name_, partition_key);
-                    
-                    return partition_key;
+                    return element.GetAttributeName();
                 }
             }
-        } else {
             spdlog::error("Could not get partition key of table '{0}'", table_name_);
             throw std::runtime_error("Could not get partition key of table");
+        } else {
+            spdlog::error("Failed partition key query on '{}'", table_name_);
+            throw std::runtime_error("Failed partition key query on table");
         }
     }
     
@@ -89,9 +102,8 @@ namespace axel {
         auto attribute_value{Aws::DynamoDB::Model::AttributeValue().SetS(key_value)};
         delete_item_request.AddKey(get_partition_key(), attribute_value);
         
-        auto outcome{client_.DeleteItem(delete_item_request)};
+        auto outcome{client_->DeleteItem(delete_item_request)};
         if (outcome.IsSuccess()) {
-            spdlog::info("Deleted item in table '{}'", table_name_);
         } else {
             spdlog::error("Failed to delete item in table '{}'", table_name_);
             throw std::runtime_error("Failed to delete item in table");
@@ -100,12 +112,36 @@ namespace axel {
         return outcome.IsSuccess();
     }
     
-    /// @param database Name of the database table to connect to.
-    /// @return A DynamoDB client.
-    Aws::DynamoDB::DynamoDBClient Database::connect(const std::string& database) {
-        Aws::Client::ClientConfiguration client_configuration;
-        client_configuration.region = "us-west-1";
+    /// Appends the attribute name-value pair to be part of a PutItemRequest. Modifies the PutItemRequest directly.
+    /// @param item_pair The name-value pair to add. Must be compliant with the types defined by attributes_
+    /// @param put_item_request The PutItemRequest to add to.
+    Aws::DynamoDB::Model::PutItemRequest&
+    Database::add_item(const std::pair<Aws::String, Aws::String>& item_pair,
+                       Aws::DynamoDB::Model::PutItemRequest& put_item_request) const {
         
-        return Aws::DynamoDB::DynamoDBClient{client_configuration};
+        // Check if attribute name is in pre-defined valid attributes
+        auto position = attributes_.find(item_pair.first);
+        if (position == attributes_.end()) { // If attribute name is not found
+            throw std::runtime_error("Database: Given item attribute name does not exist in table");
+        } else {  // If found, then construct the right DynamoDB AttributeValue type for the attribute's ValueType
+            using ValueType = Aws::DynamoDB::Model::ValueType;
+            ValueType value_type = position->second; // Get AttributeValue type
+            
+            // Construct the right AttributeValue
+            Aws::DynamoDB::Model::AttributeValue value;
+            switch (value_type) {
+                case ValueType::STRING:
+                    value.SetS(item_pair.second);
+                    break;
+                case ValueType::NUMBER:
+                    value.SetN(item_pair.second);
+                    break;
+                default:
+                    spdlog::error("Undefined type of attribute value");
+                    throw std::runtime_error("Undefined type of attribute value");
+            }
+            
+            return put_item_request;
+        }
     }
 } // axel

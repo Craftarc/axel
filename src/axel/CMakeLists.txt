@@ -1,6 +1,6 @@
 # Configure target sources here
-set(AXEL_SRC_FILES src/Handler.cpp src/Handler.cpp src/TestHandler.cpp src/Database.cpp)
-set(AXEL_TESTS_SRC_FILES test/TestHandler_test.cpp)
+set(AXEL_SRC_FILES src/Handler.cpp src/Handler.cpp src/TestHandler.cpp src/Database.cpp src/DynamoDBClient.cpp)
+set(AXEL_TESTS_SRC_FILES test/TestHandler_test.cpp test/Database_test.cpp)
 
 configure_file(../auth/test/input/auth-response.json response.txt)
 

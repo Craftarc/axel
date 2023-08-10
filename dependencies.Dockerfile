@@ -1,7 +1,7 @@
 # Build command
 # docker build -t dependencies -f dependencies.Dockerfile .
 
-FROM ubuntu
+FROM ubuntu:latest
 
 # Environment variables
 ENV CX gcc
@@ -48,9 +48,6 @@ RUN ./vcpkg install aws-lambda-cpp
 
 # AWS C++ SDK
 RUN ./vcpkg install "aws-sdk-cpp[dynamodb]" --recurse
-
-# spdlog
-RUN ./vcpkg install spdlog
 
 ## END INSTALL LIBRARIES
 
