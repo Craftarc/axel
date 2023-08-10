@@ -2,13 +2,12 @@
 #include <spdlog/spdlog.h>
 
 #include "axel/Handler.h"
-#include "axel/TestHandler.h"
 #include "parse/util.h"
 
 int main() {
 // Set logger output level
 #ifdef NDEBUG // Release
-    spdlog::set_level(spdlog::level::info)
+    spdlog::set_level(spdlog::level::info);
 #else
     spdlog::set_level(spdlog::level::trace);
 #endif
@@ -16,13 +15,14 @@ int main() {
     
     Aws::InitAPI(options);
 
-#ifdef RIE_MOUNT
-    axel::Handler::run();
+#ifdef TEST
+    axel::Handler handler{"test"};
+    handler.run();
 #else
-    invocation_request request{parse::make_invocation_request("test_input/auth/auth-response.json")};
-    axel::TestHandler::run(request);
+    axel::Handler handler{"production"};
+
 #endif
-    
+    handler.run();
     Aws::ShutdownAPI(options);
     return 0;
 }

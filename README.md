@@ -162,7 +162,7 @@ You may build it with `docker build -t axel -f axel.Dockerfile .`
 Axel's backend builds two main executables: `main.cpp` and `sandbox.cpp`. For more information on why there are two
 executables, see [The Lambda Execution Environment](#the-lambda-execution-environment).
 
-Once the _axel_ has been built, the image should contain the `main` and `sandbox` binaries in the /app/axel/build
+Once _axel-backend_ has been built, the image should contain the `main` and `sandbox` binaries in the /app/axel/build
 directory.
 
 **To package the main executable into a zip**, the format which we use to deploy onto Lambda, run
@@ -173,7 +173,6 @@ directory.
 ```
 docker run -it axel
 cd build
-<<<<<<< HEAD
 cmake ..
 make
 ```
@@ -193,14 +192,13 @@ service endpoint to get
 events. We need to mount the RIE before main is run so there _is_ an endpoint to poll in the first place.
 
 1. [Download](https://github.com/awslabs/aws-lambda-cpp) the RIE for x86_64 platforms.
-2. Run the following command:
+2. Run the following script:
 
 ```
-docker build -t axel-backend:1.0 . # Build updated executables
-docker run -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 --entrypoint /aws-lambda/aws-lambda-rie axel-backend:1.0 /app/axel/build/main
+./script/start_rie.sh
 ```
 
-Breakdown of command
+Breakdown of commands
 
 - `-v ~/.aws-lambda-rie:/aws-lambda`: Mounts the `aws-lambda-rie` runtime binary into `/aws-lambda` in the container.
 - `-p 9000:8080`: The RIE listens on port 8080 within the container. By mapping port 9000 on the host machine to port

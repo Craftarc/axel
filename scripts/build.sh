@@ -3,7 +3,7 @@
 echo "Building axel"
 
 # Compile the latest version of the main.cpp
-docker build -t axel-backend -f axel.Dockerfile . > /dev/null 2>&1
+docker build -t axel-backend -f axel.Dockerfile .
 echo "compiled: main"
 
 # Create a temporary container to copy

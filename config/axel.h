@@ -23,6 +23,9 @@ namespace config {
                                                                                                       Aws::DynamoDB::Model::ValueType::STRING},
                                                                                                      {"access_token",
                                                                                                       Aws::DynamoDB::Model::ValueType::STRING}};
+            
+            const std::string auth_test = "axel-oauth-test";
+            const std::string app_test = "axel-app-test";
         }
     }
 }

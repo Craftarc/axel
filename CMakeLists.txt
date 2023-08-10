@@ -50,12 +50,12 @@ target_compile_options(main PRIVATE "-Wall" "-Wextra")
 aws_lambda_package_target(main NO_LIBC) # this line creates a target that packages your binary and zips it up
 
 # Settings
-option(RIE_MOUNT "Compile main to run against the RIE" YES)
-if (RIE_MOUNT)
-    message(STATUS "Will build main for RIE use")
-    target_compile_definitions(main PRIVATE RIE_MOUNT)
+option(TEST "Use test databases" YES)
+if (TEST)
+    message(STATUS "Using testing databases")
+    target_compile_definitions(main PRIVATE TEST)
 else ()
-    message(STATUS "Will build main for local use")
+    message(STATUS "Using production databases")
 endif ()
 
 # sandbox executable (for testing free functions)
