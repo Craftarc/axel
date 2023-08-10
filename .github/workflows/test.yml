@@ -48,6 +48,6 @@ jobs:
           cd build
           cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
           ninja
-#
-#      - name: Run tests
-#        run: build/tests
+
+      - name: Run tests
+        run: build/tests
