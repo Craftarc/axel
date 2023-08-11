@@ -84,6 +84,7 @@ namespace axel {
     }
     
     TEST_F(Database_test, get__error_if_partition_key_does_not_exist_in_table) {
+        std::cout << "hi" << std::endl;
         EXPECT_CALL(*mock_auth_client, GetItem(_)).Times(1).WillOnce(Return(unsuccessful_get_item_outcome));
         EXPECT_THROW(auth_database.get("non_existent_key"), std::runtime_error);
     }

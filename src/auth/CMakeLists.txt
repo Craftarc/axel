@@ -9,7 +9,7 @@ set(AUTH_TESTS_SRC_FILES test/OauthManager_test.cpp test/PkceManager_test.cpp
 # auth library
 add_library(auth ${AUTH_SRC_FILES})
 target_include_directories(auth PUBLIC include ${BOTAN_PKG_INCLUDE_DIRS} ${PROJECT_ROOT}})
-target_link_libraries(auth PUBLIC webutil axel parse
+target_link_libraries(auth PUBLIC webutil axel parse test_definitions
                       spdlog::spdlog Boost::json ${BOTAN_PKG_LIBRARIES} ${AWSSDK_LINK_LIBRARIES})
 
 

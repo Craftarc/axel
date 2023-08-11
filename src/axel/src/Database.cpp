@@ -62,7 +62,7 @@ namespace axel {
         get_item_request.SetTableName(table_name_);
         
         auto attribute_value{Aws::DynamoDB::Model::AttributeValue().SetS(key_value)}; // Construct proper type for .AddKey
-        get_item_request.AddKey(get_partition_key(), attribute_value);
+        get_item_request.AddKey(partition_key_, attribute_value);
         
         auto outcome{client_->GetItem(get_item_request)};
         if (outcome.IsSuccess()) {
@@ -101,7 +101,7 @@ namespace axel {
         
         // Construct proper type for value of .AddKey (key, value)
         auto attribute_value{Aws::DynamoDB::Model::AttributeValue().SetS(key_value)};
-        delete_item_request.AddKey(get_partition_key(), attribute_value);
+        delete_item_request.AddKey(partition_key_, attribute_value);
         
         auto outcome{client_->DeleteItem(delete_item_request)};
         if (outcome.IsSuccess()) {

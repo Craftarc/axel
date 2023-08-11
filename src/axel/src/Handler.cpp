@@ -21,12 +21,13 @@ namespace axel {
         std::string content_type;
         boost::json::value json = boost::json::parse(payload);
         std::string path = json.at("rawPath").as_string().c_str();
+        int64_t request_time = json.at("requestContext").at("timeEpoch").as_int64() / 1000; // Milliseconds -> Seconds
+        spdlog::debug("Handler::handler: Found request_time '{}' seconds",
+                      std::to_string(request_time));
         
         if (path == "/login") {
-            
+            spdlog::info("Handler::handler: Entered path '{}'", path);
             std::string response = _oauth_manager.start_auth();
-            
-            std::cout << "/login flow complete" << std::endl;
             
             return invocation_response::success(response, "application/json");
         } else if (path == "/") {
@@ -37,9 +38,6 @@ namespace axel {
             
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();
             spdlog::debug("Handler::handler: Found session_id '{}'", session_id);
-            
-            int64_t request_time = json.at("requestContext").at("timeEpoch").as_int64();
-            spdlog::debug("Handler::handler: Found request request_time '{}'", std::to_string(request_time));
             
             _oauth_manager.receive_auth(query_string, session_id, request_time);
             return invocation_response::success("", "application/json");

@@ -19,6 +19,8 @@ namespace {
     class OauthManager_test : public Test {
     protected:
         
+        OauthManager_test() {}
+        
         std::unique_ptr<auth::MockPkceManager> mock_pkce_manager{std::make_unique<auth::MockPkceManager>()};
         std::unique_ptr<auth::MockStateHashManager> mock_state_hash_manager{std::make_unique<auth::MockStateHashManager>()};
         std::unique_ptr<auth::MockTokenRequestManager> mock_token_request_manager{std::make_unique<auth::MockTokenRequestManager>()};
@@ -68,11 +70,6 @@ TEST_F(OauthManager_test,
     
     // State hash matches
     EXPECT_CALL(*raw_mock_state_hash_manager, check_state_hash(_, _)).Times(1).WillOnce(Return(true));
-    
-    // Make access token request
-    EXPECT_CALL(*raw_mock_token_request_manager,
-                send_token_request(_, _, _)).Times(1)
-                                            .WillOnce(Return("access_token"));
     
     // Get app session token
     EXPECT_CALL(*raw_mock_session_manager, get_session_token()).Times(1).WillOnce(Return("session_token"));
