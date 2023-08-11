@@ -16,9 +16,10 @@ int main() {
     Aws::InitAPI(options);
 
 #ifdef TEST
+    spdlog::info("Environment: Test");
     axel::Handler handler{"test"};
-    handler.run();
 #else
+    spdlog::info("Environment: Production");
     axel::Handler handler{"production"};
 
 #endif
