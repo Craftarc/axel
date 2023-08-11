@@ -38,6 +38,7 @@ namespace axel {
     bool Database::put(const std::unordered_map<Aws::String, Aws::String>& items) {
         Aws::DynamoDB::Model::PutItemRequest put_item_request;
         put_item_request.SetTableName(table_name_);
+        spdlog::debug("Table name: {}", table_name_);
         
         for (const auto& pair: items) {
             add_item(pair, put_item_request);
@@ -141,6 +142,8 @@ namespace axel {
                     throw std::runtime_error("Undefined type of attribute value");
             }
             
+            put_item_request.AddItem(item_pair.first, value);
+            spdlog::debug("Database::add_item: Added ({0}, {1}) to PutItemRequest", item_pair.first, item_pair.second);
             return put_item_request;
         }
     }
