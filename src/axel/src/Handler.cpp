@@ -1,6 +1,7 @@
 #include <aws/lambda-runtime/runtime.h>
 #include <iostream>
 #include <boost/json.hpp>
+#include <spdlog/spdlog.h>
 
 #include "axel/Handler.h"
 #include "auth/OauthManager.h"
@@ -17,13 +18,11 @@ namespace axel {
     /// @brief Takes a request from the AWS Lambda server runtime and delegates it to the appropriate method to be processed.
     invocation_response Handler::handler(const invocation_request& req) {
         std::string payload = req.payload;
-        std::cout << payload << std::endl;
         std::string content_type;
         boost::json::value json = boost::json::parse(payload);
         std::string path = json.at("rawPath").as_string().c_str();
         
         if (path == "/login") {
-            std::cout << "Entered path: " << path << std::endl;
             
             std::string response = _oauth_manager.start_auth();
             
@@ -31,12 +30,18 @@ namespace axel {
             
             return invocation_response::success(response, "application/json");
         } else if (path == "/") {
-            std::cout << "Entered path: " << path << std::endl;
+            spdlog::info("Handler::handler: Entered path '{}'", path);
             
             std::string query_string = json.at("rawQueryString").as_string().c_str();
+            spdlog::debug("Handler::handler: Found query_string '{}'", query_string);
             
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();
-            _oauth_manager.receive_auth(query_string, session_id);
+            spdlog::debug("Handler::handler: Found session_id '{}'", session_id);
+            
+            int64_t request_time = json.at("requestContext").at("timeEpoch").as_int64();
+            spdlog::debug("Handler::handler: Found request request_time '{}'", std::to_string(request_time));
+            
+            _oauth_manager.receive_auth(query_string, session_id, request_time);
             return invocation_response::success("", "application/json");
         }
         

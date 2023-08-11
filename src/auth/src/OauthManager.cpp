@@ -17,6 +17,10 @@
 #include "parse/util.h"
 #include "axel/Database.h"
 
+namespace {
+    int MAX_SESSION_TIME = 30;
+}
+
 namespace auth {
     OauthManager::OauthManager(const std::string& auth_database, const std::string& app_database) :
             OauthManager{std::make_unique<PkceManager>(),
@@ -97,7 +101,9 @@ namespace auth {
 /// @param session_id The session_id identifying the authentication request.
 /// @return The session token for tracking this user session.
 /// @note The user session is considered established once the token is sent out.
-    std::string auth::OauthManager::receive_auth(const std::string& query_string, const std::string& session_id) {
+    std::string auth::OauthManager::receive_auth(const std::string& query_string,
+                                                 const std::string& session_id,
+                                                 int64_t request_time) {
         std::unordered_map<std::string, std::string> query_params = webutil::extract_query_params(query_string);
         
         auto state_hash = query_params["state"];
@@ -135,7 +141,10 @@ namespace auth {
             std::string session_token = session_manager_->get_session_token();
             spdlog::info("OAuthManager: Session ID for app obtained");
             
-            if (!app_database_->put({{"session_id", session_token}, {"access_token", access_token}})) {
+            // Store session details in table
+            if (!app_database_->put({{"session_id", session_token},
+                                     {"access_token", access_token},
+                                     {"time_to_live", std::to_string(request_time + MAX_SESSION_TIME)}})) {
                 throw std::runtime_error("Failed to put session_id, access_token into app database");
             } else {
                 spdlog::info("OAuthManager: Stored (client session id, access token) in App table");
