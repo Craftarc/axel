@@ -9,6 +9,8 @@ The sample requests in this directory pertain only to the Oauth process.
 Each top-level key in the JSON corresponds to a variable name of invocation_request (excluding deadline and
 get_time_remaining).
 
+To use these as inputs, please _POST_ the payloads to the exposed port on the running RIE.
+
 - initial-login: Initial GET request to the Lambda function URL. The function should redirect the user to an
   authorisation url, and place a cookie in the user's browser.
 - auth-response: Redirect from the authorisation server to the Lambda function URL.

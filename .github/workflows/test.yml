@@ -1,0 +1,53 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      VCPKG_FORCE_SYSTEM_BINARIES: 1
+
+    steps:
+      - name: Install tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y build-essential git curl zip unzip tar cmake ninja-build pkg-config python3 nodejs \
+          autoconf-archive
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Cache vcpkg
+        id: cache-vcpkg
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/vcpkg # Cache the vcpkg installation and its subdirectories
+          key: ${{ runner.os }}-${{ hashFiles('dependencies.Dockerfile') }} # Rebuilds cache if dependencies change
+
+      - name: Install vcpkg
+        if: steps.cache-vcpkg.outputs.cache-hit != 'true'
+        run: |
+          git clone https://github.com/Microsoft/vcpkg.git
+          cd vcpkg
+          ./bootstrap-vcpkg.sh
+
+      - name: Install libraries
+        if: steps.cache-vcpkg.outputs.cache-hit != 'true'
+        run: |
+          cd vcpkg
+          ./vcpkg install boost gtest botan aws-lambda-cpp spdlog
+          ./vcpkg install "aws-sdk-cpp[dynamodb]" --recurse
+
+      - name: Build tests
+        run: |
+          mkdir build
+          cd build
+          cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+          ninja
+
+      - name: Run tests
+        run: build/tests

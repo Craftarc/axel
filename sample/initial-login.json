@@ -1,21 +1,14 @@
 {
-  "request_id": "8e3b862d-1bed-452d-ad4b-8df49d758249",
-  "function_arn": "arn:aws:lambda:us-east-1:012345678912:function:test_function",
   "payload": {
 	"version": "2.0",
 	"routeKey": "$default",
-	"rawPath": "/",
-	"rawQueryString": "code=a4b218facfec4b21d396f38bc4311e7b226ec54f&state=xT-9RJjCTDGkNxh0oRo9C9F3wGQcXiBlpE57X0mY4Tk",
-	"cookies": [
-	  "X7xjFcXqvcD5DaskjT1YpFPgv_IK15xv6rmOy-_36gA"
-	],
+	"rawPath": "/login",
+	"rawQueryString": "",
 	"headers": {
 	  "sec-fetch-mode": "navigate",
-	  "referer": "https://www.pathofexile.com/",
 	  "x-amzn-tls-version": "TLSv1.2",
-	  "sec-fetch-site": "cross-site",
+	  "sec-fetch-site": "none",
 	  "accept-language": "en-US,en;q=0.9",
-	  "cookie": "X7xjFcXqvcD5DaskjT1YpFPgv_IK15xv6rmOy-_36gA",
 	  "x-forwarded-proto": "https",
 	  "x-forwarded-port": "443",
 	  "x-forwarded-for": "116.14.157.253",
@@ -24,18 +17,13 @@
 	  "x-amzn-tls-cipher-suite": "ECDHE-RSA-AES128-GCM-SHA256",
 	  "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"115\", \"Chromium\";v=\"115\"",
 	  "sec-ch-ua-mobile": "?0",
-	  "x-amzn-trace-id": "Root=1-64ca1b22-7255ee60781fc4615393e493",
-	  "sec-ch-ua-platform": "\"Linux\"",
+	  "x-amzn-trace-id": "Root=1-64d4d0a4-1cf7eee068533c5306a942d1",
+	  "sec-ch-ua-platform": "\"Windows\"",
 	  "host": "bibdsedr7muzq2hg5h2rqzs2ke0matoa.lambda-url.us-west-1.on.aws",
 	  "upgrade-insecure-requests": "1",
-	  "cache-control": "max-age=0",
 	  "accept-encoding": "gzip, deflate, br",
 	  "sec-fetch-dest": "document",
-	  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
-	},
-	"queryStringParameters": {
-	  "code": "a4b218facfec4b21d396f38bc4311e7b226ec54f",
-	  "state": "fa-b9wK7TpzsdvDZnw62pQZg8E0j5L4l3F06NA-E7Es"
+	  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
 	},
 	"requestContext": {
 	  "accountId": "anonymous",
@@ -44,16 +32,16 @@
 	  "domainPrefix": "bibdsedr7muzq2hg5h2rqzs2ke0matoa",
 	  "http": {
 		"method": "GET",
-		"path": "/",
+		"path": "/login",
 		"protocol": "HTTP/1.1",
 		"sourceIp": "116.14.157.253",
-		"userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+		"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
 	  },
-	  "requestId": "cf9ebe65-7b4c-47f1-96c2-13cfcdb6860f",
+	  "requestId": "7a8a02d2-a1eb-475e-a9da-2bcdb4d5ef1e",
 	  "routeKey": "$default",
 	  "stage": "$default",
-	  "time": "02/Aug/2023:09:00:18 +0000",
-	  "timeEpoch": 1690966818435
+	  "time": "10/Aug/2023:11:57:24 +0000",
+	  "timeEpoch": 1691668644645
 	},
 	"isBase64Encoded": false
   }

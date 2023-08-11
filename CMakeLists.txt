@@ -1,12 +1,16 @@
 # Configure target sources here
 set(MAIN_SRC_FILES main.cpp)
 
+# Toolchain path
+set(CMAKE_TOOLCHAIN_FILE /opt/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Path to CMMake toolchain file")
+message(STATUS "Toolchain file at: ${CMAKE_TOOLCHAIN_FILE}")
+
 cmake_minimum_required(VERSION 3.22)
 project(axel LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_TOOLCHAIN_FILE, /opt/vcpkg/scripts/buildsystems/vcpkg.cmake)
+
 set(Boost_NO_WARN_NEW_VERSIONS 1)
 
 # Global properties
@@ -50,12 +54,12 @@ target_compile_options(main PRIVATE "-Wall" "-Wextra")
 aws_lambda_package_target(main NO_LIBC) # this line creates a target that packages your binary and zips it up
 
 # Settings
-option(RIE_MOUNT "Compile main to run against the RIE" YES)
-if (RIE_MOUNT)
-    message(STATUS "Will build main for RIE use")
-    target_compile_definitions(main PRIVATE RIE_MOUNT)
+option(TEST "Use test databases" YES)
+if (TEST)
+    message(STATUS "Using testing databases")
+    target_compile_definitions(main PRIVATE TEST)
 else ()
-    message(STATUS "Will build main for local use")
+    message(STATUS "Using production databases")
 endif ()
 
 # sandbox executable (for testing free functions)

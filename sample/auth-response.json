@@ -1,0 +1,60 @@
+{
+  "request_id": "8e3b862d-1bed-452d-ad4b-8df49d758249",
+  "function_arn": "arn:aws:lambda:us-east-1:012345678912:function:test_function",
+  "payload": {
+	"version": "2.0",
+	"routeKey": "$default",
+	"rawPath": "/",
+	"rawQueryString": "code=4f84095c0a316a110fa46b568ceadeab200d007c&state=dppQkjP3OvbWUmO6hK2NTNbYldrzJhIvoVepkWfyavY",
+	"cookies": [
+	  "RQKtNPKEkzIYMBOXqWP6feN5X6GVM62HwXjeOocWbuM"
+	],
+	"headers": {
+	  "sec-fetch-mode": "navigate",
+	  "referer": "https://www.pathofexile.com/",
+	  "x-amzn-tls-version": "TLSv1.2",
+	  "sec-fetch-site": "cross-site",
+	  "accept-language": "en-US,en;q=0.9",
+	  "cookie": "RQKtNPKEkzIYMBOXqWP6feN5X6GVM62HwXjeOocWbuM",
+	  "x-forwarded-proto": "https",
+	  "x-forwarded-port": "443",
+	  "x-forwarded-for": "116.14.157.253",
+	  "sec-fetch-user": "?1",
+	  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+	  "x-amzn-tls-cipher-suite": "ECDHE-RSA-AES128-GCM-SHA256",
+	  "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"115\", \"Chromium\";v=\"115\"",
+	  "sec-ch-ua-mobile": "?0",
+	  "x-amzn-trace-id": "Root=1-64d4d0b3-5dd3d12e3b28f09061f1feeb",
+	  "sec-ch-ua-platform": "\"Windows\"",
+	  "host": "bibdsedr7muzq2hg5h2rqzs2ke0matoa.lambda-url.us-west-1.on.aws",
+	  "upgrade-insecure-requests": "1",
+	  "cache-control": "max-age=0",
+	  "accept-encoding": "gzip, deflate, br",
+	  "sec-fetch-dest": "document",
+	  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+	},
+	"queryStringParameters": {
+	  "code": "4f84095c0a316a110fa46b568ceadeab200d007c",
+	  "state": "dppQkjP3OvbWUmO6hK2NTNbYldrzJhIvoVepkWfyavY"
+	},
+	"requestContext": {
+	  "accountId": "anonymous",
+	  "apiId": "bibdsedr7muzq2hg5h2rqzs2ke0matoa",
+	  "domainName": "bibdsedr7muzq2hg5h2rqzs2ke0matoa.lambda-url.us-west-1.on.aws",
+	  "domainPrefix": "bibdsedr7muzq2hg5h2rqzs2ke0matoa",
+	  "http": {
+		"method": "GET",
+		"path": "/",
+		"protocol": "HTTP/1.1",
+		"sourceIp": "116.14.157.253",
+		"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+	  },
+	  "requestId": "bd95cace-ee53-48d6-950e-b3832028ed9f",
+	  "routeKey": "$default",
+	  "stage": "$default",
+	  "time": "10/Aug/2023:11:57:39 +0000",
+	  "timeEpoch": 1691668659782
+	},
+	"isBase64Encoded": false
+  }
+}

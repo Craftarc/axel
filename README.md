@@ -33,13 +33,11 @@ To start from scratch, see [Setup](#setup)
 
 ## About Axel
 
-Axel follows a frontend-backend architecture.
-
-**The backend is an AWS Lambda function**. An Lambda function is code deployed on a server that only activates when the
+**The backend is an AWS Lambda function**. A Lambda function is code deployed on a server that only activates when the
 function's endpoints are hit. <br>
-More simply put, when the frontend calls the backend with some data, the Lambda function activates, processes the data,
-and outputs the response back to the
-frontend. All code in this repository deals with is what happens between that input and that output.
+More simply put, when the desktop client calls the Lambda function, it activates, processes the data,
+and outputs the response back to the desktop client. All code in this repository deals with is what happens between that
+input and that output.
 
 **The frontend client is a Neutralino.js GUI**, and is generally responsible for:
 
@@ -50,7 +48,7 @@ frontend. All code in this repository deals with is what happens between that in
 
 To that end, there are **two** main events that require communication between these two components.
 
-1. **On first installation, initiate an Oauth process**. The backend server mediates the process - we follow the
+1. **On first installation, initiate an Oauth process**. The Lambda function mediates the process - we follow the
    standard Oauth Authorization Code Flow.
     - Axel is considered a [Confidential Client](https://www.pathofexile.com/developer/docs/authorization#clients). The
       redirect URL is the Lambda function URL.
@@ -74,13 +72,14 @@ The Axel backend uses C++17.
 3. [Google Test](https://github.com/google/googletest)
 4. [AWS C++ SDK](https://aws.amazon.com/sdk-for-cpp/)
 5. [AWS C++ Runtime](https://github.com/awslabs/aws-lambda-cpp)
+6. [spdlog](https://github.com/gabime/spdlog)
 
 ### Tools
 
 1. [Docker](https://www.docker.com/)
 2. C++17
-3. CMake
-4. gcc
+3. CMake 3.22
+4. gcc 11.4.0
 
 ### Services
 
@@ -93,7 +92,7 @@ The Axel backend uses C++17.
 
 ### The Lambda Execution Environment
 
-When a HTTP request from the Axel frontend client reaches the Lambda function's URL, the request data is stored. The AWS
+When a HTTP request from the Axel desktop client reaches the Lambda function's URL, the request data is stored. The AWS
 Lambda service then activates the Lambda function, which consists of two layers: The _AWS C++ Runtime_, and our code.
 The _Runtime_ polls the Lambda service, retrieves the stored request data, then passes it to our code for processing.
 Finally, our code returns a result to the _Runtime_, which then passes the response back to the Lambda service to be
@@ -126,13 +125,13 @@ The consequence of this is that we have two options:
 # Setup
 
 This section guides you through a basic setup of the development environment, concluding with successfully running a
-Google Test test suite.
+Google Test suite.
 
-**You are strongly recommended to use an IDE like CLion or Visual Studio**. This project assumes the use of CLion.
+**You are strongly recommended to use an IDE like CLion or Visual Studio**.
 
 ## 1. Cloning the repository
 
-To clone the repository, `cd` into the directory in which you want the **root folder** of the repsitory to reside.
+To clone the repository, `cd` into the directory in which you want the **root folder** of the repository to reside.
 
 The following commands clone the repository into `~/axel/<contents-of-root-repository>`.
 
@@ -154,15 +153,18 @@ and installs them. <br>
 You may build it with `docker build -t dependencies -f dependencies.Dockerfile .`
 
 The **second** _Dockerfile_ is located at `axel/axel.Dockerfile`. The image mounts our source files into the container
-and uses the _dependencies_ image to compile and build the executables.<br>
-You may build it with `docker build -t axel -f axel.Dockerfile .`
+and uses the _dependencies_ image to compile and build the executables. You may build it with
+`docker build -t axel -f axel.Dockerfile .`.
+
+Alternatively, run `scripts/build.sh`. The script starts up a container, builds the `main` executable, zips it up,
+and copies the `zip` deployable out of the container into the local directory.
 
 ## 3. Run tests
 
 Axel's backend builds two main executables: `main.cpp` and `sandbox.cpp`. For more information on why there are two
 executables, see [The Lambda Execution Environment](#the-lambda-execution-environment).
 
-Once the _axel_ has been built, the image should contain the `main` and `sandbox` binaries in the /app/axel/build
+Once _axel-backend_ has been built, the image should contain the `main` and `sandbox` binaries in the /app/axel/build
 directory.
 
 **To package the main executable into a zip**, the format which we use to deploy onto Lambda, run
@@ -171,10 +173,7 @@ directory.
 **To run tests**, first start a container using the `axel` image, then execute the `tests` binary from within.
 
 ```
-docker run -it axel
-cd build
-cmake ..
-make
+scripts/build.sh
 ```
 
 **3. Run tests.** <br>
@@ -192,21 +191,18 @@ service endpoint to get
 events. We need to mount the RIE before main is run so there _is_ an endpoint to poll in the first place.
 
 1. [Download](https://github.com/awslabs/aws-lambda-cpp) the RIE for x86_64 platforms.
-2. Run the following command:
+2. Run the following script:
 
 ```
-docker build -t axel-backend:1.0 . # Build updated executables
-docker run -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 --entrypoint /aws-lambda/aws-lambda-rie axel-backend:1.0 /app/axel/build/main
+scripts/start_rie.sh
 ```
 
-Breakdown of command
+In summary, the script:
 
-- `-v ~/.aws-lambda-rie:/aws-lambda`: Mounts the `aws-lambda-rie` runtime binary into `/aws-lambda` in the container.
-- `-p 9000:8080`: The RIE listens on port 8080 within the container. By mapping port 9000 on the host machine to port
-  8080 within the container, event data can be _POST_ ed to the RIE.
-- `--entrypoint /aws-lambda/aws-lambda-rie`: The first command to execute - start the runtime binary we mounted in.
-- `axel-backend:1.0`: Image to start the container with.
-- `/app/axel/build/main`: Run the main executable (this is run after/in the context of the aws-lambda-rie executable).
+1. Mounts the project root into a container started from `dependencies`.
+2. Builds updated executables from the mounted source files. These are `main`, `tests` and `sandbox`.
+3. Mounts the RIE into the container and executes the RIE binary, passing the _handler_
+   to it (in this case the `main` executable).
 
 To _POST_ an event to the RIE, do
 
