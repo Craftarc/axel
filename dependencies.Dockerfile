@@ -35,22 +35,22 @@ RUN git clone https://github.com/Microsoft/vcpkg.git && \
 WORKDIR /opt/vcpkg
 
 # Boost
-RUN ./vcpkg install boost
+RUN ./vcpkg install boost:x64-linux
 
 # Google Test
-RUN ./vcpkg install gtest
+RUN ./vcpkg install gtest:x64-linux
 
 # Botan
-RUN ./vcpkg install botan
+RUN ./vcpkg install botan:x64-linux
 
 # AWS C++ Lambda Runtime
-RUN ./vcpkg install aws-lambda-cpp
+RUN ./vcpkg install aws-lambda-cpp:x64-linux
 
 # AWS C++ SDK
-RUN ./vcpkg install "aws-sdk-cpp[dynamodb]" --recurse
+RUN ./vcpkg install "aws-sdk-cpp[dynamodb]:x64-linux" --recurse
 
 # spdlog
-RUN ./vcpkg install spdlog
+RUN ./vcpkg install spdlog:x64-linux
 
 ## END INSTALL LIBRARIES
 
