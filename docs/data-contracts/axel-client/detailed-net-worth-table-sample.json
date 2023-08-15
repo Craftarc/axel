@@ -1,0 +1,36 @@
+{
+  "league": "bestiary",
+  "league-type": "softcore",
+  "items": [
+	{
+	  "sort-id": 0,
+	  "name": "chaos-orb",
+	  "quantity": 3,
+	  "unit-price": 1,
+	  "total-price": 3,
+	  "graph": [1, 2, 3]
+	},
+	{
+	  "sort-id": 1,
+	  "name": "exalted-orb",
+	  "quantity": 10,
+	  "unit-price": 3,
+	  "total-price": 30,
+	  "graph": [1, 2, 3]
+	},
+	{
+	  "sort-id": 2,
+	  "name": "vaal-orb",
+	  "quantity": 2,
+	  "unit-price": 0.5,
+	  "total-price": 1,
+	  "graph": [1, 2, 3]
+	}
+  ],
+  "sorted-by": {
+	"name": [0, 1, 2],
+	"quantity": [2, 0, 1],
+	"unit-price": [2, 0, 1],
+	"total-price": [2, 0, 1]
+  }
+}
