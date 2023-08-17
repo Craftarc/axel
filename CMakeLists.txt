@@ -47,28 +47,34 @@ find_package(spdlog CONFIG REQUIRED)
 # main executable
 add_executable(main ${MAIN_SRC_FILES})
 target_include_directories(main PRIVATE AWS::aws-lambda-runtime)
-target_link_libraries(main PRIVATE axel
+target_link_libraries(main PRIVATE axel test_definitions
                       AWS::aws-lambda-runtime Boost::json spdlog::spdlog)
 target_compile_features(main PRIVATE "cxx_std_17")
 target_compile_options(main PRIVATE "-Wall" "-Wextra")
 aws_lambda_package_target(main NO_LIBC) # this line creates a target that packages your binary and zips it up
 
-# Settings
-option(TEST "Use test databases" YES)
-if (TEST)
+## Settings
+
+# Compile-time definitions to link against if the library needs to know whether the executable is compiled for test or not
+add_library(test_definitions INTERFACE)
+
+option(AXEL_TEST "Use test databases" YES)
+if (AXEL_TEST)
     message(STATUS "Using testing databases")
-    target_compile_definitions(main PRIVATE TEST)
+    target_compile_definitions(test_definitions INTERFACE AXEL_TEST=1)
 else ()
     message(STATUS "Using production databases")
+    target_compile_definitions(test_definitions INTERFACE AXEL_TEST=0)
 endif ()
+
+## End Settings
 
 # sandbox executable (for testing free functions)
 add_executable(sandbox sandbox.cpp)
 target_compile_features(sandbox PRIVATE "cxx_std_17")
 target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
-target_include_directories(sandbox PRIVATE AWS::aws-lambda-runtime src/axel/include ${PROJECT_ROOT})
-target_link_libraries(sandbox PRIVATE auth axel parse
-                      AWS::aws-lambda-runtime Boost::json ${AWSSDK_LINK_LIBRARIES} spdlog::spdlog)
+target_include_directories(sandbox PRIVATE ${PROJECT_ROOT})
+target_link_libraries(sandbox PRIVATE test_definitions)
 
 # tests executable (all tests)
 add_executable(tests $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:webutil_tests> $<TARGET_OBJECTS:parse_tests>

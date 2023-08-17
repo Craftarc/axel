@@ -4,13 +4,22 @@ set -euo pipefail
 # Set CMake flags here
 cmake_arguments="-DCMAKE_BUILD_TYPE=Debug -G Ninja -DTEST=YES"
 
-# Get the container id currently running on port 9000
-old_container_id=$(docker ps --format '{{.ID}}:{{.Ports}}' | grep ":9000" | cut -d ":" -f 1)
-echo ">> Old container found, with id: ${old_container_id}"
+echo ">> CMake arguments: ${cmake_arguments}"
 
-# Kill it
-docker kill "${old_container_id}" > /dev/null
-echo ">> Killed container: ${old_container_id}"
+# Get the container id currently running on port 9000
+old_container_id=$(docker ps --format '{{.ID}}:{{.Ports}}' | { grep ":9000" || true; }  | cut -d ":" -f 1)
+
+# If no such container was found
+if [ -z "${old_container_id}" ];
+then
+  # Otherwise proceed
+  echo ">> No containers running on port 9000 on host machine"
+else
+  echo ">> Old container found, with id: ${old_container_id}"
+  docker kill "${old_container_id}" > /dev/null  # Kill it
+  echo ">> Killed container: ${old_container_id}"
+fi
+
 
 # Start the container and mount the project root and RIE
 echo ">> Starting new container..."
@@ -31,5 +40,5 @@ echo ">> Updated executables built"
 # Start the RIE and pass the handler in
 echo ">> Starting RIE..."
 docker exec "${container_id}" \
-sh -c "/aws-lambda/aws-lambda-rie /app/axel/build/main"
+sh -c "/aws-lambda/aws-lambda-rie /app/axel/build/main 2>&1 | tee /app/axel/log.txt"
 

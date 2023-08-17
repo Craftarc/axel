@@ -16,6 +16,26 @@
 #include "auth/TokenRequestManager.h"
 #include "parse/util.h"
 #include "axel/Database.h"
+#include "src/auth/mock/auth/MockTokenRequestManager.h"
+
+namespace {
+    int MAX_AUTH_CODE_TIME = 30; // Maximum time before authorisation code expires and can no longer be exchanged
+    int MAX_AUTH_START_TIME = 30; // Maximum time between first start_auth() and redirect response
+    
+    /// @brief Returns the Unix time in seconds
+    int64_t get_time_now() {
+        std::chrono::time_point time_now{std::chrono::system_clock::now()};
+        
+        // Get duration member
+        auto time_point_duration{time_now.time_since_epoch()};
+        
+        // Cast to seconds
+        auto duration_seconds{std::chrono::duration_cast<std::chrono::seconds>(time_point_duration)};
+        
+        // Extract count member, the number of seconds
+        return duration_seconds.count();
+    }
+}
 
 namespace auth {
     OauthManager::OauthManager(const std::string& auth_database, const std::string& app_database) :
@@ -52,22 +72,27 @@ namespace auth {
         
         const int REDIRECT_STATUS_CODE = 302;
         
+        int64_t time_to_live{get_time_now() + MAX_AUTH_CODE_TIME};
+        spdlog::debug("time to live set to '{}'", std::to_string(time_to_live));
+        
         auto code_challenge = pkce_manager_->get_code_challenge();
         auto code_verifier = pkce_manager_->get_code_verifier();
-        spdlog::info("OauthManager: Code verifier and code challenge obtained");
+        spdlog::info("OauthManager::start_auth - Code verifier and code challenge obtained");
         
         auto state_hash = state_hash_manager_->get_state_hash();
-        spdlog::info("OauthManager: State hash obtained");
+        spdlog::info("OauthManager::start_auth - State hash obtained");
         
         auto session_id = session_manager_->get_session_token();
-        spdlog::info("OauthManager: Session token obtained");
+        spdlog::info("OauthManager::start_auth - Session token obtained");
         
         if (auth_database_->put({{"session_id", session_id},
                                  {"state_hash", state_hash},
-                                 {"code_verifier", code_verifier}})) {
+                                 {"code_verifier", code_verifier},
+                                 {"time_to_live", std::to_string(time_to_live)}})) {
             spdlog::info("Stored session id, code verifier and state hash in OAuth table");
         } else {
-            spdlog::error("OauthManager: Failed to insert (session_id, state_hash, code_verifier) in OAuth Database");
+            spdlog::error(
+                    "OauthManager::start_auth - Failed to insert (session_id, state_hash, code_verifier) in OAuth Database");
             throw std::runtime_error("Failed to insert into OAuth Database");
         };
         
@@ -95,9 +120,15 @@ namespace auth {
 /// @param query_string The query_string string containing the query parameters "state" and "code", returned from
 /// the authorization server after a successful login by the user.
 /// @param session_id The session_id identifying the authentication request.
+/// @param request_time The Unix time, in seconds, when this request was received by AWS Lambda.
 /// @return The session token for tracking this user session.
 /// @note The user session is considered established once the token is sent out.
-    std::string auth::OauthManager::receive_auth(const std::string& query_string, const std::string& session_id) {
+    std::string auth::OauthManager::receive_auth(const std::string& query_string,
+                                                 const std::string& session_id,
+                                                 int64_t request_time) {
+        int64_t time_to_live{get_time_now() + MAX_AUTH_CODE_TIME};
+        spdlog::debug("time to live set to '{}'", std::to_string(time_to_live));
+        
         std::unordered_map<std::string, std::string> query_params = webutil::extract_query_params(query_string);
         
         auto state_hash = query_params["state"];
@@ -124,9 +155,18 @@ namespace auth {
             spdlog::error("Stored state hash '{0}' does not match input state hash '{1}'", state_hash, state_hash);
             throw std::runtime_error("State hash does not match");
         } else {
+            int64_t time_to_live{get_time_now() + MAX_AUTH_CODE_TIME};
+#if AXEL_TEST // We can't actually exchange tokens with the real authorisation server during testing
+            auto access_token = "dummy_access_token";
+            
+            spdlog::debug("OauthManager::receive_auth - Using dummy access token and time to live."
+                          "time_to_live -  {}", std::to_string(time_to_live));
+#else
             auto access_token = token_request_manager_->send_token_request(auth_code,
                                                                            code_verifier,
                                                                            std::make_unique<webutil::HttpSender>());
+            int64_t time_to_live = request_time + MAX_AUTH_CODE_TIME;
+#endif
             spdlog::info("OauthManager: Token request sent");
             
             set_state(State::TOKENS_RECEIVED);
@@ -135,10 +175,13 @@ namespace auth {
             std::string session_token = session_manager_->get_session_token();
             spdlog::info("OAuthManager: Session ID for app obtained");
             
-            if (!app_database_->put({{"session_id", session_token}, {"access_token", access_token}})) {
+            // Store session details in table
+            if (!app_database_->put({{"session_id", session_token},
+                                     {"access_token", access_token},
+                                     {"time_to_live", std::to_string(time_to_live)}})) {
                 throw std::runtime_error("Failed to put session_id, access_token into app database");
             } else {
-                spdlog::info("OAuthManager: Stored (client session id, access token) in App table");
+                spdlog::info("OAuthManager: Stored (client session id, access token, time to live) in App table");
             };
             
             set_state(State::SESSION_ESTABLISHED);

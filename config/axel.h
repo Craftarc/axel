@@ -24,7 +24,9 @@ namespace config {
             const std::unordered_map<Aws::String, Aws::DynamoDB::Model::ValueType> app_attributes = {{"session_id",
                                                                                                       Aws::DynamoDB::Model::ValueType::STRING},
                                                                                                      {"access_token",
-                                                                                                      Aws::DynamoDB::Model::ValueType::STRING}};
+                                                                                                      Aws::DynamoDB::Model::ValueType::STRING},
+                                                                                                     {"time_to_live",
+                                                                                                      Aws::DynamoDB::Model::ValueType::NUMBER}};
         }
     }
 }
