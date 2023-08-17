@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Set CMake flags here
-cmake_arguments="-DCMAKE_BUILD_TYPE=Debug -G Ninja -DTEST=YES"
+cmake_arguments="-DCMAKE_BUILD_TYPE=Debug -G Ninja -DAXEL_TEST=YES"
 
 echo ">> CMake arguments: ${cmake_arguments}"
 
@@ -37,8 +37,6 @@ docker exec "${container_id}" \
 sh -c "cd /app/axel/build && cmake .. ${cmake_arguments} && ninja"
 echo ">> Updated executables built"
 
-# Start the RIE and pass the handler in
-echo ">> Starting RIE..."
-docker exec "${container_id}" \
-sh -c "/aws-lambda/aws-lambda-rie /app/axel/build/main 2>&1 | tee /app/axel/log.txt"
-
+# Enter the container and run script inside it
+echo ">> Entering the container..."
+docker exec -it "${container_id}" /app/axel/scripts/docker/start.sh
