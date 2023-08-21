@@ -21,11 +21,11 @@ var hierarchy =
       [ "auth::MockOauthManager", "classauth_1_1MockOauthManager.html", null ],
       [ "auth::OauthManager", "classauth_1_1OauthManager.html", null ]
     ] ],
-    [ "IPkceManager", "classIPkceManager.html", [
+    [ "auth::IPkceManager", "classauth_1_1IPkceManager.html", [
       [ "auth::MockPkceManager", "classauth_1_1MockPkceManager.html", null ],
       [ "auth::PkceManager", "classauth_1_1PkceManager.html", null ]
     ] ],
-    [ "ISessionManager", "classISessionManager.html", [
+    [ "auth::ISessionManager", "classauth_1_1ISessionManager.html", [
       [ "auth::MockSessionManager", "classauth_1_1MockSessionManager.html", null ],
       [ "auth::SessionManager", "classauth_1_1SessionManager.html", null ]
     ] ],

@@ -4,6 +4,8 @@ var namespaces_dup =
       [ "AuthCodeManager", "classauth_1_1AuthCodeManager.html", "classauth_1_1AuthCodeManager" ],
       [ "IAuthCodeManager", "classauth_1_1IAuthCodeManager.html", "classauth_1_1IAuthCodeManager" ],
       [ "IOauthManager", "classauth_1_1IOauthManager.html", "classauth_1_1IOauthManager" ],
+      [ "IPkceManager", "classauth_1_1IPkceManager.html", "classauth_1_1IPkceManager" ],
+      [ "ISessionManager", "classauth_1_1ISessionManager.html", "classauth_1_1ISessionManager" ],
       [ "IStateHashManager", "classauth_1_1IStateHashManager.html", "classauth_1_1IStateHashManager" ],
       [ "ITokenRequestManager", "classauth_1_1ITokenRequestManager.html", "classauth_1_1ITokenRequestManager" ],
       [ "OauthManager", "classauth_1_1OauthManager.html", "classauth_1_1OauthManager" ],
