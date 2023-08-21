@@ -25,7 +25,7 @@ find_package(AWSSDK CONFIG REQUIRED COMPONENTS core dynamodb)
 find_package(aws-lambda-runtime)
 
 # Boost library
-find_package(Boost REQUIRED COMPONENTS thread system unit_test_framework json)
+find_package(Boost REQUIRED COMPONENTS thread system json)
 
 # GTest
 find_package(GTest REQUIRED)
