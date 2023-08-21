@@ -2,52 +2,57 @@ name: Test
 
 on:
   push:
-    branches:
-      - main
+    branches: main
+  pull_request:
+    branches: main
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    env:
-      VCPKG_FORCE_SYSTEM_BINARIES: 1
 
     steps:
-      - name: Install tools
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y build-essential git curl zip unzip tar cmake ninja-build pkg-config python3 nodejs \
-          autoconf-archive
-
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Cache path is relative to runner's workspace, not container's workspace
       - name: Cache vcpkg
         id: cache-vcpkg
         uses: actions/cache@v3
         with:
-          path: ${{ github.workspace }}/vcpkg # Cache the vcpkg installation and its subdirectories
-          key: ${{ runner.os }}-${{ hashFiles('vcpkg.json') }} # Rebuilds cache if dependencies change
+          path: ${{ github.workspace }}/build/vcpkg_installed
+          key: ${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
 
-      - name: Install vcpkg
-        if: steps.cache-vcpkg.outputs.cache-hit != 'true'
+      - name: Cache Docker images
+        id: cache-docker
+        uses: actions/cache@v3
+        with:
+          path: /dockerfile
+          key: dependencies-${{ hashFiles('./dockerfile/dependencies.Dockerfile')}}
+
+      # Cache miss -> Download image and save
+      - name: Pull Docker images if not in cache and save
+        if: steps.cache-docker.outputs.cache-hit != 'true'
         run: |
-          git clone https://github.com/Microsoft/vcpkg.git
-          cd vcpkg
-          ./bootstrap-vcpkg.sh
+          docker pull craftarc/axel:dependencies
+          mkdir -p /dockerfile
+          docker save -o /dockerfile/dependencies.tar craftarc/axel:dependencies
 
-      - name: Install libraries
-        if: steps.cache-vcpkg.outputs.cache-hit != 'true'
+      # Cache hit -> The cache would have been restored -> Load the image
+      - name: Load docker image if in cache
+        if: steps.cache-docker.outputs.cache-hit == 'true'
         run: |
-          cd vcpkg
-          ./vcpkg install boost gtest botan aws-lambda-cpp spdlog
-          ./vcpkg install "aws-sdk-cpp[dynamodb]" --recurse
+          docker load -i /dockerfile/dependencies.tar
 
-      - name: Build tests
+      # docker compose takes care of mounting the project root and invoking the test script in the container
+      - name: Start container and test
         run: |
-          mkdir build
-          cd build
-          cmake .. -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
-          ninja
+          chmod 744 "scripts/workflows/test.sh"
+          docker compose up test
 
-      - name: Run tests
-        run: build/tests
+      # Return to runner workspace before vcpkg caching takes place, otherwise cache path is invalid
+      - name: Close container
+        run: |
+          docker compose down test
+          
+          
+

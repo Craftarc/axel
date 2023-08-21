@@ -14,6 +14,9 @@ services:
 
   dev:
     image: craftarc/axel:dependencies
+    build:
+      context: .
+      dockerfile: dockerfile/dependencies.Dockerfile
 
     ports:
       - "9000:8080"
@@ -24,3 +27,12 @@ services:
     environment:
       - AWS_LAMBDA_RUNTIME_API=localhost:9000
     command: [ "scripts/dev/start.sh" ]
+
+  test:
+    image: craftarc/axel:dependencies
+    build:
+      context: .
+      dockerfile: dockerfile/dependencies.Dockerfile
+    volumes:
+      - .:/axel
+    entrypoint: [ "scripts/workflows/test.sh" ]

@@ -1,13 +1,17 @@
-# Build command: docker buildx build --platform linux/arm64,linux/amd64 -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies .
-# Please run the above command in /axel.
+# Build command (push): docker buildx build --platform linux/arm64,linux/amd64 -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies .
+# Build command (local): docker build -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies . <- use this for local changes to the image
 
-# ARM64
 FROM amazonlinux:2
 
 # Environment variables
 ENV CX gcc
 ENV CXX g++
 ENV VCPKG_FORCE_SYSTEM_BINARIES=1
+
+## OpenSSL is installed via vcpkg and looks for certs in vcpkg's install directory, where there is nothing.
+## This is where the certificates are, so we guide SSL_CTX_set_default_verify_paths() to search here.
+ENV SSL_CERT_DIR /etc/ssl/certs/ca-bundle.crt
+
 
 # Install tools
 RUN yum -y install git \
@@ -25,7 +29,8 @@ RUN yum -y install git \
     autoconf \
     autoconf-archive \
     automake \
-    python3
+    python3 \
+    gdb
 
 
 # Set aliases
@@ -40,7 +45,7 @@ RUN ln -s gcc10-gcc gcc && \
 # Install CMake
 WORKDIR /usr/local
 
-COPY scripts/install_cmake.sh .
+COPY scripts/dev/install_cmake.sh .
 
 ARG TARGETPLATFORM
 RUN chmod 744 install_cmake.sh && \
@@ -54,4 +59,3 @@ RUN git clone https://github.com/Microsoft/vcpkg.git && \
     ./vcpkg/bootstrap-vcpkg.sh
 
 WORKDIR /axel
-
