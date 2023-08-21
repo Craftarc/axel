@@ -4,7 +4,7 @@ services:
     image: craftarc/axel:staging
     build:
       context: .
-      dockerfile: dockerfile/staging-linux-${arch}.Dockerfile
+      dockerfile: dockerfile/staging.Dockerfile
     ports:
       - "9000:8080"
     volumes:
@@ -14,15 +14,13 @@ services:
 
   dev:
     image: craftarc/axel:dependencies
-    build:
-      context: .
-      dockerfile: dockerfile/dependencies-linux-${arch}.Dockerfile
+
     ports:
       - "9000:8080"
     volumes:
-      - ~/.aws:/root/.aws
+      - ~/.aws:/root/.aws # Credentials file
       - .:/axel # Mount the entire project root into /axel in the container
       - ~/.aws-lambda-rie:/aws-lambda # RIE binary
     environment:
       - AWS_LAMBDA_RUNTIME_API=localhost:9000
-    command: [ "scripts/start.sh" ]
+    command: [ "scripts/dev/start.sh" ]

@@ -1,7 +1,6 @@
-# Build command: docker build -t craftarc/axel:staging -f staging-linux-arm64.Dockerfile .
-# Please run this comamand in the correct working directory: /axel/dockerfile
+# Build command: docker build -t craftarc/axel:staging -f staging.Dockerfile .
 
-FROM --platform=linux/arm64 public.ecr.aws/lambda/provided:al2
+FROM public.ecr.aws/lambda/provided:al2
 
 RUN yum -y install unzip
 

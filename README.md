@@ -33,13 +33,15 @@ To start from scratch, see [Setup](#setup)
 
 ## About Axel
 
-**The backend is an AWS Lambda function**. A Lambda function is code deployed on a server that only activates when the
+**The backend is an AWS Lambda function**, referred to as the _Lambda_.
+
+A Lambda function is code deployed on a server that only activates when the
 function's endpoints are hit. <br>
 More simply put, when the desktop client calls the Lambda function, it activates, processes the data,
 and outputs the response back to the desktop client. All code in this repository deals with is what happens between that
 input and that output.
 
-**The frontend client is a Neutralino.js GUI**, and is generally responsible for:
+**The frontend client is a Neutralino.js GUI**, referred to as the _Axel client_, and is generally responsible for:
 
 - Rendering graphs
 - Displaying information about the user's characters, inventories, and net worth
@@ -48,15 +50,16 @@ input and that output.
 
 To that end, there are **two** main events that require communication between these two components.
 
-1. **On first installation, initiate an Oauth process**. The Lambda function mediates the process - we follow the
-   standard Oauth Authorization Code Flow.
-    - Axel is considered a [Confidential Client](https://www.pathofexile.com/developer/docs/authorization#clients). The
-      redirect URL is the Lambda function URL.
+1. **On first login, initiate an Oauth process**. The Lambda function mediates the process - we follow the
+   standard [Oauth Authorization Code Flow](https://datatracker.ietf.org/doc/html/rfc6749).
+    - Axel is considered a [Confidential Client](https://www.pathofexile.com/developer/docs/authorization#clients)
+      according to the PoE Developer Docs. The redirect URL is the Lambda function URL.
     - The backend manages access tokens and session tokens,
         - This minimises security implications as the access token is never exposed on the frontend client.
 2. **When the frontend client requires new data to update its displayed
-   information _(e.g. chart data, updated currency prices)_, it makes a request to the backend**. The backend is
-   responsible for making the appropriate requests to PoE's resource server and sending the data back to the frontend.
+   information _(e.g. chart data, updated currency prices)_, it makes a request to the backend**. The Lambda function is
+   responsible for making the appropriate requests to PoE's resource server and sending the data back to the Axel
+   client.
 
 ## Technology Stack
 
@@ -68,11 +71,19 @@ Docker)_ is not required, as they are managed within a Docker image.
 The Axel backend uses C++17.
 
 1. [Boost](https://www.boost.org/)
+    - Beast: Networking and HTTP requests
+    - JSON: JSON parsing and formatting
 2. [Botan](https://botan.randombit.net/)
+    - Cryptographically secure random number generators
+    - Hash functions
 3. [Google Test](https://github.com/google/googletest)
+    - Testing and mocking
 4. [AWS C++ SDK](https://aws.amazon.com/sdk-for-cpp/)
+    - Lambda and DynamoDB interface
 5. [AWS C++ Runtime](https://github.com/awslabs/aws-lambda-cpp)
+    - Lambda deployment compatibility layer. See [The Lambda Execution Environment](#the-lambda-execution-environment)
 6. [spdlog](https://github.com/gabime/spdlog)
+    - Logging
 
 ### Tools
 
@@ -92,11 +103,13 @@ The Axel backend uses C++17.
 
 ### The Lambda Execution Environment
 
-When a HTTP request from the Axel desktop client reaches the Lambda function's URL, the request data is stored. The AWS
-Lambda service then activates the Lambda function, which consists of two layers: The _AWS C++ Runtime_, and our code.
+When a HTTP request from the Axel client reaches the Lambda's endpoint, the request data is stored. The AWS
+Lambda service then activates our Lambda function, which consists of two layers: The _AWS C++ Runtime_, and our code.
 The _Runtime_ polls the Lambda service, retrieves the stored request data, then passes it to our code for processing.
 Finally, our code returns a result to the _Runtime_, which then passes the response back to the Lambda service to be
 sent back out to the requester.
+
+We use the AWS C++ Runtime implementation. See [Libraries](#libraries).
 
 The consequence of this is that we have two options:
 
@@ -142,69 +155,75 @@ cd axel
 git clone git@github.com:Craftarc/axel.git
 ```
 
-## 2. Build the Docker images
+## 2. Pull the Docker images
 
 Axel's development environment is containerised.
 
-There are two Dockerfiles.
+There are two images in use.
 
-The **first** _Dockerfile_ is located at `axel/dependencies.Dockerfile`. The image downloads all the dependencies
-and installs them. <br>
-You may build it with `docker build -t dependencies -f dependencies.Dockerfile .`
+**1. dependencies** `docker pull craftarc/axel:dependencies`
 
-The **second** _Dockerfile_ is located at `axel/axel.Dockerfile`. The image mounts our source files into the container
-and uses the _dependencies_ image to compile and build the executables. You may build it with
-`docker build -t axel -f axel.Dockerfile .`.
+- Stores all installed libraries the project uses.
 
-Alternatively, run `scripts/build.sh`. The script starts up a container, builds the `main` executable, zips it up,
-and copies the `zip` deployable out of the container into the local directory.
+**2. staging** `docker pull craftarc/axel:staging`
 
-## 3. Run tests
+- An environment that as closely mimics deployment to the real Lambda service as possible.
 
-Axel's backend builds two main executables: `main.cpp` and `sandbox.cpp`. For more information on why there are two
+## 3. Build the project
+
+Axel's top-level CMakeLists.txt builds two primary executables: `main.cpp` and `sandbox.cpp`. For more information on
+why there are two
 executables, see [The Lambda Execution Environment](#the-lambda-execution-environment).
 
-Once _axel-backend_ has been built, the image should contain the `main` and `sandbox` binaries in the /app/axel/build
-directory.
+Along with the two executables, it also builds a testing executable.
+**To build the project**,
 
-**To package the main executable into a zip**, the format which we use to deploy onto Lambda, run
-`./build.sh`.
-
-**To run tests**, first start a container using the `axel` image, then execute the `tests` binary from within.
+- mount the project root into the container
+- start an interactive shell
 
 ```
-scripts/build.sh
+docker run -it craftarc/axel:dependencies -v .:/axel
 ```
 
-**3. Run tests.** <br>
+You should be dropped into `/axel`, where the root directory of the project should be mounted. Verify this with `pwd`.
+
+**To build the tests**, run:
 
 ```
-./tests
+mkdir -p build    # Make the build directory
+cmake -B build -S . -G Ninja
 ```
+
+Wait for compilation to complete. The executables should be compiled into `/axel/build`. <br>
+Finally, run the tests: `build/tests`
+
+All tests should pass.
 
 # Configuration
 
 ## Working with the RIE
 
-The `main` executable is intended to be started by the AWS C++ runtime, which starts polling the hardcoded Lambda
-service endpoint to get
-events. We need to mount the RIE before main is run so there _is_ an endpoint to poll in the first place.
+The `main` executable starts the AWS C++ runtime, which starts polling the hardcoded Lambda
+service endpoint to get events. We need to mount the RIE before main is run so there _is_ an endpoint to poll in the
+first place.
 
-1. [Download](https://github.com/awslabs/aws-lambda-cpp) the RIE for x86_64 platforms.
-2. Run the following script:
+Two methods to start the RIE for main to poll against are provided.
+
+### Mount the RIE into the container
+
+1. [Download](https://github.com/awslabs/aws-lambda-cpp) the RIE for your platform.
+2. Start a container running the _craftarc/axel:dependencies_ image. A standardised start script is provided
+   via `docker compose`:
 
 ```
-scripts/start_rie.sh
+docker compose up dev
 ```
 
-In summary, the script:
+This mounts the RIE binary and the project root into the container, recompiles Axel's code if there are changes, then
+executes the binary, passing in the handler (
+here our _main_ executable) as an argument.
 
-1. Mounts the project root into a container started from `dependencies`.
-2. Builds updated executables from the mounted source files. These are `main`, `tests` and `sandbox`.
-3. Mounts the RIE into the container and executes the RIE binary, passing the _handler_
-   to it (in this case the `main` executable).
-
-To _POST_ an event to the RIE, do
+You may _POST_ something to the container's exposed port to test for a response.
 
 ```
 curl --location 'http://localhost:9000/2015-03-31/functions/function/invocations' \
@@ -215,20 +234,45 @@ curl --location 'http://localhost:9000/2015-03-31/functions/function/invocations
 }'
 ```
 
+This method is suitable for **testing changes**, such as verbose logging, breaking changes
+
+### Deploy into an official RIE image
+
+AWS provides an _official_ Lambda image, which already embeds the RIE binary, and uses the same operating system as the
+actual deployment environment.
+
+You may have noticed that the [build step](#3-build-the-project) produces an archive `main.zip`. Axel's code is deployed
+onto Lambda by directly uploading this zip file. AWS automatically unpacks this archive and runs setup scripts.
+
+The _craftarc/axel:staging_ image mirrors this process. Upon launching this container, `build/main.zip` is **copied**
+into the container and unpacked in a similar fashion. **Make sure `main.zip` is freshly built, because this process does
+not compile new executables**.
+
+As before, a standardised start script is provided via `docker compose`:
+
+```
+docker compose up staging
+```
+
+This method is suitable for **staging** tests, as it most closely mimics the deployment environment. Behaviour is
+finally
+verified here before pushing to production.
+
 ## Working with custom entrypoints
 
-**1. To work with custom entrypoints, we want to execute the `sandbox` executable instead.** <br>
-Simply enter the container and run the `sandbox` executable.
+**To work with custom entrypoints, we want to execute the `sandbox` executable instead.** <br>
+You may reuse the `docker compose` configuration from before (
+see [Mount the RIE into the container](#mount-the-rie-into-the-container)). `docker compose up dev` builds fresh
+executables in the process. However, it also mounts and starts the RIE by default, by running a script via
+Docker's `CMD`.
 
-Make sure to build the `axel` image, as that's the step that compiles and links the
-main binary! See [Build the Docker images](#2-build-the-docker-images)
+**1. Override this behaviour to perform arbitrary work**. Provide a custom command; to simply drop into a shell:
 
 ```
-docker build -t axel-backend:1.0 . # Build updated executables
-docker run -it
+docker compose run dev bash
 ```
 
-**2. Run the `sandbox` executable.**
+**2. Navigate to and run the `sandbox` executable.**
 
 ```
 cd build

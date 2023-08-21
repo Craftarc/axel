@@ -1,7 +1,8 @@
-# Build command: docker build -t craftarc/axel:dependencies -f dependencies-linux-arm64.Dockerfile .
+# Build command: docker buildx build --platform linux/arm64,linux/amd64 -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies .
+# Please run the above command in /axel.
 
 # ARM64
-FROM --platform=linux/arm64 amazonlinux:2
+FROM amazonlinux:2
 
 # Environment variables
 ENV CX gcc
@@ -39,11 +40,12 @@ RUN ln -s gcc10-gcc gcc && \
 # Install CMake
 WORKDIR /usr/local
 
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.27.3/cmake-3.27.3-linux-aarch64.tar.gz && \
-    tar -xzf cmake-3.27.3-linux-aarch64.tar.gz && \
-    cp -r cmake-3.27.3-linux-aarch64/bin/* /usr/local/bin && \
-    cp -r cmake-3.27.3-linux-aarch64/share/* /usr/local/share && \
-    rm -r cmake*
+COPY scripts/install_cmake.sh .
+
+ARG TARGETPLATFORM
+RUN chmod 744 install_cmake.sh && \
+    ./install_cmake.sh && \
+    rm install_cmake.sh
 
 # Install vcpkg
 WORKDIR /opt

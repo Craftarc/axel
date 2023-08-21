@@ -32,33 +32,32 @@ then
   echo "Directory 'logs' does not exist. Creating..."
   mkdir logs
   echo "Directory 'logs' created"
+else
+  echo "Directory 'logs' already exists. Skipping mkdir..."
+fi
+
+# Make the build directory if it does not exist
+if [ ! -d ./build ]
+then
+  echo "Directory 'build' does not exist. Creating..."
+  mkdir build
+  echo "Directory 'build' created"
+else
+  echo "Directory 'build' already exists. Skipping mkdir..."
 fi
 
 # Build updated executables
 
-## Clean the build directory
-if [ ! -d ./build ]
-then
-  echo ">> Directory 'build' does not exist. Creating..."
-  mkdir build
-  echo ">> Directory 'build' created"
-else
-  echo ">> Cleaning directory 'build'..."
-  rm -r build
-  mkdir build
-  echo ">> Directory 'build' cleaned"
-fi
-
 ## Compile and build
-cd build
-cmake .. ${cmake_args}
-ninja
+mkdir -p build
+cmake -B build -S . ${cmake_args} # CMake configuration setup
+cmake --build build --clean-first --target all --target aws-lambda-package-main
 echo ">> Compilation complete"
-cd .. # Return to /axel
+
 
 # Start RIE in background
 echo ">> Starting RIE and invoking the handler..."
-/aws-lambda/aws-lambda-rie  build/main > logs/tmp.log 2>&1 &
+/aws-lambda/aws-lambda-rie  "${cwd}"build/main > logs/tmp.log 2>&1 &
 
 # Save PID of RIE
 rie_pid=$!
