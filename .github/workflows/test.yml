@@ -26,7 +26,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ github.workspace }}/vcpkg # Cache the vcpkg installation and its subdirectories
-          key: ${{ runner.os }}-${{ hashFiles('dependencies.Dockerfile') }} # Rebuilds cache if dependencies change
+          key: ${{ runner.os }}-${{ hashFiles('vcpkg.json') }} # Rebuilds cache if dependencies change
 
       - name: Install vcpkg
         if: steps.cache-vcpkg.outputs.cache-hit != 'true'

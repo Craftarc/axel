@@ -51,28 +51,5 @@ WORKDIR /opt
 RUN git clone https://github.com/Microsoft/vcpkg.git && \
     ./vcpkg/bootstrap-vcpkg.sh
 
-# Install libraries
-WORKDIR /opt/vcpkg
-
-## Boost
-RUN ./vcpkg install boost
-
-## GTest
-RUN ./vcpkg install gtest
-
-## Botan
-RUN ./vcpkg install botan
-
-## AWS C++ Runtime
-RUN ./vcpkg install aws-lambda-cpp
-
-## AWS C++ SDK
-RUN ./vcpkg install "aws-sdk-cpp[dynamodb]" --recurse
-
-## spdlog
-RUN ./vcpkg install spdlog
-
-# End install libraries
-
 WORKDIR /axel
 

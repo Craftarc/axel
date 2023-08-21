@@ -4,3 +4,4 @@ build
 external/
 credentials
 docs/html
+vcpkg_installed
