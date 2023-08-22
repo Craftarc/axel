@@ -1,3 +1,5 @@
+https://github.com/Craftarc/axel/actions/workflows/test.yml/badge.svg
+
 # Axel Backend
 
 This repository contains the source code for the companion application to the online ARPG, Path of Exile.
