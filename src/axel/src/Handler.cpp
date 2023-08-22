@@ -54,9 +54,11 @@ namespace axel {
     Handler::Handler(const std::string& environment) : _oauth_manager(init(environment)) {};
     
     auth::OauthManager Handler::init(const std::string& environment) {
+        spdlog::debug("Entered Handler::init");
         if (environment == "production") {
             return {config::axel::database::auth, config::axel::database::app};
         } else if (environment == "test") {
+            spdlog::debug("Handler::init: Set to test environment");
             return {config::axel::database::auth_test, config::axel::database::app_test};
         } else {
             throw std::runtime_error("Unknown environment specified for Handler");

@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  staging:
+    image: craftarc/axel:staging
+    build:
+      context: .
+      dockerfile: dockerfile/staging.Dockerfile
+    ports:
+      - "9000:8080"
+    volumes:
+      - ~/.aws:/root/.aws # The AWS SDK expects credentials here
+    command: [ "" ] # /lambda-entrypoint.sh requires a handler argument, but we don't use one
+    tty: true
+
+  dev:
+    image: craftarc/axel:dependencies
+    build:
+      context: .
+      dockerfile: dockerfile/dependencies.Dockerfile
+
+    ports:
+      - "9000:8080"
+    volumes:
+      - ~/.aws:/root/.aws # Credentials file
+      - .:/axel # Mount the entire project root into /axel in the container
+      - ~/.aws-lambda-rie:/aws-lambda # RIE binary
+    environment:
+      - AWS_LAMBDA_RUNTIME_API=localhost:9000
+    command: [ "scripts/dev/start.sh" ]

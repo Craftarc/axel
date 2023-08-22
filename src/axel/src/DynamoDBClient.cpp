@@ -1,3 +1,4 @@
+#include <spdlog/spdlog.h>
 #include "axel/DynamoDBClient.h"
 
 namespace axel {
@@ -7,9 +8,11 @@ namespace axel {
     /// @param database Name of the database table to connect to.
     /// @return A DynamoDB client.
     Aws::DynamoDB::DynamoDBClient DynamoDBClient::connect(const std::string& database) {
+        spdlog::debug("DynamoDBClient::connect - entered");
         Aws::Client::ClientConfiguration client_configuration;
         client_configuration.region = "us-west-1";
         
+        spdlog::debug("DynamoDBClient::connect - will construct Aws::DynamoDB::DynamoDBClient...");
         return Aws::DynamoDB::DynamoDBClient{client_configuration};
     }
     
@@ -25,6 +28,8 @@ namespace axel {
     
     Aws::DynamoDB::Model::DescribeTableOutcome
     DynamoDBClient::DescribeTable(const Aws::DynamoDB::Model::DescribeTableRequest& request) const {
+        spdlog::debug("axel::DynamoDBClient::DescribeTable - entered");
+        
         return client_.DescribeTable(request);
     }
     

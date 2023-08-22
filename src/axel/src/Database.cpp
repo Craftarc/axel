@@ -75,10 +75,14 @@ namespace axel {
     
     /// @return The name of the partition key of the table
     Aws::String Database::get_partition_key() const {
+        spdlog::debug("Database::get_partition_key - entered");
         Aws::DynamoDB::Model::DescribeTableRequest describe_table_request;
         describe_table_request.SetTableName(table_name_);
         
+        spdlog::debug("Database::get_partition_key - Sending describe table request...");
         auto outcome{client_->DescribeTable(describe_table_request)};
+        spdlog::debug("Database::get_partition_key - Outcome of request received");
+        
         if (outcome.IsSuccess()) {
             // .GetKeySchema() returns the table's partition key and sort key in a vector
             for (const auto& element: outcome.GetResult().GetTable().GetKeySchema()) {
@@ -89,6 +93,7 @@ namespace axel {
             spdlog::error("Could not get partition key of table '{0}'", table_name_);
             throw std::runtime_error("Could not get partition key of table");
         } else {
+            
             spdlog::error("Failed partition key query on '{}'", table_name_);
             throw std::runtime_error("Failed partition key query on table");
         }
