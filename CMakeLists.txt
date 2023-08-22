@@ -74,7 +74,7 @@ add_executable(sandbox sandbox.cpp)
 target_compile_features(sandbox PRIVATE "cxx_std_17")
 target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
 target_include_directories(sandbox PRIVATE ${PROJECT_ROOT})
-target_link_libraries(sandbox PRIVATE test_definitions)
+target_link_libraries(sandbox PRIVATE axel)
 
 # tests executable (all tests)
 add_executable(tests $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:webutil_tests> $<TARGET_OBJECTS:parse_tests>

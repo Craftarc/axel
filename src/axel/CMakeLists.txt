@@ -1,5 +1,5 @@
 # Configure target sources here
-set(AXEL_SRC_FILES src/Handler.cpp src/Handler.cpp src/Database.cpp src/DynamoDBClient.cpp)
+set(AXEL_SRC_FILES src/Handler.cpp src/Handler.cpp src/Database.cpp src/DynamoDBClient.cpp src/UpdateManager.cpp)
 set(AXEL_TESTS_SRC_FILES test/Database_test.cpp)
 
 # axel library
