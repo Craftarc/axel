@@ -120,12 +120,9 @@ namespace auth {
 /// @param query_string The query_string string containing the query parameters "state" and "code", returned from
 /// the authorization server after a successful login by the user.
 /// @param session_id The session_id identifying the authentication request.
-/// @param request_time The Unix time, in seconds, when this request was received by AWS Lambda.
 /// @return The session token for tracking this user session.
 /// @note The user session is considered established once the token is sent out.
-    std::string auth::OauthManager::receive_auth(const std::string& query_string,
-                                                 const std::string& session_id,
-                                                 int64_t request_time) {
+    std::string auth::OauthManager::receive_auth(const std::string& query_string, const std::string& session_id) {
         int64_t time_to_live{get_time_now() + MAX_AUTH_CODE_TIME};
         spdlog::debug("time to live set to '{}'", std::to_string(time_to_live));
         
@@ -165,7 +162,6 @@ namespace auth {
             auto access_token = token_request_manager_->send_token_request(auth_code,
                                                                            code_verifier,
                                                                            std::make_unique<webutil::HttpSender>());
-            int64_t time_to_live = request_time + MAX_AUTH_CODE_TIME;
 #endif
             spdlog::info("OauthManager: Token request sent");
             

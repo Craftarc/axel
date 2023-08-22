@@ -9,7 +9,7 @@ namespace auth {
         MOCK_METHOD(std::string, start_auth, (), (override));
         MOCK_METHOD(std::string,
                     receive_auth,
-                    (const std::string& query_string, const std::string& session_id, int64_t request_time),
+                    (const std::string& query_string, const std::string& session_id),
                     (override));
     };
 }

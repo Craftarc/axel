@@ -39,7 +39,7 @@ namespace axel {
             std::string session_id = json.at("headers").at("cookie").as_string().c_str();
             spdlog::debug("Handler::handler: Found session_id '{}'", session_id);
             
-            _oauth_manager.receive_auth(query_string, session_id, request_time);
+            _oauth_manager.receive_auth(query_string, session_id);
             return invocation_response::success("", "application/json");
         }
         

@@ -79,8 +79,7 @@ TEST_F(OauthManager_test,
     
     // Make the call
     EXPECT_NO_THROW(oauth_manager.receive_auth("https://google.com?code=auth_code&state=state_hash",
-                                               "session_id",
-                                               0));
+                                               "session_id"));
 }
 
 //TODO: Add checks for bad params
@@ -90,7 +89,6 @@ TEST_F(OauthManager_test, receive_auth__fail_if_state_hash_does_not_match) {
     EXPECT_CALL(*raw_mock_state_hash_manager, check_state_hash(_, _)).Times(1).WillOnce(Return(false));
     
     EXPECT_THROW(oauth_manager.receive_auth("https://google.com?code=auth_code&state=state_hash",
-                                            "session_id",
-                                            0),
+                                            "session_id"),
                  std::runtime_error);
 }
