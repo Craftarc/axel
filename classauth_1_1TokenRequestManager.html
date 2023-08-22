@@ -113,6 +113,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auth::TokenRequestManager::TokenRequestManager </td>
@@ -121,16 +124,15 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Responsible for constructing and storing the POST request for the access token exchange. Contains all relevant fields as specified in the PoE Developer Docs. Relevant documentation: <a href="https://www.pathofexile.com/developer/docs/authorization">https://www.pathofexile.com/developer/docs/authorization</a>. </p>
-<p>Constructs an access token exchange request.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">The</td><td>authorization code to construct the request from. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Constructs an access token exchange request. </p>
 
 </div>
 </div>
@@ -176,14 +178,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sends the token exchange request furnished with the given arguments. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">auth_code</td><td>The authorization code to be used in the request. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A string pair in the following format: {access_token, refresh_token} Constructs and sends out the token exchange request. The tokens are then parsed from the response. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Constructs and sends out the token exchange request. The tokens are then parsed from the response. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">auth_code</td><td>The authorization code to be included in the token exchange request. </td></tr>
     <tr><td class="paramname">code_verifier</td><td>The code verifier to be included in the token exchange request. </td></tr>
@@ -191,7 +186,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair of strings in the format: {${access_token}, ${refresh_token}} </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair of strings in the format: {access_token, refresh_token} </dd></dl>
 
 <p>Implements <a class="el" href="classauth_1_1ITokenRequestManager.html">auth::ITokenRequestManager</a>.</p>
 

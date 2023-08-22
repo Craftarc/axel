@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('classauth_1_1PkceManager.html',''); in
 </div><!--header-->
 <div class="contents">
 
-<p>Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.  
+<p>Responsible for managing PKCE (Proof Key for Code Exchange) code verifiers and challenges.  
  <a href="classauth_1_1PkceManager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PkceManager_8h_source.html">PkceManager.h</a>&gt;</code></p>
@@ -106,7 +106,7 @@ Inheritance diagram for auth::PkceManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3469aae28d398c90f73adb7a1c8dee92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92">PkceManager</a> ()</td></tr>
-<tr class="memdesc:a3469aae28d398c90f73adb7a1c8dee92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classauth_1_1PkceManager.html" title="Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.">PkceManager</a> object.  <a href="classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92">More...</a><br /></td></tr>
+<tr class="memdesc:a3469aae28d398c90f73adb7a1c8dee92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classauth_1_1PkceManager.html#a3469aae28d398c90f73adb7a1c8dee92">More...</a><br /></td></tr>
 <tr class="separator:a3469aae28d398c90f73adb7a1c8dee92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93071ecdcc62b3f7e0ab42321cb139d1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1PkceManager.html#a93071ecdcc62b3f7e0ab42321cb139d1">get_code_verifier</a> () const override</td></tr>
 <tr class="memdesc:a93071ecdcc62b3f7e0ab42321cb139d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Code Verifier.  <a href="classauth_1_1PkceManager.html#a93071ecdcc62b3f7e0ab42321cb139d1">More...</a><br /></td></tr>
@@ -116,8 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeeb12bdbc756a34bde5c841fad790a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges. </p>
-<p>There should only be one Pkce proof pair per authentication session. </p>
+<div class="textblock"><p>Responsible for managing PKCE (Proof Key for Code Exchange) code verifiers and challenges. </p>
+<p>There should only be one PKCE verifier-challenge pair per authentication session. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3469aae28d398c90f73adb7a1c8dee92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3469aae28d398c90f73adb7a1c8dee92">&#9670;&nbsp;</a></span>PkceManager()</h2>
@@ -134,8 +134,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a new <a class="el" href="classauth_1_1PkceManager.html" title="Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.">PkceManager</a> object. </p>
-<p>Generate and store a code verifier - code challenge pair. </p>
+<p>Default constructor. </p>
+<p>Generate a code verifier - code challenge pair. The generated pair is base64url-safe, in accordance with RFC7636 </p>
 
 </div>
 </div>
@@ -164,7 +164,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the Code Challenge. </p>
-<p>The code challenge is derived from the code verifier. According to the <a class="el" href="classauth_1_1PkceManager.html" title="Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.">PkceManager</a> specification, as well as GGG's requirements, the code challenge is hashed with SHA-256.</p>
+<p>The code challenge is derived from the code verifier. According to the <a class="el" href="classauth_1_1PkceManager.html" title="Responsible for managing PKCE (Proof Key for Code Exchange) code verifiers and challenges.">PkceManager</a> specification, as well as GGG's requirements, the code challenge is hashed with SHA-256.</p>
 <dl class="section return"><dt>Returns</dt><dd>std::string The code challenge string. </dd></dl>
 
 <p>Implements <a class="el" href="classauth_1_1IPkceManager.html">auth::IPkceManager</a>.</p>

@@ -116,17 +116,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6d48384cee549b485b66538259c80117"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a6d48384cee549b485b66538259c80117">start_auth</a> () override</td></tr>
 <tr class="memdesc:a6d48384cee549b485b66538259c80117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the Oauth process.  <a href="classauth_1_1OauthManager.html#a6d48384cee549b485b66538259c80117">More...</a><br /></td></tr>
 <tr class="separator:a6d48384cee549b485b66538259c80117"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d46e3886bfd95689fa9360936dd41c8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a2d46e3886bfd95689fa9360936dd41c8">receive_auth</a> (const std::string &amp;query_string, const std::string &amp;session_id, int64_t request_time) override</td></tr>
-<tr class="memdesc:a2d46e3886bfd95689fa9360936dd41c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives the authorization query_string, makes the token exchange request, and returns the access token.  <a href="classauth_1_1OauthManager.html#a2d46e3886bfd95689fa9360936dd41c8">More...</a><br /></td></tr>
-<tr class="separator:a2d46e3886bfd95689fa9360936dd41c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a521ce6373c8803d2ebd9f7ad907aa7da"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classauth_1_1OauthManager.html#a521ce6373c8803d2ebd9f7ad907aa7da">receive_auth</a> (const std::string &amp;query_string, const std::string &amp;session_id) override</td></tr>
+<tr class="memdesc:a521ce6373c8803d2ebd9f7ad907aa7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives the authorization query string and auth session id, makes the token exchange request, and returns the app session id.  <a href="classauth_1_1OauthManager.html#a521ce6373c8803d2ebd9f7ad907aa7da">More...</a><br /></td></tr>
+<tr class="separator:a521ce6373c8803d2ebd9f7ad907aa7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Responsible for storing and providing formatted requests and their required information for each step of one Oauth session. </p>
 <p>Includes methods that serve the authorization URL, state parameter verification and access token exchange. All required messages (URLs, HTTP requests) must not be constructed manually. They are only to be taken from this class.</p>
 <dl class="section note"><dt>Note</dt><dd>Only one <a class="el" href="classauth_1_1OauthManager.html" title="Responsible for storing and providing formatted requests and their required information for each step...">OauthManager</a> instance should exist per Oauth session. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2d46e3886bfd95689fa9360936dd41c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d46e3886bfd95689fa9360936dd41c8">&#9670;&nbsp;</a></span>receive_auth()</h2>
+<a id="a521ce6373c8803d2ebd9f7ad907aa7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a521ce6373c8803d2ebd9f7ad907aa7da">&#9670;&nbsp;</a></span>receive_auth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,13 +144,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>session_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int64_t&#160;</td>
-          <td class="paramname"><em>request_time</em>&#160;</td>
+          <td class="paramname"><em>session_id</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -165,17 +159,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Receives the authorization query_string, makes the token exchange request, and returns the access token. </p>
+<p>Receives the authorization query string and auth session id, makes the token exchange request, and returns the app session id. </p>
 <p>Processes the authorization response from the authorization server after the user has logged in and approved the required scopes. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">query_string</td><td>The query_string string containing the query parameters "state" and "code", returned from the authorization server after a successful login by the user. </td></tr>
     <tr><td class="paramname">session_id</td><td>The session_id identifying the authentication request. </td></tr>
-    <tr><td class="paramname">request_time</td><td>The Unix time, in seconds, when this request was received by AWS Lambda. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The session token for tracking this user session. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The user session is considered established once the token is sent out. </dd></dl>
 
 <p>Implements <a class="el" href="classauth_1_1IOauthManager.html">auth::IOauthManager</a>.</p>
 

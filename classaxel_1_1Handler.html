@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('classaxel_1_1Handler.html',''); initRe
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a172d77041a17bc65426176d74cdf6d32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Handler.html#a172d77041a17bc65426176d74cdf6d32">Handler</a> (const std::string &amp;environment)</td></tr>
-<tr class="memdesc:a172d77041a17bc65426176d74cdf6d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterised constructor. Sets up the <a class="el" href="classaxel_1_1Handler.html">Handler</a> with the correct configurations, depending on if the code is meant to be run in the production environment or local testing.  <a href="classaxel_1_1Handler.html#a172d77041a17bc65426176d74cdf6d32">More...</a><br /></td></tr>
+<tr class="memdesc:a172d77041a17bc65426176d74cdf6d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterised constructor. Sets the <a class="el" href="classaxel_1_1Handler.html">Handler</a> up with the correct configurations, depending on if the code is meant to be run in the production environment or local testing.  <a href="classaxel_1_1Handler.html#a172d77041a17bc65426176d74cdf6d32">More...</a><br /></td></tr>
 <tr class="separator:a172d77041a17bc65426176d74cdf6d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afba7ff118d88a0bc544859eaaeca173d"><td class="memItemLeft" align="right" valign="top"><a id="afba7ff118d88a0bc544859eaaeca173d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Handler.html#afba7ff118d88a0bc544859eaaeca173d">run</a> ()</td></tr>
@@ -108,6 +108,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">axel::Handler::Handler </td>
@@ -117,12 +120,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Parameterised constructor. Sets up the <a class="el" href="classaxel_1_1Handler.html">Handler</a> with the correct configurations, depending on if the code is meant to be run in the production environment or local testing. </p>
-<p>Sets up the handler with the correct environment variables and configurations. For example, selecting "local" would mean that database queries are made to testing databases instead of live ones. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Parameterised constructor. Sets the <a class="el" href="classaxel_1_1Handler.html">Handler</a> up with the correct configurations, depending on if the code is meant to be run in the production environment or local testing. </p>
+<p>For example, selecting "local" would mean that database queries are made to testing databases instead of live ones. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">environment</td><td>The environment this handler runs in. Can be either "production" or "local" </td></tr>
+    <tr><td class="paramname">environment</td><td>The environment this handler runs in. Can be either "production" or "local". </td></tr>
   </table>
   </dd>
 </dl>
@@ -147,7 +155,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>The handler invoked by the AWS Lambda runtime. </p>
-<p>Takes a request from the AWS Lambda server runtime and delegates it to the appropriate method to be processed. </p>
+<p>Takes a request from the AWS Lambda server runtime and delegates it to the appropriate method to be processed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>The invocation request received from the AWS Lambda service </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

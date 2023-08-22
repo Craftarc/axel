@@ -111,14 +111,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a20295ba187de645f07875f98826313ea"><td class="memItemLeft" align="right" valign="top">Aws::Map&lt; Aws::String, Aws::DynamoDB::Model::AttributeValue &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#a20295ba187de645f07875f98826313ea">get</a> (const Aws::String &amp;key_value) const override</td></tr>
 <tr class="memdesc:a20295ba187de645f07875f98826313ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an item from a database using a given value for its partition key.  <a href="classaxel_1_1Database.html#a20295ba187de645f07875f98826313ea">More...</a><br /></td></tr>
 <tr class="separator:a20295ba187de645f07875f98826313ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af351a249866666daefaa33c1417e81d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#af351a249866666daefaa33c1417e81d9">del</a> (const Aws::String &amp;key_value) const override</td></tr>
-<tr class="memdesc:af351a249866666daefaa33c1417e81d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the item with the specified partition key attribute from the database.  <a href="classaxel_1_1Database.html#af351a249866666daefaa33c1417e81d9">More...</a><br /></td></tr>
-<tr class="separator:af351a249866666daefaa33c1417e81d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d3daf6cd2f944c7931268db478a392"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#a87d3daf6cd2f944c7931268db478a392">del</a> (const Aws::String &amp;partition_key_attribute) const override</td></tr>
+<tr class="memdesc:a87d3daf6cd2f944c7931268db478a392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the item with the specified partition key attribute from the database.  <a href="classaxel_1_1Database.html#a87d3daf6cd2f944c7931268db478a392">More...</a><br /></td></tr>
+<tr class="separator:a87d3daf6cd2f944c7931268db478a392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a914d7645b421d469b173fada69db67bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaxel_1_1Database.html#a914d7645b421d469b173fada69db67bb">Database</a> (const std::string &amp;table_name, const std::unordered_map&lt; Aws::String, Aws::DynamoDB::Model::ValueType &gt; &amp;attributes, std::unique_ptr&lt; <a class="el" href="classaxel_1_1IDynamoDBClient.html">axel::IDynamoDBClient</a> &gt; client)</td></tr>
-<tr class="memdesc:a914d7645b421d469b173fada69db67bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterised constructor. All <a class="el" href="classaxel_1_1Database.html">Database</a> objects must be constructed with a specified table name, and a set of valid attributes for that table.  <a href="classaxel_1_1Database.html#a914d7645b421d469b173fada69db67bb">More...</a><br /></td></tr>
+<tr class="memdesc:a914d7645b421d469b173fada69db67bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterised constructor that allows the specification of a custom <a class="el" href="classaxel_1_1DynamoDBClient.html">DynamoDBClient</a>.  <a href="classaxel_1_1Database.html#a914d7645b421d469b173fada69db67bb">More...</a><br /></td></tr>
 <tr class="separator:a914d7645b421d469b173fada69db67bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -206,7 +206,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Database_test</b></t
 </table>
 </div><div class="memdoc">
 
-<p>Parameterised constructor. All <a class="el" href="classaxel_1_1Database.html">Database</a> objects must be constructed with a specified table name, and a set of valid attributes for that table. </p>
+<p>Parameterised constructor that allows the specification of a custom <a class="el" href="classaxel_1_1DynamoDBClient.html">DynamoDBClient</a>. </p>
 <p>Constructs an object that performs operations on the specified table name. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">table_name</td><td>Name of the table this object interacts with. </td></tr>
@@ -220,8 +220,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Database_test</b></t
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af351a249866666daefaa33c1417e81d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af351a249866666daefaa33c1417e81d9">&#9670;&nbsp;</a></span>del()</h2>
+<a id="a87d3daf6cd2f944c7931268db478a392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d3daf6cd2f944c7931268db478a392">&#9670;&nbsp;</a></span>del()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +233,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Database_test</b></t
           <td class="memname">bool axel::Database::del </td>
           <td>(</td>
           <td class="paramtype">const Aws::String &amp;&#160;</td>
-          <td class="paramname"><em>key_value</em></td><td>)</td>
+          <td class="paramname"><em>partition_key_attribute</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -247,7 +247,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Database_test</b></t
 <p>Removes the item with the specified partition key attribute from the database. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key_value</td><td>The key_value of the partition key of the item to delete</td></tr>
+    <tr><td class="paramname">partition_key_attribute</td><td>The partition_key_attribute of the partition key of the item to delete </td></tr>
   </table>
   </dd>
 </dl>

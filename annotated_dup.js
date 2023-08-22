@@ -12,26 +12,17 @@ var annotated_dup =
       [ "PkceManager", "classauth_1_1PkceManager.html", "classauth_1_1PkceManager" ],
       [ "SessionManager", "classauth_1_1SessionManager.html", "classauth_1_1SessionManager" ],
       [ "StateHashManager", "classauth_1_1StateHashManager.html", "classauth_1_1StateHashManager" ],
-      [ "TokenRequestManager", "classauth_1_1TokenRequestManager.html", "classauth_1_1TokenRequestManager" ],
-      [ "MockAuthCodeManager", "classauth_1_1MockAuthCodeManager.html", "classauth_1_1MockAuthCodeManager" ],
-      [ "MockOauthManager", "classauth_1_1MockOauthManager.html", null ],
-      [ "MockPkceManager", "classauth_1_1MockPkceManager.html", "classauth_1_1MockPkceManager" ],
-      [ "MockSessionManager", "classauth_1_1MockSessionManager.html", "classauth_1_1MockSessionManager" ],
-      [ "MockStateHashManager", "classauth_1_1MockStateHashManager.html", "classauth_1_1MockStateHashManager" ],
-      [ "MockTokenRequestManager", "classauth_1_1MockTokenRequestManager.html", "classauth_1_1MockTokenRequestManager" ]
+      [ "TokenRequestManager", "classauth_1_1TokenRequestManager.html", "classauth_1_1TokenRequestManager" ]
     ] ],
     [ "axel", null, [
       [ "Database", "classaxel_1_1Database.html", "classaxel_1_1Database" ],
       [ "DynamoDBClient", "classaxel_1_1DynamoDBClient.html", "classaxel_1_1DynamoDBClient" ],
       [ "Handler", "classaxel_1_1Handler.html", "classaxel_1_1Handler" ],
       [ "IDatabase", "classaxel_1_1IDatabase.html", "classaxel_1_1IDatabase" ],
-      [ "IDynamoDBClient", "classaxel_1_1IDynamoDBClient.html", "classaxel_1_1IDynamoDBClient" ],
-      [ "MockDatabase", "classaxel_1_1MockDatabase.html", "classaxel_1_1MockDatabase" ],
-      [ "MockDynamoDBClient", "classaxel_1_1MockDynamoDBClient.html", "classaxel_1_1MockDynamoDBClient" ]
+      [ "IDynamoDBClient", "classaxel_1_1IDynamoDBClient.html", "classaxel_1_1IDynamoDBClient" ]
     ] ],
     [ "webutil", "namespacewebutil.html", [
       [ "HttpSender", "classwebutil_1_1HttpSender.html", "classwebutil_1_1HttpSender" ],
-      [ "IHttpSender", "classwebutil_1_1IHttpSender.html", "classwebutil_1_1IHttpSender" ],
-      [ "MockHttpSender", "classwebutil_1_1MockHttpSender.html", "classwebutil_1_1MockHttpSender" ]
+      [ "IHttpSender", "classwebutil_1_1IHttpSender.html", "classwebutil_1_1IHttpSender" ]
     ] ]
 ];

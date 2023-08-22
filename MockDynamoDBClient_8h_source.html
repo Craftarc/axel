@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('MockDynamoDBClient_8h_source.html','')
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>Model = Aws::DynamoDB::Model;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>axel {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classaxel_1_1MockDynamoDBClient.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classaxel_1_1MockDynamoDBClient.html">MockDynamoDBClient</a> : <span class="keyword">public</span> <a class="code" href="classaxel_1_1IDynamoDBClient.html">IDynamoDBClient</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">class </span>MockDynamoDBClient : <span class="keyword">public</span> IDynamoDBClient {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        MOCK_METHOD(Model::PutItemOutcome, PutItem, (<span class="keyword">const</span> Model::PutItemRequest&amp; request), (<span class="keyword">const</span>, <span class="keyword">override</span>));</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        MOCK_METHOD(Model::GetItemOutcome, GetItem, (<span class="keyword">const</span> Model::GetItemRequest&amp; request), (<span class="keyword">const</span>, <span class="keyword">override</span>));</div>
@@ -109,8 +109,6 @@ $(document).ready(function(){initNavTree('MockDynamoDBClient_8h_source.html','')
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// AXEL_AXEL_MOCKDYNAMODBCLIENT_H</span></div>
-<div class="ttc" id="aclassaxel_1_1IDynamoDBClient_html"><div class="ttname"><a href="classaxel_1_1IDynamoDBClient.html">axel::IDynamoDBClient</a></div><div class="ttdoc">Wrapper class around DynamoDBClient.</div><div class="ttdef"><b>Definition:</b> IDynamoDBClient.h:8</div></div>
-<div class="ttc" id="aclassaxel_1_1MockDynamoDBClient_html"><div class="ttname"><a href="classaxel_1_1MockDynamoDBClient.html">axel::MockDynamoDBClient</a></div><div class="ttdef"><b>Definition:</b> MockDynamoDBClient.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
