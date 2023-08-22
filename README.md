@@ -1,5 +1,7 @@
 ![Tests](https://github.com/Craftarc/axel/actions/workflows/test.yml/badge.svg)
 
+Documentation: https://craftarc.github.io/axel/index.html
+
 # Axel Backend
 
 This repository contains the source code for the companion application to the online ARPG, Path of Exile.
@@ -20,7 +22,12 @@ development.
             - [The Lambda Execution Environment](#the-lambda-execution-environment)
 - [Setup](#setup)
     - [Cloning the repository](#1-cloning-the-repository)
+    - [Pulling the Docker images](#2-pulling-the-docker-images)
+    - [Building the project](#3-building-the-project)
 - [Configuration](#configuration)
+    - [Working with the RIE](#working-with-the-rie)
+        - [Mounting the RIE into the container](#mounting-the-rie-into-the-container)
+        - [Deploying into an official RIE image](#deploying-into-an-official-rie-image)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -157,7 +164,7 @@ cd axel
 git clone git@github.com:Craftarc/axel.git
 ```
 
-## 2. Pull the Docker images
+## 2. Pulling the Docker images
 
 Axel's development environment is containerised.
 
@@ -171,7 +178,7 @@ There are two images in use.
 
 - An environment that as closely mimics deployment to the real Lambda service as possible.
 
-## 3. Build the project
+## 3. Building the project
 
 Axel's top-level CMakeLists.txt builds two primary executables: `main.cpp` and `sandbox.cpp`. For more information on
 why there are two
@@ -211,7 +218,7 @@ first place.
 
 Two methods to start the RIE for main to poll against are provided.
 
-### Mount the RIE into the container
+### Mounting the RIE into the container
 
 1. [Download](https://github.com/awslabs/aws-lambda-cpp) the RIE for your platform.
 2. Start a container running the _craftarc/axel:dependencies_ image. A standardised start script is provided
@@ -238,7 +245,7 @@ curl --location 'http://localhost:9000/2015-03-31/functions/function/invocations
 
 This method is suitable for **testing changes**, such as verbose logging, breaking changes
 
-### Deploy into an official RIE image
+### Deploying into an official RIE image
 
 AWS provides an _official_ Lambda image, which already embeds the RIE binary, and uses the same operating system as the
 actual deployment environment.
@@ -284,5 +291,7 @@ cd build
 # Contributing
 
 # License
+
+GNU General Public License v3.0
 
 

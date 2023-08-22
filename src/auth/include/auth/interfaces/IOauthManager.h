@@ -10,9 +10,7 @@ namespace auth {
         
         virtual std::string start_auth() = 0;
         virtual std::string
-        receive_auth(const std::string& query_string,
-                     const std::string& session_id,
-                     int64_t request_time) = 0;
+        receive_auth(const std::string& query_string, const std::string& session_id) = 0;
     };
 }
 

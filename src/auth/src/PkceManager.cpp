@@ -5,7 +5,8 @@
 #include "auth/PkceManager.h"
 #include "webutil/hash.h"
 
-/// Generate and store a code verifier - code challenge pair.
+/// Generate a code verifier - code challenge pair.
+/// The generated pair is base64url-safe, in accordance with RFC7636
 auth::PkceManager::PkceManager() {
     // Get 32 random bytes
     std::vector<uint8_t> secret_bytes = webutil::generate_secret_bytes();
@@ -13,7 +14,6 @@ auth::PkceManager::PkceManager() {
     // Convert to alphanumeric representation
     auto base64_verifier = Botan::base64_encode(secret_bytes.data(), secret_bytes.size());
     code_verifier_ = webutil::base64_url_encode(base64_verifier);
-    
     
     // Hash bytes with SHA-256
     std::unique_ptr<Botan::HashFunction> sha_256{Botan::HashFunction::create(("SHA-256"))};

@@ -29,13 +29,11 @@ namespace axel {
         [[nodiscard]] Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue>
         get(const Aws::String& key_value) const override;
         
-        /// @param key_value The key_value of the partition key of the item to delete
         /// @brief Removes the item with the specified partition key attribute from the database
-        bool del(const Aws::String& key_value) const override;
+        [[nodiscard]] bool del(const Aws::String& partition_key_attribute) const override;
     
     protected:
-        /// @brief Parameterised constructor. All Database objects must be constructed with a specified table name, and a
-        /// set of valid attributes for that table.
+        /// @brief Parameterised constructor that allows the specification of a custom DynamoDBClient.
         Database(const std::string& table_name,
                  const std::unordered_map<Aws::String, Aws::DynamoDB::Model::ValueType>& attributes,
                  std::unique_ptr<axel::IDynamoDBClient> client);

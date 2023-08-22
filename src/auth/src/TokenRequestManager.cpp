@@ -9,18 +9,15 @@
 #include "config/axel.h"
 #include "webutil/interfaces/IHttpSender.h"
 
-/// @param The authorization code to construct the request from.
-auth::TokenRequestManager::TokenRequestManager() {}
+auth::TokenRequestManager::TokenRequestManager() = default;
 
-/// @param auth_code The authorization code to be used in the request.
-/// @return A string pair in the following format: {access_token, refresh_token}
 namespace http = boost::beast::http;
 
 /// Constructs and sends out the token exchange request. The tokens are then parsed from the response.
 /// @param auth_code The authorization code to be included in the token exchange request.
 /// @param code_verifier The code verifier to be included in the token exchange request.
 /// @param http_sender The HttpSender class that defines the request-sending behaviour and underlying networking.
-/// @return A pair of strings in the format: {${access_token}, ${refresh_token}}
+/// @return A pair of strings in the format: {access_token, refresh_token}
 std::string
 auth::TokenRequestManager::send_token_request(std::string auth_code,
                                               std::string code_verifier,
@@ -28,9 +25,9 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
     const int MAX_RESPONSE_BODY = 10;
     
     // Check input validity
-    if (auth_code == "") {
+    if (auth_code.empty()) {
         throw std::runtime_error("auth_code is empty");
-    } else if (code_verifier == "") {
+    } else if (code_verifier.empty()) {
         throw std::runtime_error("code_verifier is empty");
     }
     
@@ -42,6 +39,7 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                                         {"scope", config::poe::scopes::profile},
                                                         {"code_verifier", std::move(code_verifier)}});
     
+    // Add the headers to the request
     auto full_request = webutil::make_http_request("POST",
                                                    config::poe::paths::token,
                                                    {{"host", config::poe::host},

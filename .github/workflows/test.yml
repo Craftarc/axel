@@ -41,8 +41,6 @@ jobs:
         run: |
           docker load -i /tmp/dockerfile/dependencies.tar
 
-
-      # Using a Docker image as part of 'uses' seems to mount the runner's workspace into the container automatically
       - name: Run tests
         uses: docker://craftarc/axel:dependencies
         with:

@@ -41,10 +41,9 @@ namespace auth {
                      std::unique_ptr<axel::IDatabase> app_database);
         /// @brief Starts the Oauth process
         std::string start_auth() override;
-        /// @brief Receives the authorization query_string, makes the token exchange request, and returns the access token.
-        std::string receive_auth(const std::string& query_string,
-                                 const std::string& session_id,
-                                 int64_t request_time) override;
+        /// @brief Receives the authorization query string and auth session id, makes the token exchange request,
+        /// and returns the app session id
+        std::string receive_auth(const std::string& query_string, const std::string& session_id) override;
     
     private:
         /// @brief The states of OauthManager throughout the Oauth process.
