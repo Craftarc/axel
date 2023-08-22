@@ -9,9 +9,9 @@ using namespace aws::lambda_runtime;
 namespace axel {
     class Handler {
     public:
-        /// @brief Parameterised constructor. Sets up the Handler with the correct configurations, depending on if
+        /// @brief Parameterised constructor. Sets the Handler up with the correct configurations, depending on if
         /// the code is meant to be run in the production environment or local testing.
-        Handler(const std::string& environment);
+        explicit Handler(const std::string& environment);
         
         /// @brief Runs the handler implementation that communicates with the AWS Runtime Interface
         void run();

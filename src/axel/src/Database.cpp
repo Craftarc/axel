@@ -99,13 +99,14 @@ namespace axel {
         }
     }
     
+    /// @param partition_key_attribute The partition_key_attribute of the partition key of the item to delete
     /// @return True if the deletion operation was successful, False otherwise.
-    bool Database::del(const Aws::String& key_value) const {
+    bool Database::del(const Aws::String& partition_key_attribute) const {
         Aws::DynamoDB::Model::DeleteItemRequest delete_item_request;
         delete_item_request.SetTableName(table_name_);
         
         // Construct proper type for value of .AddKey (key, value)
-        auto attribute_value{Aws::DynamoDB::Model::AttributeValue().SetS(key_value)};
+        auto attribute_value{Aws::DynamoDB::Model::AttributeValue().SetS(partition_key_attribute)};
         delete_item_request.AddKey(partition_key_, attribute_value);
         
         auto outcome{client_->DeleteItem(delete_item_request)};
@@ -119,7 +120,7 @@ namespace axel {
     }
     
     /// Appends the attribute name-value pair to be part of a PutItemRequest. Modifies the PutItemRequest directly.
-    /// @param item_pair The name-value pair to add. Must be compliant with the types defined by attributes_
+    /// @param item_pair The name-value pair to add. Must be compliant with the attribute types in the table.
     /// @param put_item_request The PutItemRequest to add to.
     Aws::DynamoDB::Model::PutItemRequest&
     Database::add_item(const std::pair<Aws::String, Aws::String>& item_pair,

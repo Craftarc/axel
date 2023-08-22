@@ -15,7 +15,8 @@ namespace axel {
         });
     }
     
-    /// @brief Takes a request from the AWS Lambda server runtime and delegates it to the appropriate method to be processed.
+    /// Takes a request from the AWS Lambda server runtime and delegates it to the appropriate method to be processed.
+    /// @param req: The invocation request received from the AWS Lambda service
     invocation_response Handler::handler(const invocation_request& req) {
         std::string payload = req.payload;
         std::string content_type;
@@ -48,9 +49,8 @@ namespace axel {
         return {payload, content_type, success};
     }
     
-    /// Sets up the handler with the correct environment variables and configurations. For example, selecting "local"
-    /// would mean that database queries are made to testing databases instead of live ones.
-    /// @param environment The environment this handler runs in. Can be either "production" or "local"
+    /// For example, selecting "local" would mean that database queries are made to testing databases instead of live ones.
+    /// @param environment The environment this handler runs in. Can be either "production" or "local".
     Handler::Handler(const std::string& environment) : _oauth_manager(init(environment)) {};
     
     auth::OauthManager Handler::init(const std::string& environment) {

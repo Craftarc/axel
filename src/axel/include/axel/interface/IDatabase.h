@@ -11,7 +11,7 @@ namespace axel {
         [[nodiscard]] virtual Aws::Map<Aws::String, Aws::DynamoDB::Model::AttributeValue>
         get(const Aws::String& key_value) const = 0;
         
-        virtual bool del(const Aws::String& key_value) const = 0;
+        virtual bool del(const Aws::String& partition_key_attribute) const = 0;
     };
 } // axel
 

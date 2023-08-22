@@ -8,9 +8,9 @@ namespace auth {
     /// @brief The StateHashManager class.
     ///
     /// The StateHashManager class is responsible for generating and storing the state hash, which is used to track
-    /// the current authorization request. This is in order to prevent Cross-Site Request Forgery.
+    /// the current authorisation request. This is in order to prevent Cross-Site Request Forgery.
     ///
-    /// The response containing the authorization code from the authorization server should be verified against the one
+    /// The response containing the authorisation code from the authorisation server should be verified against the one
     /// stored in an instance of this class.
     ///
     /// @note There should only be one instance of this class per Oauth session.

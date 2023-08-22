@@ -15,6 +15,7 @@ namespace {
     }
 }
 
+/// @return base64url state hash
 std::string auth::StateHashManager::get_state_hash() const {
     return make_state_hash();
 }

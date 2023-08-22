@@ -6,12 +6,12 @@
 #include "interfaces/IPkceManager.h"
 
 namespace auth {
-    /// @brief Responsible for managing Pkce (Proof Key for Code Exchange) code verifiers and challenges.
+    /// @brief Responsible for managing PKCE (Proof Key for Code Exchange) code verifiers and challenges.
     ///
-    /// There should only be one Pkce proof pair per authentication session.
+    /// There should only be one PKCE verifier-challenge pair per authentication session.
     class PkceManager : public IPkceManager {
     public:
-        /// @brief Constructs a new PkceManager object.
+        /// @brief Default constructor.
         PkceManager();
         
         /// @brief Gets the Code Verifier.
