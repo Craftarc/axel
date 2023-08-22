@@ -1,3 +1,5 @@
+![Tests](https://github.com/Craftarc/axel/actions/workflows/test.yml/badge.svg)
+
 Documentation: https://craftarc.github.io/axel/index.html
 
 # Axel Backend
