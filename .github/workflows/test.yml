@@ -7,14 +7,12 @@ on:
     branches: main
 
 jobs:
-  build-and-test:
+  main:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Cache path is relative to runner's workspace, not container's workspace
       - name: Cache vcpkg
         id: cache-vcpkg
         uses: actions/cache@v3
@@ -22,37 +20,40 @@ jobs:
           path: ${{ github.workspace }}/build/vcpkg_installed
           key: ${{ runner.os }}-${{ hashFiles('vcpkg.json') }}
 
-      - name: Cache Docker images
-        id: cache-docker
+      - name: Cache image
+        id: cache-image
         uses: actions/cache@v3
         with:
-          path: /dockerfile
-          key: dependencies-${{ hashFiles('./dockerfile/dependencies.Dockerfile')}}
+          path: /tmp/dockerfile
+          key: ${{ runner.os }}-${{ hashFiles('dockerfile/dependencies.Dockerfile') }}
 
-      # Cache miss -> Download image and save
-      - name: Pull Docker images if not in cache and save
-        if: steps.cache-docker.outputs.cache-hit != 'true'
+      # If cache miss, pull and save into cache directory
+      - name: Pull image
+        if: steps.cache-image.outputs.cache-hit != 'true'
         run: |
           docker pull craftarc/axel:dependencies
-          mkdir -p /dockerfile
-          docker save -o /dockerfile/dependencies.tar craftarc/axel:dependencies
+          mkdir -p /tmp/dockerfile
+          docker save -o /tmp/dockerfile/dependencies.tar craftarc/axel:dependencies
 
-      # Cache hit -> The cache would have been restored -> Load the image
-      - name: Load docker image if in cache
-        if: steps.cache-docker.outputs.cache-hit == 'true'
+      # If cache hit, load from cache
+      - name: Load image
+        if: steps.cache-image.outputs.cache-hit == 'true'
         run: |
-          docker load -i /dockerfile/dependencies.tar
+          docker load -i /tmp/dockerfile/dependencies.tar
 
-      # docker compose takes care of mounting the project root and invoking the test script in the container
-      - name: Start container and test
-        run: |
-          chmod 744 "scripts/workflows/test.sh"
-          docker compose up test
 
-      # Return to runner workspace before vcpkg caching takes place, otherwise cache path is invalid
-      - name: Close container
+      # Using a Docker image as part of 'uses' seems to mount the runner's workspace into the container automatically
+      - name: test
+        uses: docker://craftarc/axel:dependencies
+        with:
+          entrypoint: scripts/workflows/test.sh
+
+      - name: after
         run: |
-          docker compose down test
+          echo "state of workspace outside of container after: expect hello.txt"
+          pwd
+          ls
           
           
+
 

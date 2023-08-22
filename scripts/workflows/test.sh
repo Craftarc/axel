@@ -1,10 +1,11 @@
 #!/bin/bash
 
-echo ">> Inside container"
+echo ">> Inside container at: $(pwd)"
 set -euo pipefail
 
 # Set CMake arguments here
 cmake_args='-G Ninja -DAXEL_TEST=YES -DCMAKE_BUILD_TYPE=Debug'
+echo "CMake flags: "${cmake_args}""
 
 ## Compile and build
 mkdir -p build
