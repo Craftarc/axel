@@ -1,4 +1,4 @@
-# Build command (push): docker buildx build --platform linux/arm64,linux/amd64 -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies .
+# Build command (push): docker buildx build --platform linux/arm64,linux/amd64 -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies --push .
 # Build command (local): docker build -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies . <- use this for local changes to the image
 
 FROM amazonlinux:2

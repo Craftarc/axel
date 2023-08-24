@@ -1,4 +1,4 @@
-name: Test
+name: Tests
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: main
 
 jobs:
-  main:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -41,19 +41,10 @@ jobs:
         run: |
           docker load -i /tmp/dockerfile/dependencies.tar
 
-
-      # Using a Docker image as part of 'uses' seems to mount the runner's workspace into the container automatically
-      - name: test
+      - name: Run tests
         uses: docker://craftarc/axel:dependencies
         with:
           entrypoint: scripts/workflows/test.sh
-
-      - name: after
-        run: |
-          echo "state of workspace outside of container after: expect hello.txt"
-          pwd
-          ls
-          
           
 
 
