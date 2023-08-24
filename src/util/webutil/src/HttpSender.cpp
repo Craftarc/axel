@@ -34,7 +34,7 @@ namespace webutil {
         ssl::context ctx(ssl::context::tlsv12_client);
         ctx.set_verify_mode(ssl::verify_peer);
         ctx.set_verify_callback(ssl::host_name_verification(host));
-        ctx.set_default_verify_paths();
+        ctx.load_verify_file("/etc/ssl/certs/ca-bundle.crt");
         
         ssl::stream<tcp::socket> stream(ioc, ctx); // Connection stream
         
