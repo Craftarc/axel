@@ -97,7 +97,7 @@ namespace auth {
         };
         
         std::string auth_url = auth_code_manager_->get_auth_url(code_challenge, state_hash);
-        spdlog::info("OauthManager: Authorisation URL obtained");
+        spdlog::debug("OauthManager: Authorisation URL obtained: {}", auth_url);
         
         
         // Construct invocation response
