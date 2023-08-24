@@ -230,7 +230,7 @@ docker compose up dev
 
 This mounts the RIE binary and the project root into the container, recompiles Axel's code if there are changes, then
 executes the binary, passing in the handler (
-here our _main_ executable) as an argument.
+here our _main_ executable) as an argument. It builds Axel with `CMAKE_BUILD_TYPE=Debug`.
 
 You may _POST_ something to the container's exposed port to test for a response.
 
@@ -257,11 +257,21 @@ The _craftarc/axel:staging_ image mirrors this process. Upon launching this cont
 into the container and unpacked in a similar fashion. **Make sure `main.zip` is freshly built, because this process does
 not compile new executables**.
 
-As before, a standardised start script is provided via `docker compose`:
+As before, a standardised start sequence is provided via `docker compose`:
+
+```
+docker compose up build-release-test
+```
+
+This builds Axel with `CMAKE_BUILD_TYPE=Release`, targeting testing servers.
+
+Then start the staging service:
 
 ```
 docker compose up staging
 ```
+
+which uses the `main.zip` output from the previous command.
 
 This method is suitable for **staging** tests, as it most closely mimics the deployment environment. Behaviour is
 finally
@@ -270,18 +280,24 @@ verified here before pushing to production.
 ## Working with custom entrypoints
 
 **To work with custom entrypoints, we want to execute the `sandbox` executable instead.** <br>
-You may reuse the `docker compose` configuration from before (
-see [Mount the RIE into the container](#mount-the-rie-into-the-container)). `docker compose up dev` builds fresh
-executables in the process. However, it also mounts and starts the RIE by default, by running a script via
-Docker's `CMD`.
+Convenience scripts to do this correctly are, as always, provided in `docker-compose.yml`.
 
-**1. Override this behaviour to perform arbitrary work**. Provide a custom command; to simply drop into a shell:
+**1. Build updated binaries**.
 
 ```
-docker compose run dev bash
+docker compose up build-release-test
 ```
 
-**2. Navigate to and run the `sandbox` executable.**
+This builds Axel with `CMAKE_BUILD_TYPE=Release`, targeting testing servers.
+
+**2. Start the 'dependencies' container**. Override the default `ENTRYPOINT`, which will start the RIE. Instead, drop
+straight into a shell.
+
+```
+docker compose run --rm dev bash
+```
+
+**3. Navigate to and run the `sandbox` executable.**
 
 ```
 cd build
