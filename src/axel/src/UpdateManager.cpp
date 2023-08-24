@@ -9,8 +9,8 @@ namespace axel {
     
     http::request<http::string_body> UpdateManager::make_stash_request() const {
         const std::unordered_map<std::string, std::string> fields{{"authorization", "Bearer " + _access_token},
-                                                                  {"host", config::poe::host}};
-        return webutil::make_http_request("GET", "/league", fields);
+                                                                  {"host", config::poe::api}};
+        return webutil::make_http_request("GET", "/stash/ancestor", fields);
     }
     
     /// Gets information about a player's stash for a particular softcore league
