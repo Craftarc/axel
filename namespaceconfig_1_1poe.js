@@ -12,5 +12,6 @@ var namespaceconfig_1_1poe =
       [ "profile", "namespaceconfig_1_1poe_1_1scopes.html#acd88098c1fad5518829b805c68fb85f7", null ],
       [ "stashes", "namespaceconfig_1_1poe_1_1scopes.html#a4acdaf9f6eae4307bcbacbd092f87510", null ]
     ] ],
+    [ "api", "namespaceconfig_1_1poe.html#ad8302aeb21d85e6193390ea1e6efcdb3", null ],
     [ "host", "namespaceconfig_1_1poe.html#a6b8697fdfa1286eb1d4ec099a302e66d", null ]
 ];
