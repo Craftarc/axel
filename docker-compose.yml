@@ -27,3 +27,21 @@ services:
     environment:
       - AWS_LAMBDA_RUNTIME_API=localhost:9000
     command: [ "scripts/dev/start.sh" ]
+
+  build-release-prod:
+    image: craftarc/axel:dependencies
+    build:
+      context: .
+      dockerfile: dockerfile/dependencies.Dockerfile
+    volumes:
+      - .:/axel
+    command: [ "scripts/build-release.sh", "prod" ]
+
+  build-release-test:
+    image: craftarc/axel:dependencies
+    build:
+      context: .
+      dockerfile: dockerfile/dependencies.Dockerfile
+    volumes:
+      - .:/axel
+    command: [ "scripts/build-release.sh", "test" ]
