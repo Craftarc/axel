@@ -24,6 +24,8 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                               std::unique_ptr<webutil::IHttpSender> http_sender) const {
     const int MAX_RESPONSE_BODY = 10;
     
+    namespace scopes = config::poe::scopes;
+    
     // Check input validity
     if (auth_code.empty()) {
         throw std::runtime_error("auth_code is empty");
@@ -36,7 +38,12 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                                         {"grant_type", config::axel::grant_type},
                                                         {"code", std::move(auth_code)},
                                                         {"redirect_uri", config::poe::paths::redirect_uri},
-                                                        {"scope", config::poe::scopes::profile},
+                                                        {"scope",
+                                                         webutil::concatenate_with_space({scopes::profile,
+                                                                                          scopes::stashes,
+                                                                                          scopes::characters,
+                                                                                          scopes::item_filter,
+                                                                                          scopes::league_accounts})},
                                                         {"code_verifier", std::move(code_verifier)}});
     
     // Add the headers to the request

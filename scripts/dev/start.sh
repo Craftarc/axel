@@ -4,7 +4,7 @@ echo ">> Inside container"
 set -euo pipefail
 
 # Set CMake arguments here
-cmake_args='-G Ninja -DCMAKE_BUILD_TYPE=Debug'
+cmake_args='-G Ninja -DCMAKE_BUILD_TYPE=Debug -DAXEL_TEST=YES'
 
 # Cleanup function that write logs to mounted project root
 signal_handler() {
@@ -48,15 +48,16 @@ fi
 
 # Build updated executables
 
-# Compile and build
+## Compile and build
 mkdir -p build
 cmake -B build -S . ${cmake_args} # CMake configuration setup
-cmake --build build --target all --target aws-lambda-package-main
+cmake --build build --clean-first --target all --target aws-lambda-package-main
 echo ">> Compilation complete"
+
 
 # Start RIE in background
 echo ">> Starting RIE and invoking the handler..."
-/aws-lambda/aws-lambda-rie  "${cwd}"build/main > logs/tmp.log 2>&1 &
+/aws-lambda/aws-lambda-rie  "${cwd}"/build/main > logs/tmp.log 2>&1 &
 
 # Save PID of RIE
 rie_pid=$!
