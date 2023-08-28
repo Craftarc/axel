@@ -1,0 +1,250 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Stash",
+  "definitions": {
+	"Stash": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"stash": {
+		  "$ref": "#/definitions/StashClass"
+		}
+	  },
+	  "required": [
+		"stash"
+	  ],
+	  "title": "Stash"
+	},
+	"StashClass": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"id": {
+		  "type": "string"
+		},
+		"name": {
+		  "type": "string"
+		},
+		"type": {
+		  "type": "string"
+		},
+		"index": {
+		  "type": "integer"
+		},
+		"metadata": {
+		  "$ref": "#/definitions/Metadata"
+		},
+		"items": {
+		  "type": "array",
+		  "items": {
+			"$ref": "#/definitions/Item"
+		  }
+		}
+	  },
+	  "required": [
+		"id",
+		"index",
+		"items",
+		"metadata",
+		"name",
+		"type"
+	  ],
+	  "title": "StashClass"
+	},
+	"Item": {
+	  "type": "object",
+	  "additionalProperties": true,
+	  "properties": {
+		"verified": {
+		  "type": "boolean"
+		},
+		"w": {
+		  "type": "integer"
+		},
+		"h": {
+		  "type": "integer"
+		},
+		"icon": {
+		  "type": "string",
+		  "format": "uri",
+		  "qt-uri-protocols": [
+			"https"
+		  ],
+		  "qt-uri-extensions": [
+			".png"
+		  ]
+		},
+		"stackSize": {
+		  "type": "integer"
+		},
+		"maxStackSize": {
+		  "type": "integer"
+		},
+		"league": {
+		  "$ref": "#/definitions/League"
+		},
+		"id": {
+		  "type": "string"
+		},
+		"name": {
+		  "type": "string"
+		},
+		"typeLine": {
+		  "type": "string"
+		},
+		"baseType": {
+		  "type": "string"
+		},
+		"identified": {
+		  "type": "boolean"
+		},
+		"ilvl": {
+		  "type": "integer"
+		},
+		"properties": {
+		  "type": "array",
+		  "items": {
+			"$ref": "#/definitions/AdditionalProperty"
+		  }
+		},
+		"explicitMods": {
+		  "type": "array",
+		  "items": {
+			"type": "string"
+		  }
+		},
+		"descrText": {
+		  "type": "string"
+		},
+		"frameType": {
+		  "type": "integer"
+		},
+		"x": {
+		  "type": "integer"
+		},
+		"y": {
+		  "type": "integer"
+		},
+		"inventoryId": {
+		  "$ref": "#/definitions/InventoryID"
+		},
+		"support": {
+		  "type": "boolean"
+		},
+		"requirements": {
+		  "type": "array",
+		  "items": {
+			"$ref": "#/definitions/AdditionalProperty"
+		  }
+		},
+		"additionalProperties": {
+		  "type": "array",
+		  "items": {
+			"$ref": "#/definitions/AdditionalProperty"
+		  }
+		},
+		"secDescrText": {
+		  "type": "string"
+		}
+	  },
+	  "required": [
+		"baseType",
+		"descrText",
+		"frameType",
+		"h",
+		"icon",
+		"id",
+		"identified",
+		"ilvl",
+		"inventoryId",
+		"league",
+		"name",
+		"properties",
+		"typeLine",
+		"verified",
+		"w",
+		"x",
+		"y"
+	  ]
+	},
+	"AdditionalProperty": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"name": {
+		  "$ref": "#/definitions/Name"
+		},
+		"values": {
+		  "type": "array",
+		  "items": {
+			"type": "array",
+			"items": {
+			  "$ref": "#/definitions/Value"
+			}
+		  }
+		},
+		"displayMode": {
+		  "type": "integer"
+		},
+		"progress": {
+		  "type": "number"
+		},
+		"type": {
+		  "type": "integer"
+		}
+	  },
+	  "required": [
+		"displayMode",
+		"name",
+		"values"
+	  ],
+	  "title": "AdditionalProperty"
+	},
+	"Metadata": {
+	  "type": "object",
+	  "additionalProperties": false,
+	  "properties": {
+		"public": {
+		  "type": "boolean",
+		  "description": "true if present"
+		},
+		"folder": {
+		  "type": "boolean",
+		  "description": "true if present"
+		},
+		"colour": {
+		  "type": "string"
+		}
+	  },
+	  "required": [
+		"colour"
+	  ]
+	},
+	"Name": {
+	  "type": "string",
+	  "enum": [
+		"Experience",
+		"Stack Size",
+		"Support, Duration",
+		"Level",
+		"Cost & Reservation Multiplier",
+		"Int"
+	  ],
+	  "title": "Name"
+	},
+	"InventoryID": {
+	  "type": "string",
+	  "enum": [
+		"Stash1"
+	  ],
+	  "title": "InventoryID"
+	},
+	"League": {
+	  "type": "string",
+	  "enum": [
+		"Standard"
+	  ],
+	  "title": "League"
+	}
+  }
+}
