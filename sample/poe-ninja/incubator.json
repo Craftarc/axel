@@ -1,0 +1,1218 @@
+{
+  "lines": [
+	{
+	  "id": 21681,
+	  "name": "Fine Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uQ3VycmVuY3kiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/90d8bfe442/IncubationCurrency.png",
+	  "baseType": "Fine Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  -7.69,
+		  -7.69,
+		  -7.69,
+		  -7.69,
+		  -7.69,
+		  -7.69
+		],
+		"totalChange": -7.69
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Currency item to an equippable item\nItem drops after killing (3033-3168) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 120.00,
+	  "exaltedValue": 8.33,
+	  "divineValue": 0.51,
+	  "count": 3,
+	  "detailsId": "fine-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 3
+	},
+	{
+	  "id": 21676,
+	  "name": "Whispering Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uRXNzZW5jZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/4a659194f8/IncubationEssence.png",
+	  "baseType": "Whispering Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  null,
+		  null,
+		  null,
+		  null,
+		  0,
+		  0,
+		  null
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  12.5,
+		  12.5,
+		  62.5
+		],
+		"totalChange": 62.5
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Essence item to an equippable item\nItem drops after killing (2229-2685) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 10.40,
+	  "exaltedValue": 0.72,
+	  "divineValue": 0.04,
+	  "count": 3,
+	  "detailsId": "whispering-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 3
+	},
+	{
+	  "id": 21674,
+	  "name": "Ornate Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uQ3VycmVuY3kiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/90d8bfe442/IncubationCurrency.png",
+	  "baseType": "Ornate Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  12.5,
+		  16.62,
+		  20.75,
+		  20.88,
+		  12.5
+		],
+		"totalChange": 12.5
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  12.5,
+		  16.62,
+		  20.75,
+		  20.88,
+		  12.5
+		],
+		"totalChange": 12.5
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Currency item to an equippable item\nItem drops after killing (3458-4230) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 9.00,
+	  "exaltedValue": 0.62,
+	  "divineValue": 0.04,
+	  "count": 99,
+	  "detailsId": "ornate-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 8416
+	},
+	{
+	  "id": 21684,
+	  "name": "Diviner's Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uRGl2aW5hdGlvbkNhcmRzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/c5f63e4263/IncubationDivinationCards.png",
+	  "baseType": "Diviner's Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  3.5,
+		  0,
+		  4.12,
+		  7.94,
+		  12.25
+		],
+		"totalChange": 12.25
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  3.5,
+		  0,
+		  4.12,
+		  7.94,
+		  12.25
+		],
+		"totalChange": 12.25
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds incubated Stacked Decks to an equippable item\nItem drops after killing (3704-4530) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 8.98,
+	  "exaltedValue": 0.62,
+	  "divineValue": 0.04,
+	  "count": 99,
+	  "detailsId": "diviners-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 8841
+	},
+	{
+	  "id": 21683,
+	  "name": "Skittering Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uU2NhcmFicyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/edaa4a92ba/IncubationScarabs.png",
+	  "baseType": "Skittering Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  -18.96,
+		  -37.5,
+		  -16.67,
+		  -16.67,
+		  -16.67,
+		  16.67
+		],
+		"totalChange": 16.67
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  -18.96,
+		  -37.5,
+		  -16.67,
+		  -16.67,
+		  -16.67,
+		  16.67
+		],
+		"totalChange": 16.67
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Scarab item to an equippable item\nItem drops after killing (7383-9030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.60,
+	  "exaltedValue": 0.39,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "skittering-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 20606
+	},
+	{
+	  "id": 21679,
+	  "name": "Celestial Jeweller's Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uVHJpbmtldHMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/902e8f0f20/IncubationTrinkets.png",
+	  "baseType": "Celestial Jeweller's Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  23.33,
+		  13.33,
+		  33.33,
+		  0,
+		  66.67
+		],
+		"totalChange": 66.67
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  23.33,
+		  13.33,
+		  33.33,
+		  0,
+		  66.67
+		],
+		"totalChange": 66.67
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Shaper or Elder Trinket item to an equippable item\nItem drops after killing (20307-21030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "celestial-jewellers-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 3596
+	},
+	{
+	  "id": 21680,
+	  "name": "Enchanted Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uTGFieXJpbnRoIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/6387f86116/IncubationLabyrinth.png",
+	  "baseType": "Enchanted Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -4,
+		  0,
+		  0,
+		  66.67
+		],
+		"totalChange": 66.67
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -4,
+		  0,
+		  0,
+		  66.67
+		],
+		"totalChange": 66.67
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Enchanted Helmet item to an equippable item\nItem drops after killing (3949-4830) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "enchanted-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 18304
+	},
+	{
+	  "id": 21682,
+	  "name": "Cartographer's Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uTWFwcyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/daa8321bff/IncubationMaps.png",
+	  "baseType": "Cartographer's Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  6.16,
+		  6.16,
+		  6.16,
+		  0,
+		  -1.70,
+		  6.16
+		],
+		"totalChange": 6.16
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  6.16,
+		  6.16,
+		  6.16,
+		  0,
+		  -1.70,
+		  6.16
+		],
+		"totalChange": 6.16
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Map item to an equippable item\nItem drops after killing (2968-3630) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "cartographers-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 15675
+	},
+	{
+	  "id": 21688,
+	  "name": "Thaumaturge's Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uR2VtcyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/5e44f2f524/IncubationGems.png",
+	  "baseType": "Thaumaturge's Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  4.76,
+		  19.05,
+		  -4.76,
+		  -4.76,
+		  9.52,
+		  19.05
+		],
+		"totalChange": 19.05
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  4.76,
+		  19.05,
+		  -4.76,
+		  -4.76,
+		  9.52,
+		  19.05
+		],
+		"totalChange": 19.05
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated high level Corrupted Gem or valuable Gem item to an equippable item\nItem drops after killing (12289-15030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "thaumaturges-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 5666
+	},
+	{
+	  "id": 21692,
+	  "name": "Otherworldly Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uTWFwcyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/daa8321bff/IncubationMaps.png",
+	  "baseType": "Otherworldly Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  15,
+		  0,
+		  0,
+		  0,
+		  25
+		],
+		"totalChange": 25
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  15,
+		  0,
+		  0,
+		  0,
+		  25
+		],
+		"totalChange": 25
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Unique Map item to an equippable item\nItem drops after killing (6157-7530) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "otherworldly-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 5429
+	},
+	{
+	  "id": 21694,
+	  "name": "Obscured Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uQnJlYWNoIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/adcb2374bf/IncubationBreach.png",
+	  "baseType": "Obscured Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  30.29,
+		  49.84,
+		  30.29,
+		  -2.28,
+		  30.29,
+		  62.87
+		],
+		"totalChange": 62.87
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  30.29,
+		  49.84,
+		  30.29,
+		  -2.28,
+		  30.29,
+		  62.87
+		],
+		"totalChange": 62.87
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Breach item to an equippable item\nItem drops after killing (8610-10530) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "obscured-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 5913
+	},
+	{
+	  "id": 21695,
+	  "name": "Infused Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uRXNzZW5jZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/4a659194f8/IncubationEssence.png",
+	  "baseType": "Infused Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  15,
+		  2.12,
+		  0,
+		  0,
+		  0.88,
+		  25
+		],
+		"totalChange": 25
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  15,
+		  2.12,
+		  0,
+		  0,
+		  0.88,
+		  25
+		],
+		"totalChange": 25
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Essence item to an equippable item\nItem drops after killing (3704-4530) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "infused-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 18317
+	},
+	{
+	  "id": 21696,
+	  "name": "Fragmented Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uRnJhZ21lbnRzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/998cdb111c/IncubationFragments.png",
+	  "baseType": "Fragmented Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  6.67,
+		  3,
+		  -8,
+		  13.33,
+		  17.67,
+		  66.67
+		],
+		"totalChange": 66.67
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  6.67,
+		  3,
+		  -8,
+		  13.33,
+		  17.67,
+		  66.67
+		],
+		"totalChange": 66.67
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Fragment item to an equippable item\nItem drops after killing (7383-9030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "fragmented-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 17365
+	},
+	{
+	  "id": 21700,
+	  "name": "Celestial Blacksmith's Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uV2VhcG9ucyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/5457d8c543/IncubationWeapons.png",
+	  "baseType": "Celestial Blacksmith's Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  33.33,
+		  33.33,
+		  13.33,
+		  0,
+		  22.5,
+		  66.67
+		],
+		"totalChange": 66.67
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  33.33,
+		  33.33,
+		  13.33,
+		  0,
+		  22.5,
+		  66.67
+		],
+		"totalChange": 66.67
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Shaper or Elder Weapon item to an equippable item\nItem drops after killing (14513-15030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "celestial-blacksmiths-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 3741
+	},
+	{
+	  "id": 60145,
+	  "name": "Maddening Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uRGVsaXJpdW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/856c8ac937/IncubationDelirium.png",
+	  "baseType": "Maddening Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  25,
+		  0,
+		  -10,
+		  0,
+		  0,
+		  25
+		],
+		"totalChange": 25
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  25,
+		  0,
+		  -10,
+		  0,
+		  0,
+		  25
+		],
+		"totalChange": 25
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Delirium item to an equippable item\nItem drops after killing (10572-12930) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "maddening-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 5733
+	},
+	{
+	  "id": 70529,
+	  "name": "Kalguuran Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uRXhwZWRpdGlvbiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c3d814211f/IncubationExpedition.png",
+	  "baseType": "Kalguuran Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Expedition item to an equippable item \nItem drops after killing (5421-6630) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.35,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "kalguuran-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 9655
+	},
+	{
+	  "id": 60147,
+	  "name": "Blighted Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uQmxpZ2h0IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/47630133e8/IncubationBlight.png",
+	  "baseType": "Blighted Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  -6.25,
+		  -6.25,
+		  -6.25,
+		  -6.25,
+		  23.59,
+		  53.44
+		],
+		"totalChange": 53.44
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  -6.25,
+		  -6.25,
+		  -6.25,
+		  -6.25,
+		  23.59,
+		  53.44
+		],
+		"totalChange": 53.44
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Blight item to an equippable item\nItem drops after killing (5421-6630) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 4.91,
+	  "exaltedValue": 0.34,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "blighted-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 9350
+	},
+	{
+	  "id": 21691,
+	  "name": "Foreboding Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uSGFyYmluZ2VyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/2855468d9f/IncubationHarbinger.png",
+	  "baseType": "Foreboding Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -17.4,
+		  -13.8,
+		  -20,
+		  -4
+		],
+		"totalChange": -4
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -17.4,
+		  -13.8,
+		  -20,
+		  -4
+		],
+		"totalChange": -4
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds incubated valuable Currency Shards or a Harbinger item to an equippable item\nItem drops after killing (8610-10530) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 4.80,
+	  "exaltedValue": 0.33,
+	  "divineValue": 0.02,
+	  "count": 98,
+	  "detailsId": "foreboding-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 10769
+	},
+	{
+	  "id": 60080,
+	  "name": "Morphing Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uTWV0YW1vcnBoIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/396d187cae/IncubationMetamorph.png",
+	  "baseType": "Morphing Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  -5,
+		  -25,
+		  -25,
+		  -25,
+		  -8.88,
+		  15
+		],
+		"totalChange": 15
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  -5,
+		  -25,
+		  -25,
+		  -25,
+		  -8.88,
+		  15
+		],
+		"totalChange": 15
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Metamorph item to an equippable item\nItem drops after killing (5421-6630) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 4.60,
+	  "exaltedValue": 0.32,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "morphing-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 10267
+	},
+	{
+	  "id": 21689,
+	  "name": "Mysterious Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uR2VuZXJpYyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/63aabd064b/IncubationGeneric.png",
+	  "baseType": "Mysterious Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  25,
+		  0,
+		  -25,
+		  -25,
+		  -23.5,
+		  10
+		],
+		"totalChange": 10
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  25,
+		  0,
+		  -25,
+		  -25,
+		  -23.5,
+		  10
+		],
+		"totalChange": 10
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated item to an equippable item\nItem drops after killing (7383-9030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 4.40,
+	  "exaltedValue": 0.31,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "mysterious-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 15297
+	},
+	{
+	  "id": 21677,
+	  "name": "Singular Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uVW5pcXVlcyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/61c7396d77/IncubationUniques.png",
+	  "baseType": "Singular Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  43.75,
+		  25,
+		  25,
+		  25,
+		  56.25,
+		  25
+		],
+		"totalChange": 25
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  43.75,
+		  25,
+		  25,
+		  25,
+		  56.25,
+		  25
+		],
+		"totalChange": 25
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Unique item to an equippable item\nItem drops after killing (3704-4530) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 4.00,
+	  "exaltedValue": 0.28,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "singular-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 9950
+	},
+	{
+	  "id": 21693,
+	  "name": "Geomancer's Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uQXJtb3VyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/637c41a730/IncubationArmour.png",
+	  "baseType": "Geomancer's Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -20,
+		  -20,
+		  -8,
+		  -21.4
+		],
+		"totalChange": -21.4
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -20,
+		  -20,
+		  -8,
+		  -21.4
+		],
+		"totalChange": -21.4
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated 6-Linked Armour item to an equippable item\nItem drops after killing (24554-30030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 3.93,
+	  "exaltedValue": 0.27,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "geomancers-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 7699
+	},
+	{
+	  "id": 21690,
+	  "name": "Celestial Armoursmith's Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uQXJtb3VyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/637c41a730/IncubationArmour.png",
+	  "baseType": "Celestial Armoursmith's Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  20,
+		  0,
+		  0,
+		  0,
+		  33.33,
+		  26.67
+		],
+		"totalChange": 26.67
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  20,
+		  0,
+		  0,
+		  0,
+		  33.33,
+		  26.67
+		],
+		"totalChange": 26.67
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Shaper or Elder Armour item to an equippable item\nItem drops after killing (14513-15030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 3.80,
+	  "exaltedValue": 0.26,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "celestial-armoursmiths-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 3484
+	},
+	{
+	  "id": 21678,
+	  "name": "Primal Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uVGFsaXNtYW5zIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/0f5c6f389a/IncubationTalismans.png",
+	  "baseType": "Primal Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -20,
+		  -26.67,
+		  0,
+		  -10
+		],
+		"totalChange": -10
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -20,
+		  -26.67,
+		  0,
+		  -10
+		],
+		"totalChange": -10
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Talisman item to an equippable item\nItem drops after killing (3704-4530) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 2.70,
+	  "exaltedValue": 0.19,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "primal-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 14499
+	},
+	{
+	  "id": 21686,
+	  "name": "Fossilised Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uRm9zc2lscyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/30fb338730/IncubationFossils.png",
+	  "baseType": "Fossilised Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  4.17,
+		  0,
+		  0,
+		  0,
+		  -33.33
+		],
+		"totalChange": -33.33
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  4.17,
+		  0,
+		  0,
+		  0,
+		  -33.33
+		],
+		"totalChange": -33.33
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Fossil item to an equippable item\nItem drops after killing (7383-9030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 2.00,
+	  "exaltedValue": 0.14,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "fossilised-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 18853
+	},
+	{
+	  "id": 21687,
+	  "name": "Abyssal Incubator",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdWJhdGlvbi9JbmN1YmF0aW9uQWJ5c3MiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/378681eca6/IncubationAbyss.png",
+	  "baseType": "Abyssal Incubator",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -13.33,
+		  0,
+		  0,
+		  -66.67
+		],
+		"totalChange": -66.67
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -13.33,
+		  0,
+		  0,
+		  -66.67
+		],
+		"totalChange": -66.67
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Adds an incubated Rare Abyss item to an equippable item\nItem drops after killing (7383-9030) monsters",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 1.00,
+	  "exaltedValue": 0.07,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "abyssal-incubator",
+	  "tradeInfo": [],
+	  "listingCount": 18575
+	}
+  ]
+}

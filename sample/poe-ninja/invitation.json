@@ -1,0 +1,455 @@
+{
+  "lines": [
+	{
+	  "id": 93814,
+	  "name": "Incandescent Invitation",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9DbGVhbnNpbmdGaXJlT3JiUXVlc3Q1IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/e6f9234053/CleansingFireOrbQuest5.png",
+	  "baseType": "Incandescent Invitation",
+	  "itemClass": 0,
+	  "sparkline": {
+		"data": [
+		  0,
+		  13.75,
+		  36.46,
+		  64.15,
+		  111.88,
+		  117.66,
+		  94.90
+		],
+		"totalChange": 94.90
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  13.75,
+		  36.46,
+		  64.15,
+		  111.88,
+		  117.66,
+		  94.90
+		],
+		"totalChange": 94.90
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "From the corona of an ancient star,\nthe Searing Exarch seeks to master the Atlas.",
+	  "chaosValue": 187.10,
+	  "exaltedValue": 12.99,
+	  "divineValue": 0.80,
+	  "count": 99,
+	  "detailsId": "incandescent-invitation",
+	  "tradeInfo": [],
+	  "listingCount": 6590
+	},
+	{
+	  "id": 93816,
+	  "name": "Screaming Invitation",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9UYW5nbGVkT3JiUXVlc3Q1IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/75de691c2b/TangledOrbQuest5.png",
+	  "baseType": "Screaming Invitation",
+	  "itemClass": 0,
+	  "sparkline": {
+		"data": [
+		  0,
+		  4.69,
+		  25.71,
+		  59.13,
+		  72.53,
+		  46.57,
+		  42.38
+		],
+		"totalChange": 42.38
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  4.69,
+		  25.71,
+		  59.13,
+		  72.53,
+		  46.57,
+		  42.38
+		],
+		"totalChange": 42.38
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "From the heart of the Tangle, the Eater of Worlds\nreaches out for control of the Atlas.",
+	  "chaosValue": 170.00,
+	  "exaltedValue": 11.81,
+	  "divineValue": 0.73,
+	  "count": 99,
+	  "detailsId": "screaming-invitation",
+	  "tradeInfo": [],
+	  "listingCount": 7770
+	},
+	{
+	  "id": 55759,
+	  "name": "Maven's Invitation: The Formed",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXMvTnVsbFZvaWQxIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/9e4850813c/NullVoid1.png",
+	  "baseType": "Maven's Invitation: The Formed",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [
+		  0,
+		  5,
+		  8.33,
+		  25,
+		  50,
+		  83.33,
+		  83.33
+		],
+		"totalChange": 83.33
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  5,
+		  8.33,
+		  25,
+		  50,
+		  83.33,
+		  83.33
+		],
+		"totalChange": 83.33
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 110.00,
+	  "exaltedValue": 7.64,
+	  "divineValue": 0.47,
+	  "count": 99,
+	  "detailsId": "mavens-invitation:-the-formed",
+	  "tradeInfo": [],
+	  "listingCount": 1978
+	},
+	{
+	  "id": 93100,
+	  "name": "Maven's Invitation: The Elderslayers",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXMvTnVsbFZvaWQ2IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/8f170ad68d/NullVoid6.png",
+	  "baseType": "Maven's Invitation: The Elderslayers",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [
+		  0,
+		  7.14,
+		  42.86,
+		  42.86,
+		  46.86,
+		  57.14,
+		  57.14
+		],
+		"totalChange": 57.14
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  7.14,
+		  42.86,
+		  42.86,
+		  46.86,
+		  57.14,
+		  57.14
+		],
+		"totalChange": 57.14
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "For those who must not endure it,\nthere may be found a perverse joy \nin watching the struggle for survival.",
+	  "chaosValue": 110.00,
+	  "exaltedValue": 7.64,
+	  "divineValue": 0.47,
+	  "count": 99,
+	  "detailsId": "mavens-invitation:-the-elderslayers",
+	  "tradeInfo": [],
+	  "listingCount": 1184
+	},
+	{
+	  "id": 55756,
+	  "name": "Maven's Invitation: The Twisted",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXMvTnVsbFZvaWQyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/3c5b06022e/NullVoid2.png",
+	  "baseType": "Maven's Invitation: The Twisted",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  3.45,
+		  12.07,
+		  20.69,
+		  29.31,
+		  29.31
+		],
+		"totalChange": 29.31
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  3.45,
+		  12.07,
+		  20.69,
+		  29.31,
+		  29.31
+		],
+		"totalChange": 29.31
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 75.00,
+	  "exaltedValue": 5.21,
+	  "divineValue": 0.32,
+	  "count": 99,
+	  "detailsId": "mavens-invitation:-the-twisted",
+	  "tradeInfo": [],
+	  "listingCount": 1379
+	},
+	{
+	  "id": 55763,
+	  "name": "Maven's Invitation: The Forgotten",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXMvTnVsbFZvaWQzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/48f3c7fecb/NullVoid3.png",
+	  "baseType": "Maven's Invitation: The Forgotten",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [
+		  0,
+		  20,
+		  50,
+		  50,
+		  50,
+		  50,
+		  50
+		],
+		"totalChange": 50
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  20,
+		  50,
+		  50,
+		  50,
+		  50,
+		  50
+		],
+		"totalChange": 50
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 15.00,
+	  "exaltedValue": 1.04,
+	  "divineValue": 0.06,
+	  "count": 99,
+	  "detailsId": "mavens-invitation:-the-forgotten",
+	  "tradeInfo": [],
+	  "listingCount": 1083
+	},
+	{
+	  "id": 55760,
+	  "name": "Maven's Invitation: The Feared",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXMvTnVsbFZvaWQ1IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/31ba48d1dc/NullVoid5.png",
+	  "baseType": "Maven's Invitation: The Feared",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 10.00,
+	  "exaltedValue": 0.69,
+	  "divineValue": 0.04,
+	  "count": 99,
+	  "detailsId": "mavens-invitation:-the-feared",
+	  "tradeInfo": [],
+	  "listingCount": 1255
+	},
+	{
+	  "id": 55757,
+	  "name": "Maven's Invitation: The Hidden",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXMvTnVsbFZvaWQ0IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/5a436a46d6/NullVoid4.png",
+	  "baseType": "Maven's Invitation: The Hidden",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  12.5,
+		  12.5,
+		  12.5
+		],
+		"totalChange": 12.5
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  12.5,
+		  12.5,
+		  12.5
+		],
+		"totalChange": 12.5
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 9.00,
+	  "exaltedValue": 0.62,
+	  "divineValue": 0.04,
+	  "count": 99,
+	  "detailsId": "mavens-invitation:-the-hidden",
+	  "tradeInfo": [],
+	  "listingCount": 1159
+	},
+	{
+	  "id": 93815,
+	  "name": "Polaric Invitation",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9DbGVhbnNpbmdGaXJlT3JiUXVlc3QwIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/b2cc512e70/CleansingFireOrbQuest0.png",
+	  "baseType": "Polaric Invitation",
+	  "itemClass": 0,
+	  "sparkline": {
+		"data": [
+		  0,
+		  -12.5,
+		  -12.5,
+		  12.5,
+		  25,
+		  25,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  -12.5,
+		  -12.5,
+		  12.5,
+		  25,
+		  25,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "Once within the grasp of the Black Star,\nthere can be no escape.",
+	  "chaosValue": 8.00,
+	  "exaltedValue": 0.56,
+	  "divineValue": 0.03,
+	  "count": 99,
+	  "detailsId": "polaric-invitation",
+	  "tradeInfo": [],
+	  "listingCount": 2442
+	},
+	{
+	  "id": 92921,
+	  "name": "Maven's Invitation: The Atlas",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXMvUHJvdmluZ0dyb3VuZEhhZXdhcmtIYW1sZXQ1IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d581ab6c29/ProvingGroundHaewarkHamlet5.png",
+	  "baseType": "Maven's Invitation: The Atlas",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "For those who must not endure it,\nthere may be found a perverse joy \nin watching the struggle for survival.",
+	  "chaosValue": 4.00,
+	  "exaltedValue": 0.28,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "mavens-invitation:-the-atlas",
+	  "tradeInfo": [],
+	  "listingCount": 5259
+	},
+	{
+	  "id": 93813,
+	  "name": "Writhing Invitation",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9UYW5nbGVkT3JiUXVlc3QwIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/5dbc2f3ffc/TangledOrbQuest0.png",
+	  "baseType": "Writhing Invitation",
+	  "itemClass": 0,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  50,
+		  50,
+		  50,
+		  50
+		],
+		"totalChange": 50
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  50,
+		  50,
+		  50,
+		  50
+		],
+		"totalChange": 50
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "The Infinite Hunger awaits in a cosmic stomach where\nwhole civilisations are digested - but do not die.",
+	  "chaosValue": 3.00,
+	  "exaltedValue": 0.21,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "writhing-invitation",
+	  "tradeInfo": [],
+	  "listingCount": 1796
+	}
+  ]
+}

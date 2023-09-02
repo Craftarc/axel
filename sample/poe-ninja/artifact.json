@@ -1,0 +1,172 @@
+{
+  "lines": [
+	{
+	  "id": 69146,
+	  "name": "Exotic Coinage",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9CYXJ0ZXJSZWZyZXNoQ3VycmVuY3kiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/bf3e6fbe8f/BarterRefreshCurrency.png",
+	  "baseType": "Exotic Coinage",
+	  "stackSize": 1000,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  4.35,
+		  8.86,
+		  12.91,
+		  15.40,
+		  16.64,
+		  16.64
+		],
+		"totalChange": 16.64
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  4.35,
+		  8.86,
+		  12.91,
+		  15.40,
+		  16.64,
+		  16.64
+		],
+		"totalChange": 16.64
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 7.50,
+	  "exaltedValue": 0.52,
+	  "divineValue": 0.03,
+	  "count": 99,
+	  "detailsId": "exotic-coinage",
+	  "tradeInfo": [],
+	  "listingCount": 4060
+	},
+	{
+	  "id": 69149,
+	  "name": "Burial Medallion",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9EYW5uaWdSZXJvbGxDdXJyZW5jeSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/62d38b9f1d/DannigRerollCurrency.png",
+	  "baseType": "Burial Medallion",
+	  "stackSize": 1000,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  4.71,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  4.71,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 7.00,
+	  "exaltedValue": 0.49,
+	  "divineValue": 0.03,
+	  "count": 99,
+	  "detailsId": "burial-medallion",
+	  "tradeInfo": [],
+	  "listingCount": 5570
+	},
+	{
+	  "id": 69141,
+	  "name": "Scrap Metal",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9EZWFsZXJSZWZyZXNoQ3VycmVuY3kiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/f4db789e4b/DealerRefreshCurrency.png",
+	  "baseType": "Scrap Metal",
+	  "stackSize": 1000,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  17.12,
+		  15.32,
+		  9.91,
+		  9.01,
+		  4.95,
+		  2.70
+		],
+		"totalChange": 2.70
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  17.12,
+		  15.32,
+		  9.91,
+		  9.01,
+		  4.95,
+		  2.70
+		],
+		"totalChange": 2.70
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 1.14,
+	  "exaltedValue": 0.08,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "scrap-metal",
+	  "tradeInfo": [],
+	  "listingCount": 3667
+	},
+	{
+	  "id": 69150,
+	  "name": "Astragali",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9HYW1ibGVyUmVmcmVzaEN1cnJlbmN5IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/f878f8fc1a/GamblerRefreshCurrency.png",
+	  "baseType": "Astragali",
+	  "stackSize": 1000,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  18,
+		  28,
+		  28,
+		  28,
+		  26,
+		  26
+		],
+		"totalChange": 26
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  18,
+		  28,
+		  28,
+		  28,
+		  26,
+		  26
+		],
+		"totalChange": 26
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "chaosValue": 0.63,
+	  "exaltedValue": 0.04,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "astragali",
+	  "tradeInfo": [],
+	  "listingCount": 6171
+	}
+  ]
+}

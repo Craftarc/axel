@@ -1,0 +1,1154 @@
+{
+  "lines": [
+	{
+	  "id": 20445,
+	  "name": "Fractured Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvRnJhY3R1cmVkRm9zc2lsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/ffb5b47984/FracturedFossil.png",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  4.76,
+		  14.29,
+		  23.81,
+		  23.81
+		],
+		"totalChange": 23.81
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  4.76,
+		  14.29,
+		  23.81,
+		  23.81
+		],
+		"totalChange": 23.81
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Creates a split copy. Cannot be used to split Influenced,\nEnchanted, Fractured, or Synthesised items.",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 130.00,
+	  "exaltedValue": 7.50,
+	  "divineValue": 0.61,
+	  "count": 99,
+	  "detailsId": "fractured-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 2174
+	},
+	{
+	  "id": 7650,
+	  "name": "Faceted Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvRmFjZXRlZEZvc3NpbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/db0aba6238/FacetedFossil.png",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  1.01,
+		  1.01,
+		  1.01,
+		  1.01
+		],
+		"totalChange": 1.01
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  1.01,
+		  1.01,
+		  1.01,
+		  1.01
+		],
+		"totalChange": 1.01
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Gem modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 70.71,
+	  "exaltedValue": 4.08,
+	  "divineValue": 0.33,
+	  "count": 99,
+	  "detailsId": "faceted-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 2864
+	},
+	{
+	  "id": 7666,
+	  "name": "Glyphic Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvR2x5cGhpY0Zvc3NpbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/f5b3c6edf7/GlyphicFossil.png",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Has a Corrupt Essence modifier",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 30.00,
+	  "exaltedValue": 1.73,
+	  "divineValue": 0.14,
+	  "count": 99,
+	  "detailsId": "glyphic-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 1821
+	},
+	{
+	  "id": 7661,
+	  "name": "Hollow Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvQW1iZXJFeWUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/7579485795/AmberEye.png",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  5,
+		  0,
+		  0,
+		  0,
+		  0,
+		  8.33
+		],
+		"totalChange": 8.33
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  5,
+		  0,
+		  0,
+		  0,
+		  0,
+		  8.33
+		],
+		"totalChange": 8.33
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Has an Abyssal socket",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 13.00,
+	  "exaltedValue": 0.75,
+	  "divineValue": 0.06,
+	  "count": 99,
+	  "detailsId": "hollow-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 1571
+	},
+	{
+	  "id": 7634,
+	  "name": "Perfect Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvUGVyZmVjdEZvc3NpbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/7a87694b3c/PerfectFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  1.42,
+		  -2.23,
+		  0.41,
+		  1.42,
+		  1.42,
+		  1.42
+		],
+		"totalChange": 1.42
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  1.42,
+		  -2.23,
+		  0.41,
+		  1.42,
+		  1.42,
+		  1.42
+		],
+		"totalChange": 1.42
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Improved Quality",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 10.00,
+	  "exaltedValue": 0.58,
+	  "divineValue": 0.05,
+	  "count": 99,
+	  "detailsId": "perfect-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 3866
+	},
+	{
+	  "id": 7653,
+	  "name": "Sanctified Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvR2lsZGVkRm9zc2lsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/8a8b6de108/GildedFossil.png",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Numeric modifier values are lucky\nHigh Level modifiers are more common",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 7.00,
+	  "exaltedValue": 0.40,
+	  "divineValue": 0.03,
+	  "count": 99,
+	  "detailsId": "sanctified-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 4139
+	},
+	{
+	  "id": 7665,
+	  "name": "Shuddering Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvU2h1ZGRlcmluZ0Zvc3NpbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/7ea7926999/ShudderingFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Speed modifiers\nNo Mana modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 5.00,
+	  "exaltedValue": 0.29,
+	  "divineValue": 0.02,
+	  "count": 99,
+	  "detailsId": "shuddering-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 7689
+	},
+	{
+	  "id": 7654,
+	  "name": "Corroded Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvQ29ycm9kZWRGb3NzaWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e934508b43/CorrodedFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  -7.91,
+		  -7.91,
+		  -7.91,
+		  -8.47,
+		  -15.25,
+		  -14.41
+		],
+		"totalChange": -14.41
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  -7.91,
+		  -7.91,
+		  -7.91,
+		  -8.47,
+		  -15.25,
+		  -14.41
+		],
+		"totalChange": -14.41
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Physical Ailment or Chaos Ailment modifiers\nNo Elemental modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 3.03,
+	  "exaltedValue": 0.17,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "corroded-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 7278
+	},
+	{
+	  "id": 70507,
+	  "name": "Deft Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvRW5jaGFudGVkRm9zc2lsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/314cfdc367/EnchantedFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  -25,
+		  -25,
+		  -25,
+		  -25,
+		  -25
+		],
+		"totalChange": -25
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  -25,
+		  -25,
+		  -25,
+		  -25,
+		  -25
+		],
+		"totalChange": -25
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Critical modifiers\nNo Attribute modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 3.00,
+	  "exaltedValue": 0.17,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "deft-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 4901
+	},
+	{
+	  "id": 7640,
+	  "name": "Bound Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvUmVzb25hdGluZ0Zvc3NpbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/836925ced6/ResonatingFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  -8
+		],
+		"totalChange": -8
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  -8
+		],
+		"totalChange": -8
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Minion, Aura or Curse modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 2.76,
+	  "exaltedValue": 0.16,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "bound-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 9100
+	},
+	{
+	  "id": 7658,
+	  "name": "Serrated Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvU2VycmF0ZWRGb3NzaWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/42d7279694/SerratedFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  37,
+		  48,
+		  27
+		],
+		"totalChange": 27
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  37,
+		  48,
+		  27
+		],
+		"totalChange": 27
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Attack modifiers\nFewer Caster modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 2.54,
+	  "exaltedValue": 0.15,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "serrated-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 9483
+	},
+	{
+	  "id": 7637,
+	  "name": "Aetheric Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvQWV0aGVyaWNGb3NzaWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/fb38994bc8/AethericFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -0.50,
+		  -4.00,
+		  -2.50,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  -0.50,
+		  -4.00,
+		  -2.50,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Caster modifiers\nFewer Attack modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 2.00,
+	  "exaltedValue": 0.12,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "aetheric-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 4161
+	},
+	{
+	  "id": 7649,
+	  "name": "Prismatic Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvUHJpc21hdGljRm9zc2lsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/ebaea2a708/PrismaticFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Elemental modifiers\nNo Physical Ailment or Chaos Ailment modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 2.00,
+	  "exaltedValue": 0.12,
+	  "divineValue": 0.01,
+	  "count": 98,
+	  "detailsId": "prismatic-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 9257
+	},
+	{
+	  "id": 70510,
+	  "name": "Fundamental Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvRW5jcnVzdGVkRm9zc2lsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/4f7e7cc55d/EncrustedFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Attribute modifiers\nNo Critical modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 2.00,
+	  "exaltedValue": 0.12,
+	  "divineValue": 0.01,
+	  "count": 99,
+	  "detailsId": "fundamental-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 6094
+	},
+	{
+	  "id": 7638,
+	  "name": "Gilded Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvU2FuY3RpZmllZEZvc3NpbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/3c8e7553b5/SanctifiedFossil.png",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Item is overvalued by vendors",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 1.00,
+	  "exaltedValue": 0.06,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "gilded-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 3952
+	},
+	{
+	  "id": 7664,
+	  "name": "Tangled Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvVGFuZ2xlZEZvc3NpbCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/3e5e6289c8/TangledFossil.png",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Makes a random modifier type much more likely and prevents \nanother random modifier type. Effects revealed once resonator is\nfully socketed.",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 1.00,
+	  "exaltedValue": 0.06,
+	  "divineValue": 0.00,
+	  "count": 63,
+	  "detailsId": "tangled-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 1959
+	},
+	{
+	  "id": 7667,
+	  "name": "Bloodstained Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvQmxvb2RzdGFpbmVkRm9zc2lsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/fe0b3edea8/BloodstainedFossil.png",
+	  "stackSize": 10,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "Corrupted\nHas a Corrupted implicit modifier",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 1.00,
+	  "exaltedValue": 0.06,
+	  "divineValue": 0.00,
+	  "count": 42,
+	  "detailsId": "bloodstained-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 1643
+	},
+	{
+	  "id": 7639,
+	  "name": "Jagged Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvSmFnZ2VkRm9zc2lsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/054b08865e/JaggedFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  1.05,
+		  2.11,
+		  2.11,
+		  5.26,
+		  5.26,
+		  -5.26
+		],
+		"totalChange": -5.26
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  1.05,
+		  2.11,
+		  2.11,
+		  5.26,
+		  5.26,
+		  -5.26
+		],
+		"totalChange": -5.26
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Physical modifiers\nNo Chaos modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 0.90,
+	  "exaltedValue": 0.05,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "jagged-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 14299
+	},
+	{
+	  "id": 7643,
+	  "name": "Dense Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvRGVuc2VGb3NzaWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e51b8071e7/DenseFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  2.27,
+		  1.14,
+		  0,
+		  2.27,
+		  3.41,
+		  -5.68
+		],
+		"totalChange": -5.68
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  2.27,
+		  1.14,
+		  0,
+		  2.27,
+		  3.41,
+		  -5.68
+		],
+		"totalChange": -5.68
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Defence modifiers\nNo Life Modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 0.83,
+	  "exaltedValue": 0.05,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "dense-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 16129
+	},
+	{
+	  "id": 7652,
+	  "name": "Pristine Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvUHJpc3RpbmVGb3NzaWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e9dda92a19/PristineFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Life modifiers\nNo Defence modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 0.67,
+	  "exaltedValue": 0.04,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "pristine-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 16117
+	},
+	{
+	  "id": 7655,
+	  "name": "Lucent Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvTHVjZW50Rm9zc2lsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/633b40a6b0/LucentFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  14.04,
+		  21.05,
+		  32.46,
+		  21.05,
+		  28.07,
+		  17.54
+		],
+		"totalChange": 17.54
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  14.04,
+		  21.05,
+		  32.46,
+		  21.05,
+		  28.07,
+		  17.54
+		],
+		"totalChange": 17.54
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Mana modifiers\nNo Speed modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 0.67,
+	  "exaltedValue": 0.04,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "lucent-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 7470
+	},
+	{
+	  "id": 7641,
+	  "name": "Aberrant Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvQWJiZXJhbnRGb3NzaWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/426882fe76/AbberantFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  -1.72,
+		  -1.72,
+		  8.62,
+		  1.72,
+		  5.17,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  -1.72,
+		  -1.72,
+		  8.62,
+		  1.72,
+		  5.17,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Chaos modifiers\nNo Lightning modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 0.58,
+	  "exaltedValue": 0.03,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "aberrant-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 16298
+	},
+	{
+	  "id": 7642,
+	  "name": "Scorched Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvQW1iZXJGaXJlRmx5IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/cf1a077c8d/AmberFireFly.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Fire modifiers\nNo Cold modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 0.33,
+	  "exaltedValue": 0.02,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "scorched-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 14923
+	},
+	{
+	  "id": 7644,
+	  "name": "Frigid Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvQW1iZXJGYW5nIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/559d8ae855/AmberFang.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Cold modifiers\nNo Fire modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 0.33,
+	  "exaltedValue": 0.02,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "frigid-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 14710
+	},
+	{
+	  "id": 7645,
+	  "name": "Metallic Fossil",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsdmUvTWV0YWxsaWNGb3NzaWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/c26857827c/MetallicFossil.png",
+	  "stackSize": 20,
+	  "itemClass": 5,
+	  "sparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0,
+		  0
+		],
+		"totalChange": 0
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [
+		{
+		  "text": "More Lightning modifiers\nNo Physical modifiers",
+		  "optional": false
+		}
+	  ],
+	  "flavourText": "",
+	  "chaosValue": 0.33,
+	  "exaltedValue": 0.02,
+	  "divineValue": 0.00,
+	  "count": 99,
+	  "detailsId": "metallic-fossil",
+	  "tradeInfo": [],
+	  "listingCount": 15454
+	}
+  ]
+}

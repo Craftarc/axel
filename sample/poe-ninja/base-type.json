@@ -1,0 +1,76 @@
+{
+  "lines": [
+	{
+	  "id": 51466,
+	  "name": "Legion Boots",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb290cy9Cb290c1N0ckludDIiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/742e5a15d7/BootsStrInt2.png",
+	  "levelRequired": 86,
+	  "baseType": "Legion Boots",
+	  "variant": "Redeemer/Hunter",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  null,
+		  null,
+		  null,
+		  0,
+		  6.36,
+		  12.21,
+		  14.99
+		],
+		"totalChange": 14.99
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "itemType": "Boots",
+	  "chaosValue": 147788.80,
+	  "exaltedValue": 10263.11,
+	  "divineValue": 631.93,
+	  "count": 1,
+	  "detailsId": "legion-boots-86-redeemer-hunter",
+	  "tradeInfo": [],
+	  "listingCount": 1
+	},
+	{
+	  "id": 101485,
+	  "name": "Magmatic Tower Shield",
+	  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9TaGllbGRzL0hlaXN0U2hpZWxkIiwidyI6MiwiaCI6Mywic2NhbGUiOjF9XQ/e65fb9efea/HeistShield.png",
+	  "levelRequired": 86,
+	  "baseType": "Magmatic Tower Shield",
+	  "variant": "Elder/Redeemer",
+	  "itemClass": 2,
+	  "sparkline": {
+		"data": [],
+		"totalChange": 0
+	  },
+	  "lowConfidenceSparkline": {
+		"data": [
+		  0,
+		  17.66,
+		  19.81,
+		  27.43,
+		  35.99,
+		  43.46,
+		  47.02
+		],
+		"totalChange": 47.02
+	  },
+	  "implicitModifiers": [],
+	  "explicitModifiers": [],
+	  "flavourText": "",
+	  "itemType": "Shield",
+	  "chaosValue": 98525.87,
+	  "exaltedValue": 6842.07,
+	  "divineValue": 421.28,
+	  "count": 1,
+	  "detailsId": "magmatic-tower-shield-86-elder-redeemer",
+	  "tradeInfo": [],
+	  "listingCount": 1
+	}
+  ]
+}

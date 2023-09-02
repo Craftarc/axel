@@ -1,0 +1,96 @@
+{
+    "lines": [
+        {
+            "id": 96951,
+            "name": "Awakened Enlighten Support",
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L1N1cHBvcnRQbHVzL0VubGlnaHRlbnBsdXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/7ec7d0544d/Enlightenplus.png",
+            "levelRequired": 80,
+            "baseType": "Awakened Enlighten Support",
+            "variant": "5/23c",
+            "itemClass": 4,
+            "sparkline": {
+                "data": [],
+                "totalChange": 0
+            },
+            "lowConfidenceSparkline": {
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0,
+                    13.52
+                ],
+                "totalChange": 13.52
+            },
+            "implicitModifiers": [],
+            "explicitModifiers": [
+                {
+                    "text": "This Gem gains 115% increased Experience",
+                    "optional": false
+                }
+            ],
+            "flavourText": "",
+            "corrupted": true,
+            "gemLevel": 5,
+            "gemQuality": 23,
+            "chaosValue": 40927.25,
+            "exaltedValue": 2842.17,
+            "divineValue": 175.00,
+            "count": 1,
+            "detailsId": "awakened-enlighten-support-5-23c",
+            "tradeInfo": [],
+            "listingCount": 1
+        },
+        {
+            "id": 96363,
+            "name": "Awakened Enlighten Support",
+            "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L1N1cHBvcnRQbHVzL0VubGlnaHRlbnBsdXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/7ec7d0544d/Enlightenplus.png",
+            "levelRequired": 80,
+            "baseType": "Awakened Enlighten Support",
+            "variant": "5/20c",
+            "itemClass": 4,
+            "sparkline": {
+                "data": [
+                    null,
+                    0,
+                    null,
+                    15.33,
+                    28.76,
+                    28.77,
+                    null
+                ],
+                "totalChange": 28.77
+            },
+            "lowConfidenceSparkline": {
+                "data": [
+                    0,
+                    22.85,
+                    48.90,
+                    41.69,
+                    58.19,
+                    58.20,
+                    56.15
+                ],
+                "totalChange": 56.15
+            },
+            "implicitModifiers": [],
+            "explicitModifiers": [
+                {
+                    "text": "This Gem gains (95-100)% increased Experience",
+                    "optional": false
+                }
+            ],
+            "flavourText": "",
+            "corrupted": true,
+            "gemLevel": 5,
+            "gemQuality": 20,
+            "chaosValue": 38261.13,
+            "exaltedValue": 2657.02,
+            "divineValue": 163.60,
+            "count": 4,
+            "detailsId": "awakened-enlighten-support-5-20c",
+            "tradeInfo": [],
+            "listingCount": 4
+        }]}
