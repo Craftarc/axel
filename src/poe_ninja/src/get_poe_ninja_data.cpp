@@ -16,6 +16,6 @@ namespace poe_ninja {
     std::string get_item_prices(const std::string& resource_path) {
         auto request = make_http_request("GET", resource_path, {{"host", config::poe_ninja::host}});
         
-        return HttpSender().send_http_request(request, 15);
+        return HttpSender().send_http_request(request, 15); // TODO: Remove magic number
     }
 } // poe_ninja

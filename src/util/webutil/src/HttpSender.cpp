@@ -72,4 +72,11 @@ namespace webutil {
         
         return body_string;
     }
+    
+    /// @param request HTTP request to be sent.
+    /// @return Body of the HTTP response.
+    std::string HttpSender::send_http_request(const http::request<http::string_body>& request) {
+        int DEFAULT_MAX_BODY_SIZE = 10;
+        return send_http_request(request, DEFAULT_MAX_BODY_SIZE);
+    }
 }

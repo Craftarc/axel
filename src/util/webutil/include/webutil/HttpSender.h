@@ -10,7 +10,9 @@ namespace webutil {
     public:
         /// @brief Sends a HTTP request and returns the body of the HTTP response in a string.
         std::string send_http_request(const http::request<http::string_body>& request, int max_body_size) override;
-        // TODO: Add an overload for a default max_body_size
+        
+        /// @brief Sends a HTTP request and returns the body of the HTTP response in a string.
+        std::string send_http_request(const http::request<http::string_body>& request);
     };
 }
 #endif // AXEL_WEBUTIL_HTTPSENDER_H

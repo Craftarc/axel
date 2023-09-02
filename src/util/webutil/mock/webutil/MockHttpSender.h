@@ -15,6 +15,11 @@ namespace webutil {
                     send_http_request,
                     (const http::request<http::string_body>& request, int max_body_size),
                     (override));
+        
+        MOCK_METHOD(std::string,
+                    send_http_request,
+                    (const http::request<http::string_body>& request),
+                    (override));
     };
 }
 
