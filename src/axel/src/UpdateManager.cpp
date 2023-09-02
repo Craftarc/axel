@@ -2,7 +2,7 @@
 
 #include "axel/UpdateManager.h"
 #include "webutil/http.h"
-#include "config/poe_auth.h"
+#include "config/poe.h"
 
 namespace axel {
     UpdateManager::UpdateManager(const std::string& access_token) : _access_token{access_token} {}

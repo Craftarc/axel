@@ -1,4 +1,4 @@
-#include "poe_ninja//get_poe_ninja_data.h"
+#include "poe_ninja/get_poe_ninja_data.h"
 #include "webutil/HttpSender.h"
 #include "webutil/http.h"
 #include "config/poe_ninja_config.h"

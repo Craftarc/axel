@@ -1,5 +1,5 @@
 #include "auth/AuthCodeManager.h"
-#include "config/poe_auth.h"
+#include "config/poe.h"
 #include "webutil/path.h"
 #include "config/axel.h"
 

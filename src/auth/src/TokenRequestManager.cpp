@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "auth/TokenRequestManager.h"
-#include "config/poe_auth.h"
+#include "config/poe.h"
 #include "webutil/http.h"
 #include "webutil/path.h"
 #include "config/axel.h"
