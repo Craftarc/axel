@@ -1,8 +1,9 @@
-#ifndef AXEL_PARSE_STRING_H
-#define AXEL_PARSE_STRING_H
+#ifndef AXEL_PARSE_UTIL_H
+#define AXEL_PARSE_UTIL_H
 
 #include <aws/lambda-runtime/runtime.h>
 #include <istream>
+#include <cctype>
 
 using namespace aws::lambda_runtime;
 namespace parse {
@@ -16,6 +17,9 @@ namespace parse {
     std::string make_invocation_response_payload(int status_code,
                                                  const std::unordered_map<std::string, std::string>& headers,
                                                  const std::string& body);
+    
+    /// @brief Converts a string into kebab case
+    std::string to_kebab(const std::string& string);
 } // parse
 
-#endif // AXEL_PARSE_STRING_H
+#endif // AXEL_PARSE_UTIL_H

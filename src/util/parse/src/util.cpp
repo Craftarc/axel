@@ -23,6 +23,7 @@ namespace parse {
     /// as possible, before creating a new invocation_request with those values filled in.
     /// @param filename Path to input JSON file.
     /// @return An invocation_request with member variables assigned
+    /// @note Pass a std::ifstream to read a file with
     invocation_request make_invocation_request(const std::string& filename) {
         std::fstream file(filename);
         std::string input = parse::read_file_into_string(file);
@@ -58,5 +59,32 @@ namespace parse {
         boost::json::value json{{"statusCode", status_code}, {"headers", std::move(header_object)}, {"body", body}};
         
         return boost::json::serialize(json); // Convert to string
+    }
+    
+    /// In converting to kebab-case, the following transformations are made:
+    /// 1. Uppercase characters are changed to lowercase.
+    /// 2. Whitespaces are changed to dashes.
+    /// 3. Punctuation is removed.
+    /// @param string String to convert.
+    /// @return Kebab-cased string.
+    std::string to_kebab(const std::string& string) {
+        std::string kebab(string.length(), '\0'); // Result string to write to
+        
+        auto to_kebab = [](unsigned char c) -> unsigned char {
+            if (std::isupper(c)) { // Upper to lower
+                return std::tolower(c);
+            } else if (std::isblank(c)) { // Whitespace to dash
+                return '-';
+            } else {
+                return c;
+            }
+        };
+        std::transform(string.begin(), string.end(), kebab.begin(), to_kebab);
+        
+        // Remove punctuation with remove-and-erase
+        auto end{std::remove(kebab.begin(), kebab.end(), '\'')};
+        kebab.erase(end, kebab.end());
+        
+        return kebab;
     }
 } // parse
