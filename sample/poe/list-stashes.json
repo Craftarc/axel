@@ -1,0 +1,2170 @@
+{
+  "stashes": [
+	{
+	  "id": "020a8ddeef",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "6ae262393b",
+	  "name": "Watchstones (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "048437bf9f",
+	  "name": "Heist (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "c744ad2d94",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "7535f25d79",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "91599556c0",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "b0640268f1",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "8e2459a50b",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "244f48cf25",
+	  "name": "Watchstones (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "990a9ff56a",
+	  "name": "Heist (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "e3a9e68ac1",
+	  "name": "Watchstones (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "7a7841f49a",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "20cab012df",
+	  "name": "Watchstones (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "19b950aa8a",
+	  "name": "Heist (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "f5700d988f",
+	  "name": "Heist (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "67e052d20d",
+	  "name": "Heist (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "c65be2fbfd",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "d175cb104b",
+	  "name": "Heist (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "6570300804",
+	  "name": "Heist (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "1ade648efa",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "512015f4d5",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "d6a94e62d1",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "5414011113",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "d3ae348f1c",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "2a89b8cc6b",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "92f5174d8c",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "413fd3913b",
+	  "name": "Expedition (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "bc093ab963",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 0,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "d50182b06b",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "014e785567",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "fdf73a45ca",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "ffff99"
+	  }
+	},
+	{
+	  "id": "089596c35d",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "eccab989a4",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "f0ff80"
+	  }
+	},
+	{
+	  "id": "015b300590",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "ba9933bd3d",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "8a7b988256",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "12591e1e0e",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "8e296b80c0",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "888888"
+	  }
+	},
+	{
+	  "id": "c88f7a0975",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "0fa6174eef",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "be4aa402d2",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "48af7996e2",
+	  "name": "Dump (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 1,
+	  "metadata": {
+		"colour": "c080ff"
+	  }
+	},
+	{
+	  "id": "470f58cb80",
+	  "name": "Run (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "c402cf3625",
+	  "name": "Map (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 6
+		}
+	  }
+	},
+	{
+	  "id": "cc4aa485d4",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 13
+		}
+	  }
+	},
+	{
+	  "id": "5f4a599e69",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 11
+		}
+	  }
+	},
+	{
+	  "id": "da62be49bd",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 4
+		}
+	  }
+	},
+	{
+	  "id": "59dbd50bc9",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "df66100279",
+	  "name": "Map (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 7
+		}
+	  }
+	},
+	{
+	  "id": "185d0e57c9",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 5
+		}
+	  }
+	},
+	{
+	  "id": "4fba8f2ac2",
+	  "name": "Frag (Remove-only)",
+	  "type": "FragmentStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "22cbfe23d4",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 10
+		}
+	  }
+	},
+	{
+	  "id": "76c8d4ff3e",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 13
+		}
+	  }
+	},
+	{
+	  "id": "54c340d327",
+	  "name": "Map (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 6
+		}
+	  }
+	},
+	{
+	  "id": "72558404f8",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 12
+		}
+	  }
+	},
+	{
+	  "id": "4efa1ddbc9",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 15
+		}
+	  }
+	},
+	{
+	  "id": "3854ba4aa5",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 8
+		}
+	  }
+	},
+	{
+	  "id": "6a6a85ac09",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 2,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "0da662124c",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 16
+		}
+	  }
+	},
+	{
+	  "id": "24d9035fe7",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "7fda7e3a14",
+	  "name": "Roll (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "ff80df"
+	  }
+	},
+	{
+	  "id": "fc298949d8",
+	  "name": "Currency",
+	  "type": "CurrencyStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "768fc2c7bc",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 14
+		}
+	  }
+	},
+	{
+	  "id": "14ee0f390a",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "3c887cd447",
+	  "name": "Fragments (Remove-only)",
+	  "type": "FragmentStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "08f4082506",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "bc84aa03ca",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "ff80df"
+	  }
+	},
+	{
+	  "id": "7b161a4211",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 18
+		}
+	  }
+	},
+	{
+	  "id": "10f39d847c",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "59a0cd494e",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "bff500"
+	  }
+	},
+	{
+	  "id": "57bd7a72e2",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "57ada4d09a",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "0d957f6b68",
+	  "name": "Frag (Remove-only)",
+	  "type": "FragmentStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "c080ff"
+	  }
+	},
+	{
+	  "id": "5b59bf63ab",
+	  "name": "Run (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 3,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "e8026bb999",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "6a9e8ca400",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "26f940ca3c",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "e81b0d7ba6",
+	  "name": "Frag (Remove-only)",
+	  "type": "FragmentStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "f0ff80"
+	  }
+	},
+	{
+	  "id": "d5c23cee0e",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "ff80df"
+	  }
+	},
+	{
+	  "id": "f95487b456",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "bf00"
+	  }
+	},
+	{
+	  "id": "f146837ab3",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "1b41416831",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "f0ff80"
+	  }
+	},
+	{
+	  "id": "66f93ba4ca",
+	  "name": "Run (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "80ff80"
+	  }
+	},
+	{
+	  "id": "f4ea0a8650",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "bff500"
+	  }
+	},
+	{
+	  "id": "30f0f41a09",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "faf9232364",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "fde3ea4409",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "ff80df"
+	  }
+	},
+	{
+	  "id": "ddf9eb198f",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "4b9d24a80e",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "05ab347a44",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 4,
+	  "metadata": {
+		"colour": "ff8080"
+	  }
+	},
+	{
+	  "id": "8b3f1159e9",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "c080ff"
+	  }
+	},
+	{
+	  "id": "e7da589d92",
+	  "name": "Run (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "2e43cd3f60",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "bff500"
+	  }
+	},
+	{
+	  "id": "d45723847c",
+	  "name": "Fossils (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "80ff80"
+	  }
+	},
+	{
+	  "id": "679733f51e",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "cc81ebe9f1",
+	  "name": "Run (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "bef33a0417",
+	  "name": "OC (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "50fb9a68b7",
+	  "name": "~price 3 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "4eadf89506",
+	  "name": "Oils (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "ad21dc5049",
+	  "name": "Fragments (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "730055"
+	  }
+	},
+	{
+	  "id": "42252dff78",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "a18b95882b",
+	  "name": "2 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "501c8d384b",
+	  "name": "Frag (Remove-only)",
+	  "type": "FragmentStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "ff8080"
+	  }
+	},
+	{
+	  "id": "65a5b8554b",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "80ff80"
+	  }
+	},
+	{
+	  "id": "bc6f3d331e",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "c4deea745e",
+	  "name": "Frag (Remove-only)",
+	  "type": "FragmentStash",
+	  "index": 5,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "832dc75d7a",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "7535ca25cd",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "888888"
+	  }
+	},
+	{
+	  "id": "adbe8c121e",
+	  "name": "Frag (Remove-only)",
+	  "type": "FragmentStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "c080ff"
+	  }
+	},
+	{
+	  "id": "c8e78aef24",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "fdf0a709cc",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "ff"
+	  }
+	},
+	{
+	  "id": "e039fd1a0f",
+	  "name": "Frag (Remove-only)",
+	  "type": "FragmentStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "80"
+	  }
+	},
+	{
+	  "id": "818ee65df8",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "817eb9a676",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "858c19f835",
+	  "name": "impt (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "323232"
+	  }
+	},
+	{
+	  "id": "ceb5cde847",
+	  "name": "~price 5 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "ff8080"
+	  }
+	},
+	{
+	  "id": "acda36ef10",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "00f72a78a6",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "888888"
+	  }
+	},
+	{
+	  "id": "03dd808327",
+	  "name": "Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "ffaa00"
+	  }
+	},
+	{
+	  "id": "f9d247b132",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "f0ff80"
+	  }
+	},
+	{
+	  "id": "aaa68ffa4f",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 6,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "2477ef6df0",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "2789001249",
+	  "name": "O&C (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "c080ff"
+	  }
+	},
+	{
+	  "id": "cc3db18a3a",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "5694a34b47",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "34cdac6569",
+	  "name": "Flasks (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "54f6493b5d",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "daaa72002b",
+	  "name": "Fossils (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "00b6615e28",
+	  "name": "Deli (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "1d8fffbc96",
+	  "name": "Dump (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "f579679b74",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "b06b4d8b71",
+	  "name": "C (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "3fd8ef99b7",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "bfc3e5045c",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "5ec6098888",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 7,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "4fa3a87f34",
+	  "name": "UR (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "ff80df"
+	  }
+	},
+	{
+	  "id": "ccd3322dc9",
+	  "name": "mb (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "5fb2766b83",
+	  "name": "O&C (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "d17174734d",
+	  "name": "Fossils (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "bf0000"
+	  }
+	},
+	{
+	  "id": "dc5411bf5a",
+	  "name": "Dump",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "3d6ef5346d",
+	  "name": "~price 3 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "888888"
+	  }
+	},
+	{
+	  "id": "81a3025212",
+	  "name": "Frags (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "ff8080"
+	  }
+	},
+	{
+	  "id": "e63fc766d6",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "323232"
+	  }
+	},
+	{
+	  "id": "33426bb796",
+	  "name": "Essences (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "4cd78ea655",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "ffff99"
+	  }
+	},
+	{
+	  "id": "dade810663",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "c080ff"
+	  }
+	},
+	{
+	  "id": "e35ac65d09",
+	  "name": "O (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "39dd720705",
+	  "name": "Fossils (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 8,
+	  "metadata": {
+		"colour": "888888"
+	  }
+	},
+	{
+	  "id": "d7fb3fb7d9",
+	  "name": "~price 5 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "ffbf80"
+	  }
+	},
+	{
+	  "id": "e1aea79c59",
+	  "name": "Level (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "997fc160c2",
+	  "name": "Levelling (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "bd9982ca0c",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "cc009a"
+	  }
+	},
+	{
+	  "id": "897a5736fa",
+	  "name": "~price 5 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "888888"
+	  }
+	},
+	{
+	  "id": "51a64e6eda",
+	  "name": "Blight (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "c500dc1f3c",
+	  "name": "Frag (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "f0ff80"
+	  }
+	},
+	{
+	  "id": "ff5adb1cc8",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "590000"
+	  }
+	},
+	{
+	  "id": "cdd50122ec",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 9,
+	  "metadata": {
+		"colour": "ffbf80"
+	  }
+	},
+	{
+	  "id": "e868ff149d",
+	  "name": "Crafting1 (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "bf5e00"
+	  }
+	},
+	{
+	  "id": "38ef3532f5",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "3438a91608",
+	  "name": "~price 3 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "a5c2519f96",
+	  "name": "Flasks (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "460dadd5d9",
+	  "name": "W (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "a4ecbcff46",
+	  "name": "1 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "f9be08875e",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "a04c768ea4",
+	  "name": "Delve (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "faf919d1ed",
+	  "name": "Levelling (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "9a716ebfd8",
+	  "name": "O&C (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 10,
+	  "metadata": {
+		"colour": "888888"
+	  }
+	},
+	{
+	  "id": "5be2aa9c58",
+	  "name": "Dump (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 11,
+	  "metadata": {
+		"colour": "590000"
+	  }
+	},
+	{
+	  "id": "f77f98ba91",
+	  "name": "Crafts1 (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 11,
+	  "metadata": {
+		"colour": "ff8080"
+	  }
+	},
+	{
+	  "id": "cf033f575e",
+	  "name": "11 (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 11,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "516932aa4a",
+	  "name": "Meta Del (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 11,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "81e4ada17a",
+	  "name": "O&C (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 11,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "2a97fd21e4",
+	  "name": "Essences (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 11,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "94324fda54",
+	  "name": "~price 2 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 11,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "d637cd2cad",
+	  "name": "Synthesis (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 11,
+	  "metadata": {
+		"colour": "80b3ff"
+	  }
+	},
+	{
+	  "id": "576a3e3eae",
+	  "name": "Uring (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 12,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "23e8a13279",
+	  "name": "Crafts2 (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 12,
+	  "metadata": {
+		"colour": "ff8080"
+	  }
+	},
+	{
+	  "id": "e3328f9790",
+	  "name": "UR (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 12,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "3ec7ade4f5",
+	  "name": "3 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 12,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "79e8b147a6",
+	  "name": "$Currency (Remove-only)",
+	  "type": "CurrencyStash",
+	  "index": 13,
+	  "metadata": {
+		"colour": "ff80df"
+	  }
+	},
+	{
+	  "id": "e78063a273",
+	  "name": "Dump (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 13,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "b0653d6591",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 14,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "57b25ab3b8",
+	  "name": "Run",
+	  "type": "PremiumStash",
+	  "index": 15,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "a344f656c9",
+	  "name": "Maps (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 16,
+	  "metadata": {
+		"colour": "730055"
+	  }
+	},
+	{
+	  "id": "15ae9658d6",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 17,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 4
+		}
+	  }
+	},
+	{
+	  "id": "b6faf20fd9",
+	  "name": "Maps",
+	  "type": "MapStash",
+	  "index": 18,
+	  "metadata": {
+		"colour": "638000",
+		"map": {
+		  "series": 4
+		}
+	  }
+	},
+	{
+	  "id": "9b47237e8f",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 19,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 4
+		}
+	  }
+	},
+	{
+	  "id": "27efc906fb",
+	  "name": "4 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 20,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "18d306e6a6",
+	  "name": "2 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 21,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "22482cdd21",
+	  "name": "~price 1 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 22,
+	  "metadata": {
+		"colour": "ff"
+	  }
+	},
+	{
+	  "id": "56e04c536c",
+	  "name": "Roll (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 23,
+	  "metadata": {
+		"colour": "5a00b3"
+	  }
+	},
+	{
+	  "id": "38046fb3ea",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 24,
+	  "metadata": {
+		"colour": "bf0000",
+		"map": {
+		  "series": 4
+		}
+	  }
+	},
+	{
+	  "id": "707a584c54",
+	  "name": "3 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 25,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "ada7c96584",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 26,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "725c89dc01",
+	  "name": "Div (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 27,
+	  "metadata": {
+		"colour": "2c0059"
+	  }
+	},
+	{
+	  "id": "a71c5f61d8",
+	  "name": "5 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 28,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "01d3986f47",
+	  "name": "Roll",
+	  "type": "PremiumStash",
+	  "index": 29,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "a3ad7b25cb",
+	  "name": "Maps (Remove-only)",
+	  "type": "MapStash",
+	  "index": 30,
+	  "metadata": {
+		"colour": "cc009a",
+		"map": {
+		  "series": 4
+		}
+	  }
+	},
+	{
+	  "id": "447e2f25c0",
+	  "name": "General (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 31,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "c2b228386e",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 32,
+	  "metadata": {
+		"colour": "80"
+	  }
+	},
+	{
+	  "id": "7e4754c407",
+	  "name": "4 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 33,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "c18a22743d",
+	  "name": "General (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 34,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "f7d0d80123",
+	  "name": "~price 2 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 35,
+	  "metadata": {
+		"colour": "ff"
+	  }
+	},
+	{
+	  "id": "3d4813ce8b",
+	  "name": "~price 5 chaos",
+	  "type": "PremiumStash",
+	  "index": 36,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "6afd649423",
+	  "name": "~price 5 chaos (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 37,
+	  "metadata": {
+		"colour": "ff"
+	  }
+	},
+	{
+	  "id": "631cec963f",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 38,
+	  "metadata": {
+		"colour": "bf0000"
+	  }
+	},
+	{
+	  "id": "7013a04d74",
+	  "name": "~price 2 chaos (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 39,
+	  "metadata": {
+		"colour": "80ff80"
+	  }
+	},
+	{
+	  "id": "505263ec22",
+	  "name": "LQG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 40,
+	  "metadata": {
+		"colour": "ff"
+	  }
+	},
+	{
+	  "id": "9c356aabf3",
+	  "name": "4 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 41,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "7c11548c24",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 42,
+	  "metadata": {
+		"colour": "bf0000"
+	  }
+	},
+	{
+	  "id": "c02385c79e",
+	  "name": "~price 2 chaos",
+	  "type": "QuadStash",
+	  "index": 43,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "d8068c3db6",
+	  "name": "Sale (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 44,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "f88caba63c",
+	  "name": "5 (Remove-only)",
+	  "type": "NormalStash",
+	  "index": 45,
+	  "metadata": {
+		"colour": "7c5436"
+	  }
+	},
+	{
+	  "id": "a1d537b6eb",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 46,
+	  "metadata": {
+		"colour": "bff500"
+	  }
+	},
+	{
+	  "id": "4a0bfaff64",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 47,
+	  "metadata": {
+		"colour": "ffbf80"
+	  }
+	},
+	{
+	  "id": "c265472a4f",
+	  "name": "Sell",
+	  "type": "PremiumStash",
+	  "index": 48,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "80b7b9700e",
+	  "name": "~price 5 chaos (Remove-only)",
+	  "type": "QuadStash",
+	  "index": 49,
+	  "metadata": {
+		"colour": "dddddd"
+	  }
+	},
+	{
+	  "id": "6d485fdd62",
+	  "name": "Sale (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 50,
+	  "metadata": {
+		"colour": "bf00"
+	  }
+	},
+	{
+	  "id": "8f8c68ec83",
+	  "name": "~price 5 chisel (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 51,
+	  "metadata": {
+		"colour": "ffbf80"
+	  }
+	},
+	{
+	  "id": "97f75da51c",
+	  "name": "Sell (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 52,
+	  "metadata": {
+		"colour": "c080ff"
+	  }
+	},
+	{
+	  "id": "b552ff90bf",
+	  "name": "Cards (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 53,
+	  "metadata": {
+		"colour": "730055"
+	  }
+	},
+	{
+	  "id": "9c5a40ff41",
+	  "name": "7 (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 54,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "a6f1275ed9",
+	  "name": "Gen",
+	  "type": "PremiumStash",
+	  "index": 55,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "d519f3bb3a",
+	  "name": "Fragments",
+	  "type": "PremiumStash",
+	  "index": 56,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "66bcff007f",
+	  "name": "QG (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 57,
+	  "metadata": {
+		"colour": "ff"
+	  }
+	},
+	{
+	  "id": "1510af20e7",
+	  "name": "Maps (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 58,
+	  "metadata": {
+		"colour": "bf0000"
+	  }
+	},
+	{
+	  "id": "993ab705ec",
+	  "name": "Gen (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 59,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "4194550dce",
+	  "name": "Nice (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 60,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "6a50b1876f",
+	  "name": "Essences",
+	  "type": "PremiumStash",
+	  "index": 61,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "086535ae9b",
+	  "name": "Currency 2",
+	  "type": "CurrencyStash",
+	  "index": 62,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "733594e400",
+	  "name": "Cards",
+	  "type": "PremiumStash",
+	  "index": 63,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "564226b3f7",
+	  "name": "9 (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 64,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "81b301de4c",
+	  "name": "Level (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 65,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	},
+	{
+	  "id": "3e5537ba7b",
+	  "name": "9 (Remove-only)",
+	  "type": "PremiumStash",
+	  "index": 66,
+	  "metadata": {
+		"colour": "638000"
+	  }
+	}
+  ]
+}

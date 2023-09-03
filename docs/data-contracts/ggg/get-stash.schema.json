@@ -75,6 +75,7 @@
 		  ]
 		},
 		"stackSize": {
+		  "description": "Total count of this item in this stash tab",
 		  "type": "integer"
 		},
 		"maxStackSize": {

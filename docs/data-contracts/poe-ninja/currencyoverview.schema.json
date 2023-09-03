@@ -169,6 +169,7 @@
 		  "type": "integer"
 		},
 		"value": {
+		  "description": "Value to use for calculations - this is the sell price of the item in Chaos",
 		  "type": "number"
 		},
 		"data_point_count": {
