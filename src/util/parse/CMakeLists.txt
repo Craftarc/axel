@@ -1,5 +1,5 @@
 # Configure target sources here
-set(PARSE_SRC_FILES src/util.cpp)
+set(PARSE_SRC_FILES src/util.cpp src/prices.cpp src/json.cpp)
 set(PARSE_TESTS_SRC_FILES test/util_test.cpp)
 
 # parse library
