@@ -43,6 +43,7 @@ namespace config {
         namespace leagues {
             const std::string crucible = "Crucible";
             const std::string sanctum = "Sanctum";
+            const std::string ancestor = "Ancestor";
         } // leagues
     } // poe_ninja
 } // config
