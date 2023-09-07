@@ -9,8 +9,8 @@
 #include "parse/json.h"
 #include "parse/util.h"
 #include "poe_ninja/get_poe_ninja_data.h"
-#include "webutil/HttpSender.h"
-#include "webutil/http.h"
+#include "util/HttpSender.h"
+#include "util/http.h"
 
 namespace http = boost::beast::http;
 namespace json = boost::json;
@@ -61,7 +61,7 @@ namespace axel {
 	http::request<http::string_body> ResourceManager::make_list_stashes_request() const {
 		const std::unordered_map<std::string, std::string> fields{ { "authorization", "Bearer " + access_token_ },
 			                                                       { "host", config::poe::api } };
-		return webutil::make_http_request("GET", config::poe::paths::list_stashes, fields);
+		return util::make_http_request("GET", config::poe::paths::list_stashes, fields);
 	}
 
 	/// The request gets information about a specific stash tab in the player's stash.
@@ -73,7 +73,7 @@ namespace axel {
 			                                                       { "host", config::poe::api } };
 		// Using the GET /stash/<league>/<stash_id> endpoint
 		std::string path{ config::poe::paths::get_stash + id };
-		return webutil::make_http_request("GET", path, fields);
+		return util::make_http_request("GET", path, fields);
 	}
 
 	/// @return The JSON response body.

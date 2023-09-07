@@ -77,17 +77,17 @@ target_include_directories(sandbox PRIVATE ${PROJECT_ROOT})
 target_link_libraries(sandbox PRIVATE axel)
 
 # tests executable (all tests)
-add_executable(tests $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:webutil_tests> $<TARGET_OBJECTS:parse_tests>
+add_executable(tests $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:util_tests> $<TARGET_OBJECTS:parse_tests>
                $<TARGET_OBJECTS:poe_ninja_tests> $<TARGET_OBJECTS:axel_tests>)
-target_link_libraries(tests PRIVATE auth_tests webutil_tests parse_tests poe_ninja_tests axel_tests
+target_link_libraries(tests PRIVATE auth_tests util_tests parse_tests poe_ninja_tests axel_tests
                       GTest::gtest_main)
 include(GoogleTest)
 gtest_discover_tests(tests)
 
 # Subdirectories
 add_subdirectory(src/poe_ninja)
-add_subdirectory(src/util/webutil)
-add_subdirectory(src/util/parse)
+add_subdirectory(src/util)
+add_subdirectory(src/parse)
 add_subdirectory(src/auth)
 add_subdirectory(src/axel)
 

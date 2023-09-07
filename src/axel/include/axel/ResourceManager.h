@@ -6,7 +6,8 @@
 #include <boost/beast/http.hpp>
 #include <boost/json.hpp>
 
-#include "webutil/interfaces/IHttpSender.h"
+#include "Item.h"
+#include "util/interfaces/IHttpSender.h"
 namespace http = boost::beast::http;
 
 namespace axel {
@@ -23,15 +24,15 @@ namespace axel {
 			void fill_quantity_table(std::string& items_string);
 
 		protected:
-			/// @brief Constructor that allows for custom webutil::IHttpSender
+			/// @brief Constructor that allows for custom util::IHttpSender
 			/// implementations.
-			ResourceManager(std::string access_token, std::unique_ptr<webutil::IHttpSender> http_sender);
+			ResourceManager(std::string access_token, std::unique_ptr<util::IHttpSender> http_sender);
 
 		private:
 			const std::string access_token_;
 			std::vector<std::string> stash_tab_ids_;
-			std::unique_ptr<webutil::IHttpSender> http_sender_;
-			std::unordered_map<std::string, int64_t> quantity_table_;
+			std::unique_ptr<util::IHttpSender> http_sender_;
+			std::unordered_map<std::string, int64_t> items_table_;
 			std::unordered_map<std::string, double> prices_table_;
 
 			/// @brief Populates prices_table_ with pricing information
