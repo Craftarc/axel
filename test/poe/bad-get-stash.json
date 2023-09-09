@@ -1,0 +1,1710 @@
+"stash": {
+"id": "020a8ddeef",
+"name": "Currency (Remove-only)",
+"type": "CurrencyStash",
+"index": 0,
+"metadata": {
+"colour": "ffaa00"
+},
+"items": [
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png",
+"stackSize": 35,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "20bda3d64c15dcfa53d545d9857c116ce1a15e6a78c9ecbe78b426a1797ee805",
+"name": "",
+"typeLine": "Chaos Orb",
+"baseType": "Chaos Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"35/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Reforges a rare item with new random modifiers"
+],
+"descrText": "Right click this item then left click a rare item to apply it.",
+"frameType": 5,
+"x": 2,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lJZGVudGlmaWNhdGlvbiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/3a1e615322/CurrencyIdentification.png",
+"stackSize": 404,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "f4963a9d8c35ce93395a6ae3850c6bf6c3ad2b6ea760fe6593b5738a2950da79",
+"name": "",
+"typeLine": "Scroll of Wisdom",
+"baseType": "Scroll of Wisdom",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"404/40",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Identifies an item"
+],
+"descrText": "Right click this item then left click an unidentified item to apply it.",
+"frameType": 5,
+"x": 1,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaFNoYXJkTGlnaHRuaW5nIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/de619878b0/BreachShardLightning.png",
+"stackSize": 73,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "5a0d8f765c91de1ee084d63f422a240d3c8d17b1b9a199121fa57a425eacd227",
+"name": "",
+"typeLine": "Splinter of Esh",
+"baseType": "Splinter of Esh",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"73/100",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "Combine 100 Splinters to create Esh's Breachstone.",
+"frameType": 5,
+"x": 47,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lXZWFwb25RdWFsaXR5IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/c874e03eb7/CurrencyWeaponQuality.png",
+"stackSize": 111,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "c314a8b583b1a93ea15451b6a2a7b8dc44f9e467e458f3819d5a91ee4c5a50f3",
+"name": "",
+"typeLine": "Blacksmith's Whetstone",
+"baseType": "Blacksmith's Whetstone",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"111/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Improves the quality of a weapon"
+],
+"descrText": "Right click this item then left click a weapon to apply it. Has greater effect on lower-rarity weapons. The maximum quality is 20%.",
+"frameType": 5,
+"x": 0,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaFNoYXJkQ29sZCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/ef894cc215/BreachShardCold.png",
+"stackSize": 107,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "dd5e503909f2415755b846476688824b9a36cb38ef06b578b458a54873afca3b",
+"name": "",
+"typeLine": "Splinter of Tul",
+"baseType": "Splinter of Tul",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"107/100",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "Combine 100 Splinters to create Tul's Breachstone.",
+"frameType": 5,
+"x": 46,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlTWFnaWNUb1JhcmUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/898378b439/CurrencyUpgradeMagicToRare.png",
+"stackSize": 46,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "d3f1c508cf9635001a645cdd65665bf170da27c7a7634b7fd712b33c9067504c",
+"name": "",
+"typeLine": "Regal Orb",
+"baseType": "Regal Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"46/10",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Upgrades a magic item to a rare item"
+],
+"descrText": "Right click this item then left click a magic item to apply it. Current modifiers are retained and a new one is added.",
+"frameType": 5,
+"x": 12,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lQYXNzaXZlU2tpbGxSZWZ1bmQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/6b8ab3ff07/CurrencyPassiveSkillRefund.png",
+"stackSize": 87,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "eaf8f6cdebf2c8b2f1b1119b0e6ba5b3de8eef81ed4d670923cbaf168497b179",
+"name": "",
+"typeLine": "Orb of Regret",
+"baseType": "Orb of Regret",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"87/40",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Grants a passive skill refund point"
+],
+"descrText": "Right click on this item to use it.",
+"frameType": 5,
+"x": 7,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaFNoYXJkQ2hhb3MiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/873da59e9c/BreachShardChaos.png",
+"stackSize": 22,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "7134acd988a88a7e22873837512c8a6e37c30d8ce079dc66aabe0c72c847d999",
+"name": "",
+"typeLine": "Splinter of Chayula",
+"baseType": "Splinter of Chayula",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"22/100",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "Combine 100 splinters to create Chayula's Breachstone.",
+"frameType": 5,
+"x": 48,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXNSYWRpdXNUaWVyMyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/07377648d7/AtlasRadiusTier3.png",
+"stackSize": 53,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "028aa4aaf19d1919308d1408b99723b87690c465b20d2edfc9807912a49da31d",
+"name": "",
+"typeLine": "Awakened Sextant",
+"baseType": "Awakened Sextant",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"53/10",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Adds or rerolls a modifier on a Voidstone"
+],
+"descrText": "Right click this item then left click a Voidstone to apply it.",
+"frameType": 5,
+"x": 38,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXNSYWRpdXNUaWVyMyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/07377648d7/AtlasRadiusTier3.png",
+"stackSize": 45,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "e66c8a155c7b7b99dcd34b7130fa191a0c3cef4c4d42a2db9adad3a351f6a697",
+"name": "",
+"typeLine": "Awakened Sextant",
+"baseType": "Awakened Sextant",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"45/10",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Adds or rerolls a modifier on a Voidstone"
+],
+"descrText": "Right click this item then left click a Voidstone to apply it.",
+"frameType": 5,
+"x": 37,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlUmFuZG9tbHkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/eaeece27be/CurrencyUpgradeRandomly.png",
+"stackSize": 682,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "fb87f7363fadd5491498f56127377feacb62a596a63f6bc6b2ae1a866cbe1ce4",
+"name": "",
+"typeLine": "Orb of Chance",
+"baseType": "Orb of Chance",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"682/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Upgrades a normal item to a random rarity"
+],
+"descrText": "Right click this item then left click a normal item to apply it.",
+"frameType": 5,
+"x": 6,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lDb252ZXJ0VG9Ob3JtYWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/6953e90545/CurrencyConvertToNormal.png",
+"stackSize": 193,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "453431e91ad567731defa632c95533651bd98c977d0e5bfb89e7f44391d1b926",
+"name": "",
+"typeLine": "Orb of Scouring",
+"baseType": "Orb of Scouring",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"193/30",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Removes all modifiers from an item"
+],
+"descrText": "Right click this item then left click on a magic or rare item to apply it.",
+"frameType": 5,
+"x": 10,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXRMaW5rcyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/f38529edfc/CurrencyRerollSocketLinks.png",
+"stackSize": 56,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "c2c6a4befb7286573c7ed9c40eb07636606cf9ac4e0a03b402f3a2491a8eaefb",
+"name": "",
+"typeLine": "Orb of Fusing",
+"baseType": "Orb of Fusing",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"56/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Reforges the links between sockets on an item"
+],
+"descrText": "Right click this item then left click a socketed item to apply it. The item's quality increases the chances of obtaining more links.",
+"frameType": 5,
+"x": 18,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaFNoYXJkUGh5c2ljYWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/310aff1de6/BreachShardPhysical.png",
+"stackSize": 24,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "5f1633ea48c915527a752ca6094428bd498d13792798c6073f8c4bbb8f9f7fdb",
+"name": "",
+"typeLine": "Splinter of Uul-Netol",
+"baseType": "Splinter of Uul-Netol",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"24/100",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "Combine 100 Splinters to create Uul-Netol's Breachstone.",
+"frameType": 5,
+"x": 41,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb01hZ2ljIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/1a6cb2ad17/CurrencyAddModToMagic.png",
+"stackSize": 61,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "fcda1bd5f88ed7bd97cb371c122761009c31bed958099246e828903c53a18031",
+"name": "",
+"typeLine": "Orb of Augmentation",
+"baseType": "Orb of Augmentation",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"61/30",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Augments a magic item with a new random modifier"
+],
+"descrText": "Right click this item then left click a magic item to apply it. Magic items can have up to two random modifiers.",
+"frameType": 5,
+"x": 13,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXRsYXNSYWRpdXNUaWVyMyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/07377648d7/AtlasRadiusTier3.png",
+"stackSize": 20,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "67017846f861472bc499575109fc1841f981f89069a15b0bddecd4d03c2d847a",
+"name": "",
+"typeLine": "Awakened Sextant",
+"baseType": "Awakened Sextant",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"20/10",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Adds or rerolls a modifier on a Voidstone"
+],
+"descrText": "Right click this item then left click a Voidstone to apply it.",
+"frameType": 5,
+"x": 36,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lQb3J0YWwiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/a55c72f398/CurrencyPortal.png",
+"stackSize": 699,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "4f082cb7e275d561a15226f394d7c8a93b0027b2be4c9dcfdafb87770c51f928",
+"name": "",
+"typeLine": "Portal Scroll",
+"baseType": "Portal Scroll",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"699/40",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Creates a portal to town"
+],
+"descrText": "Right click on this item to use it.",
+"frameType": 5,
+"x": 14,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lHZW1RdWFsaXR5IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/1be1273b91/CurrencyGemQuality.png",
+"stackSize": 67,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "9d6dd52d6687cbe97ae9fdb6fb23c2863405d72b21e5fc6996c4689b48b44196",
+"name": "",
+"typeLine": "Gemcutter's Prism",
+"baseType": "Gemcutter's Prism",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"67/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Improves the quality of a gem"
+],
+"descrText": "Right click this item then left click a gem to apply it. The maximum quality is 20%.",
+"frameType": 5,
+"x": 16,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lJbXBsaWNpdE1vZCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c3cbf3e5ab/CurrencyImplicitMod.png",
+"stackSize": 59,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "08b90a382ac745257568d48b6944fe392667a9eead5be6efe49558bea89ea95d",
+"name": "",
+"typeLine": "Blessed Orb",
+"baseType": "Blessed Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"59/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Randomises the numeric values of the implicit modifiers of an item"
+],
+"descrText": "Right click this item then left click another item to apply it.",
+"frameType": 5,
+"x": 21,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQW5udWxsT3JiIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/88cfdbe1e5/AnnullOrb.png",
+"stackSize": 2,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "84d0119c90e34dd8a63987804f75405eb443511c2d38bea94ef068df227a21a6",
+"name": "",
+"typeLine": "Orb of Annulment",
+"baseType": "Orb of Annulment",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"2/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Removes a random modifier from an item"
+],
+"descrText": "Right click this item then left click on a magic or rare item to apply it.",
+"frameType": 5,
+"x": 54,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaFNoYXJkRmlyZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/c0deb5799d/BreachShardFire.png",
+"stackSize": 103,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "9e20ff2c66ded26d0a1d85071976c893ed6a50151620117e9ee90f4282defb10",
+"name": "",
+"typeLine": "Splinter of Xoph",
+"baseType": "Splinter of Xoph",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"103/100",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "Combine 100 Splinters to create Xoph's Breachstone.",
+"frameType": 5,
+"x": 44,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9NYWdpYyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/130762c82d/CurrencyUpgradeToMagic.png",
+"stackSize": 686,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "ae45e42abd2a50ac3251444c8e9840cc3d2b1e7f26c81952229d88840efb4cb8",
+"name": "",
+"typeLine": "Orb of Transmutation",
+"baseType": "Orb of Transmutation",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"686/40",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Upgrades a normal item to a magic item"
+],
+"descrText": "Right click this item then left click a normal item to apply it.",
+"frameType": 5,
+"x": 8,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxNYWdpYyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/28212545fd/CurrencyRerollMagic.png",
+"stackSize": 367,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "0b809b18eb38acf5c0ee126edef53658ecc10adcc20d212234986740016593da",
+"name": "",
+"typeLine": "Orb of Alteration",
+"baseType": "Orb of Alteration",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"367/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Reforges a magic item with new random modifiers"
+],
+"descrText": "Right click this item then left click a magic item to apply it.",
+"frameType": 5,
+"x": 9,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9SYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/f0dc27cd7c/CurrencyUpgradeToRare.png",
+"stackSize": 45,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "5f0977f4a1843a6bdd50446e7c6dd1f50571f2df25cb5a8290a12543b8d539fd",
+"name": "",
+"typeLine": "Orb of Alchemy",
+"baseType": "Orb of Alchemy",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"45/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Upgrades a normal item to a rare item"
+],
+"descrText": "Right click this item then left click a normal item to apply it.",
+"frameType": 5,
+"x": 5,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRW5naW5lZXJzT3JiIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/56b41a5ee5/EngineersOrb.png",
+"stackSize": 32,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "75d25d0070d047c71d336b759a93c0e34563bf67b30ed037ffedaf6d2f2932a6",
+"name": "",
+"typeLine": "Engineer's Orb",
+"baseType": "Engineer's Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"32/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Improves the quality of a Strongbox"
+],
+"descrText": "Right click this item then left click a Strongbox to apply it. Has greater effect on lower rarity Strongboxes. The maximum quality is 20%.",
+"frameType": 5,
+"x": 34,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSG9yaXpvbk9yYiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/a48e326c68/HorizonOrb.png",
+"stackSize": 7,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "fd5dde2e07143e777d2bd66439a0041ce8a82e3159f99473c86b68e3fa591419",
+"name": "",
+"typeLine": "Orb of Horizons",
+"baseType": "Orb of Horizons",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"7/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Reforges a map item as another of the same tier"
+],
+"descrText": "Right click this item then left click a map to apply it.",
+"frameType": 5,
+"x": 40,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png",
+"stackSize": 5,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "de521abe883e34de6bb7283422c229baea32c22751f6326298dd58bd11e5a7e5",
+"name": "",
+"typeLine": "Divine Orb",
+"baseType": "Divine Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"5/10",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Randomises the numeric values of the random modifiers on an item"
+],
+"descrText": "Right click this item then left click a magic, rare or unique item to apply it.",
+"frameType": 5,
+"x": 20,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBcm1vdXJRdWFsaXR5IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/0b964e9b9e/CurrencyArmourQuality.png",
+"stackSize": 58,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "1d4946736db6f762f3dcb846e4c30721d10d50f8e4475b77f11221f8655aa857",
+"name": "",
+"typeLine": "Armourer's Scrap",
+"baseType": "Armourer's Scrap",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"58/40",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Improves the quality of an armour"
+],
+"descrText": "Right click this item then left click an armour to apply it. Has greater effect on lower-rarity armours. The maximum quality is 20%.",
+"frameType": 5,
+"x": 3,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQW5udWxsU2hhcmQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/f7a8a838a6/AnnullShard.png",
+"stackSize": 4,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "007c0860e62a38d19abd059e0fd11287eccd34f851e15a32ee935ff045f5d081",
+"name": "",
+"typeLine": "Annulment Shard",
+"baseType": "Annulment Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"4/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes an Orb of Annulment.",
+"frameType": 5,
+"x": 53,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSGFyYmluZ2VyU2hhcmQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/9b8b1837d2/HarbingerShard.png",
+"stackSize": 4,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "70a8a29e2fd2a4258ba676a657f0a12fb06eb4dc42a7bfe133413cc41823f184",
+"name": "",
+"typeLine": "Harbinger's Shard",
+"baseType": "Harbinger's Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"4/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes a Harbinger's Orb.",
+"frameType": 5,
+"x": 33,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUmVnYWxTaGFyZCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/972b7b232b/RegalShard.png",
+"stackSize": 3,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "4f14e854ba16911db4dba753cdb7b3cbd25b077e6a45ef5bc3c7206f6df09a01",
+"name": "",
+"typeLine": "Regal Shard",
+"baseType": "Regal Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"3/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes a Regal Orb.",
+"frameType": 5,
+"x": 52,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lGbGFza1F1YWxpdHkiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/8a36dffe11/CurrencyFlaskQuality.png",
+"stackSize": 14,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "9ea3ee626a423c82652ab36d0dabe692bc3d6e2ef1d10405e133475883b3c533",
+"name": "",
+"typeLine": "Glassblower's Bauble",
+"baseType": "Glassblower's Bauble",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"14/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Improves the quality of a flask"
+],
+"descrText": "Right click this item then left click a flask to apply it. Has greater effect on lower-rarity flasks. The maximum quality is 20%.",
+"frameType": 5,
+"x": 15,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9NYWdpY1NoYXJkIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/769d3bfabd/CurrencyUpgradeToMagicShard.png",
+"stackSize": 6,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "681c51d4a956d78df7e681e9f563d702fc8d45873c862ef69668a92be8c6d8a3",
+"name": "",
+"typeLine": "Transmutation Shard",
+"baseType": "Transmutation Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"6/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes an Orb of Transmutation.",
+"frameType": 5,
+"x": 24,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSG9yaXpvblNoYXJkIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/396c5f134f/HorizonShard.png",
+"stackSize": 5,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "d721334bcc987f4a4071fddfd8ec34137e1264aa05db9de9ae0bfd4bf0272dd5",
+"name": "",
+"typeLine": "Horizon Shard",
+"baseType": "Horizon Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"5/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes an Orb of Horizons.",
+"frameType": 5,
+"x": 32,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L0VmZmljYWN5IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/90381ee91a/Efficacy.png",
+"support": true,
+"league": "Standard",
+"id": "3357407d8408ac7e0298a322ea271b3ac31c958bfdfad746bccf7f23279ef514",
+"name": "",
+"typeLine": "Efficacy Support",
+"baseType": "Efficacy Support",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Support, Duration",
+"values": [],
+"displayMode": 0
+},
+{
+"name": "Level",
+"values": [
+[
+"19",
+0
+]
+],
+"displayMode": 0,
+"type": 5
+},
+{
+"name": "Cost & Reservation Multiplier",
+"values": [
+[
+"130%",
+0
+]
+],
+"displayMode": 0
+}
+],
+"requirements": [
+{
+"name": "Level",
+"values": [
+[
+"67",
+0
+]
+],
+"displayMode": 0,
+"type": 62
+},
+{
+"name": "Int",
+"values": [
+[
+"106",
+0
+]
+],
+"displayMode": 1,
+"type": 65
+}
+],
+"additionalProperties": [
+{
+"name": "Experience",
+"values": [
+[
+"6180131/242078618",
+0
+]
+],
+"displayMode": 2,
+"progress": 0.03,
+"type": 20
+}
+],
+"secDescrText": "Supports any skill that deals damage or has a duration.",
+"explicitMods": [
+"Supported Skills deal 24% more Damage over Time",
+"Supported Skills have 24% increased Skill Effect Duration"
+],
+"descrText": "This is a Support Gem. It does not grant a bonus to your character, but to skills in sockets connected to it. Place into an item socket connected to a socket containing the Skill Gem you wish to augment. Right click to remove from a socket.",
+"frameType": 4,
+"x": 28,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQmluZGluZ1NoYXJkIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/4c5b54654a/BindingShard.png",
+"stackSize": 14,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "790ea4c793d82776e071efb522b72f7db89685cb664e64a45f7e8f2c6dc52921",
+"name": "",
+"typeLine": "Binding Shard",
+"baseType": "Binding Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"14/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes an Orb of Binding.",
+"frameType": 5,
+"x": 31,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxNYWdpY1NoYXJkIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/2dc121cb4e/CurrencyRerollMagicShard.png",
+"stackSize": 17,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "7cb00d1b89e6237f8280df25397f61fef87bd9947d6cb2b713e753b29ec62103",
+"name": "",
+"typeLine": "Alteration Shard",
+"baseType": "Alteration Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"17/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes an Orb of Alteration.",
+"frameType": 5,
+"x": 25,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9SYXJlU2hhcmQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/2e51dc8c8c/CurrencyUpgradeToRareShard.png",
+"stackSize": 10,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "f9bc02a45e553645d70b115a91e49b3bb0d41b8850b048e02386289fb69fa3b7",
+"name": "",
+"typeLine": "Alchemy Shard",
+"baseType": "Alchemy Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"10/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes an Orb of Alchemy.",
+"frameType": 5,
+"x": 26,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQmluZGluZ09yYiIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/66ef64410c/BindingOrb.png",
+"stackSize": 2,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "c078a88419ad8bb0a5888cf05ab7525de950dfebe2b182dc9c0b7eb6822b8f54",
+"name": "",
+"typeLine": "Orb of Binding",
+"baseType": "Orb of Binding",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"2/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Upgrades a normal item to a rare item with up to four linked sockets"
+],
+"descrText": "Right click this item then left click a normal item to apply it.",
+"frameType": 5,
+"x": 42,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ2hhb3NTaGFyZCIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/fa09d6f7ba/ChaosShard.png",
+"stackSize": 7,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "8eb7dc34617c7fa62f26fd92cc23b58a7cc7ac8966b35619da1e4b34b57334fa",
+"name": "",
+"typeLine": "Chaos Shard",
+"baseType": "Chaos Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"7/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes a Chaos Orb.",
+"frameType": 5,
+"x": 49,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQW5jaWVudFNoYXJkIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/bb214de034/AncientShard.png",
+"stackSize": 8,
+"maxStackSize": 20,
+"league": "Standard",
+"id": "a7a51d8add15df095a3c62d16bfdeedf1d66f9ce49e46acde78af7af72564bd2",
+"name": "",
+"typeLine": "Ancient Shard",
+"baseType": "Ancient Shard",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"8/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 20 shards becomes an Ancient Orb.",
+"frameType": 5,
+"x": 43,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/b102771c23/CurrencyAddModToRare.png",
+"stackSize": 1,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "2b9fca73ae142db1cbb289dab23664b49c8aac5bd2284ba891c87f842ed824ce",
+"name": "",
+"typeLine": "Exalted Orb",
+"baseType": "Exalted Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"1/10",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Augments a rare item with a new random modifier"
+],
+"descrText": "Right click this item then left click a rare item to apply it. Rare items can have up to six random modifiers.",
+"frameType": 5,
+"x": 11,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXROdW1iZXJzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/685633cb14/CurrencyRerollSocketNumbers.png",
+"stackSize": 1925,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "99e0f597c3abc6c4b5743202acd925bbf04e7e0bc84d99c44e504369404e9ff6",
+"name": "",
+"typeLine": "Jeweller's Orb",
+"baseType": "Jeweller's Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"1925/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Reforges the number of sockets on an item"
+],
+"descrText": "Right click this item then left click a socketed item to apply it. The item's quality increases the chances of obtaining more sockets.",
+"frameType": 5,
+"x": 19,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lJZGVudGlmaWNhdGlvbkZyYWdtZW50IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/4f379102ee/CurrencyIdentificationFragment.png",
+"stackSize": 4,
+"maxStackSize": 5,
+"league": "Standard",
+"id": "683be50e8a604494ab10da938db49ac350e62a7cac37782896e01bfddb80c1d1",
+"name": "",
+"typeLine": "Scroll Fragment",
+"baseType": "Scroll Fragment",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"4/5",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"descrText": "A stack of 5 fragments becomes a Scroll of Wisdom.",
+"frameType": 5,
+"x": 23,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNYXBRdWFsaXR5IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/c83c35bed5/CurrencyMapQuality.png",
+"stackSize": 1,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "733dcf54b63d0df48f69a49778e82a51437a344aea6394fbcf845a78c2567c2e",
+"name": "",
+"typeLine": "Cartographer's Chisel",
+"baseType": "Cartographer's Chisel",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"1/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Improves the quality of a map"
+],
+"descrText": "Right click this item then left click a map to apply it. Has greater effect on lower-rarity maps. The maximum quality is 20%.",
+"frameType": 5,
+"x": 22,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lWYWFsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/304f775089/CurrencyVaal.png",
+"stackSize": 12,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "e1a34befba11874157c0c8196467b1619d3940f0705b71c41788a66ec874a12d",
+"name": "",
+"typeLine": "Vaal Orb",
+"baseType": "Vaal Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"12/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Corrupts an item, modifying it unpredictably"
+],
+"descrText": "Right click this item then left click an item to corrupt it. Corrupted items cannot be modified again.",
+"frameType": 5,
+"x": 27,
+"y": 0,
+"inventoryId": "Stash1"
+},
+{
+"verified": false,
+"w": 1,
+"h": 1,
+"icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXRDb2xvdXJzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/136314c10a/CurrencyRerollSocketColours.png",
+"stackSize": 221,
+"maxStackSize": 5000,
+"league": "Standard",
+"id": "7b85fcb29d532225f94d44a9b4a077a66aa1c520683114f5206437c7e606de38",
+"name": "",
+"typeLine": "Chromatic Orb",
+"baseType": "Chromatic Orb",
+"identified": true,
+"ilvl": 0,
+"properties": [
+{
+"name": "Stack Size",
+"values": [
+[
+"221/20",
+0
+]
+],
+"displayMode": 0,
+"type": 32
+}
+],
+"explicitMods": [
+"Reforges the colour of sockets on an item"
+],
+"descrText": "Right click this item then left click a socketed item to apply it.",
+"frameType": 5,
+"x": 17,
+"y": 0,
+"inventoryId": "Stash1"
+}
+]
+}
+}
