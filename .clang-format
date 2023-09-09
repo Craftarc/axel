@@ -133,7 +133,7 @@ StatementAttributeLikeMacros: []
 StatementMacros: []
 TabWidth: 4
 TypenameMacros: []
-UseTab: AlignWithSpaces
+UseTab: Never
 WhitespaceSensitiveMacros: []
 
 
