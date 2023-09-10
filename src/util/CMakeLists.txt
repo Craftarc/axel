@@ -15,5 +15,5 @@ target_link_libraries(util_tests PUBLIC util util_mocks GTest::gtest)
 
 # util mocks
 add_library(util_mocks INTERFACE)
-target_include_directories(util_mocks INTERFACE mock include)
+target_include_directories(util_mocks INTERFACE mock)
 target_link_libraries(util_mocks INTERFACE GTest::gmock)
