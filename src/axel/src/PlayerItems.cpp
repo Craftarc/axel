@@ -43,6 +43,7 @@ namespace axel {
         json::value stashes(list_stashes());
         set_stash_tab_ids(stashes);
         fill_items_table();
+        return items_table_;
     }
 
     // Private

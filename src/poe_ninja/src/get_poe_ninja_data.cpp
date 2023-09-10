@@ -14,9 +14,9 @@ namespace poe_ninja {
 	/// @param resource_path - Path to specific data resource at host.
 	///
 	/// @return - Response body from GET request as string.
-	std::string get_item_prices(const std::string& resource_path) {
+	std::string get_item_prices(const std::string& resource_path, const std::shared_ptr<IHttpSender>& http_sender) {
 		auto request = make_http_request("GET", resource_path, { { "host", config::poe_ninja::host } });
 
-		return HttpSender().send_http_request(request, 15);  // TODO: Remove magic number
+		return http_sender->send_http_request(request, 15);  // TODO: Remove magic number
 	}
 }  // namespace poe_ninja
