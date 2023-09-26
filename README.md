@@ -229,7 +229,7 @@ docker compose up dev
 ```
 
 This mounts the RIE binary and the project root into the container, recompiles Axel's code if there are changes, then
-executes the binary, passing in the handler (
+executes the binary, passing in the handler 
 here our _main_ executable) as an argument. It builds Axel with `CMAKE_BUILD_TYPE=Debug`.
 
 You may _POST_ something to the container's exposed port to test for a response.
@@ -293,6 +293,7 @@ This builds Axel with `CMAKE_BUILD_TYPE=Release`, targeting testing servers.
 **2. Start the 'dependencies' container**. Override the default `ENTRYPOINT`, which will start the RIE. Instead, drop
 straight into a shell.
 
+**Always run `docker compose` in the root directory of the project!** 
 ```
 docker compose run --rm dev bash
 ```

@@ -22,7 +22,7 @@ services:
       - "9000:8080"
     volumes:
       - ~/.aws:/root/.aws # Credentials file
-      - .:/axel # Mount the entire project root into /axel in the container
+      - .:${PWD}  # Mount project root into matching path in container
       - ~/.aws-lambda-rie:/aws-lambda # RIE binary
     environment:
       - AWS_LAMBDA_RUNTIME_API=localhost:9000

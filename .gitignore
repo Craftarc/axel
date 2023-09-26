@@ -1,4 +1,6 @@
 .DS_Store
+.cache/
+Session.vim
 .idea/
 build
 external/
