@@ -30,7 +30,8 @@ RUN yum -y install git \
     autoconf-archive \
     automake \
     python3 \
-    gdb
+    gdb \
+    binutils-devel # For stack traces
 
 
 # Set aliases
@@ -57,5 +58,3 @@ WORKDIR /opt
 
 RUN git clone https://github.com/Microsoft/vcpkg.git && \
     ./vcpkg/bootstrap-vcpkg.sh
-
-WORKDIR /axel
