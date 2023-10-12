@@ -257,13 +257,15 @@ The _craftarc/axel:staging_ image mirrors this process. Upon launching this cont
 into the container and unpacked in a similar fashion. **Make sure `main.zip` is freshly built, because this process does
 not compile new executables**.
 
-As before, a standardised start sequence is provided via `docker compose`:
-
+In a craftarc/axel:dependencies container, at `/axel`, run the following command:
 ```
-docker compose up build-release-test
+scripts/build-release.sh test
+
 ```
 
 This builds Axel with `CMAKE_BUILD_TYPE=Release`, targeting testing servers.
+Note that running `scripts/build-release.sh prod` will target production servers,
+but running this in staging will not work because the credentials in `.aws` are insufficient.
 
 Then start the staging service:
 
@@ -273,30 +275,18 @@ docker compose up staging
 
 which uses the `main.zip` output from the previous command.
 
-This method is suitable for **staging** tests, as it most closely mimics the deployment environment. Behaviour is
-finally
-verified here before pushing to production.
+This method is suitable for **staging** tests, as it most closely mimics the deployment environment.
+
+Behaviour is verified here before pushing to production. Test behaviour by POSTing
+to the exposed port on the container, 9000.
 
 ## Working with custom entrypoints
 
 **To work with custom entrypoints, we want to execute the `sandbox` executable instead.** <br>
-Convenience scripts to do this correctly are, as always, provided in `docker-compose.yml`.
 
 **1. Build updated binaries**.
-
-```
-docker compose up build-release-test
-```
-
-This builds Axel with `CMAKE_BUILD_TYPE=Release`, targeting testing servers.
-
-**2. Start the 'dependencies' container**. Override the default `ENTRYPOINT`, which will start the RIE. Instead, drop
-straight into a shell.
-
-**Always run `docker compose` in the root directory of the project!** 
-```
-docker compose run --rm dev bash
-```
+In a container running the _craftarc/axel:dependencies_ image, build the updated
+binaries with the desired cmake flags.
 
 **3. Navigate to and run the `sandbox` executable.**
 
