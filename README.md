@@ -28,6 +28,7 @@ development.
     - [Working with the RIE](#working-with-the-rie)
         - [Mounting the RIE into the container](#mounting-the-rie-into-the-container)
         - [Deploying into an official RIE image](#deploying-into-an-official-rie-image)
+    - [Utility scripts](#utililty-scripts)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -270,7 +271,7 @@ but running this in staging will not work because the credentials in `.aws` are 
 Then start the staging service:
 
 ```
-docker compose up staging
+docker compose up --build staging
 ```
 
 which uses the `main.zip` output from the previous command.
@@ -294,6 +295,16 @@ binaries with the desired cmake flags.
 cd build
 ./sandbox
 ```
+
+## Utililty scripts
+In `/scripts`, there are a few utility scripts for common tasks.
+
+- `build-release.sh`
+    - arguments: `prod` or `test`
+    - This script builds release binaries and bundles them up into a deployable
+    main.zip. This means no debug information!
+    - To test in `craftarc/axel:staging`, run `build-release.sh test`, then
+    **rebuild** the image and run it. (see [Deploying into an official RIE image](#deploying-into-an-official-rie-image))
 
 # Contributing
 
