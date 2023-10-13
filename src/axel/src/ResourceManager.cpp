@@ -5,6 +5,7 @@
 
 #include <spdlog/spdlog.h>
 
+#include "axel/PlayerItems.h"
 #include "config/poe.h"
 #include "config/poe_ninja_config.h"
 #include "parse/json.h"
@@ -13,36 +14,32 @@
 #include "util/HttpSender.h"
 #include "util/http.h"
 
-namespace http = boost::beast::http;
 namespace json = boost::json;
 
 namespace axel {
     // Public
-    /// Uses the real implementation of HttpSender
-    /// @param access_token: Access token to use for making calls to the PoE API.
-    ResourceManager::ResourceManager(std::string access_token) :
-        ResourceManager{ std::move(access_token), std::make_shared<util::HttpSender>() } {};
+    ResourceManager::ResourceManager(const std::string& access_token) :
+        access_token_{ access_token },
+        player_items_{ access_token } {}
 
-    /// @param item_name Item name key to look for in prices_table_.
-    /// @return 0 if the item was not found.
-    /// @note Will log that the item name was not found.
-    double ResourceManager::find_in_prices_table(const std::string& item_name) {
-        if (prices_table_.find(item_name) != prices_table_.end()) {  // Item name was found in prices_table_
-            return prices_table_.at(item_name);
-        } else {
-            spdlog::warn("Item name '{}' not found in prices_table_", item_name);
-            return 0;
-        }
+    ResourceManager::ResourceManager(std::string&& access_token) :
+        access_token_{ std::move(access_token) },
+        player_items_{ access_token_ } {}
+
+    /// @return A list of items in the player's stashes
+    std::vector<axel::Item> ResourceManager::get_update() {
+            return std::vector<axel::Item>{};
     }
 
     // Protected
     ResourceManager::ResourceManager(std::string access_token, std::shared_ptr<util::IHttpSender> http_sender) :
         access_token_{ std::move(access_token) },
-        http_sender_{ std::move(http_sender) },
+        http_sender_{ http_sender },
         player_items_{ access_token_ } {};
 
     /// Stores the information in prices_table_ as a (name, price) pair.
-    /// @param prices String representation of a JSON response from PoE Ninja containing price information.
+    /// @param prices String representation of a JSON response from PoE Ninja
+    ///
     /// e.g. Price information for all currencies.
     void ResourceManager::add_to_prices_table(std::string& prices) {
         json::value prices_value(json::parse(prices));
@@ -79,8 +76,9 @@ namespace axel {
 
     /// @param path
     /// Stores the information in prices_table_ as an (item-name, price) pair.
-    /// @note Only retrieves prices for one endpoint. For example, calling the currency endpoint will retrieve
-    /// all price information provided by that endpoint only.
+    /// @note Only retrieves prices for one endpoint. For example, calling the
+    /// currency endpoint will retrieve all price information provided by that .
+    /// endpoint only.
     void ResourceManager::get_prices(const std::string& path, const std::string& league) {
         // Get to the 'lines' array, where all the price information is
         std::string full_path{ path + "&league=" + league };
@@ -88,4 +86,15 @@ namespace axel {
         add_to_prices_table(prices);
     }
 
+    /// @param item_name Item name key to look for in prices_table_.
+    /// @return 0 if the item was not found.
+    /// @note Will log that the item name was not found.
+    double ResourceManager::find_in_prices_table(const std::string& item_name) {
+        if (prices_table_.find(item_name) != prices_table_.end()) {  // Item name was found in prices_table_
+            return prices_table_.at(item_name);
+        } else {
+            spdlog::warn("Item name '{}' not found in prices_table_", item_name);
+            return 0;
+        }
+    }
 }  // namespace axel

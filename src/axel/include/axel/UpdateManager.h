@@ -10,6 +10,8 @@
 namespace http = boost::beast::http;
 
 namespace axel {
+    /// @brief Initiates and coordinates fetching updated item information from
+    /// the player's stash.
     class UpdateManager {
     public:
         /// @brief Default constructor.

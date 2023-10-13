@@ -1,4 +1,5 @@
 #!/bin/bash
+# Builds the project for testing and starts the RIE
 
 echo ">> Inside container"
 set -euo pipefail

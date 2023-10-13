@@ -1,5 +1,6 @@
 #!/bin/bash
-# Build script for prod
+# Build script
+# Run this in the root directory of the project
 
 # Set CMake arguments here
 cmake_args='-G Ninja -DCMAKE_BUILD_TYPE=Release'
@@ -18,9 +19,7 @@ echo ">> Current working directory: $(pwd)"
 
 echo ">> Building Axel..."
 mkdir -p build
+rm -f build/CMakeCache.txt # Clean out previous build settings
 cmake -B build -S . ${cmake_args} # CMake configuration setup
 cmake --build build --target all --target aws-lambda-package-main
 echo ">> Compilation complete"
-
-bash
-

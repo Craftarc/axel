@@ -37,11 +37,11 @@ RUN yum -y install git \
 # Set aliases
 WORKDIR /usr/bin
 
-RUN ln -s gcc10-gcc gcc && \
-    ln -s gcc10-g++ g++ && \
-    ln -s gcc10-ar ar && \
-    ln -s ninja-build ninja && \
-    ln -s gcc10-ranlib ranlib
+RUN ln -sf gcc10-gcc gcc && \
+    ln -sf gcc10-g++ g++ && \
+    ln -sf gcc10-ar ar && \
+    ln -sf ninja-build ninja && \
+    ln -sf gcc10-ranlib ranlib
 
 # Install CMake
 WORKDIR /usr/local

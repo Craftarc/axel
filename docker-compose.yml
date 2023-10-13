@@ -22,26 +22,9 @@ services:
       - "9000:8080"
     volumes:
       - ~/.aws:/root/.aws # Credentials file
-      - .:${PWD}  # Mount project root into matching path in container
+      - .:${PWD}
       - ~/.aws-lambda-rie:/aws-lambda # RIE binary
+      - ~/.ssh:/root/.ssh
     environment:
       - AWS_LAMBDA_RUNTIME_API=localhost:9000
     command: [ "scripts/dev/start.sh" ]
-
-  build-release-prod:
-    image: craftarc/axel:dependencies
-    build:
-      context: .
-      dockerfile: dockerfile/dependencies.Dockerfile
-    volumes:
-      - .:/axel
-    command: [ "scripts/build-release.sh", "prod" ]
-
-  build-release-test:
-    image: craftarc/axel:dependencies
-    build:
-      context: .
-      dockerfile: dockerfile/dependencies.Dockerfile
-    volumes:
-      - .:/axel
-    command: [ "scripts/build-release.sh", "test" ]

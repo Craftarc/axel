@@ -16,8 +16,11 @@ namespace axel {
             friend class ResourceManager_test;
 
         public:
-            /// @brief Default constructor.
-            explicit ResourceManager(std::string access_token);
+            /// @brief Constructor
+            explicit ResourceManager(const std::string& access_token);
+
+            /// @brief Constructor
+            explicit ResourceManager(std::string&& access_token);
 
             /// @brief Get an updated list of items in the player's stashes, and their cumulative value.
             std::vector<axel::Item> get_update();
