@@ -106,6 +106,7 @@ namespace auth {
 			                                                     { "Set-Cookie", session_id } };
 		auto response = parse::make_invocation_response_payload(REDIRECT_STATUS_CODE, headers, "");
 
+        spdlog::info("Response: {}", response);
 		set_state(State::USER_REDIRECTED);
 		spdlog::info("State set to USER_REDIRECTED");
 

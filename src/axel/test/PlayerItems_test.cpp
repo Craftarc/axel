@@ -24,7 +24,7 @@ namespace axel {
             axel::PlayerItems player_items;
     };
 
-    TEST_F(PlayerItems_test, get_update__empty_json_response) {
+    TEST_F(PlayerItems_test, get_update__error_empty_json_response) {
         NiceMock<util::MockHttpSender>* mock_http_sender_handle{
             mock_http_sender.get()
         };

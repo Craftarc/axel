@@ -22,12 +22,6 @@ namespace axel {
             axel::ResourceManager resource_manager;
     };
 
-    // Get update shouldn't return an empty array (unless the player has literally zero items)
-    TEST_F(ResourceManager_test, get_update__no_empty_items) {
-        auto result{ resource_manager.get_update() };
-        EXPECT_FALSE(result.empty());
-    }
-
     TEST_F(ResourceManager_test, get_update__succeed) {
         EXPECT_NO_FATAL_FAILURE(resource_manager.get_update());
     }

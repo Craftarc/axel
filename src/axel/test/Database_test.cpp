@@ -41,7 +41,7 @@ namespace axel {
 	class Database_test : public Test {
 		protected:
 			Database_test() :
-				mock_auth_client{ new axel::MockDynamoDBClient },
+				mock_auth_client{ new NiceMock<axel::MockDynamoDBClient> },
 				setup_return(setup()),
 				auth_database{ config::axel::database::auth,
 				               config::axel::database::auth_attributes,

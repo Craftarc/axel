@@ -7,6 +7,7 @@
 #include "backward.hpp"
 #include "boost/json.hpp"
 #include "config/poe.h"
+#include "fmt/ranges.h"
 #include "parse/json.h"
 #include "parse/util.h"
 #include "spdlog/spdlog.h"
@@ -48,13 +49,17 @@ namespace axel {
     const std::unordered_map<std::string, int64_t>&
     PlayerItems::get_update(const std::string& league) {
         json::value stashes(list_stashes(league));
-        std::cout << stashes << std::endl;
         set_stash_tab_ids(stashes);
 
-        std::cout << stashes.at(0) << std::endl;
-        //TODO: Replace placeholder json string
-        fill_items_table({ "" });
-        std::cout << "here" << std::endl;
+        // For now, get the first 3 stashes
+        std::vector<std::string> target_stash_ids{ stash_tab_ids_[0],
+                                                   stash_tab_ids_[1],
+                                                   stash_tab_ids_[2] };
+
+        for (auto& id : target_stash_ids) {
+            json::value stash = get_stash(id);
+            fill_items_table(stash);
+        }
         return items_table_;
     }
 

@@ -1,5 +1,6 @@
 #include "poe_ninja/get_poe_ninja_data.h"
 
+#include <spdlog/spdlog.h>
 #include <string>
 
 #include "config/poe_ninja_config.h"

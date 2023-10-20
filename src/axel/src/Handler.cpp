@@ -19,6 +19,8 @@ namespace axel {
     /// @param req: The invocation request received from the AWS Lambda service
     invocation_response Handler::handler(const invocation_request& req) {
         std::string payload = req.payload;
+        spdlog::info("Payload: {}", payload);
+
         std::string content_type;
         boost::json::value json = boost::json::parse(payload);
         std::string path = json.at("rawPath").as_string().c_str();

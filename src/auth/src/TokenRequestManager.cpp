@@ -4,6 +4,7 @@
 
 #include <boost/beast/http.hpp>
 #include <boost/json.hpp>
+#include <spdlog/spdlog.h>
 
 #include "config/axel.h"
 #include "config/poe.h"
@@ -19,7 +20,7 @@ namespace http = boost::beast::http;
 /// @param auth_code The authorization code to be included in the token exchange request.
 /// @param code_verifier The code verifier to be included in the token exchange request.
 /// @param http_sender The HttpSender class that defines the request-sending behaviour and underlying networking.
-/// @return A pair of strings in the format: {access_token, refresh_token}
+/// @return The access token
 std::string auth::TokenRequestManager::send_token_request(std::string auth_code,
                                                           std::string code_verifier,
                                                           std::unique_ptr<util::IHttpSender> http_sender) const {
@@ -36,7 +37,7 @@ std::string auth::TokenRequestManager::send_token_request(std::string auth_code,
 
 	std::string request_body = util::make_form_data(
 	{ { "client_id", config::axel::client_id },
-	  { "client_secret", "secret" },
+	  { "client_secret", "vG55l3KkL4Hz" },
 	  { "grant_type", config::axel::grant_type },
 	  { "code", std::move(auth_code) },
 	  { "redirect_uri", config::poe::paths::redirect_uri },
@@ -54,6 +55,8 @@ std::string auth::TokenRequestManager::send_token_request(std::string auth_code,
 
 	full_request.prepare_payload();  // Automatically set Content-Length
 	auto response_body = http_sender->send_http_request(full_request, MAX_RESPONSE_BODY);
+
+    spdlog::info("Response: {}", response_body);
 
 	// Extract access token
 	boost::json::value json = boost::json::parse(response_body);

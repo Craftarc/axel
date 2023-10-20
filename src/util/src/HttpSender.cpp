@@ -3,6 +3,7 @@
 #include <boost/asio/ssl.hpp>
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
+#include <iostream>
 
 #include "util/http.h"
 
