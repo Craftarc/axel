@@ -96,6 +96,8 @@ NamespaceMacros: []
 PPIndentWidth: -1
 PackConstructorInitializers: CurrentLine
 PenaltyBreakAssignment: 100
+PenaltyBreakOpenParenthesis: 300
+PenaltyBreakBeforeFirstCallParameter: 100
 PointerAlignment: Left
 QualifierAlignment: Left
 ReferenceAlignment: Left
