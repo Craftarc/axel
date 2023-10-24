@@ -1,0 +1,10 @@
+services:
+  staging:
+    image: craftarc/axel:staging
+    build:  
+      context: . # env/staging/
+      dockerfile: staging.Dockerfile
+    ports: 
+      - "80:80"
+    command: [nginx, '-g', 'daemon off;'] # Start server in foreground so
+                                          # the container doesn't stop immediately
