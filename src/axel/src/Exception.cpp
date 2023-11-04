@@ -9,7 +9,7 @@ namespace axel {
     void Exception::print_stack_trace() {
         using namespace backward;
         StackTrace st;
-        st.load_here(32);
+        st.load_here(8);
         Printer p;
         p.object = false;
         p.snippet = true;

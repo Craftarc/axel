@@ -11,7 +11,7 @@ cmake_minimum_required(VERSION 3.22)
 project(axel LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -rdynamic")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -rdynamic -fdiagnostics-color=always")
 
 set(Boost_NO_WARN_NEW_VERSIONS 1)
 
@@ -34,6 +34,9 @@ enable_testing()
 # OpenSSL
 find_package(OpenSSL REQUIRED)
 
+# Crow
+find_package(Crow REQUIRED)
+
 # Botan uses pkgconfig; find PkgConfig, then use PkgConfig to find botan-2.pc
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BOTAN_PKG REQUIRED botan-2)
@@ -42,18 +45,17 @@ link_directories(${BOTAN_PKG_LIBRARY_DIRS})
 # spdlog
 find_package(spdlog CONFIG REQUIRED)
 
+# sqlite3
+find_package(unofficial-sqlite3 CONFIG REQUIRED)
+
 # End find libraries
 
 # main executable
 add_executable(main ${MAIN_SRC_FILES})
 target_include_directories(main PRIVATE AWS::aws-lambda-runtime)
-target_link_libraries(
-  main PRIVATE axel test_definitions AWS::aws-lambda-runtime Boost::json
-               spdlog::spdlog)
-target_compile_features(main PRIVATE "cxx_std_17")
+target_link_libraries(main PRIVATE util axel test_definitions Crow::Crow
+                                   spdlog::spdlog unofficial::sqlite3::sqlite3)
 target_compile_options(main PRIVATE "-Wall" "-Wextra")
-aws_lambda_package_target(main NO_LIBC) # this line creates a target that
-                                        # packages your binary and zips it up
 
 # Settings
 
@@ -74,10 +76,9 @@ endif()
 
 # sandbox executable (for testing free functions)
 add_executable(sandbox sandbox.cpp)
-target_compile_features(sandbox PRIVATE "cxx_std_17")
 target_compile_options(sandbox PRIVATE "-Wall" "-Wextra")
 target_include_directories(sandbox PRIVATE ${PROJECT_ROOT})
-target_link_libraries(sandbox PRIVATE axel)
+target_link_libraries(sandbox PRIVATE util axel unofficial::sqlite3::sqlite3)
 
 # tests executable (all tests)
 add_executable(
