@@ -2,8 +2,10 @@
 .cache/
 Session.vim
 .idea/
+main.zip
 build
 external/
 credentials
 docs/html
 vcpkg_installed
+

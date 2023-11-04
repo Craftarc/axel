@@ -58,8 +58,3 @@ WORKDIR /opt
 
 RUN git clone https://github.com/Microsoft/vcpkg.git && \
     ./vcpkg/bootstrap-vcpkg.sh
-
-# Install editor
-
-RUN git clone https://github.com/juayhee/dotfiles.git && \
-    source dotfiles/bootstrap.sh
