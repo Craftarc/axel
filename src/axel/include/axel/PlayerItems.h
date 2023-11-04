@@ -38,7 +38,8 @@ namespace axel {
             http::request<http::string_body>
             make_get_stash_request(const std::string& id) const;
 
-            /// @brief Populates items_table_ with information about the items_string in a player's inventory.
+            /// @brief Populates items_table_ with information
+            /// about the items_string in a player's inventory.
             void fill_items_table(const json::value& stash);
 
             /// @brief Fetches a list of the player's stashes for a particular
@@ -47,7 +48,7 @@ namespace axel {
 
             /// @brief Looks through a List Stashes response JSON for stash tab IDs and
             /// stores them
-            void set_stash_tab_ids(boost::json::value list_stash_response);
+            bool set_stash_tab_ids(boost::json::value list_stash_response);
 
             /// @brief Prepares a List Stashes HTTP request to send to the PoE API.
             http::request<http::string_body>

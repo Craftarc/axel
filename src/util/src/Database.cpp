@@ -20,6 +20,9 @@ namespace {
 
 }  // namespace
 
+using TableInfo =
+std::pair<std::string, std::unordered_map<std::string, std::string>>;
+
 namespace util {
     Database::Database(const char* name) {
         if (sqlite3_open(name, &handle_) != SQLITE_OK) {
@@ -44,6 +47,11 @@ namespace util {
                 "time_to_live INTEGER NOT NULL,"
                 "FOREIGN KEY (session_id) REFERENCES oauth (session_key)"
                 "ON DELETE CASCADE)");
+
+        // Schema for prices table
+        execute("CREATE TABLE IF NOT EXISTS prices"
+                "(name TEXT PRIMARY KEY,"
+                "unit_price REAL UNIQUE DEFAULT NULL)");
     }
 
     Database::~Database() {
@@ -65,13 +73,15 @@ namespace util {
         }
     }
 
-    std::unordered_map<std::string, std::variant<std::string, int>>
+    std::unordered_map<std::string, std::variant<std::string, int, double>>
     Database::select_row(const std::string& table,
                          const std::string& primary_key_value,
                          std::vector<std::string> attributes) {
-        std::unordered_map<std::string, std::variant<std::string, int>>
+        TableInfo table_info = get_table_info(table);
+        std::string primary_key{ table_info.first };
+
+        std::unordered_map<std::string, std::variant<std::string, int, double>>
         result{};
-        std::string primary_key{ attributes.at(0) };
 
         // Prepare query
         std::string comma_separated_attributes{
@@ -84,13 +94,14 @@ namespace util {
                                        primary_key,
                                        primary_key_value) };
 
-        auto table_info{ get_table_info(table) };
         spdlog::info("{}", query);
 
         if (prepare(&statement, query) == 0) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 int n_columns{ sqlite3_column_count(statement) };
-                auto row = extract_row(statement, attributes, table_info.second);
+                auto row = extract_row(statement,
+                                       attributes,
+                                       table_info.second);
 
                 for (int i{ 0 }; i < attributes.size(); i++) {
                     /// attributes
@@ -123,8 +134,7 @@ namespace util {
         return result;
     }
 
-    std::pair<std::string, std::unordered_map<std::string, std::string>>
-    Database::get_table_info(const std::string& table) noexcept {
+    TableInfo Database::get_table_info(const std::string& table) noexcept {
         std::unordered_map<std::string, std::string> map{};
         std::string primary_key;
 
@@ -172,13 +182,13 @@ namespace util {
         return 0;
     }
 
-    std::vector<std::variant<std::string, int>>
+    std::vector<std::variant<std::string, int, double>>
     Database::extract_row(sqlite3_stmt* statement,
                           const std::vector<std::string>& attributes,
                           const std::unordered_map<std::string, std::string>&
                           table_info) noexcept {
         int n_columns{ sqlite3_column_count(statement) };
-        std::vector<std::variant<std::string, int>> row;
+        std::vector<std::variant<std::string, int, double>> row;
 
         for (int i{ 0 }; i < n_columns; i++) {
             // Get current attribute's type
@@ -186,7 +196,7 @@ namespace util {
             std::string type{ table_info.at(current_attribute) };
 
             // Retrieve from statement as the right type
-            std::variant<std::string, int> item;
+            std::variant<std::string, int, double> item;
             if (type == "TEXT") {
                 item =
                 reinterpret_cast<const char*>(sqlite3_column_text(statement,
@@ -203,10 +213,10 @@ namespace util {
         return row;
     }
 
-    int
-    Database::delete_row(const std::string& table,
-                         const std::string& attribute,
-                         const std::variant<std::string, int>& value) noexcept {
+    int Database::delete_row(const std::string& table,
+                             const std::string& attribute,
+                             const std::variant<std::string, int, double>&
+                             value) noexcept {
         sqlite3_stmt* statement;
 
         std::string query;
@@ -246,11 +256,11 @@ namespace util {
         }
     }
 
-    int
-    Database::update_row(const std::string& table,
-                         const std::string& primary_key_value,
-                         const std::string& attribute,
-                         std::variant<std::string, int> new_value) noexcept {
+    int Database::update_row(const std::string& table,
+                             const std::string& primary_key_value,
+                             const std::string& attribute,
+                             std::variant<std::string, int, double>
+                             new_value) noexcept {
         auto table_info = get_table_info(table);
         auto primary_key{ table_info.first };
 
@@ -299,6 +309,16 @@ namespace util {
         } else {
             return 1;
         }
+    }
+
+    int
+    Database::insert_row(const std::string& table,
+                         const std::variant<database::OAuthTable,
+                                            database::AppTable,
+                                            database::PricesTable>& values) {
+        return std::visit(
+        [this, &table](auto&& variant) { return this->insert_row(table, variant); },
+        values);
     }
 
 }  // namespace util

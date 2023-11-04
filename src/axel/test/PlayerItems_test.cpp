@@ -5,8 +5,6 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include "config/poe.h"
-#include "parse/util.h"
 #include "util/MockHttpSender.h"
 
 using namespace ::testing;
@@ -24,7 +22,7 @@ namespace axel {
             axel::PlayerItems player_items;
     };
 
-    TEST_F(PlayerItems_test, get_update__error_empty_json_response) {
+    TEST_F(PlayerItems_test, get_update__empty_json_response_empty_table) {
         NiceMock<util::MockHttpSender>* mock_http_sender_handle{
             mock_http_sender.get()
         };
@@ -33,7 +31,7 @@ namespace axel {
         .Times(1)
         .WillOnce(Return(test_json));
 
-        // Should throw something because nothing can be found in the empty json
-        EXPECT_THROW(player_items.get_update(""), std::runtime_error);
+        auto table = player_items.get_update("");
+        EXPECT_TRUE(table.empty());
     }
 }  // namespace axel

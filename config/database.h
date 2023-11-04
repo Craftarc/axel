@@ -18,6 +18,11 @@ namespace database {
             int time_to_live;
     };
 
+    struct PricesTable {
+            std::string name;  // Primary key
+            double unit_price;
+    };
+
 }  // namespace database
 
 #endif

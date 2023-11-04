@@ -3,15 +3,18 @@
 
 #include <string>
 
+#include <crow.h>
+
 namespace auth {
     class IOauthManager {
-    public:
-        virtual ~IOauthManager() = default;
-        
-        virtual std::string start_auth() = 0;
-        virtual std::string
-        receive_auth(const std::string& query_string, const std::string& session_id) = 0;
-    };
-}
+        public:
+            virtual ~IOauthManager() = default;
 
-#endif //AXEL_IOAUTHMANAGER_H
+            virtual void start_auth(crow::response& response) = 0;
+            virtual void receive_auth(const std::string& query_string,
+                                      const std::string& session_id,
+                                      crow::response& response) = 0;
+    };
+}  // namespace auth
+
+#endif  //AXEL_IOAUTHMANAGER_H

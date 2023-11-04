@@ -1,5 +1,5 @@
-#ifndef AXEL_util_IHTTPSENDER_H
-#define AXEL_util_IHTTPSENDER_H
+#ifndef AXEL_UTIL_IHTTPSENDER_H
+#define AXEL_UTIL_IHTTPSENDER_H
 
 #include <string>
 
@@ -16,4 +16,4 @@ namespace util {
 			virtual std::string send_http_request(const http::request<http::string_body>& request) = 0;
 	};
 }  // namespace util
-#endif  // AXEL_util_IHTTPSENDER_H
+#endif  // AXEL_UTIL_IHTTPSENDER_H

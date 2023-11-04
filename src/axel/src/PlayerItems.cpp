@@ -49,16 +49,15 @@ namespace axel {
     const std::unordered_map<std::string, int64_t>&
     PlayerItems::get_update(const std::string& league) {
         json::value stashes(list_stashes(league));
-        set_stash_tab_ids(stashes);
-
-        // For now, get the first 3 stashes
-        std::vector<std::string> target_stash_ids{ stash_tab_ids_[0],
-                                                   stash_tab_ids_[1],
-                                                   stash_tab_ids_[2] };
-
-        for (auto& id : target_stash_ids) {
-            json::value stash = get_stash(id);
-            fill_items_table(stash);
+        if (set_stash_tab_ids(stashes)) {
+            // For now, get the first 3 stashes
+            std::vector<std::string> target_stash_ids{ stash_tab_ids_[0],
+                                                       stash_tab_ids_[1],
+                                                       stash_tab_ids_[2] };
+            for (auto& id : target_stash_ids) {
+                json::value stash = get_stash(id);
+                fill_items_table(stash);
+            }
         }
         return items_table_;
     }
@@ -68,28 +67,34 @@ namespace axel {
     /// Stores stash tab IDs in stash_tab_ids_
     /// Reference: https://www.pathofexile.com/developer/docs/reference#type-StashTab
     /// @param list_stash_response boost::json::value response from a List Stashes API call.
+    /// @return True if successful.
     /// @note Directly modifiers the private stash_tab_ids_ vector.
-    void
+    bool
     PlayerItems::set_stash_tab_ids(boost::json::value list_stash_response) {
         // Try to look for value at /stashes
         boost::system::error_code ec;
         json::value* stashes(list_stash_response.find_pointer("/stashes", ec));
         if (ec.value() != 0) {
-            throw axel::Exception("Error finding value at '/stashes'");
+            spdlog::error("Error finding value at '/stashes'");
+            return false;
         }
         // 'stashes' value should be an array
         json::array* stashes_list{ stashes->if_array() };
         if (stashes_list == nullptr) {
-            throw axel::Exception("Value at '/stashes' is not a JSON array");
+            spdlog::error("Value at '/stashes' is not a JSON array");
+            return false;
         }
         for (auto& item : *stashes_list) {
             json::value* name{ item.find_pointer("/id", ec) };
             if (ec.value() != 0) {
-                throw axel::Exception(
+                spdlog::error(
                 "Could not find value at '/id' in a stash object");
+                return false;
             }
             stash_tab_ids_.emplace_back(name->as_string());
         }
+
+        return true;
     }
 
     /// Stores the information in items_table_ as a (item-name, quantity) pair.

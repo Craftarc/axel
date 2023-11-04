@@ -1,101 +1,103 @@
 {
-  "$schema": "https:://json-schema.org/draft/2020-12/schema",
-  "title": "Detailed Net Worth Table",
-  "description": "Data contract for the valuation details of a player's inventory",
-  "$ref": "#/definitions/DetailedNetWorthTable",
-  "definitions": {
-	"DetailedNetWorthTable": {
-	  "title": "Top level JSON object",
-	  "description": "Contains JSON objects that each describe a portion of the player's inventory",
-	  "type": "object",
-	  "properties": {
-		"league": {
-		  "$ref": "#/definitions/League"
-		},
-		"league-type": {
-		  "description": "Name of the league for which this data was fetched",
-		  "type": "string"
-		},
-		"items": {
-		  "$ref": "#/definitions/Items"
-		}
-	  }
-	},
-	"League": {
-	  "title": "League that this data was obtained from",
-	  "type": "string",
-	  "examples": [
-		"Bestiary",
-		"Sanctum"
-	  ]
-	},
-	"Items": {
-	  "title": "Player inventory item list",
-	  "description": "Each element is an object that contains statistics about all instances of the item present in the player's inventory",
-	  "type": "array",
-	  "items": {
-		"$ref": "#/definitions/Item"
-	  }
-	},
-	"Item": {
-	  "title": "Item statistics object",
-	  "description": "Contains information about an item's cumulative statistics, such as quantity, unit price and total price",
-	  "type": "object",
-	  "properties": {
-		"sort-id": {
-		  "description": "Integer for use in sorting according to all of the different table attributes",
-		  "type": "integer"
-		},
-		"name": {
-		  "type": "string"
-		},
-		"quantity": {
-		  "type": "integer"
-		},
-		"unit-price": {
-		  "type": "number"
-		},
-		"total-price": {
-		  "type": "number"
-		},
-		"graph": {
-		  "type": "array",
-		  "items": {
-			"type": "number"
-		  }
-		}
-	  },
-	  "additionalProperties": false,
-	  "required": ["sort-id", "name", "quantity", "unit-price", "total-price", "graph"]
-	},
-	"SortIdArray": {
-	  "title": "Array of sorted indexes",
-	  "description": "An array of sort-ids of Items, sorted according to the indicated attribute",
-	  "type": "array",
-	  "items": {
-		"type": "integer",
-		"uniqueItems": "true"
-	  }
-	},
-	"SortedBy": {
-	  "description": "Sorted arrays of sort-ids for each attribute in the table",
-	  "type": "object",
-	  "properties": {
-		"name": {
-		  "$ref": "#/definitions/SortIdArray"
-		},
-		"quantity": {
-		  "$ref": "#/definitions/SortIdArray"
-		},
-		"unit-price": {
-		  "$ref": "#/definitions/SortIdArray"
-		},
-		"total-price": {
-		  "$ref": "#/definitions/SortIdArray"
-		}
-	  },
-	  "additionalProperties": false,
-	  "required": ["name", "quantity", "unit-price", "total-price"]
-	}
-  }
+    "$schema": "https:://json-schema.org/draft/2020-12/schema",
+    "title": "Detailed Net Worth Table",
+    "description": "Data contract for the valuation details of a player's inventory",
+    "$ref": "#/definitions/DetailedNetWorthTable",
+    "definitions": {
+        "DetailedNetWorthTable": {
+            "title": "Top level JSON object",
+            "description": "Contains JSON objects that each describe a portion of the player's inventory",
+            "type": "object",
+            "properties": {
+                "league": {
+                    "$ref": "#/definitions/League"
+                },
+                "league-type": {
+                    "description": "Name of the league for which this data was fetched",
+                    "type": "string"
+                },
+                "items": {
+                    "$ref": "#/definitions/Items"
+                }
+                "sorted": {
+                    "$ref": "#/definitions/SortedBy"
+                }
+            }
+        },
+        "League": {
+            "title": "League that this data was obtained from",
+            "type": "string",
+            "examples": [
+                "Bestiary",
+                "Sanctum"
+            ]
+        },
+        "Items": {
+            "title": "Player inventory item list",
+            "description": "Each element is an object that contains statistics about all instances of the item present in the player's inventory",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Item"
+            }
+        },
+        "Item": {
+            "title": "Item statistics object",
+            "description": "Contains information about an item's cumulative statistics, such as quantity, unit price and total price",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "type": "integer"
+                },
+                "unit-price": {
+                    "type": "number"
+                },
+                "total-price": {
+                    "type": "number"
+                },
+                "graph": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["sort-id", "name", "quantity", "unit-price", "total-price", "graph"]
+        },
+        "SortedBy": {
+            "description": "Arrays of sorted unique IDs over different attributes",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "quantity": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "unit-price": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "total-price": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["name", "quantity", "unit-price", "total-price"]
+        }
+    }
 }

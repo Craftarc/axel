@@ -1,4 +1,6 @@
 #include "util/Database.h"
+#include "util/type.h"
+#include "axel/Exception.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -24,27 +26,6 @@ namespace {
         return row_count;
     }
 
-    // Get underlying string from variant
-    // Throws if the underlying value was not a string
-    std::string get_string(std::variant<std::string, int> variant) {
-        const std::string* handle = std::get_if<std::string>(&variant);
-        if (handle) {
-            return *handle;
-        } else {
-            throw axel::Exception("Underlying type was not a string");
-        }
-    }
-
-    // Get underlying int from variant
-    // Throws if the underlying value was not an int
-    int get_int(std::variant<std::string, int> variant) {
-        const int* handle = std::get_if<int>(&variant);
-        if (handle) {
-            return *handle;
-        } else {
-            throw axel::Exception("Underlying type was not a int");
-        }
-    }
 }  // namespace
 
 using namespace ::testing;
@@ -110,11 +91,11 @@ TEST_F(Database_tests, select_row__selects) {
     EXPECT_EQ(2, result.size());  // 2 keys: session_id and time_to_live
 
     // Get the "session_id" value out
-    auto session_id = get_string(result.at("session_id"));
+    auto session_id = util::get_string(result.at("session_id"));
     EXPECT_EQ("session_id", session_id);
 
     // Get the "time_to_live" value out
-    auto time_to_live = get_int(result.at("time_to_live"));
+    auto time_to_live = util::get_int(result.at("time_to_live"));
     EXPECT_EQ(100, time_to_live);
 }
 
@@ -130,12 +111,12 @@ TEST_F(Database_tests, update_row__updates_row_with_int_value) {
     database.insert_row("app", apptable_row);
     std::vector select_attributes{ "session_id"s, "time_to_live"s };
     auto result = database.select_row("app", "session_id", select_attributes);
-    auto time_to_live = get_int(result.at("time_to_live"));
+    auto time_to_live = util::get_int(result.at("time_to_live"));
     EXPECT_EQ(100, time_to_live);
 
     database.update_row("app", "session_id", "time_to_live", 200);
     result = database.select_row("app", "session_id", select_attributes);
-    time_to_live = get_int(result.at("time_to_live"));
+    time_to_live = util::get_int(result.at("time_to_live"));
     EXPECT_EQ(200, time_to_live);
 }
 
@@ -143,7 +124,7 @@ TEST_F(Database_tests, update_row__updates_row_with_string_value) {
     database.insert_row("app", apptable_row);
     std::vector select_attributes{ "session_id"s, "access_token"s };
     auto result = database.select_row("app", "session_id", select_attributes);
-    auto access_token = get_string(result.at("access_token"));
+    auto access_token = util::get_string(result.at("access_token"));
     EXPECT_EQ("access_token", access_token);
 
     database.update_row("app",
@@ -151,7 +132,7 @@ TEST_F(Database_tests, update_row__updates_row_with_string_value) {
                         "access_token",
                         "new_access_token");
     result = database.select_row("app", "session_id", select_attributes);
-    access_token = get_string(result.at("access_token"));
+    access_token = util::get_string(result.at("access_token"));
     EXPECT_EQ("new_access_token", access_token);
 }
 
@@ -159,7 +140,7 @@ TEST_F(Database_tests, update_row__no_such_primary_key_value) {
     database.insert_row("app", apptable_row);
     std::vector select_attributes{ "session_id"s, "access_token"s };
     auto result = database.select_row("app", "session_id", select_attributes);
-    auto access_token = get_string(result.at("access_token"));
+    auto access_token = util::get_string(result.at("access_token"));
     EXPECT_EQ("access_token", access_token);
 
     database.update_row("app",
@@ -167,6 +148,6 @@ TEST_F(Database_tests, update_row__no_such_primary_key_value) {
                         "access_token",
                         "new_access_token");
     result = database.select_row("app", "session_id", select_attributes);
-    access_token = get_string(result.at("access_token"));
+    access_token = util::get_string(result.at("access_token"));
     EXPECT_EQ("access_token", access_token);
 }

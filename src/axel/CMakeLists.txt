@@ -1,17 +1,15 @@
 # Configure target sources here
 set(AXEL_SRC_FILES
-    src/Handler.cpp
-    src/Handler.cpp
     src/Database.cpp
     src/DynamoDBClient.cpp
-    src/UpdateManager.cpp
     src/Item.cpp
     src/ResourceManager.cpp
     src/PlayerItems.cpp
-    src/Exception.cpp)
+    src/Exception.cpp
+    src/Prices.cpp)
 
 set(AXEL_TESTS_SRC_FILES test/Database_test.cpp test/ResourceManager_test.cpp
-                         test/PlayerItems_test.cpp)
+                         test/PlayerItems_test.cpp test/Prices_test.cpp)
 
 # Find libbfd for axel::Exception
 find_library(BFD_LIBRARY NAMES bfd REQUIRED)
@@ -21,7 +19,7 @@ add_library(axel ${AXEL_SRC_FILES})
 message(STATUS "${Boost_INCLUDE_DIRS}")
 target_include_directories(axel PUBLIC include ${PROJECT_ROOT}
                                        ${Boost_INCLUDE_DIRS})
-target_link_libraries(axel PUBLIC auth parse poe_ninja AWS::aws-lambda-runtime
+target_link_libraries(axel PUBLIC auth parse poe_ninja util AWS::aws-lambda-runtime
     ${BFD_LIBRARY})
 
 # axel library tests

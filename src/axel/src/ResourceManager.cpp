@@ -1,123 +1,166 @@
 #include "axel/ResourceManager.h"
 
+#include <functional>
 #include <iostream>
+#include <memory>
 #include <utility>
 
 #include <spdlog/spdlog.h>
 
 #include "axel/PlayerItems.h"
+#include "axel/Prices.h"
+#include "config/database.h"
 #include "config/poe.h"
 #include "config/poe_ninja_config.h"
-#include "fmt/ranges.h"
 #include "parse/json.h"
 #include "parse/util.h"
 #include "poe_ninja/get_poe_ninja_data.h"
+#include "util/Database.h"
 #include "util/HttpSender.h"
-#include "util/http.h"
+#include "util/type.h"
 
 namespace json = boost::json;
 
+namespace {
+    /// @brief Retrieves the sort order of items given a sorting function.
+    /// @param items List of items to sort through.
+    /// @param Comparator function.
+    /// @return A sorted list of unique item IDs.
+    std::vector<int>
+    get_sort_order(const std::vector<axel::Item>& items,
+                   std::function<bool(const axel::Item& item_1,
+                                      const axel::Item& item_2)> comp) {
+        // Copy because sort mutates
+        auto copy(items);
+        std::sort(copy.begin(), copy.end(), comp);
+
+        // Retrieve IDs in order
+        std::vector<int> result{};
+        for (auto item : copy) {
+            result.push_back(item.get_id());
+        }
+
+        return result;
+    }
+}  // namespace
+
 namespace axel {
+    namespace ninja = config::poe_ninja;
+
     // Public
-    ResourceManager::ResourceManager(const std::string& access_token) :
+    ResourceManager::ResourceManager(const std::string& access_token,
+                                     const std::string& league,
+                                     const std::string& league_type) :
         access_token_{ access_token },
-        player_items_{ access_token } {} <- initialise httpsender here
+        league_{ league },
+        league_type_{ league_type },
+        player_items_{ std::move(access_token) },
+        prices_{ std::make_unique<axel::Prices>(league, league_type) },
+        database_{ std::make_unique<util::Database>("app") },
+        http_sender_{ std::make_shared<util::HttpSender>() } {}
 
+    std::string ResourceManager::get_update() {
+        auto player_items = player_items_.get_update(ninja::leagues::standard);
+        prices_->update_prices();
 
-    ResourceManager::ResourceManager(std::string&& access_token) :
-        access_token_{ std::move(access_token) },
-        player_items_{ access_token_ } {}
+        std::vector<axel::Item> item_list{};
+        int id = 0;  // Unique ID to give to each item
+        for (auto& pair : player_items) {
+            std::string name{ pair.first };
+            int64_t quantity{ util::long_to_int64_t(pair.second) };
+            double unit_price{ -1 };
 
-    /// @return A list of items in the player's stashes
-    std::vector<axel::Item> ResourceManager::get_update() {
-        spdlog::info("Entered get_update()");
-        auto player_items = player_items_.get_update("standard");
+            // Lookup corresponding unit price
+            std::vector<std::string> attributes{ "name, unit_price" };
+            auto prices_table = database_->select_row("prices",
+                                                      name,
+                                                      attributes);
 
-        spdlog::info("Done get_update()");
-        get_prices(config::poe_ninja::paths::currency, "crucible");
+            if (!prices_table.empty()) {
+                auto unit_price_variant = prices_table.at("unit_price");
+                // Get the double out of variant
+                if (const double* unit_price_ptr =
+                    std::get_if<double>(&unit_price_variant)) {
+                    unit_price = *unit_price_ptr;
+                }
+            } else {
+                spdlog::warn("Unit price not found for {}", name);
+            }
 
-        spdlog::info("Done get_prices()");
-        fmt::print("Prices table: {}", prices_table_);
+            item_list
+            .emplace_back(axel::Item{ id, name, quantity, unit_price });
+            id++;
+        }
+        json::value item_list_json = serialise_items(item_list);
+        return json::serialize(item_list_json);
     }
 
     // Protected
-    ResourceManager::ResourceManager(
-    std::string access_token,
-    std::shared_ptr<util::IHttpSender> http_sender) :
+    ResourceManager::ResourceManager(std::string access_token,
+                                     std::shared_ptr<util::IHttpSender>
+                                     http_sender) :
         access_token_{ std::move(access_token) },
         http_sender_{ http_sender },
         player_items_{ access_token_ } {};
 
-    /// Stores the information in prices_table_ as a (name, price) pair.
-    /// @param prices String representation of a JSON response from PoE Ninja
-    ///
-    /// e.g. Price information for all currencies.
-    void ResourceManager::add_to_prices_table(std::string& prices) {
-        json::value prices_value(json::parse(prices));
-        parse::JsonResult<json::array> prices_result{
-            parse::get<json::array>(prices_value, "/lines")
-        };
-        // Check if the 'lines' key was found and was an array
-        json::array prices_array{};
-        if (prices_result.is_success()) {
-            prices_array = prices_result.get();
-        } else {
-            prices_array = {};
-        }
-        // Iterate through all the items in the array
-        for (auto& item : prices_array) {
-            // Name value could be keyed by /currencyTypeName or /name
-            parse::JsonResult<json::string> name_result{
-                parse::get<json::string>(item, "/currencyTypeName")
-            };
-            json::string name{};
-            double price{};
-            if (name_result
-                .is_success()) {  // Name value is keyed by /currencyTypeName
-                name = name_result.get().c_str();
-                // Value key for currencyOverview pricelists
-                price = 1 / (parse::get<double>(item, "/pay/value").get());
-            } else {  // Name value is keyed by /name
-                std::string prices_kebab{ parse::to_kebab(prices) };
-                name =
-                parse::get<json::string>(item, "/name")
-                .get()
-                .c_str();  // TODO: Probably want to handle this failing as well
-                price = 1 / (parse::get<double>(item, "/chaosValue")
-                             .get());  // Value key for itemOverview pricelists
-            }
-            std::string name_kebab{ parse::to_kebab(name.c_str()) };
-            // Put into prices table
-            prices_table_.emplace(std::move(name_kebab), price);
-        }
-    }
+    json::value
+    ResourceManager::serialise_items(const std::vector<axel::Item>& item_list) {
+        json::string league{ league_ };
+        json::string league_type{ league_type_ };
+        json::array items{};
+        // Populate items array
+        for (auto& item : item_list) {
+            json::value item_json{ { "name", item.get_name() },
+                                   { "quantity", item.get_quantity() },
+                                   { "unit-price", item.get_unit_price() },
+                                   { "total-price", item.get_total_price() },
+                                   { "graph", { 1, 2, 3, 4, 5 } } };
 
-    /// @param path
-    /// Stores the information in prices_table_ as an (item-name, price) pair.
-    /// @note Only retrieves prices for one endpoint. For example, calling the
-    /// currency endpoint will retrieve all price information provided by that .
-    /// endpoint only.
-    void ResourceManager::get_prices(const std::string& path,
-                                     const std::string& league) {
-        // Get to the 'lines' array, where all the price information is
-        std::string full_path{ path + "&league=" + league };
-        std::string prices{ poe_ninja::get_item_prices(full_path,
-                                                       http_sender_) };
-
-        add_to_prices_table(prices);
-    }
-
-    /// @param item_name Item name key to look for in prices_table_.
-    /// @return 0 if the item was not found.
-    /// @note Will log that the item name was not found.
-    double ResourceManager::find_in_prices_table(const std::string& item_name) {
-        if (prices_table_.find(item_name) !=
-            prices_table_.end()) {  // Item name was found in prices_table_
-            return prices_table_.at(item_name);
-        } else {
-            spdlog::warn("Item name '{}' not found in prices_table_",
-                         item_name);
-            return 0;
+            items.emplace_back(std::move(item_json));
         }
+
+        // Populate sort arrays
+        auto sorted_by_name = get_sort_order(item_list,
+                                             [](auto item_1, auto item_2) {
+                                                 return (item_1.get_name() <
+                                                         item_2.get_name());
+                                             });
+
+        auto sorted_by_quantity =
+        get_sort_order(item_list, [](auto item_1, auto item_2) {
+            return (item_1.get_quantity() < item_2.get_quantity());
+        });
+
+        auto sorted_by_unit_price =
+        get_sort_order(item_list, [](auto item_1, auto item_2) {
+            return (item_1.get_unit_price() < item_2.get_unit_price());
+        });
+
+        auto sorted_by_total_price =
+        get_sort_order(item_list, [](auto item_1, auto item_2) {
+            return (item_1.get_total_price() < item_2.get_total_price());
+        });
+
+        // Construct "sorted" property
+        json::array name(sorted_by_name.begin(), sorted_by_name.end());
+        json::array quantity(sorted_by_quantity.begin(),
+                             sorted_by_quantity.end());
+        json::array unit_price(sorted_by_unit_price.begin(),
+                               sorted_by_unit_price.end());
+        json::array total_price(sorted_by_total_price.begin(),
+                                sorted_by_total_price.end());
+
+        json::value sorted{ { "name", name },
+                            { "quantity", quantity },
+                            { "unit-price", unit_price },
+                            { "total-price", total_price } };
+
+        // Construct final JSON
+        json::value result{ { "league", league },
+                            { "league_type", league_type },
+                            { "items", items },
+                            { "sorted", sorted } };
+
+        return result;
     }
 }  // namespace axel

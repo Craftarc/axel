@@ -41,9 +41,12 @@ namespace config {
         } // paths
         
         namespace leagues {
+            const std::string standard = "Standard";
             const std::string crucible = "Crucible";
             const std::string sanctum = "Sanctum";
             const std::string ancestor = "Ancestor";
+            const std::string softcore = "";
+            const std::string hardcore = "Hardcore+";
         } // leagues
     } // poe_ninja
 } // config

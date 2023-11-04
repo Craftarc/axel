@@ -10,21 +10,21 @@
 #include <spdlog/spdlog.h>
 #include <sqlite3.h>
 
-#include "axel/Exception.h"
 #include "config/database.h"
+#include "util/interfaces/IDatabase.h"
 
 #include <map>
 
 namespace util {
     /// @brief Database handler object
     /// Wrapper interface for an SQLite managed database
-    class Database {
+    class Database : public IDatabase {
         public:
             /// @brief Constructor.
             /// @param name Filename of the databse
             Database(const char* name);
 
-            ~Database();
+            ~Database() override;
             Database(const Database&) = delete;
             Database& operator=(const Database&) = delete;
             Database(Database&&) = delete;
@@ -37,10 +37,11 @@ namespace util {
             /// The first item must be the primary key.
             /// @return Hash table of the attributes and their respective values.
             /// Empty hash table if no row found.
-            std::unordered_map<std::string, std::variant<std::string, int>>
+            std::unordered_map<std::string,
+                               std::variant<std::string, int, double>>
             select_row(const std::string& table,
                        const std::string& primary_key_value,
-                       std::vector<std::string> attributes);
+                       std::vector<std::string> attributes) override;
 
             /// @brief Inserts a row into the app table.
             /// @param table The name of the table to insert into.
@@ -82,10 +83,17 @@ namespace util {
             /// @param attribute Name of the attribute to search for.
             /// @param value Value of the attribute to search for.
             /// @return Exit code.
-            int
-            delete_row(const std::string& table,
-                       const std::string& attribute,
-                       const std::variant<std::string, int>& value) noexcept;
+            int delete_row(const std::string& table,
+                           const std::string& attribute,
+                           const std::variant<std::string, int, double>&
+                           value) noexcept override;
+
+            // Dispatches to templated implementation
+            int insert_row(const std::string& table,
+                           const std::variant<database::OAuthTable,
+                                              database::AppTable,
+                                              database::PricesTable>& values)
+            override;
 
             /// @brief Inserts a row into the oauth table.
             /// @param table The name of the table to insert into.
@@ -97,12 +105,50 @@ namespace util {
             enable_if<std::is_same<T, database::OAuthTable>::value, int>::type
             insert_row(const std::string& table, const T& values) {
                 sqlite3_stmt* statement;
+                std::string query{
+                    fmt::format("INSERT INTO {0} "
+                                "VALUES ('{1}', '{2}', '{3}', '{4}', {5})",
+                                table,
+                                values.session_id,
+                                values.state_hash,
+                                values.code_challenge,
+                                values.code_verifier,
+                                values.time_to_live)
+                };
+
+                spdlog::info("{}", query);
+
+                if (prepare(&statement, query) == 0) {
+                    int result = { sqlite3_step(statement) };
+                    // Clean up occurs regardless of failure or success
+                    sqlite3_finalize(statement);
+
+                    if (result != SQLITE_DONE) {
+                        spdlog::warn("Could not insert: {}", query);
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                } else {
+                    return 1;
+                }
+            }
+
+            /// @brief Inserts a row into the prices table.
+            /// @param table The name of the table to insert into.
+            /// @param values A set of values to insert.
+            /// @return Exit code.
+            /// @note Strong guarantee.
+            template<typename T>
+            typename std::
+            enable_if<std::is_same<T, database::PricesTable>::value, int>::type
+            insert_row(const std::string& table, const T& values) {
+                sqlite3_stmt* statement;
                 std::string query{ fmt::format("INSERT INTO {0} "
-                                               "VALUES ('{1}', '{2}', {3})",
+                                               "VALUES ('{1}', {2})",
                                                table,
-                                               values.session_id,
-                                               values.access_token,
-                                               values.time_to_live) };
+                                               values.name,
+                                               values.unit_price) };
 
                 spdlog::info("{}", query);
 
@@ -131,7 +177,8 @@ namespace util {
             int update_row(const std::string& table,
                            const std::string& primary_key_value,
                            const std::string& attribute,
-                           std::variant<std::string, int> new_value) noexcept;
+                           std::variant<std::string, int, double>
+                           new_value) noexcept;
 
         protected:
             /// @brief Executes an SQL query.
@@ -162,7 +209,7 @@ namespace util {
             /// @param Ordered list of attributes that this statement will produce.
             /// @param Hash map of the table's types and their values.
             /// @return List of values of the requested attributes in the row.
-            std::vector<std::variant<std::string, int>>
+            std::vector<std::variant<std::string, int, double>>
             extract_row(sqlite3_stmt* statement,
                         const std::vector<std::string>& attributes,
                         const std::unordered_map<std::string, std::string>&
