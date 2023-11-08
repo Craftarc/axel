@@ -8,10 +8,17 @@ RUN apt-get update -y && \
     apt-get install -y \
     nginx-core \
     net-tools \
-    vim
+    vim \
+    binutils-devel
+
 
 # Server configuration
-COPY nginx.conf /etc/nginx/
+COPY env/staging/nginx.conf /etc/nginx/
+
+WORKDIR /app
+
+# Binary
+COPY build/main /app
 
 EXPOSE 80
 

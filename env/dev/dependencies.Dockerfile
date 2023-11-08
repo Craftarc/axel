@@ -14,7 +14,10 @@ ENV SSL_CERT_DIR /etc/ssl/certs/ca-bundle.crt
 
 
 # Install tools
-RUN yum -y install git \
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    apt-get install -y \ 
+    git \
     wget \
     curl \
     zip \
@@ -22,36 +25,19 @@ RUN yum -y install git \
     tar \
     ninja-build \
     make \
-    gcc10 \
-    gcc10-c++ \
-    pkgconfig \
-    perl-IPC-Cmd \
-    autoconf \
-    autoconf-archive \
-    automake \
+    gcc-12 \
+    g++-12 \
+    pkg-config \
+    cmake \
     python3 \
-    gdb \
-    binutils-devel # For stack traces
-
+    binutils-dev \
+    gdb
 
 # Set aliases
 WORKDIR /usr/bin
 
-RUN ln -sf gcc10-gcc gcc && \
-    ln -sf gcc10-g++ g++ && \
-    ln -sf gcc10-ar ar && \
-    ln -sf ninja-build ninja && \
-    ln -sf gcc10-ranlib ranlib
-
-# Install CMake
-WORKDIR /usr/local
-
-COPY scripts/dev/install_cmake.sh .
-
-ARG TARGETPLATFORM
-RUN chmod 744 install_cmake.sh && \
-    ./install_cmake.sh && \
-    rm install_cmake.sh
+RUN ln -sf gcc-12 gcc && \
+    ln -sf g++-12 g++
 
 # Install vcpkg
 WORKDIR /opt

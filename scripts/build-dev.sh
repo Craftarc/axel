@@ -8,6 +8,3 @@ cmake_args="-G Ninja -DCMAKE_BUILD_TYPE=Debug -DAXEL_TEST=1 \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
 cmake -B ${dir}/build -S .
-
-# cmake -S . -B ${dir}/build $cmake_args
-# ninja -C ${dir}/build
