@@ -84,9 +84,7 @@ namespace auth {
 
         std::string auth_url = auth_code_manager_->get_auth_url(code_challenge,
                                                                 state_hash);
-        // Construct invocation response
-        // Location must be absolute path instead of only hostname
-        auth_url = "https://" + auth_url;
+        spdlog::debug("Authorisation URL: {}", auth_url);
 
         // Set up response
         response.code = 302;  // Redirect
@@ -122,9 +120,9 @@ namespace auth {
 
         // Retrieve information about the Oauth session identified by session_id
         std::vector<std::string> attributes{ "session_id",
-                                             "code_challenge",
+                                             "state_hash",
                                              "code_verifier" };
-        auto item_map = database_->select_row("oauth", session_id, attributes);
+        std::unordered_map item_map = database_->select_row("oauth", session_id, attributes);
 
         // Get the stored state hash and code verifier out
         std::string stored_hash{};

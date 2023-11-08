@@ -32,12 +32,23 @@ int main() {
     CROW_ROUTE(app, "/auth/callback")
     ([](const crow::request& request) {
         crow::response response{ 404 };
-        std::string url{ request.url };
         auth::OauthManager oauth_manager{};
-        auto session_id = request.get_header_value("Cookie");
-        spdlog::info("Query string: {}", url);
-        spdlog::info("Cookies: {}", session_id);
-        oauth_manager.receive_auth(url, session_id, response);
+
+        std::string url{ request.raw_url }; // Endpoint + query string
+        spdlog::info("URL: {}", url);
+
+        // In the format "session_id=<cookie>"
+        auto cookie = request.get_header_value("Cookie");
+        // Get the <cookie> part
+        size_t equal_position{cookie.find('=')};
+        std::string session_id{};
+        if (equal_position != std::string::npos) {
+            session_id = cookie.substr(equal_position + 1);
+            spdlog::info("Session id: {}", session_id);
+            oauth_manager.receive_auth(url, session_id, response);
+        } else {
+            spdlog::error("session_id not found");
+        }
 
         return response;
     });

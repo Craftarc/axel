@@ -88,7 +88,9 @@ namespace util {
             fmt::to_string(fmt::join(attributes, ", "))
         };
         sqlite3_stmt* statement;
-        std::string query{ fmt::format("SELECT {0} FROM {1} WHERE {2} = {3}",
+
+        // Must quote the conditional ('{3}' instead of {3})
+        std::string query{ fmt::format("SELECT {0} FROM {1} WHERE {2} = '{3}'",
                                        comma_separated_attributes,
                                        table,
                                        primary_key,
@@ -274,7 +276,7 @@ namespace util {
             using T = std::decay_t<decltype(variant)>;  // Type of value
             if constexpr (std::is_same_v<T, int>) {
                 query = {
-                    fmt::format("UPDATE {0} SET {1} = {2} WHERE {3} = {4}",
+                    fmt::format("UPDATE {0} SET {1} = {2} WHERE {3} = '{4}'",
                                 table,
                                 attribute,
                                 variant,
@@ -317,7 +319,9 @@ namespace util {
                                             database::AppTable,
                                             database::PricesTable>& values) {
         return std::visit(
-        [this, &table](auto&& variant) { return this->insert_row(table, variant); },
+        [this, &table](auto&& variant) {
+            return this->insert_row(table, variant);
+        },
         values);
     }
 
