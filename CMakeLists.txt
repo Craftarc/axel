@@ -9,7 +9,7 @@ message(STATUS "Toolchain file at: ${CMAKE_TOOLCHAIN_FILE}")
 
 cmake_minimum_required(VERSION 3.22)
 project(axel LANGUAGES CXX)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -rdynamic -fdiagnostics-color=always")
 

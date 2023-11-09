@@ -3,14 +3,22 @@
 
 FROM ubuntu:22.04
 
+# ca-certificates: for when the server needs to make its own https requests
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y \
-    nginx-core
+    nginx-core \
+    binutils-dev \
+    ca-certificates
 
 # Server configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY env/production/nginx.conf /etc/nginx/nginx.conf
+
+WORKDIR /app
+
+# Binary
+COPY build/main /app
 
 EXPOSE 80 443
 

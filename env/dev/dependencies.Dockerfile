@@ -39,6 +39,9 @@ WORKDIR /usr/bin
 RUN ln -sf gcc-12 gcc && \
     ln -sf g++-12 g++
 
+# Set up gdb config
+RUN wget -P  ~ https://git.io/.gdbinit --no-check-certificate
+
 # Install vcpkg
 WORKDIR /opt
 

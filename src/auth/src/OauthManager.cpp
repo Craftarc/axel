@@ -13,6 +13,7 @@
 #include "auth/interfaces/IStateHashManager.h"
 #include "auth/interfaces/ITokenRequestManager.h"
 #include "axel/Exception.h"
+#include "util/HttpSender.h"
 #include "util/path.h"
 #include "util/type.h"
 
@@ -122,7 +123,9 @@ namespace auth {
         std::vector<std::string> attributes{ "session_id",
                                              "state_hash",
                                              "code_verifier" };
-        std::unordered_map item_map = database_->select_row("oauth", session_id, attributes);
+        std::unordered_map item_map = database_->select_row("oauth",
+                                                            session_id,
+                                                            attributes);
 
         // Get the stored state hash and code verifier out
         std::string stored_hash{};
@@ -149,7 +152,7 @@ namespace auth {
                // real authorisation server during testing
         auto access_token = "dummy_access_token";
 
-        spdlog::debug("OauthManager::receive_auth - Using dummy access "
+        spdlog::debug("Using dummy access "
                       "token and time to live."
                       "time_to_live -  {}",
                       std::to_string(time_to_live));
@@ -158,20 +161,27 @@ namespace auth {
         token_request_manager_
         ->send_token_request(auth_code,
                              code_verifier,
-                             std::make_unique<util::HttpSender>());
+                             std::make_shared<util::HttpSender>());
 #endif
 
-        std::string session_token = session_manager_->get_session_token();
+        std::string axel_session_id = session_manager_->get_session_token();
 
         // Store session details in oauth_app
-        database::AppTable apptable_row{ session_token,
+        database::AppTable apptable_row{ axel_session_id,
                                          access_token,
                                          static_cast<int>(time_to_live) };
 
         database_->insert_row("app", apptable_row);
 
         // Set up response
-        response.code = 200;  // OK
+        response.code = 200;  // Redirect
+
+        // Cookie and its attributes
+        std::string cookie{
+            "axel_session_id=" + axel_session_id +
+            "; Domain=pathofaxel.com; SameSite=Strict; Secure; HttpOnly"
+        };
+        response.set_header("Set-Cookie", cookie);
         return;
     }
 }  // namespace auth

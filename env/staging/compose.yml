@@ -2,7 +2,7 @@ services:
   staging:
     image: craftarc/axel:staging
     build:  
-      context: ../.. # Project root
+      context: ${ROOT}
       dockerfile: env/staging/staging.Dockerfile
     ports: 
       - "80:80"

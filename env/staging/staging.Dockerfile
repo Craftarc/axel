@@ -9,11 +9,11 @@ RUN apt-get update -y && \
     nginx-core \
     net-tools \
     vim \
-    binutils-devel
+    binutils-dev
 
 
 # Server configuration
-COPY env/staging/nginx.conf /etc/nginx/
+COPY env/staging/nginx.conf /etc/nginx/nginx.conf
 
 WORKDIR /app
 

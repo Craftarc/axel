@@ -13,7 +13,7 @@ namespace auth {
 			            send_token_request,
 			            (std::string auth_code,
 			             std::string code_verifier,
-			             std::unique_ptr<util::IHttpSender> http_sender),
+			             std::shared_ptr<util::IHttpSender> http_sender),
 			            (const, override));
 	};
 }  // namespace auth

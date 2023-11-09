@@ -2,12 +2,12 @@ services:
   production:
     image: craftarc/axel:production
     build:  
-      context: . # env/production/
-      dockerfile: production.Dockerfile
+      context: ${ROOT}
+      dockerfile: env/production/production.Dockerfile
     ports: 
       - "80:80"
       - "443:443"
     volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt # Mount SSH keys
     command: [nginx, '-g', 'daemon off;'] # Start server in foreground so
                                           # the container doesn't stop immediately

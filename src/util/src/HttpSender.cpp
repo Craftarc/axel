@@ -4,12 +4,12 @@
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <iostream>
+#include <spdlog/spdlog.h>
 
 #include "util/http.h"
 
 namespace {
 	constexpr int HTTP_VERSION = 11;  // HTTP 1.1
-	const std::string HTTP_SERVICE = "https";
 }  // namespace
 
 namespace util {
@@ -43,7 +43,8 @@ namespace util {
 
 		// Resolve hostname
 		tcp::resolver resolver(ioc);
-		const auto endpoints = resolver.resolve(host, HTTP_SERVICE);
+        spdlog::info("Resolving host: {}", host);
+		const auto endpoints = resolver.resolve(host, "443"); // Use HTTPS
 
 		// Set SNI Hostname (many hosts need this to handshake successfully)
 		if (!SSL_set_tlsext_host_name(stream.native_handle(), host.c_str())) {

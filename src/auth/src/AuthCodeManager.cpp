@@ -10,7 +10,7 @@
 std::string auth::AuthCodeManager::get_auth_url(std::string code_challenge,
                                                 std::string state_hash) const {
     std::string base_path =
-    config::poe::host +
+    "https://" + config::poe::host +
     config::poe::paths::auth_path;  // Before adding query parameters
     namespace scopes = config::poe::scopes;
 

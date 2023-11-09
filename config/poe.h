@@ -6,8 +6,8 @@
 namespace config {
     /// @brief Contains constants related to POE's API.
     namespace poe {
-        const std::string host = "https://www.pathofexile.com";
-        const std::string api = "https://api.pathofexile.com";
+        const std::string host = "www.pathofexile.com";
+        const std::string api = "api.pathofexile.com";
 
         /// @brief Contains constants related to paths.
         namespace paths {
