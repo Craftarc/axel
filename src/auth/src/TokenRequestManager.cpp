@@ -6,8 +6,8 @@
 #include <boost/json.hpp>
 #include <spdlog/spdlog.h>
 
+#include "config/auth.h"
 #include "config/axel.h"
-#include "config/poe.h"
 #include "util/http.h"
 #include "util/interfaces/IHttpSender.h"
 #include "util/path.h"
@@ -16,10 +16,12 @@ auth::TokenRequestManager::TokenRequestManager() = default;
 
 namespace http = boost::beast::http;
 
-/// Constructs and sends out the token exchange request. The tokens are then parsed from the response.
+/// Constructs and sends out the token exchange request. The tokens are then
+/// parsed from the response.
 /// @param auth_code The authorization code to be included in the token exchange request.
 /// @param code_verifier The code verifier to be included in the token exchange request.
-/// @param http_sender The HttpSender class that defines the request-sending behaviour and underlying networking.
+/// @param http_sender The HttpSender class that defines the request-sending
+/// behaviour and underlying networking.
 /// @return The access token
 std::string
 auth::TokenRequestManager::send_token_request(std::string auth_code,
@@ -28,7 +30,8 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                               http_sender) const {
     const int MAX_RESPONSE_BODY = 10;
 
-    namespace scopes = config::poe::scopes;
+    namespace scopes = config::auth::scopes;
+    namespace auth = config::auth;
 
     // Check input validity
     if (auth_code.empty()) {
@@ -37,12 +40,19 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
         throw std::runtime_error("code_verifier is empty");
     }
 
+#ifdef AXEL_TEST
+    std::string redirect_uri = auth::paths::test_redirect_uri;
+    std::string host = auth::test_host;
+#else
+    std::string redirect_uri = auth::paths::redirect_uri;
+    std::string host = auth::host;
+#endif
     std::string request_body = util::make_form_data(
     { { "client_id", config::axel::client_id },
       { "client_secret", "xJqwozXycup5" },
       { "grant_type", config::axel::grant_type },
       { "code", std::move(auth_code) },
-      { "redirect_uri", config::poe::paths::redirect_uri },
+      { "redirect_uri", redirect_uri },
       { "scope",
         util::concatenate_with_space({ scopes::profile,
                                        scopes::stashes,
@@ -54,8 +64,8 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
     // Add the headers to the request
     auto full_request =
     util::make_http_request("POST",
-                            config::poe::paths::token,
-                            { { "host", config::poe::host },
+                            auth::paths::token,
+                            { { "host", host },
                               { "content-type",
                                 "application/x-www-form-urlencoded" } },
                             request_body);

@@ -6,7 +6,7 @@ services:
       dockerfile: env/dev/dependencies.Dockerfile
 
     ports:
-      - "9000:8080"
+      - "80:80" # Axel app
+      - "8080:8080" # Python test server
     volumes:
       - ${MOUNT}:${MOUNT}
-      - ~/.ssh:/root/.ssh

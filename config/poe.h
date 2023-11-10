@@ -13,7 +13,10 @@ namespace config {
         namespace paths {
             const std::string auth_path = "/oauth/authorize";
             const std::string token = "/oauth/token";
-            const std::string redirect_uri = "https://pathofaxel.com/auth/callback";
+            const std::string redirect_uri =
+            "https://pathofaxel.com/auth/callback";
+            const std::string test_redirect_uri = "http://localhost:" +
+                                                  test_port;
             const std::string list_stashes = "/stash/";
             const std::string get_stash = "/stash/standard/";
         }  // namespace paths
@@ -26,7 +29,7 @@ namespace config {
             const std::string league_accounts = "account:league_accounts";
             const std::string item_filter = "account:item_filter";
         }  // namespace scopes
-    }      // namespace poe
+    }      // namespace auth
 }  // namespace config
 
-#endif  // AXEL_CONFIG_POE_H
+#endif  // AXEL_CONFIG_

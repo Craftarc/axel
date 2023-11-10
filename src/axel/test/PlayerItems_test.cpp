@@ -10,7 +10,7 @@
 using namespace ::testing;
 
 namespace axel {
-    class PlayerItems_test : public ::Test {
+    class PlayerItems_test : public ::testing::Test {
         protected:
             PlayerItems_test() :
                 mock_http_sender{

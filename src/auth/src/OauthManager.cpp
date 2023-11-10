@@ -90,7 +90,11 @@ namespace auth {
         // Set up response
         response.code = 302;  // Redirect
         response.set_header("Location", auth_url);
-        response.set_header("Set-Cookie", "session_id=" + session_id);
+        std::string cookie{
+            "session_id=" + session_id +
+            "; SameSite=Strict; Secure; HttpOnly; Path=/auth" // Only for auth purposes
+        };
+        response.set_header("Set-Cookie", cookie);
         return;
     }
 
@@ -179,7 +183,7 @@ namespace auth {
         // Cookie and its attributes
         std::string cookie{
             "axel_session_id=" + axel_session_id +
-            "; Domain=pathofaxel.com; SameSite=Strict; Secure; HttpOnly"
+            "; SameSite=Strict; Secure; HttpOnly; Path=/" // Accessible everywhere
         };
         response.set_header("Set-Cookie", cookie);
         return;

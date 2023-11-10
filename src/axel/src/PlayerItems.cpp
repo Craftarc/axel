@@ -6,7 +6,7 @@
 #include "axel/Exception.h"
 #include "backward.hpp"
 #include "boost/json.hpp"
-#include "config/poe.h"
+#include "config/auth.h"
 #include "fmt/ranges.h"
 #include "parse/json.h"
 #include "parse/util.h"
@@ -139,10 +139,10 @@ namespace axel {
     PlayerItems::make_list_stashes_request(const std::string& league) const {
         const std::unordered_map<std::string, std::string> fields{
             { "authorization", "Bearer " + access_token_ },
-            { "host", config::poe::api }
+            { "host", config::auth::api }
         };
         return util::make_http_request("GET",
-                                       config::poe::paths::list_stashes +
+                                       config::auth::paths::list_stashes +
                                        league,
                                        fields);
     }
@@ -163,10 +163,10 @@ namespace axel {
     PlayerItems::make_get_stash_request(const std::string& id) const {
         const std::unordered_map<std::string, std::string> fields{
             { "authorization", "Bearer " + access_token_ },
-            { "host", config::poe::api }
+            { "host", config::auth::api }
         };
         // Using the GET /stash/<league>/<stash_id> endpoint
-        std::string path{ config::poe::paths::get_stash + id };
+        std::string path{ config::auth::paths::get_stash + id };
         return util::make_http_request("GET", path, fields);
     }
 

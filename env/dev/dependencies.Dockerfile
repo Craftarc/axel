@@ -30,8 +30,12 @@ RUN apt-get update -y && \
     pkg-config \
     cmake \
     python3 \
+    pip \
     binutils-dev \
     gdb
+
+# Python packages
+RUN pip install flask
 
 # Set aliases
 WORKDIR /usr/bin

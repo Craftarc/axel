@@ -1,6 +1,7 @@
 #ifndef AXEL_AUTH_IAUTHCODEMANAGER_H
 #define AXEL_AUTH_IAUTHCODEMANAGER_H
 
+#include <string>
 namespace auth {
     class IAuthCodeManager {
     public:

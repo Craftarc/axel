@@ -10,7 +10,7 @@
 #include "axel/PlayerItems.h"
 #include "axel/Prices.h"
 #include "config/database.h"
-#include "config/poe.h"
+#include "config/auth.h"
 #include "config/poe_ninja_config.h"
 #include "parse/json.h"
 #include "parse/util.h"

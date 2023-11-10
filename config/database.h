@@ -1,5 +1,5 @@
-#ifndef AXEL_CONFIG_POE_H
-#define AXEL_CONFIG_POE_H
+#ifndef AXEL_CONFIG_AUTH_H
+#define AXEL_CONFIG_AUTH_H
 
 #include <string>
 
