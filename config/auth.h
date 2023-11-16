@@ -1,13 +1,14 @@
-#ifndef AXEL_CONFIG_POE_H
-#define AXEL_CONFIG_POE_H
+#ifndef AXEL_CONFIG_AUTH_H
+#define AXEL_CONFIG_AUTH_H
 
 #include <string>
 
 namespace config {
     /// @brief Contains constants related to POE's API.
-    namespace poe {
+    namespace auth {
         const std::string host = "www.pathofexile.com";
         const std::string api = "api.pathofexile.com";
+        const std::string test_host = "localhost:8080";  // Python test server
 
         /// @brief Contains constants related to paths.
         namespace paths {
@@ -15,7 +16,8 @@ namespace config {
             const std::string token = "/oauth/token";
             const std::string redirect_uri =
             "https://pathofaxel.com/auth/callback";
-            const std::string test_redirect_uri = "http://localhost:
+            const std::string test_redirect_uri =
+            "http://localhost/auth/callback";
             const std::string list_stashes = "/stash/";
             const std::string get_stash = "/stash/standard/";
         }  // namespace paths
@@ -31,4 +33,4 @@ namespace config {
     }      // namespace auth
 }  // namespace config
 
-#endif  // AXEL_CONFIG_
+#endif  // AXEL_CONFIG_AUTH_H

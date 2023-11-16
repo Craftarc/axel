@@ -1,5 +1,6 @@
 #include "auth/OauthManager.h"
 
+#include <botan/base64.h>
 #include <iostream>
 #include <utility>
 
@@ -14,12 +15,14 @@
 #include "auth/interfaces/ITokenRequestManager.h"
 #include "axel/Exception.h"
 #include "util/HttpSender.h"
+#include "util/hash.h"
 #include "util/path.h"
 #include "util/type.h"
 
 namespace {
     int MAX_AUTH_CODE_TIME =
-    30;  // Maximum time before authorisation code expires and can no longer be exchanged
+    30;  // Maximum time before authorisation code expires
+         // and can no longer be exchanged
     int MAX_AUTH_START_TIME =
     30;  // Maximum time between first start_auth() and redirect response
 
@@ -40,13 +43,13 @@ namespace {
 }  // namespace
 
 namespace auth {
-    OauthManager::OauthManager() :
+    OauthManager::OauthManager(const std::string& database) :
         OauthManager{ std::make_unique<PkceManager>(),
                       std::make_unique<StateHashManager>(),
                       std::make_unique<TokenRequestManager>(),
                       std::make_unique<AuthCodeManager>(),
                       std::make_unique<SessionManager>(),
-                      std::make_unique<util::Database>("app") } {}
+                      std::make_unique<util::Database>(database.c_str()) } {}
 
     OauthManager::OauthManager(
     std::unique_ptr<IPkceManager> pkce_manager,
@@ -92,7 +95,8 @@ namespace auth {
         response.set_header("Location", auth_url);
         std::string cookie{
             "session_id=" + session_id +
-            "; SameSite=Strict; Secure; HttpOnly; Path=/auth" // Only for auth purposes
+            "; SameSite=Strict; Secure; HttpOnly; Path=/auth"  // Only for auth
+                                                               // purposes
         };
         response.set_header("Set-Cookie", cookie);
         return;
@@ -152,14 +156,12 @@ namespace auth {
             return;
         }
 
-#if AXEL_TEST  // We can't actually exchange tokens with the \
-               // real authorisation server during testing
-        auto access_token = "dummy_access_token";
-
-        spdlog::debug("Using dummy access "
-                      "token and time to live."
-                      "time_to_live -  {}",
-                      std::to_string(time_to_live));
+#if AXEL_TEST
+        // Just make a fake one
+        auto random_bytes = util::generate_secret_bytes();
+        auto access_token = Botan::base64_encode(random_bytes.data(),
+                                          random_bytes.size());
+        util::base64_url_encode(access_token);
 #else
         std::string access_token =
         token_request_manager_
@@ -183,7 +185,7 @@ namespace auth {
         // Cookie and its attributes
         std::string cookie{
             "axel_session_id=" + axel_session_id +
-            "; SameSite=Strict; Secure; HttpOnly; Path=/" // Accessible everywhere
+            "; SameSite=Strict; Secure; HttpOnly; Path=/"  // Accessible everywhere
         };
         response.set_header("Set-Cookie", cookie);
         return;

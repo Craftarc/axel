@@ -2,7 +2,6 @@
 
 #include "config/auth.h"
 #include "config/axel.h"
-#include "config/poe.h"
 #include "util/path.h"
 
 /// @param code_challenge The code challenge to include in the authorization url.

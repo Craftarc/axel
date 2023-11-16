@@ -1,6 +1,15 @@
 # Configure target sources here
 set(MAIN_SRC_FILES main.cpp)
 
+# Copy python test server into build directory if it changes Python test server
+add_custom_command(
+  OUTPUT "${CMAKE_BINARY_DIR}/server.py"
+  COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/integration/server.py"
+          "${CMAKE_BINARY_DIR}/server.py"
+  DEPENDS "${CMAKE_SOURCE_DIR}/integration/server.py")
+
+add_custom_target(copy_server ALL DEPENDS "${CMAKE_BINARY_DIR}/server.py")
+
 # Toolchain path
 set(CMAKE_TOOLCHAIN_FILE
     /opt/vcpkg/scripts/buildsystems/vcpkg.cmake
@@ -89,8 +98,6 @@ add_executable(
 target_link_libraries(
   tests PRIVATE auth_tests util_tests parse_tests poe_ninja_tests axel_tests
                 GTest::gtest_main)
-include(GoogleTest)
-gtest_discover_tests(tests)
 
 # Subdirectories
 add_subdirectory(src/poe_ninja)

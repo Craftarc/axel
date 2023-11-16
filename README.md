@@ -134,7 +134,7 @@ Axel's development environment is containerised.
 
 There are two images in use.
 
-**1. dependencies** `docker pull craftarc/axel:dependencies`
+**1. dependencies** `docker pull craftarc/axel:dev`
 
 - Stores all installed libraries the project uses.
 - For use as a local development environment.
@@ -154,7 +154,7 @@ Along with the two executables, it also builds a testing executable.
 - start an interactive shell
 
 ```
-docker run -it craftarc/axel:dependencies -v .:/axel
+docker run -it craftarc/axel:dev -v .:/axel
 ```
 
 You should be dropped into `/axel`, where the root directory of the project should be
@@ -197,7 +197,7 @@ docker compose up dev
 **To work with custom entrypoints, we want to execute the `sandbox` executable instead.** <br>
 
 **1. Build updated binaries**.
-In a container running the _craftarc/axel:dependencies_ image, build the updated
+In a container running the _craftarc/axel:dev_ image, build the updated
 binaries with the desired cmake flags.
 
 **3. Navigate to and run the `sandbox` executable.**

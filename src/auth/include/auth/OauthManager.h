@@ -30,7 +30,7 @@ namespace auth {
     /// @note Only one OauthManager instance should exist per Oauth session.
     class OauthManager : public IOauthManager {
         public:
-            OauthManager();
+            OauthManager(const std::string& database);
 
             /// @brief Default constructor
             OauthManager(std::unique_ptr<IPkceManager> pkce_manager,
