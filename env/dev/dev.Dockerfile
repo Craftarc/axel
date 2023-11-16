@@ -1,5 +1,5 @@
-# Build command (push): docker buildx build --platform linux/arm64,linux/amd64 -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies --push .
-# Build command (local): docker build -f dockerfile/dependencies.Dockerfile -t craftarc/axel:dependencies . <- use this for local changes to the image
+# Build command (push): docker buildx build --platform linux/arm64,linux/amd64 -f dockerfile/dev.Dockerfile -t craftarc/axel:dev --push .
+# Build command (local): docker build -f dockerfile/dev.Dockerfile -t craftarc/axel:dev . <- use this for local changes to the image
 
 FROM ubuntu:22.04
 
@@ -32,16 +32,20 @@ RUN apt-get update -y && \
     python3 \
     pip \
     binutils-dev \
-    gdb
+    gdb \
+    python3-venv \
+    sqlite3 \
+    net-tools
 
 # Python packages
-RUN pip install flask
+RUN pip install flask pytest requests
 
 # Set aliases
 WORKDIR /usr/bin
 
 RUN ln -sf gcc-12 gcc && \
-    ln -sf g++-12 g++
+    ln -sf g++-12 g++ && \
+    ln -sf python3 python
 
 # Set up gdb config
 RUN wget -P  ~ https://git.io/.gdbinit --no-check-certificate
@@ -51,3 +55,8 @@ WORKDIR /opt
 
 RUN git clone https://github.com/Microsoft/vcpkg.git && \
     ./vcpkg/bootstrap-vcpkg.sh
+
+WORKDIR /root
+# Install editor
+RUN git clone https://github.com/juayhee/dotfiles && \
+    dotfiles/bootstrap.sh

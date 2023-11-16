@@ -1,12 +1,21 @@
 services:
   dev:
-    image: craftarc/axel:dependencies
+    image: craftarc/axel:dev
     build:
       context: ../..
-      dockerfile: env/dev/dependencies.Dockerfile
+      dockerfile: env/dev/dev.Dockerfile
 
     ports:
       - "80:80" # Axel app
       - "8080:8080" # Python test server
     volumes:
-      - ${MOUNT}:${MOUNT}
+      - ${PROJECT_ROOT}:${PROJECT_ROOT}
+      - ~/.ssh:/root/.ssh
+      - ~/.gitconfig:/root/.gitconfig
+      - config:/root
+    environment:
+      - PROJECT_ROOT=${PROJECT_ROOT}
+
+volumes:
+  config:
+
