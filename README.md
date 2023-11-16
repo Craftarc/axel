@@ -25,6 +25,7 @@ development.
     - [Building the project](#3-building-the-project)
 - [Configuration](#configuration)
     - [Utility scripts](#utililty-scripts)
+    - [Integration testing](#integration-testing)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -209,6 +210,22 @@ cd build
 
 ## Utililty scripts
 In `/scripts`, there are a few utility scripts for common tasks.
+
+## Integration testing
+Some tests require a larger amount of coordination between components.
+
+There is a purpose-built Python program in /integration that sets up a mock Oauth
+server, start up the Axel backend, then tests that the whole Oauth flow
+(such as requests and responses) are as expected.
+
+The tests use Python as an orchestrating language, and `pytest` as the
+test framework.
+
+These tests **work locally**, within the same container. To run these tests, 
+simply `cd` into the `/integration` directory, and run `pytest`.
+
+
+
 
 # Contributing
 
