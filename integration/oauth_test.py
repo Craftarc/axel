@@ -157,3 +157,30 @@ def test_auth(axel):
     # Check the axel session id sent back
     redirect_cookies = redirect_response.cookies
     assert (util.is_valid_base64url(redirect_cookies.get('axel_session_id')))
+
+
+def test_auth_callback_path_invalid_session_id(axel):
+    """
+    Rejects the access if the session id is invalid
+    """
+    response = requests.get('http://localhost/auth/callback',
+                            cookies={'session_id': 'invalid_session_id'})
+    assert (response.status_code == requests.codes.forbidden)
+
+
+def test_auth_callback_path_no_state_in_query_params(axel):
+    """
+    Rejects if there is no 'state' query parameter
+    """
+    response = requests.get('http://localhost/auth/callback',
+                            params={'code' : 'code'})
+    assert (response.status_code == requests.codes.forbidden)
+
+
+def test_auth_callback_path_no_code_in_query_params(axel):
+    """
+    Rejects if there is no 'code' query parameter
+    """
+    response = requests.get('http://localhost/auth/callback',
+                            params={'state' : 'state'})
+    assert (response.status_code == requests.codes.forbidden)
