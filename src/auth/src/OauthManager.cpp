@@ -1,10 +1,10 @@
 #include "auth/OauthManager.h"
 
-#include <botan/base64.h>
 #include <iostream>
 #include <utility>
 
 #include <aws/core/client/ClientConfiguration.h>
+#include <botan/base64.h>
 #include <spdlog/spdlog.h>
 
 #include "auth/PkceManager.h"
@@ -123,8 +123,9 @@ namespace auth {
 
         // Keys are not found in map
         if (state_hash.empty() || auth_code.empty()) {
-            throw axel::Exception(
-            "State or authorisation code could not be found in query string");
+            response.code = 403;
+            spdlog::error("State or authorisation code could not be found in query string");
+            return;
         }
 
         // Retrieve information about the Oauth session identified by session_id
@@ -148,7 +149,7 @@ namespace auth {
             spdlog::info("State hash is valid");
         } else {
             // Stop immediately if state hash returned from auth server does not match
-            spdlog::warn(
+            spdlog::error(
             "Stored state hash '{0}' does not match input state hash '{1}'",
             stored_hash,
             state_hash);
@@ -160,7 +161,7 @@ namespace auth {
         // Just make a fake one
         auto random_bytes = util::generate_secret_bytes();
         auto access_token = Botan::base64_encode(random_bytes.data(),
-                                          random_bytes.size());
+                                                 random_bytes.size());
         util::base64_url_encode(access_token);
 #else
         std::string access_token =
