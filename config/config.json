@@ -1,0 +1,32 @@
+{
+    "auth": {
+        "host": {
+            "poe": "www.pathofexile.com",
+            "test": "localhost:8080"
+        },
+        "endpoint": {
+            "login": "/oauth/authorize",
+            "token": "/oauth/token",
+            "redirect": "/auth/callback"
+        },
+        "scopes": {
+            "profile": "account:profile",
+            "stashes": "account:stashes",
+            "characters": "account:characters",
+            "league_accounts": "account:league_accounts",
+            "item_filter": "account:item_filter"
+        },
+        "client_id": "axel",
+        "grant_type": "authorization_code"
+    },
+    "api": {
+        "host": {
+            "poe": "api.pathofexile.com",
+            "poe_ninja": "poeninja.com"
+        },
+        "endpoint": {
+            "list_stashes": "/stash",
+            "get_stash": "/stash/standard"
+        }
+    }
+}

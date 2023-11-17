@@ -1,14 +1,14 @@
 # Configure target sources here
 set(MAIN_SRC_FILES main.cpp)
 
-# Copy python test server into build directory if it changes Python test server
+# Copy config.json into build directory if it changes
 add_custom_command(
-  OUTPUT "${CMAKE_BINARY_DIR}/server.py"
-  COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/integration/server.py"
-          "${CMAKE_BINARY_DIR}/server.py"
-  DEPENDS "${CMAKE_SOURCE_DIR}/integration/server.py")
+  OUTPUT "${CMAKE_BINARY_DIR}/config.json"
+  COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/config/config.json"
+          "${CMAKE_BINARY_DIR}/config.json"
+  DEPENDS "${CMAKE_SOURCE_DIR}/config/config.json")
 
-add_custom_target(copy_server ALL DEPENDS "${CMAKE_BINARY_DIR}/server.py")
+add_custom_target(copy_config ALL DEPENDS "${CMAKE_BINARY_DIR}/config.json")
 
 # Toolchain path
 set(CMAKE_TOOLCHAIN_FILE
