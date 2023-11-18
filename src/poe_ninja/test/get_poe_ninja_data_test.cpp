@@ -1,11 +1,10 @@
-#include <gtest/gtest.h>
 #include <boost/json.hpp>
+#include <gtest/gtest.h>
 
-#include "poe_ninja/get_poe_ninja_data.h"
-#include "config/poe_ninja_config.h"
+#include "axel/Config.h"
 
 namespace {
-/**
+    /**
   * @brief Checks if a given string is a valid JSON
   *
   * Parses the provided string using boost::json::parse
@@ -26,33 +25,8 @@ namespace {
         boost::json::parse(json_string, ec);
         return !ec;
     }
-}
+}  // namespace
 
 TEST(constants_test, correct_hostname) {
-    EXPECT_EQ(config::poe_ninja::host, "poe.ninja");
+    EXPECT_EQ(CONFIG("api.host.poe_ninja"), "poe.ninja");
 }
-
-//// PoE Ninja API endpoints test - takes very long to test since it requires hitting real endpoints. Use only if
-//// necessary.
-//TEST(constants_test, currency_json_returns_non_empty_valid_json) {
-//    using namespace config::poe_ninja::paths;
-//
-//    // All currency and item endpoints (excluding league)
-//    std::vector<std::string> paths{
-//            currency, fragment, divination_card, artifact, oil, incubator, unique_weapon, unique_armour,
-//            unique_accessory, unique_flask, unique_jewel, skill_gem, cluster_jewel, map, blighted_map,
-//            blight_ravaged_map, scourged_map, unique_map, delirium_orb, invitation, scarab, base_type, fossil,
-//            resonator, helmet_enchant, beast, essence, vial
-//    };
-//
-//    for (auto& path: paths) {
-//        path += "&league=" + config::poe_ninja::leagues::crucible;
-//        std::string output = poe_ninja::get_item_prices(path);
-//
-//        boost::json::value json_output = boost::json::parse(output);
-//
-//        ASSERT_TRUE(is_json(output));
-//
-//        EXPECT_TRUE(json_output.as_object().if_contains("lines") != nullptr);
-//    }
-//}

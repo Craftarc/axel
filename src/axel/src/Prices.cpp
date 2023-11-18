@@ -29,6 +29,8 @@ namespace axel {
             database::PricesTable row{ name, unit_price };
             database_->insert_row("prices", row);
         }
+
+        return 1;
     }
 
     std::unordered_map<std::string, double>

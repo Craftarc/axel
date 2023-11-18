@@ -22,7 +22,7 @@
     "api": {
         "host": {
             "poe": "api.pathofexile.com",
-            "poe_ninja": "poeninja.com"
+            "poe_ninja": "poe.ninja"
         },
         "endpoint": {
             "list_stashes": "/stash",

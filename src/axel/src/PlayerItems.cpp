@@ -3,11 +3,7 @@
 #include <cctype>
 #include <regex>
 
-#include "axel/Exception.h"
-#include "backward.hpp"
-#include "boost/json.hpp"
-#include "config/auth.h"
-#include "fmt/ranges.h"
+#include "axel/Config.h"
 #include "parse/json.h"
 #include "parse/util.h"
 #include "spdlog/spdlog.h"
@@ -139,10 +135,10 @@ namespace axel {
     PlayerItems::make_list_stashes_request(const std::string& league) const {
         const std::unordered_map<std::string, std::string> fields{
             { "authorization", "Bearer " + access_token_ },
-            { "host", config::auth::api }
+            { "host", CONFIG("api.host.poe") }
         };
         return util::make_http_request("GET",
-                                       config::auth::paths::list_stashes +
+                                       CONFIG("api.endpoint.list_stashes") +
                                        league,
                                        fields);
     }
@@ -163,10 +159,10 @@ namespace axel {
     PlayerItems::make_get_stash_request(const std::string& id) const {
         const std::unordered_map<std::string, std::string> fields{
             { "authorization", "Bearer " + access_token_ },
-            { "host", config::auth::api }
+            { "host", CONFIG("api.host.poe") }
         };
         // Using the GET /stash/<league>/<stash_id> endpoint
-        std::string path{ config::auth::paths::get_stash + id };
+        std::string path{ CONFIG("api.endpoint.get_stash") + id };
         return util::make_http_request("GET", path, fields);
     }
 

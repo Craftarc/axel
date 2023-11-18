@@ -6,8 +6,7 @@
 #include <boost/json.hpp>
 #include <spdlog/spdlog.h>
 
-#include "config/auth.h"
-#include "config/axel.h"
+#include "axel/Config.h"
 #include "util/http.h"
 #include "util/interfaces/IHttpSender.h"
 #include "util/path.h"
@@ -30,9 +29,6 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                                               http_sender) const {
     const int MAX_RESPONSE_BODY = 10;
 
-    namespace scopes = config::auth::scopes;
-    namespace auth = config::auth;
-
     // Check input validity
     if (auth_code.empty()) {
         throw std::runtime_error("auth_code is empty");
@@ -41,30 +37,31 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
     }
 
 #ifdef AXEL_TEST
-    std::string redirect_uri = auth::paths::test_redirect_uri;
-    std::string host = auth::test_host;
+    std::string host = CONFIG("auth.host.test");
 #else
-    std::string redirect_uri = auth::paths::redirect_uri;
-    std::string host = auth::host;
+    std::string host = CONFIG("auth.host.poe");
 #endif
-    std::string request_body = util::make_form_data(
-    { { "client_id", config::axel::client_id },
-      { "client_secret", "xJqwozXycup5" },
-      { "grant_type", config::axel::grant_type },
-      { "code", std::move(auth_code) },
-      { "redirect_uri", redirect_uri },
-      { "scope",
-        util::concatenate_with_space({ scopes::profile,
-                                       scopes::stashes,
-                                       scopes::characters,
-                                       scopes::item_filter,
-                                       scopes::league_accounts }) },
-      { "code_verifier", std::move(code_verifier) } });
+
+    std::string redirect_uri{ host + CONFIG("auth.endpoint.redirect") };
+    std::string request_body =
+    util::make_form_data({ { "client_id", CONFIG("auth.client_id") },
+                           { "client_secret", "xJqwozXycup5" },
+                           { "grant_type", CONFIG("auth.grant_type") },
+                           { "code", std::move(auth_code) },
+                           { "redirect_uri", redirect_uri },
+                           { "scope",
+                             util::concatenate_with_space(
+                             { CONFIG("auth.scopes.profile"),
+                               CONFIG("auth.scopes.stashes"),
+                               CONFIG("auth.scopes.characters"),
+                               CONFIG("auth.scopes.item_filter"),
+                               CONFIG("auth.scopes.league_accounts") }) },
+                           { "code_verifier", std::move(code_verifier) } });
 
     // Add the headers to the request
     auto full_request =
     util::make_http_request("POST",
-                            auth::paths::token,
+                            CONFIG("auth.endpoint.token"),
                             { { "host", host },
                               { "content-type",
                                 "application/x-www-form-urlencoded" } },

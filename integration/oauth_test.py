@@ -77,8 +77,7 @@ def test_auth(axel):
     """
     response = requests.get('http://localhost/auth', allow_redirects=False)
 
-    print(response)
-    # The response is a redirect
+    # the response is a redirect
     assert (response.status_code == requests.codes.found)
 
     # Headers contain session_id cookie

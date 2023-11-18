@@ -15,9 +15,9 @@ int main() {
 #endif
 
 #ifdef AXEL_TEST
-    std::string database{"test.db"};
+    std::string database{ "test.db" };
 #else
-    std::string database{"app.db"};
+    std::string database{ "app.db" };
 #endif
 
     crow::App<crow::CookieParser> app;
@@ -29,7 +29,8 @@ int main() {
     CROW_ROUTE(app, "/auth")
     ([&]() {
         crow::response response{ 404 };  // Default
-        auth::OauthManager oauth_manager{database};
+
+        auth::OauthManager oauth_manager{ database };
         oauth_manager.start_auth(response);
 
         return response;
@@ -39,7 +40,7 @@ int main() {
     CROW_ROUTE(app, "/auth/callback")
     ([&](const crow::request& request) {
         crow::response response{ 404 };
-        auth::OauthManager oauth_manager{database};
+        auth::OauthManager oauth_manager{ database };
 
         std::string url{ request.raw_url };  // Endpoint + query string
         spdlog::info("URL: {}", url);
@@ -58,7 +59,7 @@ int main() {
     CROW_ROUTE(app, "/update")
     ([&](const crow::request& request) {
         crow::response response{ 404 };
-        auth::OauthManager oauth_manager{database};
+        auth::OauthManager oauth_manager{ database };
 
         std::string url{ request.raw_url };  // Endpoint + query string
 

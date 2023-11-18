@@ -6,7 +6,8 @@ set(AXEL_SRC_FILES
     src/ResourceManager.cpp
     src/PlayerItems.cpp
     src/Exception.cpp
-    src/Prices.cpp)
+    src/Prices.cpp
+    src/Config.cpp)
 
 set(AXEL_TESTS_SRC_FILES test/Database_test.cpp test/ResourceManager_test.cpp
                          test/PlayerItems_test.cpp test/Prices_test.cpp)

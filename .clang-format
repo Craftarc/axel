@@ -137,7 +137,9 @@ TabWidth: 4
 TypenameMacros: []
 UseTab: Never
 WhitespaceSensitiveMacros: []
-
+---
+Language: Json
+IndentWidth: 4
 
 
 

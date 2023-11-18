@@ -1,7 +1,8 @@
 #include "auth/AuthCodeManager.h"
 
-#include "config/auth.h"
-#include "config/axel.h"
+#include <spdlog/spdlog.h>
+
+#include "axel/Config.h"
 #include "util/path.h"
 
 /// @param code_challenge The code challenge to include in the authorization url.
@@ -9,28 +10,28 @@
 /// @return The authorization url string.
 std::string auth::AuthCodeManager::get_auth_url(std::string code_challenge,
                                                 std::string state_hash) const {
-    namespace auth = config::auth;
-    namespace scopes = auth::scopes;
-#if AXEL_TEST
-    std::string host = "http://" + auth::test_host;
-    std::string redirect_uri = auth::paths::test_redirect_uri;
+#ifdef AXEL_TEST
+    /* std::string host = CONFIG("auth.host.test"); */
+    std::string host = "http://localhost:8080";
 #else
-    std::string host = "https://" + auth::host;
-    std::string redirect_uri = auth::paths::redirect_uri;
+    std::string host = CONFIG("auth.host.poe");
 #endif
+
     std::string base_path =
-    host + auth::paths::auth_path;  // Before adding query parameters
+    host + CONFIG("auth.endpoint.login");  // Before adding query parameters
+
+    std::string redirect_uri{ host + CONFIG("auth.endpoint.redirect") };
 
     return util::add_query_parameters(
     base_path,
-    { { "client_id", config::axel::client_id },
+    { { "client_id", CONFIG("auth.client_id") },
       { "response_type", "code" },
       { "scope",
-        util::concatenate_with_space({ scopes::profile,
-                                       scopes::characters,
-                                       scopes::stashes,
-                                       scopes::league_accounts,
-                                       scopes::item_filter }) },
+        util::concatenate_with_space({ CONFIG("auth.scopes.profile"),
+                                       CONFIG("auth.scopes.characters"),
+                                       CONFIG("auth.scopes.stashes"),
+                                       CONFIG("auth.scopes.league_accounts"),
+                                       CONFIG("auth.scopes.item_filter") }) },
       { "state", state_hash },
       { "redirect_uri", redirect_uri },
       { "challenge", code_challenge },
