@@ -1,7 +1,5 @@
 # Configure target sources here
 set(AXEL_SRC_FILES
-    src/Database.cpp
-    src/DynamoDBClient.cpp
     src/Item.cpp
     src/ResourceManager.cpp
     src/PlayerItems.cpp
@@ -9,7 +7,7 @@ set(AXEL_SRC_FILES
     src/Prices.cpp
     src/Config.cpp)
 
-set(AXEL_TESTS_SRC_FILES test/Database_test.cpp test/ResourceManager_test.cpp
+set(AXEL_TESTS_SRC_FILES test/ResourceManager_test.cpp
                          test/PlayerItems_test.cpp test/Prices_test.cpp)
 
 # Find libbfd for axel::Exception

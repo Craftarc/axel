@@ -28,5 +28,5 @@ namespace {
 }  // namespace
 
 TEST(constants_test, correct_hostname) {
-    EXPECT_EQ(CONFIG("api.host.poe_ninja"), "poe.ninja");
+    EXPECT_EQ(CONFIG("api.host.ninja"), "poe.ninja");
 }

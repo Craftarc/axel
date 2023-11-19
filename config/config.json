@@ -22,11 +22,54 @@
     "api": {
         "host": {
             "poe": "api.pathofexile.com",
-            "poe_ninja": "poe.ninja"
+            "ninja": "poe.ninja"
         },
-        "endpoint": {
-            "list_stashes": "/stash",
-            "get_stash": "/stash/standard"
+        "poe": {
+            "endpoint": {
+                "list_stashes": "/stash",
+                "get_stash": "/stash/standard"
+            }
+        },
+        "ninja": {
+            "endpoint": {
+                "currency": "/api/data/currencyoverview?type=Currency",
+                "fragment": "/api/data/currencyoverview?type=Fragment",
+                "divination_card": "/api/data/itemoverview?type=DivinationCard",
+                "artifact": "/api/data/itemoverview?type=Artifact",
+                "oil": "/api/data/itemoverview?type=Oil",
+                "incubator": "/api/data/itemoverview?type=Incubator",
+                "unique_weapon": "/api/data/itemoverview?type=UniqueWeapon",
+                "unique_armour": "/api/data/itemoverview?type=UniqueArmour",
+                "unique_accessory": "/api/data/itemoverview?type=UniqueAccessory",
+                "unique_flask": "/api/data/itemoverview?type=UniqueFlask",
+                "unique_jewel": "/api/data/itemoverview?type=UniqueJewel",
+                "skill_gem": "/api/data/itemoverview?type=SkillGem",
+                "cluster_jewel": "/api/data/itemoverview?type=ClusterJewel",
+                "map": "/api/data/itemoverview?type=Map",
+                "blighted_map": "/api/data/itemoverview?type=BlightedMap",
+                "blight_ravaged_map": "/api/data/itemoverview?type=BlightRavagedMap",
+                "scourged_map": "/api/data/itemoverview?type=ScourgedMap",
+                "unique_map": "/api/data/itemoverview?type=UniqueMap",
+                "delirium_orb": "/api/data/itemoverview?type=DeliriumOrb",
+                "invitation": "/api/data/itemoverview?type=Invitation",
+                "scarab": "/api/data/itemoverview?type=Scarab",
+                "base_type": "/api/data/itemoverview?type=BaseType",
+                "fossil": "/api/data/itemoverview?type=Fossil",
+                "resonator": "/api/data/itemoverview?type=Resonator",
+                "helmet_enchant": "/api/data/itemoverview?type=HelmetEnchant",
+                "beast": "/api/data/itemoverview?type=Beast",
+                "essence": "/api/data/itemoverview?type=Essence",
+                "vial": "/api/data/itemoverview?type=Vial"
+            },
+            "leagues": {
+                "standard": "Standard",
+                "crucible": "Crucible",
+                "sanctum": "Sanctum",
+                "ancestor": "Ancestor",
+                "softcore": "",
+                "hardcore": "Hardcore+"
+            }
+
         }
     }
 }

@@ -2,6 +2,7 @@
 
 #include <unordered_map>
 
+#include "axel/Config.h"
 #include "boost/json.hpp"
 #include "config/poe_ninja_config.h"
 #include "parse/JsonResult.h"
@@ -12,7 +13,6 @@
 #include "util/path.h"
 
 namespace axel {
-    namespace ninja = config::poe_ninja;
     // Public
     Prices::Prices(const std::string& league, const std::string& league_type) :
         Prices{ league,
@@ -21,7 +21,7 @@ namespace axel {
                 std::make_unique<util::Database>("app") } {};
 
     int Prices::update_prices() {
-        auto price_table = get_prices(ninja::paths::currency);
+        auto price_table = get_prices(CONFIG("api.ninja.endpoint.currency"));
         // Put into prices database
         for (auto& price : price_table) {
             std::string name{ price.first };
@@ -46,7 +46,7 @@ namespace axel {
         Request request =
         util::make_http_request("GET",
                                 path,
-                                { { "host", config::poe_ninja::host } });
+                                { { "host", CONFIG("api.host.ninja") } });
 
         std::string response =
         http_sender_->send_http_request(request,

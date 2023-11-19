@@ -1,9 +1,9 @@
+#include "axel/Config.h"
 #include "axel/Prices.h"
 
 #include <boost/json.hpp>
 #include <gtest/gtest.h>
 
-#include "config/poe_ninja_config.h"
 #include "parse/util.h"
 #include "util/MockDatabase.h"
 #include "util/MockHttpSender.h"
@@ -30,14 +30,13 @@ namespace {
 
 namespace axel {
     using namespace ::testing;
-    namespace ninja = config::poe_ninja;
     namespace json = boost::json;
 
     class Prices_test : public Test {
         protected:
             Prices_test() :
-                prices_{ ninja::leagues::standard,
-                         ninja::leagues::softcore,
+                prices_{ CONFIG("api.ninja.leagues.standard"),
+                         CONFIG("api.ninja.leagues.softcore"),
                          mock_http_sender_,
                          std::move(mock_database_) },
 
@@ -60,7 +59,7 @@ namespace axel {
             std::unique_ptr<util::MockDatabase> mock_database_;
             Prices prices_;
 
-            std::string path = ninja::paths::currency;
+            std::string path = CONFIG("api.ninja.endpoint.currency");
     };
 
     TEST_F(Prices_test, get_prices__calls_http_sender) {

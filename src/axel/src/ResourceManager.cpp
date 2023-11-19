@@ -7,14 +7,9 @@
 
 #include <spdlog/spdlog.h>
 
+#include "axel/Config.h"
 #include "axel/PlayerItems.h"
 #include "axel/Prices.h"
-#include "config/database.h"
-#include "config/auth.h"
-#include "config/poe_ninja_config.h"
-#include "parse/json.h"
-#include "parse/util.h"
-#include "poe_ninja/get_poe_ninja_data.h"
 #include "util/Database.h"
 #include "util/HttpSender.h"
 #include "util/type.h"
@@ -45,8 +40,6 @@ namespace {
 }  // namespace
 
 namespace axel {
-    namespace ninja = config::poe_ninja;
-
     // Public
     ResourceManager::ResourceManager(const std::string& access_token,
                                      const std::string& league,
@@ -60,7 +53,8 @@ namespace axel {
         http_sender_{ std::make_shared<util::HttpSender>() } {}
 
     std::string ResourceManager::get_update() {
-        auto player_items = player_items_.get_update(ninja::leagues::standard);
+        auto player_items =
+        player_items_.get_update(CONFIG("poe.endpoint.get_stash"));
         prices_->update_prices();
 
         std::vector<axel::Item> item_list{};

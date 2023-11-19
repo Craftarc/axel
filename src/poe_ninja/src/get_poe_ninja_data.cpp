@@ -22,7 +22,7 @@ namespace poe_ninja {
         auto request = make_http_request("GET",
                                          resource_path,
                                          { { "host",
-                                             CONFIG("api.host.poe_ninja") } });
+                                             CONFIG("api.host.ninja") } });
 
         return http_sender->send_http_request(request,
                                               15);  // TODO: Remove magic number

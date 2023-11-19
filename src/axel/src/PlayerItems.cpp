@@ -138,7 +138,7 @@ namespace axel {
             { "host", CONFIG("api.host.poe") }
         };
         return util::make_http_request("GET",
-                                       CONFIG("api.endpoint.list_stashes") +
+                                       CONFIG("api.poe.endpoint.list_stashes") +
                                        league,
                                        fields);
     }

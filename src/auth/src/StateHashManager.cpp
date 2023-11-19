@@ -5,7 +5,6 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <botan/base64.h>
 
-#include "axel/Database.h"
 #include "util/hash.h"
 
 namespace {

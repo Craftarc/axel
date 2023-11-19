@@ -2,7 +2,6 @@
 
 #include <gtest/gtest.h>
 
-#include "config/poe_ninja_config.h"
 
 namespace {
 	class http_tests : public ::testing::Test {
