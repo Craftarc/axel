@@ -3,6 +3,8 @@
 
 FROM ubuntu:22.04
 
+ARG APP_ROOT
+
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y \
@@ -15,12 +17,12 @@ RUN apt-get update -y && \
 # Server configuration
 COPY env/staging/nginx.conf /etc/nginx/nginx.conf
 
-WORKDIR /app
+WORKDIR ${APP_ROOT}
 
 # Binary
-COPY build/main /app
+COPY build/main ${APP_ROOT}
+
+# Config
+COPY config/config.json ${APP_ROOT}/config/
 
 EXPOSE 80
-
-
-
