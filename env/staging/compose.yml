@@ -3,12 +3,31 @@ services:
     image: craftarc/axel:staging
     build:  
       context: ${PROJECT_ROOT}
-      dockerfile: env/staging/staging.Dockerfile
+      dockerfile: env/release.Dockerfile
       args:
         APP_ROOT: ${APP_ROOT}
+        CONFIG_PATH: ${CONFIG_PATH}
     ports: 
-      - "8081:80"
-    command: [nginx, '-g', 'daemon off;'] # Start server in foreground so
-                                          # the container doesn't stop immediately
+      - "80:80"
+      - "443:443"
+
     environment:
       - APP_ROOT=${APP_ROOT}
+
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt # Mount SSL keys
+
+  oauth:
+    image: craftarc/axel:oauth
+    build:
+      context: ${PROJECT_ROOT}
+      dockerfile: env/staging/oauth.Dockerfile
+      args:
+        APP_ROOT: ${APP_ROOT}
+        PROJECT_ROOT: ${PROJECT_ROOT}
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_ROOT=${APP_ROOT}
+    stdin_open: true
+    tty: true

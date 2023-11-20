@@ -9,12 +9,12 @@ services:
       - "80:80" # Axel app
       - "8080:8080" # Python test server
     volumes:
-      - ${PROJECT_ROOT}:${PROJECT_ROOT}
+      - ${APP_ROOT}:${APP_ROOT}
       - ~/.ssh:/root/.ssh
       - ~/.gitconfig:/root/.gitconfig
       - config:/root
     environment:
-      - PROJECT_ROOT=${PROJECT_ROOT}
+      - APP_ROOT=${APP_ROOT}
 
 volumes:
   config:

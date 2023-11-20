@@ -5,8 +5,6 @@
 # CMake settings group for production
 cmake_args="-G Ninja -DCMAKE_BUILD_TYPE=Release -DAXEL_TEST=0"
 
-echo ">> Current working directory: $(pwd)"
-
 echo ">> Building Axel..."
 mkdir -p build
 rm -f build/CMakeCache.txt # Clean out previous build settings

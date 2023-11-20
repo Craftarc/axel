@@ -28,6 +28,14 @@ def oauth_authorize():
     return app.redirect(final_callback_url, code=requests.codes.found)
 
 
+@app.route('/update', methods=['GET'])
+def update():
+    """
+    Provides update JSON information back to the player
+    """
+    pass
+
+
 def print_response(response):
     logger.info('Response headers')
     for header, value in response.headers.items():
