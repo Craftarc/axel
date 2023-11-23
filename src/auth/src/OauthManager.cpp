@@ -124,7 +124,8 @@ namespace auth {
         // Keys are not found in map
         if (state_hash.empty() || auth_code.empty()) {
             response.code = 403;
-            spdlog::error("State or authorisation code could not be found in query string");
+            spdlog::error(
+            "State or authorisation code could not be found in query string");
             return;
         }
 

@@ -15,53 +15,31 @@ from util.config import config
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Variables setup
-app_root = os.environ['APP_ROOT']
-oauth_server_path = os.path.join(app_root, 'server.py')
 
-class OauthTestFixture:
-    def __init__(self):
-        # Start test oauth server
-        self.oauth_server = subprocess.Popen(['python3', oauth_server_path])
-        logger.info("Oauth server started")
-
-    def shutdown(self):
-        # Stop test server
-        self.oauth_server.terminate()
-        logger.info("Oauth server shut down")
-
-
-@pytest.fixture(scope='session')
-def axel():
-    fixture = OauthTestFixture()
-    time.sleep(1)  # Give server time to start
-    yield
-    fixture.shutdown()
-
-
-def test_base_domain(axel):
+def test_base_domain():
     """
     OK response from base domain (no trailing slash)
     """
-    response = requests.get(f'https://staging.pathofaxel.com')
+    response = requests.get('https://staging.pathofaxel.com')
     assert (response.status_code == 200)
 
 
-def test_root(axel):
+def test_root():
     """
     OK response from root path ('/')
     """
-    response = requests.get(f'https://staging.pathofaxel.com/')
+    response = requests.get('https://staging.pathofaxel.com/')
     assert (response.status_code == 200)
 
 
-def test_auth(axel):
+def test_auth():
     """
     Check response from Axel's '/auth' endpoint
     Expected to be a redirect to an auth server endpoint
     Redrect is not actually carried out
     """
-    response = requests.get(f'http://staging.pathofaxel.com/auth', allow_redirects=False)
+    response = requests.get(
+        'https://staging.pathofaxel.com/auth', allow_redirects=False)
 
     # the response is a redirect
     assert (response.status_code == requests.codes.found)
@@ -144,28 +122,28 @@ def test_auth(axel):
     assert (util.is_valid_base64url(redirect_cookies.get('axel_session_id')))
 
 
-def test_auth_callback_path_invalid_session_id(axel):
+def test_auth_callback_path_invalid_session_id():
     """
     Rejects the access if the session id is invalid
     """
-    response = requests.get(f'http://staging.pathofaxel.com/auth/callback',
+    response = requests.get('https://staging.pathofaxel.com/auth/callback',
                             cookies={'session_id': 'invalid_session_id'})
     assert (response.status_code == requests.codes.forbidden)
 
 
-def test_auth_callback_path_no_state_in_query_params(axel):
+def test_auth_callback_path_no_state_in_query_params():
     """
     Rejects if there is no 'state' query parameter
     """
-    response = requests.get(f'http://staging.pathofaxel.com/auth/callback',
+    response = requests.get('https://staging.pathofaxel.com/auth/callback',
                             params={'code': 'code'})
     assert (response.status_code == requests.codes.forbidden)
 
 
-def test_auth_callback_path_no_code_in_query_params(axel):
+def test_auth_callback_path_no_code_in_query_params():
     """
     Rejects if there is no 'code' query parameter
     """
-    response = requests.get(f'http://staging.pathofaxel.com/auth/callback',
+    response = requests.get('https://staging.pathofaxel.com/auth/callback',
                             params={'state': 'state'})
     assert (response.status_code == requests.codes.forbidden)

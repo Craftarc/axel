@@ -37,15 +37,15 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
     }
 
 #ifdef AXEL_TEST
-    std::string host = CONFIG("auth.host.test");
+    std::string host = "https://" + CONFIG("auth.host.axel.staging");
 #else
-    std::string host = CONFIG("auth.host.poe");
+    std::string host = "https://" + CONFIG("auth.host.axel.production");
 #endif
 
     std::string redirect_uri{ host + CONFIG("auth.endpoint.redirect") };
     std::string request_body =
     util::make_form_data({ { "client_id", CONFIG("auth.client_id") },
-                           { "client_secret", "xJqwozXycup5" },
+                           { "client_secret", "piVeiWU8NyDJ" },
                            { "grant_type", CONFIG("auth.grant_type") },
                            { "code", std::move(auth_code) },
                            { "redirect_uri", redirect_uri },

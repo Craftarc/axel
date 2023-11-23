@@ -11,16 +11,18 @@
 std::string auth::AuthCodeManager::get_auth_url(std::string code_challenge,
                                                 std::string state_hash) const {
 #ifdef AXEL_TEST
-    /* std::string host = CONFIG("auth.host.test"); */
-    std::string host = "http://localhost:8080";
+    std::string redirect_uri = "https://" + CONFIG("auth.host.axel.staging") +
+                               CONFIG("auth.endpoint.redirect");
+    ;
 #else
-    std::string host = CONFIG("auth.host.poe");
+    std::string redirect_uri = "https://" +
+                               CONFIG("auth.host.axel.production") +
+                               CONFIG("auth.endpoint.redirect");
 #endif
 
     std::string base_path =
-    host + CONFIG("auth.endpoint.login");  // Before adding query parameters
-
-    std::string redirect_uri{ host + CONFIG("auth.endpoint.redirect") };
+    CONFIG("auth.host.poe") +
+    CONFIG("auth.endpoint.login");  // Before adding query parameters
 
     return util::add_query_parameters(
     base_path,

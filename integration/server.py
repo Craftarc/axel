@@ -2,6 +2,7 @@ import logging
 import requests
 from flask import Flask, request
 from util import util
+from util.config import config
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -14,10 +15,11 @@ def oauth_authorize():
     Extracts 'state' and 'challenge' query parameters, then sends the
     user back to Axel's callback url.
     """
-    callback_url = 'http://localhost/auth/callback'
 
     # Store in server for later verification
     code_challenge = request.args.get('challenge')
+    callback_url = 'https://' + config.auth.host.axel.staging + \
+        config.auth.endpoint.redirect
 
     authorization_code = 'code'
     state = request.args.get('state')

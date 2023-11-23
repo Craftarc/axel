@@ -2,7 +2,10 @@
     "auth": {
         "host": {
             "poe": "www.pathofexile.com",
-            "test": "oauth"
+            "axel": {
+                "production": "pathofaxel.com",
+                "staging": "staging.pathofaxel.com"
+            }
         },
         "endpoint": {
             "login": "/oauth/authorize",

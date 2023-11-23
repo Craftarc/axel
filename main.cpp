@@ -1,7 +1,8 @@
-#include <spdlog/spdlog.h>
+
 #include <sqlite3.h>
 
 #include "auth/OauthManager.h"
+#include "axel/Config.h"
 #include "axel/ResourceManager.h"
 #include "crow.h"
 #include "crow/middlewares/cookie_parser.h"
@@ -15,10 +16,11 @@ int main() {
 #endif
 
 #ifdef AXEL_TEST
-    std::string database{ "test.db" };
+    spdlog::info("TEST BUILD");
 #else
-    std::string database{ "app.db" };
+    spdlog::info("PRODUCTION BUILD");
 #endif
+    std::string database{ "app.db" };
 
     crow::App<crow::CookieParser> app;
     // Landing page
@@ -67,15 +69,15 @@ int main() {
         auto& context = app.get_context<crow::CookieParser>(request);
         std::string axel_session_id{ context.get_cookie("axel_session_id") };
         spdlog::info("Axel session id: {}", axel_session_id);
-        /* axel::ResourceManager resource_manager{ */
-        /*     "d4336d2a46bb98d5e0dec8e7596dc62f386e8cd6", */
-        /*     "", */
-        /*     "" */
-        /* }; */
+        axel::ResourceManager resource_manager{
+            "d4336d2a46bb98d5e0dec8e7596dc62f386e8cd6",
+            "",
+            ""
+        };
 
-        /* auto items = resource_manager.get_update(); */
+        auto items = resource_manager.get_update();
         return 0;
     });
 
-    app.port(80).multithreaded().run();
+    app.port(8080).multithreaded().run();
 }
