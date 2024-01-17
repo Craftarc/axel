@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pwd=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+
+docker build -f "${pwd}"/../../env/dev/dev.Dockerfile -t craftarc/axel:dev .
+

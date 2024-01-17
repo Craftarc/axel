@@ -12,12 +12,10 @@ ENV VCPKG_FORCE_SYSTEM_BINARIES=1
 ## This is where the certificates are, so we guide SSL_CTX_set_default_verify_paths() to search here.
 ENV SSL_CERT_DIR /etc/ssl/certs/ca-bundle.crt
 
-
 # Install tools
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y \ 
-    git \
+    apt-get install -y git \
     wget \
     curl \
     zip \
@@ -37,9 +35,6 @@ RUN apt-get update -y && \
     sqlite3 \
     net-tools
 
-# Python packages
-RUN pip install flask pytest requests
-
 # Set aliases
 WORKDIR /usr/bin
 
@@ -47,16 +42,13 @@ RUN ln -sf gcc-12 gcc && \
     ln -sf g++-12 g++ && \
     ln -sf python3 python
 
-# Set up gdb config
-RUN wget -P  ~ https://git.io/.gdbinit --no-check-certificate
-
 # Install vcpkg
 WORKDIR /opt
 
 RUN git clone https://github.com/Microsoft/vcpkg.git && \
     ./vcpkg/bootstrap-vcpkg.sh
 
+# Python packages
+RUN pip install flask pytest requests
+
 WORKDIR /root
-# Install editor
-RUN git clone https://github.com/juayhee/dotfiles && \
-    dotfiles/bootstrap.sh
