@@ -3,10 +3,10 @@ set(MAIN_SRC_FILES main.cpp)
 
 # Copy config.json into build directory if it changes
 add_custom_command(
-  OUTPUT "${CMAKE_BINARY_DIR}/config.json"
-  COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/config/config.json"
-          "${CMAKE_BINARY_DIR}/config.json"
-  DEPENDS "${CMAKE_SOURCE_DIR}/config/config.json")
+        OUTPUT "${CMAKE_BINARY_DIR}/config.json"
+        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/config/config.json"
+        "${CMAKE_BINARY_DIR}/config.json"
+        DEPENDS "${CMAKE_SOURCE_DIR}/config/config.json")
 
 add_custom_target(copy_config ALL DEPENDS "${CMAKE_BINARY_DIR}/config.json")
 
@@ -26,12 +26,6 @@ set(Boost_NO_WARN_NEW_VERSIONS 1)
 
 # Global properties
 set(PROJECT_ROOT ${CMAKE_CURRENT_LIST_DIR})
-
-# Find libraries AWS C++ SDK
-find_package(AWSSDK CONFIG REQUIRED COMPONENTS core dynamodb)
-
-# AWS Lambda runtime library
-find_package(aws-lambda-runtime)
 
 # Boost library
 find_package(Boost REQUIRED COMPONENTS thread system json)
@@ -61,9 +55,8 @@ find_package(unofficial-sqlite3 CONFIG REQUIRED)
 
 # main executable
 add_executable(main ${MAIN_SRC_FILES})
-target_include_directories(main PRIVATE AWS::aws-lambda-runtime)
 target_link_libraries(main PRIVATE util axel test_definitions Crow::Crow
-                                   spdlog::spdlog unofficial::sqlite3::sqlite3)
+                      spdlog::spdlog unofficial::sqlite3::sqlite3)
 target_compile_options(main PRIVATE "-Wall" "-Wextra")
 
 # Settings
@@ -73,13 +66,13 @@ target_compile_options(main PRIVATE "-Wall" "-Wextra")
 add_library(test_definitions INTERFACE)
 
 option(AXEL_TEST "Use test databases" YES)
-if(AXEL_TEST)
-  message(STATUS "Using testing databases")
-  target_compile_definitions(test_definitions INTERFACE AXEL_TEST=1)
-else()
-  message(STATUS "Using production databases")
-  target_compile_definitions(test_definitions INTERFACE AXEL_TEST=0)
-endif()
+if (AXEL_TEST)
+    message(STATUS "Using testing databases")
+    target_compile_definitions(test_definitions INTERFACE AXEL_TEST=1)
+else ()
+    message(STATUS "Using production databases")
+    target_compile_definitions(test_definitions INTERFACE AXEL_TEST=0)
+endif ()
 
 # End Settings
 
@@ -91,13 +84,13 @@ target_link_libraries(sandbox PRIVATE util axel unofficial::sqlite3::sqlite3)
 
 # tests executable (all tests)
 add_executable(
-  tests
-  $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:util_tests>
-  $<TARGET_OBJECTS:parse_tests> $<TARGET_OBJECTS:poe_ninja_tests>
-  $<TARGET_OBJECTS:axel_tests>)
+        tests
+        $<TARGET_OBJECTS:auth_tests> $<TARGET_OBJECTS:util_tests>
+        $<TARGET_OBJECTS:parse_tests> $<TARGET_OBJECTS:poe_ninja_tests>
+        $<TARGET_OBJECTS:axel_tests>)
 target_link_libraries(
-  tests PRIVATE auth_tests util_tests parse_tests poe_ninja_tests axel_tests
-                GTest::gtest_main)
+        tests PRIVATE auth_tests util_tests parse_tests poe_ninja_tests axel_tests
+        GTest::gtest_main)
 
 # Subdirectories
 add_subdirectory(src/poe_ninja)

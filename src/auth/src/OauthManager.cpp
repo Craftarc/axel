@@ -3,7 +3,6 @@
 #include <iostream>
 #include <utility>
 
-#include <aws/core/client/ClientConfiguration.h>
 #include <botan/base64.h>
 #include <spdlog/spdlog.h>
 

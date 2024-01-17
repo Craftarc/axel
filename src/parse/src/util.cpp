@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 
-#include <aws/lambda-runtime/runtime.h>
 #include <boost/json.hpp>
 
 namespace parse {
@@ -18,33 +17,6 @@ namespace parse {
             string += character;
         }
         return string;
-    }
-
-    /// Takes in a JSON file, then tries to read as many fields matching those in an invocation_request
-    /// as possible, before creating a new invocation_request with those values filled in.
-    /// @param filename Path to input JSON file.
-    /// @return An invocation_request with member variables assigned
-    /// @note Pass a std::ifstream to read a file with
-    invocation_request make_invocation_request(const std::string& filename) {
-        std::fstream file(filename);
-        std::string input = parse::read_file_into_string(file);
-
-        invocation_request request{};
-        boost::json::object input_json = boost::json::parse(input).as_object();
-        // Check for presence of each of the fields
-        if (input_json.contains("request_id")) {
-            request.request_id =
-            boost::json::serialize(input_json.at("request_id"));
-        }
-        if (input_json.contains("function_arn")) {
-            request.function_arn =
-            boost::json::serialize(input_json.at("function_arn"));
-        }
-        if (input_json.contains("payload")) {
-            request.payload = boost::json::serialize(input_json.at("payload"));
-        }
-
-        return request;
     }
 
     /// @param status_code HTTP status code of response.

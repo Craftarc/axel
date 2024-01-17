@@ -3,17 +3,11 @@
 
 #include <cctype>
 #include <istream>
-
-#include <aws/lambda-runtime/runtime.h>
-
-using namespace aws::lambda_runtime;
+#include <unordered_map>
 
 namespace parse {
     /// @brief Read an entire file into a string.
     std::string read_file_into_string(std::istream& file_stream);
-
-    /// @brief Creates an invocation_request using information in a provided JSON file.
-    invocation_request make_invocation_request(const std::string& filename);
 
     /// @brief Creates a JSON string representing an invocation_response
     /// payload to pass back to the AWS Lambda service.

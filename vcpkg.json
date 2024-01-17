@@ -1,71 +1,61 @@
 {
-    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
-    "name": "axel",
-    "version": "0.1.0",
-    "description": "Backend for Axel",
-    "builtin-baseline": "c95000e1b5bb62884de08d5e952993c8bced9db6",
-    "dependencies": [
-        {
-            "name": "aws-sdk-cpp",
-            "version>=": "1.11.132",
-            "default-features": false,
-            "features": ["dynamodb"]
-        },
-        {
-            "name": "boost-core",
-            "version>=": "1.82.0"
-        },
-        {
-            "name": "boost-beast",
-            "version>=": "1.82.0"
-        },
-        {
-            "name": "boost-json",
-            "version>=": "1.82.0"
-        },
-        {
-            "name": "boost-asio",
-            "version>=": "1.82.0"
-        },
-        {
-            "name": "boost-system",
-            "version>=": "1.82.0"
-        },
-        {
-            "name": "boost-thread",
-            "version>=": "1.82.0"
-        },
-        {
-            "name": "boost-algorithm",
-            "version>=": "1.82.0"
-        },
-        {
-            "name": "backward-cpp",
-            "version>=": "1.6"
-        },
-        {
-            "name": "gtest",
-            "version>=": "1.13.0"
-        },
-        {
-            "name": "botan",
-            "version>=": "2.19.3"
-        },
-        {
-            "name": "spdlog",
-            "version>=": "1.12.0"
-        },
-        {
-            "name": "crow",
-            "version>=": "1.0-5"
-        },
-        {
-            "name": "sqlite3",
-            "version>=": "3.43.0"
-        },
-        {
-            "name": "aws-lambda-cpp",
-            "version>=": "0.2.8"
-        }
-    ]
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "axel",
+  "version": "0.1.0",
+  "description": "Backend for Axel",
+  "builtin-baseline": "c95000e1b5bb62884de08d5e952993c8bced9db6",
+  "dependencies": [
+	{
+	  "name": "boost-core",
+	  "version>=": "1.82.0"
+	},
+	{
+	  "name": "boost-beast",
+	  "version>=": "1.82.0"
+	},
+	{
+	  "name": "boost-json",
+	  "version>=": "1.82.0"
+	},
+	{
+	  "name": "boost-asio",
+	  "version>=": "1.82.0"
+	},
+	{
+	  "name": "boost-system",
+	  "version>=": "1.82.0"
+	},
+	{
+	  "name": "boost-thread",
+	  "version>=": "1.82.0"
+	},
+	{
+	  "name": "boost-algorithm",
+	  "version>=": "1.82.0"
+	},
+	{
+	  "name": "backward-cpp",
+	  "version>=": "1.6"
+	},
+	{
+	  "name": "gtest",
+	  "version>=": "1.13.0"
+	},
+	{
+	  "name": "botan",
+	  "version>=": "2.19.3"
+	},
+	{
+	  "name": "spdlog",
+	  "version>=": "1.12.0"
+	},
+	{
+	  "name": "crow",
+	  "version>=": "1.0-5"
+	},
+	{
+	  "name": "sqlite3",
+	  "version>=": "3.43.0"
+	}
+  ]
 }
