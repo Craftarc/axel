@@ -1,6 +1,34 @@
 #!/bin/bash
 
-pwd=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+# Absolute path to project root
+root=$(realpath "$(dirname "${BASH_SOURCE[0]}")")/../..
+dev_compose="${root}"/env/dev/compose.yml
+production_compose="${root}"/env/production/compose.yml
 
-docker build -f "${pwd}"/../../env/release.Dockerfile -t craftarc/axel:production .
+# Start the development container
+docker rm --force builder
+docker compose -f "$dev_compose"  run --name builder --rm -d dev bash
+
+# Compile production binary
+if docker exec builder /app/axel/scripts/compile/production.sh
+then
+  echo ">> Compiled successfully for production"
+else
+  echo ">> Compilation failed"
+  exit 1
+fi
+
+# Build the production image
+if docker compose -f "$production_compose" build
+then
+  echo ">> Production image built successfully"
+else
+  echo ">> Production image failed to build"
+  exit 1
+fi
+
+# Push the image
+docker compose -f "$production_compose" push
+exit 0
+
 

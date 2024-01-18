@@ -25,6 +25,7 @@ RUN apt-get update -y && \
     make \
     gcc-12 \
     g++-12 \
+    libssl-dev \
     pkg-config \
     cmake \
     python3 \
@@ -51,4 +52,4 @@ RUN git clone https://github.com/Microsoft/vcpkg.git && \
 # Python packages
 RUN pip install flask pytest requests
 
-WORKDIR /root
+WORKDIR /app/axel/build
