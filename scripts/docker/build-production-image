@@ -7,7 +7,7 @@ production_compose="${root}"/env/production/compose.yml
 
 # Start the development container
 docker rm --force builder
-docker compose -f "$dev_compose"  run --name builder --rm -d dev bash
+docker compose -f "$dev_compose" run --name builder --rm -d dev bash
 
 # Compile production binary
 if docker exec builder /app/axel/scripts/compile/production.sh

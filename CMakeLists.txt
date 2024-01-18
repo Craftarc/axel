@@ -67,11 +67,10 @@ add_library(test_definitions INTERFACE)
 
 option(AXEL_TEST "Use test databases" YES)
 if (AXEL_TEST)
-    message(STATUS "Using testing databases")
-    target_compile_definitions(test_definitions INTERFACE AXEL_TEST=1)
+    target_compile_definitions(test_definitions INTERFACE AXEL_TEST)
+    message(">> THIS IS A TEST BUILD")
 else ()
-    message(STATUS "Using production databases")
-    target_compile_definitions(test_definitions INTERFACE AXEL_TEST=0)
+    message(">> THIS IS A PRODUCTION BUILD")
 endif ()
 
 # End Settings

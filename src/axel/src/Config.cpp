@@ -3,10 +3,10 @@
 #include <fstream>
 
 #include <boost/json.hpp>
+#include <parse/util.h>
 
 #include "axel/Exception.h"
 #include "parse/json.h"
-#include "parse/util.h"
 
 namespace json = boost::json;
 
@@ -20,6 +20,7 @@ namespace axel {
     Config& Config::get_instance() {
         // Find the path to the configuration file
         std::string project_root{ std::getenv("APP_ROOT") };
+        spdlog::debug("{}", project_root);
         std::string path_to_config{ project_root + "/config/config.json" };
 
         static Config instance(path_to_config);

@@ -30,7 +30,7 @@ COPY config/config.json config/
 # Start script
 COPY scripts/start.sh start.sh
 
-CMD ["./start.sh"]
+ENTRYPOINT ["./start.sh"]
 
 EXPOSE 80 443
 

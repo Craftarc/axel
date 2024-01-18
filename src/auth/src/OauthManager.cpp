@@ -94,11 +94,10 @@ namespace auth {
         response.set_header("Location", auth_url);
         std::string cookie{
             "session_id=" + session_id +
-            "; SameSite=Strict; Secure; HttpOnly; Path=/auth"  // Only for auth
-                                                               // purposes
+            "; SameSite=None; Secure; HttpOnly; Path=/auth"  // Only for auth
+                                                             // purposes
         };
         response.set_header("Set-Cookie", cookie);
-        return;
     }
 
     /// Processes the authorization response from the authorization server

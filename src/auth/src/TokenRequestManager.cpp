@@ -37,15 +37,15 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
     }
 
 #ifdef AXEL_TEST
-    std::string host = "https://" + CONFIG("auth.host.axel.staging");
+    std::string host = CONFIG("auth.host.axel.staging");
 #else
-    std::string host = "https://" + CONFIG("auth.host.axel.production");
+    std::string host = CONFIG("auth.host.poe");
 #endif
-
-    std::string redirect_uri{ host + CONFIG("auth.endpoint.redirect") };
+    std::string redirect_uri{ "https://" + CONFIG("auth.host.axel.production") +
+                              CONFIG("auth.endpoint.redirect") };
     std::string request_body =
     util::make_form_data({ { "client_id", CONFIG("auth.client_id") },
-                           { "client_secret", "piVeiWU8NyDJ" },
+                           { "client_secret", std::getenv("SECRET") },
                            { "grant_type", CONFIG("auth.grant_type") },
                            { "code", std::move(auth_code) },
                            { "redirect_uri", redirect_uri },
@@ -68,10 +68,13 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                             request_body);
 
     full_request.prepare_payload();  // Automatically set Content-Length
+
+    std::cout << full_request << std::endl;
+
     auto response_body = http_sender->send_http_request(full_request,
                                                         MAX_RESPONSE_BODY);
 
-    spdlog::info("Response: {}", response_body);
+    spdlog::info("response: {}", response_body);
 
     // Extract access token
     boost::json::value json = boost::json::parse(response_body);

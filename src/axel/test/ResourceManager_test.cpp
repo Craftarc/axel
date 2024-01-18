@@ -5,7 +5,6 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include "parse/util.h"
 #include "util/MockHttpSender.h"
 using namespace ::testing;
 
