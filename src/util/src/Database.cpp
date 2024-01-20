@@ -24,8 +24,8 @@ using TableInfo =
 std::pair<std::string, std::unordered_map<std::string, std::string>>;
 
 namespace util {
-    Database::Database(const char* name) {
-        if (sqlite3_open(name, &handle_) != SQLITE_OK) {
+    Database::Database(const std::string& name) {
+        if (sqlite3_open(name.c_str(), &handle_) != SQLITE_OK) {
             throw axel::Exception("Could not open database file");
         }
 

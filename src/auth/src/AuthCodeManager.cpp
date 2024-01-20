@@ -14,13 +14,17 @@ std::string auth::AuthCodeManager::get_auth_url(std::string code_challenge,
     std::string redirect_uri = "https://" + CONFIG("auth.host.axel.staging") +
                                CONFIG("auth.endpoint.redirect");
     ;
+
+    // Mock oauth server doesn't support https
+    std::string base_path = "http://";
 #else
     std::string redirect_uri = "https://" +
                                CONFIG("auth.host.axel.production") +
                                CONFIG("auth.endpoint.redirect");
+    std::string base_path = "https://";
 #endif
 
-    std::string base_path =
+    base_path +=
     CONFIG("auth.host.poe") +
     CONFIG("auth.endpoint.login");  // Before adding query parameters
 

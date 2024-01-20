@@ -22,8 +22,7 @@ namespace util {
         public:
             /// @brief Constructor.
             /// @param name Filename of the databse
-            Database(const char* name);
-
+            Database(const std::string& name);
             ~Database() override;
             Database(const Database&) = delete;
             Database& operator=(const Database&) = delete;
@@ -188,7 +187,7 @@ namespace util {
             void execute(const std::string& query);
 
         private:
-            sqlite3* handle_;
+            sqlite3* handle_{};
 
             /// @brief Gets attribute and type information of the table.
             /// @param table Name of table to get information about.

@@ -37,15 +37,17 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
     }
 
 #ifdef AXEL_TEST
-    std::string host = CONFIG("auth.host.axel.staging");
+    std::string secret{ "dummy_secret" };
 #else
-    std::string host = CONFIG("auth.host.poe");
+    std::string secret{ std::getenv("SECRET") };
 #endif
+
+    std::string host = CONFIG("auth.host.poe");
     std::string redirect_uri{ "https://" + CONFIG("auth.host.axel.production") +
                               CONFIG("auth.endpoint.redirect") };
     std::string request_body =
     util::make_form_data({ { "client_id", CONFIG("auth.client_id") },
-                           { "client_secret", std::getenv("SECRET") },
+                           { "client_secret", secret },
                            { "grant_type", CONFIG("auth.grant_type") },
                            { "code", std::move(auth_code) },
                            { "redirect_uri", redirect_uri },
@@ -68,8 +70,6 @@ auth::TokenRequestManager::send_token_request(std::string auth_code,
                             request_body);
 
     full_request.prepare_payload();  // Automatically set Content-Length
-
-    std::cout << full_request << std::endl;
 
     auto response_body = http_sender->send_http_request(full_request,
                                                         MAX_RESPONSE_BODY);

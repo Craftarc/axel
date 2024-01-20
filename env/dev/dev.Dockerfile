@@ -52,4 +52,4 @@ RUN git clone https://github.com/Microsoft/vcpkg.git && \
 # Python packages
 RUN pip install flask pytest requests
 
-WORKDIR /app/axel/build
+WORKDIR /app

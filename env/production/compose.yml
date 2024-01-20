@@ -1,17 +1,10 @@
+# Build configuration
 services:
   production:
     image: craftarc/axel:production
     build:
       context: ${PROJECT_ROOT}
-      dockerfile: env/release.Dockerfile
+      dockerfile: env/production/production.Dockerfile
       args:
         APP_ROOT: ${APP_ROOT}
         CONFIG_PATH: ${CONFIG_PATH}
-    ports:
-      - "80:80"
-      - "443:443"
-    environment:
-      - APP_ROOT=${APP_ROOT}
-
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt # Mount SSL keys

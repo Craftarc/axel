@@ -1,5 +1,3 @@
-# docker build -t craftarc/axel:release -f release.Dockerfile .
-
 FROM ubuntu:22.04
 
 ARG APP_ROOT
@@ -29,6 +27,9 @@ COPY config/config.json config/
 
 # Start script
 COPY scripts/start.sh start.sh
+
+# Dummy target file for mount
+RUN touch app.db
 
 ENTRYPOINT ["./start.sh"]
 

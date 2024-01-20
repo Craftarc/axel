@@ -1,18 +1,13 @@
+# Build configuration
 services:
   dev:
     image: craftarc/axel:dev
     build:
       context: ../..
       dockerfile: env/dev/dev.Dockerfile
-
     ports:
       - "80:80" # Axel app
-      - "8080:8080" # Python test server
     volumes:
-      - ${MOUNT_ROOT}:/app/axel # Mount project root
+      - ${HOST_ROOT}:${APP_ROOT} # Mount project root
     environment: # For inside container
       - APP_ROOT=${APP_ROOT}
-
-volumes:
-  config:
-
